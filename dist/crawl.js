@@ -156,19 +156,19 @@ function crawl(_a) {
             var _b = _a === void 0 ? {} : _a, _c = _b.twitterSearchUrl, twitterSearchUrl = _c === void 0 ? constants_1.TWITTER_SEARCH_ADVANCED_URL[SEARCH_TAB] : _c;
             return __awaiter(this, void 0, void 0, function () {
                 function scrollAndSave() {
-                    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+                    var _a, _b, _c, _d, _e, _f, _g, _h, _j;
                     return __awaiter(this, void 0, void 0, function () {
                         var _loop_1, state_1, _loop_2, state_2, _loop_3, state_3;
-                        return __generator(this, function (_m) {
-                            switch (_m.label) {
+                        return __generator(this, function (_k) {
+                            switch (_k.label) {
                                 case 0:
                                     if (!(TWEET_THREAD_URL && TWEET_THREAD_URL.indexOf('/likes') > -1)) return [3 /*break*/, 4];
                                     TIMEOUT_LIMIT = 2;
                                     _loop_1 = function () {
-                                        var response, favorites_1, responseJson, error_2, _o, headerRow, comingFavs, dir, dirFullPath, rows, csv, fullPathFilename;
-                                        var _p;
-                                        return __generator(this, function (_q) {
-                                            switch (_q.label) {
+                                        var response, favorites_1, responseJson, error_2, _l, headerRow, comingFavs, dir, dirFullPath, rows, csv, fullPathFilename;
+                                        var _m;
+                                        return __generator(this, function (_o) {
+                                            switch (_o.label) {
                                                 case 0: return [4 /*yield*/, Promise.race([
                                                         // includes "SearchTimeline" because it's the endpoint for the search result
                                                         // or also includes "TweetDetail" because it's the endpoint for the tweet detail
@@ -176,38 +176,38 @@ function crawl(_a) {
                                                         page.waitForTimeout(5000),
                                                     ])];
                                                 case 1:
-                                                    response = _q.sent();
+                                                    response = _o.sent();
                                                     if (!response) return [3 /*break*/, 15];
                                                     timeoutCount = 0;
                                                     favorites_1 = [];
                                                     responseJson = void 0;
-                                                    _q.label = 2;
+                                                    _o.label = 2;
                                                 case 2:
-                                                    _q.trys.push([2, 4, , 10]);
+                                                    _o.trys.push([2, 4, , 10]);
                                                     return [4 /*yield*/, response.json()];
                                                 case 3:
-                                                    responseJson = _q.sent();
+                                                    responseJson = _o.sent();
                                                     return [3 /*break*/, 10];
                                                 case 4:
-                                                    error_2 = _q.sent();
+                                                    error_2 = _o.sent();
                                                     return [4 /*yield*/, response.text()];
                                                 case 5:
-                                                    if (!(_q.sent()).toLowerCase().includes("rate limit")) return [3 /*break*/, 9];
+                                                    if (!(_o.sent()).toLowerCase().includes("rate limit")) return [3 /*break*/, 9];
                                                     console.error("Error parsing response json: ".concat(JSON.stringify(response)));
                                                     console.error("Most likely, you have already exceeded the Twitter rate limit. Read more on https://twitter.com/elonmusk/status/1675187969420828672?s=46.");
                                                     // wait for rate limit window passed before retrying
                                                     return [4 /*yield*/, page.waitForTimeout((0, exponential_backoff_1.calculateForRateLimit)(rateLimitCount++))];
                                                 case 6:
                                                     // wait for rate limit window passed before retrying
-                                                    _q.sent();
+                                                    _o.sent();
                                                     // click retry
                                                     return [4 /*yield*/, page.click("text=Retry")];
                                                 case 7:
                                                     // click retry
-                                                    _q.sent();
-                                                    _o = {};
+                                                    _o.sent();
+                                                    _l = {};
                                                     return [4 /*yield*/, scrollAndSave()];
-                                                case 8: return [2 /*return*/, (_o.value = _q.sent(), _o)];
+                                                case 8: return [2 /*return*/, (_l.value = _o.sent(), _l)];
                                                 case 9: return [2 /*return*/, "break"];
                                                 case 10:
                                                     // reset the rate limit exception count
@@ -223,7 +223,7 @@ function crawl(_a) {
                                                         appendCsv(FILE_NAME, headerRow);
                                                     }
                                                     // add tweets and users to allData
-                                                    (_p = allData.favorites).push.apply(_p, favorites_1);
+                                                    (_m = allData.favorites).push.apply(_m, favorites_1);
                                                     comingFavs = favorites_1;
                                                     if (!fs.existsSync(FOLDER_DESTINATION)) {
                                                         dir = fs.mkdirSync(FOLDER_DESTINATION, { recursive: true });
@@ -257,14 +257,14 @@ function crawl(_a) {
                                                     console.info(chalk_1.default.gray("\n--Taking a break, waiting for 1 second..."));
                                                     return [4 /*yield*/, page.waitForTimeout(1000)];
                                                 case 11:
-                                                    _q.sent();
+                                                    _o.sent();
                                                     return [3 /*break*/, 14];
                                                 case 12:
                                                     if (!(additionalTweetsCount > 20)) return [3 /*break*/, 14];
                                                     return [4 /*yield*/, page.waitForTimeout(DELAY_EACH_LIKES_SECONDS * 1000)];
                                                 case 13:
-                                                    _q.sent();
-                                                    _q.label = 14;
+                                                    _o.sent();
+                                                    _o.label = 14;
                                                 case 14: return [3 /*break*/, 18];
                                                 case 15:
                                                     timeoutCount++;
@@ -280,11 +280,11 @@ function crawl(_a) {
                                                             });
                                                         })];
                                                 case 16:
-                                                    _q.sent();
+                                                    _o.sent();
                                                     return [4 /*yield*/, scrollAndSave()];
                                                 case 17:
-                                                    _q.sent(); // call the function again to resume scrolling
-                                                    _q.label = 18;
+                                                    _o.sent(); // call the function again to resume scrolling
+                                                    _o.label = 18;
                                                 case 18: return [4 /*yield*/, page.evaluate(function () {
                                                         return window.scrollTo({
                                                             behavior: "smooth",
@@ -292,17 +292,17 @@ function crawl(_a) {
                                                         });
                                                     })];
                                                 case 19:
-                                                    _q.sent();
+                                                    _o.sent();
                                                     return [2 /*return*/];
                                             }
                                         });
                                     };
-                                    _m.label = 1;
+                                    _k.label = 1;
                                 case 1:
                                     if (!(allData.favorites.length < TARGET_TWEET_COUNT && timeoutCount < TIMEOUT_LIMIT)) return [3 /*break*/, 3];
                                     return [5 /*yield**/, _loop_1()];
                                 case 2:
-                                    state_1 = _m.sent();
+                                    state_1 = _k.sent();
                                     if (typeof state_1 === "object")
                                         return [2 /*return*/, state_1.value];
                                     if (state_1 === "break")
@@ -312,61 +312,58 @@ function crawl(_a) {
                                 case 4:
                                     if (!(TWEET_THREAD_URL && TWEET_THREAD_URL.indexOf('/retweets') > -1)) return [3 /*break*/, 8];
                                     _loop_2 = function () {
-                                        var response, retweetEntries_1, responseJson, error_3, _r, headerRow, comingFavs, dir, dirFullPath, rows, csv, fullPathFilename;
-                                        var _s;
-                                        return __generator(this, function (_t) {
-                                            switch (_t.label) {
-                                                case 0:
-                                                    console.log('alldata', allData);
-                                                    return [4 /*yield*/, Promise.race([
-                                                            // includes "SearchTimeline" because it's the endpoint for the search result
-                                                            // or also includes "TweetDetail" because it's the endpoint for the tweet detail
-                                                            page.waitForResponse(function (response) {
-                                                                console.log('url', response.url());
-                                                                return response.url().includes("Retweeters");
-                                                            }),
-                                                            page.waitForTimeout(5000),
-                                                        ])];
+                                        var response, retweetEntries_1, responseJson, error_3, _p, headerRow, comingFavs, dir, dirFullPath, rows, csv, fullPathFilename;
+                                        var _q;
+                                        return __generator(this, function (_r) {
+                                            switch (_r.label) {
+                                                case 0: return [4 /*yield*/, Promise.race([
+                                                        // includes "SearchTimeline" because it's the endpoint for the search result
+                                                        // or also includes "TweetDetail" because it's the endpoint for the tweet detail
+                                                        page.waitForResponse(function (response) {
+                                                            console.log('url', response.url());
+                                                            return response.url().includes("Retweeters");
+                                                        }),
+                                                        page.waitForTimeout(5000),
+                                                    ])];
                                                 case 1:
-                                                    response = _t.sent();
+                                                    response = _r.sent();
                                                     if (!response) return [3 /*break*/, 15];
                                                     timeoutCount = 0;
                                                     retweetEntries_1 = [];
                                                     responseJson = void 0;
-                                                    _t.label = 2;
+                                                    _r.label = 2;
                                                 case 2:
-                                                    _t.trys.push([2, 4, , 10]);
+                                                    _r.trys.push([2, 4, , 10]);
                                                     return [4 /*yield*/, response.json()];
                                                 case 3:
-                                                    responseJson = _t.sent();
+                                                    responseJson = _r.sent();
                                                     return [3 /*break*/, 10];
                                                 case 4:
-                                                    error_3 = _t.sent();
+                                                    error_3 = _r.sent();
                                                     return [4 /*yield*/, response.text()];
                                                 case 5:
-                                                    if (!(_t.sent()).toLowerCase().includes("rate limit")) return [3 /*break*/, 9];
+                                                    if (!(_r.sent()).toLowerCase().includes("rate limit")) return [3 /*break*/, 9];
                                                     console.error("Error parsing response json: ".concat(JSON.stringify(response)));
                                                     console.error("Most likely, you have already exceeded the Twitter rate limit. Read more on https://twitter.com/elonmusk/status/1675187969420828672?s=46.");
                                                     // wait for rate limit window passed before retrying
                                                     return [4 /*yield*/, page.waitForTimeout((0, exponential_backoff_1.calculateForRateLimit)(rateLimitCount++))];
                                                 case 6:
                                                     // wait for rate limit window passed before retrying
-                                                    _t.sent();
+                                                    _r.sent();
                                                     // click retry
                                                     return [4 /*yield*/, page.click("text=Retry")];
                                                 case 7:
                                                     // click retry
-                                                    _t.sent();
-                                                    _r = {};
+                                                    _r.sent();
+                                                    _p = {};
                                                     return [4 /*yield*/, scrollAndSave()];
-                                                case 8: return [2 /*return*/, (_r.value = _t.sent(), _r)];
+                                                case 8: return [2 /*return*/, (_p.value = _r.sent(), _p)];
                                                 case 9: return [2 /*return*/, "break"];
                                                 case 10:
                                                     // reset the rate limit exception count
                                                     rateLimitCount = 0;
-                                                    console.log('data', (_c = (_b = responseJson.data) === null || _b === void 0 ? void 0 : _b.tweetResult) === null || _c === void 0 ? void 0 : _c.result);
-                                                    if (((_d = responseJson.data) === null || _d === void 0 ? void 0 : _d.retweeters_timeline.timeline.instructions) && ((_e = responseJson.data) === null || _e === void 0 ? void 0 : _e.retweeters_timeline.timeline.instructions.length) > 0) {
-                                                        retweetEntries_1 = (_f = responseJson.data) === null || _f === void 0 ? void 0 : _f.retweeters_timeline.timeline.instructions[0].entries;
+                                                    if (((_b = responseJson.data) === null || _b === void 0 ? void 0 : _b.retweeters_timeline.timeline.instructions) && ((_c = responseJson.data) === null || _c === void 0 ? void 0 : _c.retweeters_timeline.timeline.instructions.length) > 0) {
+                                                        retweetEntries_1 = (_d = responseJson.data) === null || _d === void 0 ? void 0 : _d.retweeters_timeline.timeline.instructions[0].entries;
                                                     }
                                                     if (!retweetEntries_1) {
                                                         console.error("No more retweets found");
@@ -378,7 +375,7 @@ function crawl(_a) {
                                                         appendCsv(FILE_NAME, headerRow);
                                                     }
                                                     // add tweets and users to allData
-                                                    (_s = allData.reposts).push.apply(_s, retweetEntries_1);
+                                                    (_q = allData.reposts).push.apply(_q, retweetEntries_1);
                                                     comingFavs = retweetEntries_1;
                                                     if (!fs.existsSync(FOLDER_DESTINATION)) {
                                                         dir = fs.mkdirSync(FOLDER_DESTINATION, { recursive: true });
@@ -390,7 +387,7 @@ function crawl(_a) {
                                                         if (current.entryId.indexOf('user') > -1 && ((_c = (_b = (_a = current === null || current === void 0 ? void 0 : current.content) === null || _a === void 0 ? void 0 : _a.itemContent) === null || _b === void 0 ? void 0 : _b.user_results) === null || _c === void 0 ? void 0 : _c.result)) {
                                                             var tweet = (0, lodash_1.pick)(__assign({ id: (_g = (_f = (_e = (_d = current === null || current === void 0 ? void 0 : current.content) === null || _d === void 0 ? void 0 : _d.itemContent) === null || _e === void 0 ? void 0 : _e.user_results) === null || _f === void 0 ? void 0 : _f.result) === null || _g === void 0 ? void 0 : _g.id }, current.content.itemContent.user_results.result.legacy), filteredFavFields);
                                                             var cleanText1 = "".concat(current.content.itemContent.user_results.result.legacy.description.replace(/,/g, " ").replace(/\n/g, " "));
-                                                            var cleanText2 = "".concat(current.content.itemContent.user_results.result.legacy.name.replace(/,/g, " ").replace(/\n/g, " "));
+                                                            var cleanText2 = "".concat(current.content.itemContent.user_results.result.core.name.replace(/,/g, " ").replace(/\n/g, " "));
                                                             tweet["description"] = cleanText1;
                                                             tweet["name"] = cleanText2;
                                                             var row = Object.values(convertValuesToStrings(tweet)).join(",");
@@ -412,14 +409,14 @@ function crawl(_a) {
                                                     console.info(chalk_1.default.gray("\n--Taking a break, waiting for 1 second..."));
                                                     return [4 /*yield*/, page.waitForTimeout(1000)];
                                                 case 11:
-                                                    _t.sent();
+                                                    _r.sent();
                                                     return [3 /*break*/, 14];
                                                 case 12:
                                                     if (!(additionalTweetsCount > 20)) return [3 /*break*/, 14];
                                                     return [4 /*yield*/, page.waitForTimeout(DELAY_EACH_LIKES_SECONDS * 1000)];
                                                 case 13:
-                                                    _t.sent();
-                                                    _t.label = 14;
+                                                    _r.sent();
+                                                    _r.label = 14;
                                                 case 14: return [3 /*break*/, 18];
                                                 case 15:
                                                     timeoutCount++;
@@ -435,11 +432,11 @@ function crawl(_a) {
                                                             });
                                                         })];
                                                 case 16:
-                                                    _t.sent();
+                                                    _r.sent();
                                                     return [4 /*yield*/, scrollAndSave()];
                                                 case 17:
-                                                    _t.sent(); // call the function again to resume scrolling
-                                                    _t.label = 18;
+                                                    _r.sent(); // call the function again to resume scrolling
+                                                    _r.label = 18;
                                                 case 18: return [4 /*yield*/, page.evaluate(function () {
                                                         return window.scrollTo({
                                                             behavior: "smooth",
@@ -447,17 +444,17 @@ function crawl(_a) {
                                                         });
                                                     })];
                                                 case 19:
-                                                    _t.sent();
+                                                    _r.sent();
                                                     return [2 /*return*/];
                                             }
                                         });
                                     };
-                                    _m.label = 5;
+                                    _k.label = 5;
                                 case 5:
                                     if (!(allData.reposts.length < TARGET_TWEET_COUNT && timeoutCount < TIMEOUT_LIMIT)) return [3 /*break*/, 7];
                                     return [5 /*yield**/, _loop_2()];
                                 case 6:
-                                    state_2 = _m.sent();
+                                    state_2 = _k.sent();
                                     if (typeof state_2 === "object")
                                         return [2 /*return*/, state_2.value];
                                     if (state_2 === "break")
@@ -466,10 +463,10 @@ function crawl(_a) {
                                 case 7: return [3 /*break*/, 11];
                                 case 8:
                                     _loop_3 = function () {
-                                        var response, tweets, responseJson, error_4, _u, isTweetDetail, headerRow, tweetContents_1, comingTweets, dir, dirFullPath, rows, csv, fullPathFilename;
-                                        var _v;
-                                        return __generator(this, function (_w) {
-                                            switch (_w.label) {
+                                        var response, tweets, responseJson, error_4, _s, isTweetDetail, headerRow, tweetContents_1, comingTweets, dir, dirFullPath, rows, csv, fullPathFilename;
+                                        var _t;
+                                        return __generator(this, function (_u) {
+                                            switch (_u.label) {
                                                 case 0: return [4 /*yield*/, Promise.race([
                                                         // includes "SearchTimeline" because it's the endpoint for the search result
                                                         // or also includes "TweetDetail" because it's the endpoint for the tweet detail
@@ -477,48 +474,48 @@ function crawl(_a) {
                                                         page.waitForTimeout(5000),
                                                     ])];
                                                 case 1:
-                                                    response = _w.sent();
+                                                    response = _u.sent();
                                                     if (!response) return [3 /*break*/, 18];
                                                     timeoutCount = 0;
                                                     tweets = [];
                                                     responseJson = void 0;
-                                                    _w.label = 2;
+                                                    _u.label = 2;
                                                 case 2:
-                                                    _w.trys.push([2, 4, , 10]);
+                                                    _u.trys.push([2, 4, , 10]);
                                                     return [4 /*yield*/, response.json()];
                                                 case 3:
-                                                    responseJson = _w.sent();
+                                                    responseJson = _u.sent();
                                                     return [3 /*break*/, 10];
                                                 case 4:
-                                                    error_4 = _w.sent();
+                                                    error_4 = _u.sent();
                                                     return [4 /*yield*/, response.text()];
                                                 case 5:
-                                                    if (!(_w.sent()).toLowerCase().includes("rate limit")) return [3 /*break*/, 9];
+                                                    if (!(_u.sent()).toLowerCase().includes("rate limit")) return [3 /*break*/, 9];
                                                     console.error("Error parsing response json: ".concat(JSON.stringify(response)));
                                                     console.error("Most likely, you have already exceeded the Twitter rate limit. Read more on https://twitter.com/elonmusk/status/1675187969420828672?s=46.");
                                                     // wait for rate limit window passed before retrying
                                                     return [4 /*yield*/, page.waitForTimeout((0, exponential_backoff_1.calculateForRateLimit)(rateLimitCount++))];
                                                 case 6:
                                                     // wait for rate limit window passed before retrying
-                                                    _w.sent();
+                                                    _u.sent();
                                                     // click retry
                                                     return [4 /*yield*/, page.click("text=Retry")];
                                                 case 7:
                                                     // click retry
-                                                    _w.sent();
-                                                    _u = {};
+                                                    _u.sent();
+                                                    _s = {};
                                                     return [4 /*yield*/, scrollAndSave()];
-                                                case 8: return [2 /*return*/, (_u.value = _w.sent(), _u)];
+                                                case 8: return [2 /*return*/, (_s.value = _u.sent(), _s)];
                                                 case 9: return [2 /*return*/, "break"];
                                                 case 10:
                                                     // reset the rate limit exception count
                                                     rateLimitCount = 0;
                                                     isTweetDetail = responseJson.data.threaded_conversation_with_injections_v2;
                                                     if (isTweetDetail) {
-                                                        tweets = (_g = responseJson.data) === null || _g === void 0 ? void 0 : _g.threaded_conversation_with_injections_v2.instructions[0].entries;
+                                                        tweets = (_e = responseJson.data) === null || _e === void 0 ? void 0 : _e.threaded_conversation_with_injections_v2.instructions[0].entries;
                                                     }
                                                     else {
-                                                        tweets = (_l = (_k = (_j = (_h = responseJson.data) === null || _h === void 0 ? void 0 : _h.search_by_raw_query.search_timeline.timeline) === null || _j === void 0 ? void 0 : _j.instructions) === null || _k === void 0 ? void 0 : _k[0]) === null || _l === void 0 ? void 0 : _l.entries;
+                                                        tweets = (_j = (_h = (_g = (_f = responseJson.data) === null || _f === void 0 ? void 0 : _f.search_by_raw_query.search_timeline.timeline) === null || _g === void 0 ? void 0 : _g.instructions) === null || _h === void 0 ? void 0 : _h[0]) === null || _j === void 0 ? void 0 : _j.entries;
                                                     }
                                                     if (!tweets) {
                                                         console.error("No more tweets found, please check your search criteria and csv file result");
@@ -528,12 +525,12 @@ function crawl(_a) {
                                                     return [4 /*yield*/, page.getByText("No results for").count()];
                                                 case 11:
                                                     // found text "not found" on the page
-                                                    if (_w.sent()) {
+                                                    if (_u.sent()) {
                                                         TWEETS_NOT_FOUND_ON_CURRENT_TAB = true;
                                                         console.info("No tweets found for the search criteria");
                                                         return [2 /*return*/, "break"];
                                                     }
-                                                    _w.label = 12;
+                                                    _u.label = 12;
                                                 case 12:
                                                     headerRow = __spreadArray(__spreadArray([], filteredFields, true), ["views_count"], false).map(function (field) { return "\"".concat(field, "\""); }).join(",") + "\n";
                                                     if (!headerWritten) {
@@ -542,7 +539,7 @@ function crawl(_a) {
                                                     }
                                                     tweetContents_1 = tweets
                                                         .map(function (tweet) {
-                                                        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z;
+                                                        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _0, _1;
                                                         var isPromotedTweet = tweet.entryId.includes("promoted");
                                                         if (IS_SEARCH_MODE && !((_c = (_b = (_a = tweet === null || tweet === void 0 ? void 0 : tweet.content) === null || _a === void 0 ? void 0 : _a.itemContent) === null || _b === void 0 ? void 0 : _b.tweet_results) === null || _c === void 0 ? void 0 : _c.result))
                                                             return null;
@@ -562,16 +559,21 @@ function crawl(_a) {
                                                             return null;
                                                         var tweetContent = result.legacy || result.tweet.legacy;
                                                         var userContent = ((_y = (_x = (_w = result.core) === null || _w === void 0 ? void 0 : _w.user_results) === null || _x === void 0 ? void 0 : _x.result) === null || _y === void 0 ? void 0 : _y.legacy) || result.tweet.core.user_results.result.legacy;
-                                                        var views = result.views || ((_z = result.tweet) === null || _z === void 0 ? void 0 : _z.views);
+                                                        var userDetail = ((_0 = (_z = result.core) === null || _z === void 0 ? void 0 : _z.user_results) === null || _0 === void 0 ? void 0 : _0.result) || result.tweet.core.user_results.result;
+                                                        var views = result.views || ((_1 = result.tweet) === null || _1 === void 0 ? void 0 : _1.views);
+                                                        console.log('tweetContent', tweetContent);
+                                                        console.log('userContent', userContent);
+                                                        console.log('userDetail', userDetail);
                                                         return {
                                                             tweet: tweetContent,
                                                             user: userContent,
+                                                            userDetail: userDetail,
                                                             views: views
                                                         };
                                                     })
                                                         .filter(function (tweet) { return tweet !== null; });
                                                     // add tweets and users to allData
-                                                    (_v = allData.tweets).push.apply(_v, tweetContents_1);
+                                                    (_t = allData.tweets).push.apply(_t, tweetContents_1);
                                                     comingTweets = tweetContents_1;
                                                     if (!fs.existsSync(FOLDER_DESTINATION)) {
                                                         dir = fs.mkdirSync(FOLDER_DESTINATION, { recursive: true });
@@ -579,7 +581,7 @@ function crawl(_a) {
                                                         console.info(chalk_1.default.green("Created new directory: ".concat(dirFullPath)));
                                                     }
                                                     rows = comingTweets.reduce(function (prev, current) {
-                                                        var _a, _b, _c, _d;
+                                                        var _a, _b, _c, _d, _e, _f, _g, _h;
                                                         var tweet = (0, lodash_1.pick)(current.tweet, filteredFields);
                                                         var cleanTweetText = "".concat(tweet.full_text.replace(/,/g, " ").replace(/\n/g, " "));
                                                         if (IS_DETAIL_MODE) {
@@ -591,12 +593,14 @@ function crawl(_a) {
                                                                 cleanTweetText = cleanTweetText.replace("@".concat(replyToUsername, " "), "");
                                                             }
                                                         }
+                                                        console.log('current', current);
+                                                        var userName = (_b = (_a = current.userDetail) === null || _a === void 0 ? void 0 : _a.core) === null || _b === void 0 ? void 0 : _b.screen_name;
                                                         tweet["full_text"] = cleanTweetText;
-                                                        tweet["username"] = current.user.screen_name;
-                                                        tweet["tweet_url"] = "https://twitter.com/".concat(current.user.screen_name, "/status/").concat(tweet.id_str);
-                                                        tweet["image_url"] = ((_c = (_b = (_a = current.tweet.entities) === null || _a === void 0 ? void 0 : _a.media) === null || _b === void 0 ? void 0 : _b[0]) === null || _c === void 0 ? void 0 : _c.media_url_https) || "";
-                                                        tweet["location"] = current.user.location || "";
-                                                        tweet["views_count"] = (_d = current.views) === null || _d === void 0 ? void 0 : _d.count;
+                                                        tweet["username"] = userName;
+                                                        tweet["tweet_url"] = "https://twitter.com/".concat(userName, "/status/").concat(tweet.id_str);
+                                                        tweet["image_url"] = ((_e = (_d = (_c = current.tweet.entities) === null || _c === void 0 ? void 0 : _c.media) === null || _d === void 0 ? void 0 : _d[0]) === null || _e === void 0 ? void 0 : _e.media_url_https) || "";
+                                                        tweet["location"] = ((_g = (_f = current.userDetail) === null || _f === void 0 ? void 0 : _f.location) === null || _g === void 0 ? void 0 : _g.location) || "";
+                                                        tweet["views_count"] = (_h = current.views) === null || _h === void 0 ? void 0 : _h.count;
                                                         var row = Object.values(convertValuesToStrings(tweet)).join(",");
                                                         return __spreadArray(__spreadArray([], prev, true), [row], false);
                                                     }, []);
@@ -612,15 +616,15 @@ function crawl(_a) {
                                                     console.info(chalk_1.default.gray("\n--Taking a break, waiting for ".concat(DELAY_EVERY_100_TWEETS_SECONDS, " seconds...")));
                                                     return [4 /*yield*/, page.waitForTimeout(DELAY_EVERY_100_TWEETS_SECONDS * 1000)];
                                                 case 13:
-                                                    _w.sent();
-                                                    _w.label = 14;
+                                                    _u.sent();
+                                                    _u.label = 14;
                                                 case 14: return [3 /*break*/, 17];
                                                 case 15:
                                                     if (!(additionalTweetsCount > 20)) return [3 /*break*/, 17];
                                                     return [4 /*yield*/, page.waitForTimeout(DELAY_EACH_TWEET_SECONDS * 1000)];
                                                 case 16:
-                                                    _w.sent();
-                                                    _w.label = 17;
+                                                    _u.sent();
+                                                    _u.label = 17;
                                                 case 17: return [3 /*break*/, 21];
                                                 case 18:
                                                     timeoutCount++;
@@ -636,11 +640,11 @@ function crawl(_a) {
                                                             });
                                                         })];
                                                 case 19:
-                                                    _w.sent();
+                                                    _u.sent();
                                                     return [4 /*yield*/, scrollAndSave()];
                                                 case 20:
-                                                    _w.sent(); // call the function again to resume scrolling
-                                                    _w.label = 21;
+                                                    _u.sent(); // call the function again to resume scrolling
+                                                    _u.label = 21;
                                                 case 21: return [4 /*yield*/, page.evaluate(function () {
                                                         return window.scrollTo({
                                                             behavior: "smooth",
@@ -648,17 +652,17 @@ function crawl(_a) {
                                                         });
                                                     })];
                                                 case 22:
-                                                    _w.sent();
+                                                    _u.sent();
                                                     return [2 /*return*/];
                                             }
                                         });
                                     };
-                                    _m.label = 9;
+                                    _k.label = 9;
                                 case 9:
                                     if (!(allData.tweets.length < TARGET_TWEET_COUNT && timeoutCount < TIMEOUT_LIMIT)) return [3 /*break*/, 11];
                                     return [5 /*yield**/, _loop_3()];
                                 case 10:
-                                    state_3 = _m.sent();
+                                    state_3 = _k.sent();
                                     if (typeof state_3 === "object")
                                         return [2 /*return*/, state_3.value];
                                     if (state_3 === "break")
