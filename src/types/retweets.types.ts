@@ -51,21 +51,40 @@ export interface Result {
   id: string
   rest_id: string
   affiliates_highlighted_label: AffiliatesHighlightedLabel
+  avatar: Avatar
+  core: Core
+  dm_permissions: DmPermissions
   has_graduated_access: boolean
   is_blue_verified: boolean
-  profile_image_shape: string
   legacy: Legacy
+  location: Location
+  media_permissions: MediaPermissions
+  parody_commentary_fan_label: string
+  profile_image_shape: string
+  privacy: Privacy
+  relationship_perspectives: RelationshipPerspectives
   tipjar_settings: TipjarSettings
-  professional?: Professional
+  verification: Verification
 }
 
 export interface AffiliatesHighlightedLabel {}
 
-export interface Legacy {
-  following: boolean
-  can_dm: boolean
-  can_media_tag: boolean
+export interface Avatar {
+  image_url: string
+}
+
+export interface Core {
   created_at: string
+  name: string
+  screen_name: string
+}
+
+export interface DmPermissions {
+  can_dm: boolean
+  can_dm_on_xchat: boolean
+}
+
+export interface Legacy {
   default_profile: boolean
   default_profile_image: boolean
   description: string
@@ -77,19 +96,14 @@ export interface Legacy {
   has_custom_timelines: boolean
   is_translator: boolean
   listed_count: number
-  location: string
   media_count: number
-  name: string
   normal_followers_count: number
   pinned_tweet_ids_str: string[]
   possibly_sensitive: boolean
   profile_banner_url?: string
-  profile_image_url_https: string
   profile_interstitial_type: string
-  screen_name: string
   statuses_count: number
   translator_type: string
-  verified: boolean
   want_retweets: boolean
   withheld_in_countries: any[]
   url?: string
@@ -115,20 +129,28 @@ export interface Url2 {
   indices: number[]
 }
 
+export interface Location {
+  location: string
+}
+
+export interface MediaPermissions {
+  can_media_tag: boolean
+}
+
+export interface Privacy {
+  protected: boolean
+}
+
+export interface RelationshipPerspectives {
+  following: boolean
+}
+
 export interface TipjarSettings {
   is_enabled?: boolean
 }
 
-export interface Professional {
-  rest_id: string
-  professional_type: string
-  category: Category[]
-}
-
-export interface Category {
-  id: number
-  name: string
-  icon_name: string
+export interface Verification {
+  verified: boolean
 }
 
 export interface ResponseObjects {

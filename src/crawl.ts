@@ -332,8 +332,6 @@ export async function crawl({
         }
       } else if (TWEET_THREAD_URL && TWEET_THREAD_URL.indexOf('/retweets')  > -1) {
         while (allData.reposts.length < TARGET_TWEET_COUNT && timeoutCount < TIMEOUT_LIMIT) {
-          console.log('alldata', allData);
-
           // Wait for the next response or 3 seconds, whichever comes first
           const response = await Promise.race([
             // includes "SearchTimeline" because it's the endpoint for the search result
@@ -377,7 +375,6 @@ export async function crawl({
             // reset the rate limit exception count
             rateLimitCount = 0;
 
-            console.log('data', responseJson.data?.tweetResult?.result);
             if (responseJson.data?.retweeters_timeline.timeline.instructions && responseJson.data?.retweeters_timeline.timeline.instructions.length > 0) {
               retweetEntries = responseJson.data?.retweeters_timeline.timeline.instructions[0].entries;
             }
@@ -414,7 +411,7 @@ export async function crawl({
                 const tweet = pick({ id: current?.content?.itemContent?.user_results?.result?.id, ...current.content.itemContent.user_results.result.legacy }, filteredFavFields);
 
                 let cleanText1 = `${current.content.itemContent.user_results.result.legacy.description.replace(/,/g, " ").replace(/\n/g, " ")}`;
-                let cleanText2 = `${current.content.itemContent.user_results.result.legacy.name.replace(/,/g, " ").replace(/\n/g, " ")}`;
+                let cleanText2 = `${current.content.itemContent.user_results.result.core.name.replace(/,/g, " ").replace(/\n/g, " ")}`;
                 tweet["description"] = cleanText1;
                 tweet["name"] = cleanText2;
 
@@ -563,11 +560,17 @@ export async function crawl({
                 const tweetContent = result.legacy || result.tweet.legacy;
                 const userContent =
                   result.core?.user_results?.result?.legacy || result.tweet.core.user_results.result.legacy;
+                const userDetail = result.core?.user_results?.result || result.tweet.core.user_results.result;
                 const views = result.views || result.tweet?.views;
+
+                console.log('tweetContent', tweetContent);
+                console.log('userContent', userContent);
+                console.log('userDetail', userDetail);
 
                 return {
                   tweet: tweetContent,
                   user: userContent,
+                  userDetail: userDetail,
                   views: views
                 };
               })
@@ -601,11 +604,14 @@ export async function crawl({
                 }
               }
 
+              console.log('current', current);
+
+              const userName = current.userDetail?.core?.screen_name;
               tweet["full_text"] = cleanTweetText;
-              tweet["username"] = current.user.screen_name;
-              tweet["tweet_url"] = `https://twitter.com/${current.user.screen_name}/status/${tweet.id_str}`;
+              tweet["username"] = userName;
+              tweet["tweet_url"] = `https://twitter.com/${userName}/status/${tweet.id_str}`;
               tweet["image_url"] = current.tweet.entities?.media?.[0]?.media_url_https || "";
-              tweet["location"] = current.user.location || "";
+              tweet["location"] = current.userDetail?.location?.location || "";
               tweet["views_count"] = current.views?.count;
 
               const row = Object.values(convertValuesToStrings(tweet)).join(",");
