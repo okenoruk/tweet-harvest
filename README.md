@@ -15,3 +15,16 @@ To use Tweet Harvest, follow these simple steps:
 That’s it! Tweet Harvest will open a Chromium browser instance and navigate to Twitter's search page. It will then enter your search parameters and scrape the resulting tweets. The tweets will be saved in a CSV file in a directory named tweets-data in the current working directory.
 
 Note: You will need a Twitter auth token to use this tool. When prompted, enter your Twitter auth token to authenticate your search.
+
+# Publishing `tweet-harvest2` to npmjs (Step-by-step)
+
+## Prerequisites
+- You have access to the npm package name: `tweet-harvest2`
+- Your code compiles to `dist/` (because your package publishes only `dist/`)
+- You have `pnpm` and `npm` installed
+
+---
+
+## 1) Go to your project folder
+```bash
+cd /path/to/tweet-harvest2
