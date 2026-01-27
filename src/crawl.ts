@@ -1,96 +1,23 @@
-import * as fs from "fs";
 import dayjs from "dayjs";
-import { pick } from "lodash";
 import chalk from "chalk";
 import path from "path";
-import { Entry } from "./types/tweets.types";
 import { chromium } from "playwright-extra";
 import stealth from "puppeteer-extra-plugin-stealth";
 import { inputKeywords } from "./features/input-keywords";
 import { listenNetworkRequests } from "./features/listen-network-requests";
-import { calculateForRateLimit } from "./features/exponential-backoff";
 import { HEADLESS_MODE } from "./env";
-import { TWITTER_SEARCH_ADVANCED_URL } from "./constants";
-import { FavEntry } from "./types/favorites.types";
-import { RetweetEntry } from "./types/retweets.types";
+import { CrawlMode, DEFAULT_DATA_FOLDER, FORMATTED_TIMESTAMP, SearchTab, TWITTER_SEARCH_ADVANCED_URL } from "./utils/constants";
+import { LikesHandler } from "./handlers/likes-handler";
+import { RetweetsHandler } from "./handlers/retweets-handler";
+import { TweetsHandler } from "./handlers/tweets-handler";
 
+// Initialize stealth mode
 chromium.use(stealth());
 
-const NOW = dayjs().format("DD-MM-YYYY HH-mm-ss");
-let headerWritten = false;
-
-function appendCsv(pathStr: string, contents: any, cb?) {
-  const dirName = path.dirname(pathStr);
-  const fileName = path.resolve(pathStr);
-
-  fs.mkdirSync(dirName, { recursive: true });
-  fs.appendFileSync(fileName, contents, cb);
-
-  return fileName;
-}
-
-const filteredFields = [
-  "created_at",
-  "id_str",
-  "full_text",
-  "quote_count",
-  "reply_count",
-  "retweet_count",
-  "favorite_count",
-  "bookmark_count",
-  "lang",
-  "user_id_str",
-  "conversation_id_str",
-  "username",
-  "tweet_url",
-  "image_url",
-  "location",
-];
-
-
-const filteredFavFields = [
-  "id",
-  "created_at",
-  "description",
-  "followers_count",
-  "friends_count",
-  "name",
-  "profile_image_url_https",
-  "screen_name",
-  "statuses_count"
-];
-
-type StartCrawlTwitterParams = {
-  twitterSearchUrl?: string;
-};
-
-function convertValuesToStrings(obj) {
-  const result = {};
-  for (const key in obj) {
-    if (typeof obj[key] === "object" && obj[key] !== null) {
-      result[key] = convertValuesToStrings(obj[key]); // Recursively convert nested object values
-    } else {
-      result[key] = `"${String(obj[key])}"`;
-    }
-  }
-  return result;
-}
-
-export async function crawl({
-  ACCESS_TOKEN,
-  SEARCH_KEYWORDS,
-  TWEET_THREAD_URL,
-  SEARCH_FROM_DATE,
-  SEARCH_TO_DATE,
-  TARGET_TWEET_COUNT = 10,
-  // default delay each tweet activity: 3 seconds
-  DELAY_EACH_TWEET_SECONDS = 3,
-  DELAY_EACH_LIKES_SECONDS = 1,
-  DELAY_EVERY_100_TWEETS_SECONDS = 5,
-  DEBUG_MODE,
-  OUTPUT_FILENAME,
-  SEARCH_TAB = "LATEST",
-}: {
+/**
+ * Parameters for the crawl function
+ */
+interface CrawlParams {
   ACCESS_TOKEN: string;
   SEARCH_KEYWORDS?: string;
   SEARCH_FROM_DATE?: string;
@@ -103,27 +30,44 @@ export async function crawl({
   OUTPUT_FILENAME?: string;
   TWEET_THREAD_URL?: string;
   SEARCH_TAB?: "LATEST" | "TOP";
-}) {
-  const CRAWL_MODE = TWEET_THREAD_URL ? "DETAIL" : "SEARCH";
+}
+
+/**
+ * Parameters for the startCrawlTwitter function
+ */
+interface StartCrawlTwitterParams {
+  twitterSearchUrl?: string;
+}
+
+/**
+ * Main crawl function
+ */
+export async function crawl({
+  ACCESS_TOKEN,
+  SEARCH_KEYWORDS,
+  TWEET_THREAD_URL,
+  SEARCH_FROM_DATE,
+  SEARCH_TO_DATE,
+  TARGET_TWEET_COUNT = 10,
+  DELAY_EACH_TWEET_SECONDS = 3,
+  DELAY_EACH_LIKES_SECONDS = 1,
+  DELAY_EVERY_100_TWEETS_SECONDS = 5,
+  DEBUG_MODE,
+  OUTPUT_FILENAME,
+  SEARCH_TAB = "LATEST",
+}: CrawlParams) {
+  // Determine crawl mode based on URL
+  const CRAWL_MODE = TWEET_THREAD_URL ? CrawlMode.DETAIL : CrawlMode.SEARCH;
   const SWITCHED_SEARCH_TAB = SEARCH_TAB === "TOP" ? "LATEST" : "TOP";
 
-  const IS_DETAIL_MODE = CRAWL_MODE === "DETAIL";
-  const IS_SEARCH_MODE = CRAWL_MODE === "SEARCH";
-  let TIMEOUT_LIMIT = 4;
-
-  let MODIFIED_SEARCH_KEYWORDS = SEARCH_KEYWORDS;
-
-  const CURRENT_PACKAGE_VERSION = require("../package.json").version;
-
-  // change spaces to _
-  const FOLDER_DESTINATION = "./tweets-data";
-  const FUlL_PATH_FOLDER_DESTINATION = path.resolve(FOLDER_DESTINATION);
-  const filename = (OUTPUT_FILENAME || `${SEARCH_KEYWORDS} ${NOW}`).trim().replace(".csv", "");
-
-  const FILE_NAME = `${FOLDER_DESTINATION}/${filename}.csv`.replace(/ /g, "_").replace(/:/g, "-");
+  // Set up file paths
+  const filename = (OUTPUT_FILENAME || `${SEARCH_KEYWORDS} ${FORMATTED_TIMESTAMP}`).trim().replace(".csv", "");
+  const FILE_NAME = `${DEFAULT_DATA_FOLDER}/${filename}.csv`.replace(/ /g, "_").replace(/:/g, "-");
 
   console.info(chalk.blue("\nOpening twitter search page...\n"));
 
+  // Rename existing file if it exists
+  const fs = require("fs");
   if (fs.existsSync(FILE_NAME)) {
     console.info(
       chalk.blue(`\nFound existing file ${FILE_NAME}, renaming to ${FILE_NAME.replace(".csv", ".old.csv")}`)
@@ -132,9 +76,12 @@ export async function crawl({
   }
 
   let TWEETS_NOT_FOUND_ON_CURRENT_TAB = false;
+  const CURRENT_PACKAGE_VERSION = require("../package.json").version;
 
+  // Initialize browser
   const browser = await chromium.launch({ headless: HEADLESS_MODE });
 
+  // Set up browser context with authentication
   const context = await browser.newContext({
     screen: { width: 1240, height: 1080 },
     storageState: {
@@ -154,531 +101,103 @@ export async function crawl({
     },
   });
 
+  // Create new page
   const page = await context.newPage();
   page.setDefaultTimeout(60 * 1000);
 
+  // Listen for network requests
   listenNetworkRequests(page);
 
+  /**
+   * Start crawling Twitter
+   */
   async function startCrawlTwitter({
     twitterSearchUrl = TWITTER_SEARCH_ADVANCED_URL[SEARCH_TAB],
   }: StartCrawlTwitterParams = {}) {
-    if (IS_DETAIL_MODE) {
+    // Navigate to the appropriate URL
+    if (CRAWL_MODE === CrawlMode.DETAIL) {
       await page.goto(TWEET_THREAD_URL);
     } else {
       await page.goto(twitterSearchUrl);
     }
 
-    // check is current page url is twitter login page (have /login in the url)
+    // Check if logged in
     const isLoggedIn = !page.url().includes("/login");
-
     if (!isLoggedIn) {
       console.error("Invalid twitter auth token. Please check your auth token");
       return browser.close();
     }
 
-    if (IS_SEARCH_MODE) {
+    // Input search keywords if in search mode
+    if (CRAWL_MODE === CrawlMode.SEARCH) {
       inputKeywords(page, {
         SEARCH_FROM_DATE,
         SEARCH_TO_DATE,
         SEARCH_KEYWORDS,
-        MODIFIED_SEARCH_KEYWORDS,
+        MODIFIED_SEARCH_KEYWORDS: SEARCH_KEYWORDS,
       });
     }
 
-    let timeoutCount = 0;
-    let additionalTweetsCount = 0;
-    // count how many rate limit exception got raised
-    let rateLimitCount = 0;
-
-    const allData = {
-      tweets: [],
-      favorites: [],
-      reposts: []
-    };
-
-    async function scrollAndSave() {
-      if (TWEET_THREAD_URL && TWEET_THREAD_URL.indexOf('/likes') > -1) {
-        TIMEOUT_LIMIT = 2;
-        while (allData.favorites.length < TARGET_TWEET_COUNT && timeoutCount < TIMEOUT_LIMIT) {
-          // Wait for the next response or 3 seconds, whichever comes first
-          const response = await Promise.race([
-            // includes "SearchTimeline" because it's the endpoint for the search result
-            // or also includes "TweetDetail" because it's the endpoint for the tweet detail
-            page.waitForResponse(
-              (response) => response.url().includes("Favoriters")
-            ),
-            page.waitForTimeout(5000),
-          ]);
-
-          if (response) {
-            timeoutCount = 0;
-
-            let favorites: FavEntry[] = [];
-
-            let responseJson;
-
-            try {
-              responseJson = await response.json();
-            } catch (error) {
-              if ((await response.text()).toLowerCase().includes("rate limit")) {
-                console.error(`Error parsing response json: ${JSON.stringify(response)}`);
-                console.error(
-                  `Most likely, you have already exceeded the Twitter rate limit. Read more on https://twitter.com/elonmusk/status/1675187969420828672?s=46.`
-                );
-
-                // wait for rate limit window passed before retrying
-                await page.waitForTimeout(calculateForRateLimit(rateLimitCount++));
-
-                // click retry
-                await page.click("text=Retry");
-                return await scrollAndSave(); // recursive call
-              }
-
-              break;
-            }
-
-            // reset the rate limit exception count
-            rateLimitCount = 0;
-
-            favorites = responseJson.data?.favoriters_timeline.timeline.instructions[0].entries;
-
-            if (!favorites) {
-              console.error("No more favorites found");
-              return;
-            }
-
-
-            const headerRow = filteredFavFields.map((field) => `"${field}"`).join(",") + "\n";
-
-            if (!headerWritten) {
-              headerWritten = true;
-              appendCsv(FILE_NAME, headerRow);
-            }
-
-            // add tweets and users to allData
-            allData.favorites.push(...favorites);
-
-            // write tweets to CSV file
-            const comingFavs = favorites;
-
-            if (!fs.existsSync(FOLDER_DESTINATION)) {
-              const dir = fs.mkdirSync(FOLDER_DESTINATION, { recursive: true });
-              const dirFullPath = path.resolve(dir);
-
-              console.info(chalk.green(`Created new directory: ${dirFullPath}`));
-            }
-
-            const rows = comingFavs.reduce((prev: [], current: (typeof favorites)[0]) => {
-
-              if (current.entryId.indexOf('user') > -1 && current?.content?.itemContent?.user_results?.result) {
-                const tweet = pick({ id: current?.content?.itemContent?.user_results?.result?.id, ...current.content.itemContent.user_results.result.legacy }, filteredFavFields);
-
-                let cleanText1 = `${current.content.itemContent.user_results.result.legacy.description.replace(/,/g, " ").replace(/\n/g, " ")}`;
-                let cleanText2 = `${current.content.itemContent.user_results.result.legacy.name.replace(/,/g, " ").replace(/\n/g, " ")}`;
-                tweet["description"] = cleanText1;
-                tweet["name"] = cleanText2;
-
-                const row = Object.values(convertValuesToStrings(tweet)).join(",");
-
-                return [...prev, row];
-              } else {
-                return [...prev];
-              }
-            }, []);
-
-            const csv = (rows as []).join("\n") + "\n";
-            const fullPathFilename = appendCsv(FILE_NAME, csv);
-
-            console.info(chalk.blue(`Your user profiles saved to: ${fullPathFilename}`));
-
-            // progress:
-            console.info(chalk.yellow(`Total user profiles saved: ${allData.favorites.length}`));
-            additionalTweetsCount += favorites.length;
-
-            if (additionalTweetsCount > 100) {
-              additionalTweetsCount = 0;
-              // if (DELAY_EVERY_100_TWEETS_SECONDS) {
-                console.info(chalk.gray(`\n--Taking a break, waiting for 1 second...`));
-                await page.waitForTimeout(1000);
-              // }
-            } else if (additionalTweetsCount > 20) {
-              await page.waitForTimeout(DELAY_EACH_LIKES_SECONDS * 1000);
-            }
-          } else {
-            timeoutCount++;
-            console.info(chalk.gray("Scrolling more..."));
-
-            if (timeoutCount > TIMEOUT_LIMIT) {
-              console.info(chalk.yellow("No more favs found, please check your search criteria and csv file result"));
-              break;
-            }
-
-            await page.evaluate(() =>
-              window.scrollTo({
-                behavior: "smooth",
-                top: 10_000 * 9_000,
-              })
-            );
-
-            await scrollAndSave(); // call the function again to resume scrolling
-          }
-
-          await page.evaluate(() =>
-            window.scrollTo({
-              behavior: "smooth",
-              top: 10_000 * 9_000,
-            })
-          );
-        }
-      } else if (TWEET_THREAD_URL && TWEET_THREAD_URL.indexOf('/retweets')  > -1) {
-        while (allData.reposts.length < TARGET_TWEET_COUNT && timeoutCount < TIMEOUT_LIMIT) {
-          // Wait for the next response or 3 seconds, whichever comes first
-          const response = await Promise.race([
-            // includes "SearchTimeline" because it's the endpoint for the search result
-            // or also includes "TweetDetail" because it's the endpoint for the tweet detail
-            page.waitForResponse(
-              (response) => {
-                console.log('url', response.url());
-                return response.url().includes("Retweeters")
-              }
-            ),
-            page.waitForTimeout(5000),
-          ]);
-
-          if (response) {
-            timeoutCount = 0;
-
-            let retweetEntries: RetweetEntry[] = [];
-
-            let responseJson;
-
-            try {
-              responseJson = await response.json();
-            } catch (error) {
-              if ((await response.text()).toLowerCase().includes("rate limit")) {
-                console.error(`Error parsing response json: ${JSON.stringify(response)}`);
-                console.error(
-                  `Most likely, you have already exceeded the Twitter rate limit. Read more on https://twitter.com/elonmusk/status/1675187969420828672?s=46.`
-                );
-
-                // wait for rate limit window passed before retrying
-                await page.waitForTimeout(calculateForRateLimit(rateLimitCount++));
-
-                // click retry
-                await page.click("text=Retry");
-                return await scrollAndSave(); // recursive call
-              }
-
-              break;
-            }
-
-            // reset the rate limit exception count
-            rateLimitCount = 0;
-
-            if (responseJson.data?.retweeters_timeline.timeline.instructions && responseJson.data?.retweeters_timeline.timeline.instructions.length > 0) {
-              retweetEntries = responseJson.data?.retweeters_timeline.timeline.instructions[0].entries;
-            }
-
-            if (!retweetEntries) {
-              console.error("No more retweets found");
-              return;
-            }
-
-
-            const headerRow = filteredFavFields.map((field) => `"${field}"`).join(",") + "\n";
-
-            if (!headerWritten) {
-              headerWritten = true;
-              appendCsv(FILE_NAME, headerRow);
-            }
-
-            // add tweets and users to allData
-            allData.reposts.push(...retweetEntries);
-
-            // write tweets to CSV file
-            const comingFavs = retweetEntries;
-
-            if (!fs.existsSync(FOLDER_DESTINATION)) {
-              const dir = fs.mkdirSync(FOLDER_DESTINATION, { recursive: true });
-              const dirFullPath = path.resolve(dir);
-
-              console.info(chalk.green(`Created new directory: ${dirFullPath}`));
-            }
-
-            const rows = comingFavs.reduce((prev: [], current: (typeof retweetEntries)[0]) => {
-
-              if (current.entryId.indexOf('user') > -1 && current?.content?.itemContent?.user_results?.result) {
-                const tweet = pick({ id: current?.content?.itemContent?.user_results?.result?.id, ...current.content.itemContent.user_results.result.legacy }, filteredFavFields);
-
-                let cleanText1 = `${current.content.itemContent.user_results.result.legacy.description.replace(/,/g, " ").replace(/\n/g, " ")}`;
-                let cleanText2 = `${current.content.itemContent.user_results.result.core.name.replace(/,/g, " ").replace(/\n/g, " ")}`;
-                tweet["description"] = cleanText1;
-                tweet["name"] = cleanText2;
-
-                const row = Object.values(convertValuesToStrings(tweet)).join(",");
-
-                return [...prev, row];
-              } else {
-                return [...prev];
-              }
-            }, []);
-
-            const csv = (rows as []).join("\n") + "\n";
-            const fullPathFilename = appendCsv(FILE_NAME, csv);
-
-            console.info(chalk.blue(`Your user profiles saved to: ${fullPathFilename}`));
-
-            // progress:
-            console.info(chalk.yellow(`Total user profiles saved: ${allData.reposts.length}`));
-            additionalTweetsCount += retweetEntries.length;
-
-            if (additionalTweetsCount > 100) {
-              additionalTweetsCount = 0;
-              // if (DELAY_EVERY_100_TWEETS_SECONDS) {
-              console.info(chalk.gray(`\n--Taking a break, waiting for 1 second...`));
-              await page.waitForTimeout(1000);
-              // }
-            } else if (additionalTweetsCount > 20) {
-              await page.waitForTimeout(DELAY_EACH_LIKES_SECONDS * 1000);
-            }
-          } else {
-            timeoutCount++;
-            console.info(chalk.gray("Scrolling more..."));
-
-            if (timeoutCount > TIMEOUT_LIMIT) {
-              console.info(chalk.yellow("No more reposts found, please check your search criteria and csv file result"));
-              break;
-            }
-
-            await page.evaluate(() =>
-              window.scrollTo({
-                behavior: "smooth",
-                top: 10_000 * 9_000,
-              })
-            );
-
-            await scrollAndSave(); // call the function again to resume scrolling
-          }
-
-          await page.evaluate(() =>
-            window.scrollTo({
-              behavior: "smooth",
-              top: 10_000 * 9_000,
-            })
-          );
-        }
+    // Determine which handler to use based on URL and mode
+    if (TWEET_THREAD_URL && TWEET_THREAD_URL.indexOf('/likes') > -1) {
+      // Handle likes
+      const likesHandler = new LikesHandler(
+        page,
+        FILE_NAME,
+        DEFAULT_DATA_FOLDER,
+        TARGET_TWEET_COUNT,
+        2, // timeoutLimit
+        DELAY_EACH_LIKES_SECONDS,
+        1 // delayEvery100Seconds
+      );
+      
+      const likes = await likesHandler.collect();
+      console.info(`Collected ${likes.length} user profiles from likes`);
+    } 
+    else if (TWEET_THREAD_URL && TWEET_THREAD_URL.indexOf('/retweets') > -1) {
+      // Handle retweets
+      const retweetsHandler = new RetweetsHandler(
+        page,
+        FILE_NAME,
+        DEFAULT_DATA_FOLDER,
+        TARGET_TWEET_COUNT,
+        2, // timeoutLimit
+        DELAY_EACH_LIKES_SECONDS,
+        1 // delayEvery100Seconds
+      );
+      
+      const retweets = await retweetsHandler.collect();
+      console.info(`Collected ${retweets.length} user profiles from retweets`);
+    } 
+    else {
+      // Handle tweets
+      const tweetsHandler = new TweetsHandler(
+        page,
+        FILE_NAME,
+        DEFAULT_DATA_FOLDER,
+        TARGET_TWEET_COUNT,
+        CRAWL_MODE,
+        4, // timeoutLimit
+        DELAY_EACH_TWEET_SECONDS,
+        DELAY_EVERY_100_TWEETS_SECONDS
+      );
+      
+      const tweets = await tweetsHandler.collect();
+      
+      if (tweets.length === 0) {
+        TWEETS_NOT_FOUND_ON_CURRENT_TAB = true;
+        console.info("No tweets found for the search criteria");
       } else {
-        while (allData.tweets.length < TARGET_TWEET_COUNT && timeoutCount < TIMEOUT_LIMIT) {
-          // Wait for the next response or 3 seconds, whichever comes first
-          const response = await Promise.race([
-            // includes "SearchTimeline" because it's the endpoint for the search result
-            // or also includes "TweetDetail" because it's the endpoint for the tweet detail
-            page.waitForResponse(
-              (response) => response.url().includes("SearchTimeline") || response.url().includes("TweetDetail")
-            ),
-            page.waitForTimeout(5000),
-          ]);
-
-          if (response) {
-            timeoutCount = 0;
-
-            let tweets: Entry[] = [];
-
-            let responseJson;
-
-            try {
-              responseJson = await response.json();
-            } catch (error) {
-              if ((await response.text()).toLowerCase().includes("rate limit")) {
-                console.error(`Error parsing response json: ${JSON.stringify(response)}`);
-                console.error(
-                  `Most likely, you have already exceeded the Twitter rate limit. Read more on https://twitter.com/elonmusk/status/1675187969420828672?s=46.`
-                );
-
-                // wait for rate limit window passed before retrying
-                await page.waitForTimeout(calculateForRateLimit(rateLimitCount++));
-
-                // click retry
-                await page.click("text=Retry");
-                return await scrollAndSave(); // recursive call
-              }
-
-              break;
-            }
-
-            // reset the rate limit exception count
-            rateLimitCount = 0;
-
-            const isTweetDetail = responseJson.data.threaded_conversation_with_injections_v2;
-            if (isTweetDetail) {
-              tweets = responseJson.data?.threaded_conversation_with_injections_v2.instructions[0].entries;
-            } else {
-              tweets = responseJson.data?.search_by_raw_query.search_timeline.timeline?.instructions?.[0]?.entries;
-            }
-
-            if (!tweets) {
-              console.error("No more tweets found, please check your search criteria and csv file result");
-              return;
-            }
-
-            if (!tweets.length) {
-              // found text "not found" on the page
-              if (await page.getByText("No results for").count()) {
-                TWEETS_NOT_FOUND_ON_CURRENT_TAB = true;
-                console.info("No tweets found for the search criteria");
-                break;
-              }
-            }
-
-            const headerRow = [...filteredFields, "views_count"].map((field) => `"${field}"`).join(",") + "\n";
-
-            if (!headerWritten) {
-              headerWritten = true;
-              appendCsv(FILE_NAME, headerRow);
-            }
-
-            const tweetContents = tweets
-              .map((tweet) => {
-                const isPromotedTweet = tweet.entryId.includes("promoted");
-
-                if (IS_SEARCH_MODE && !tweet?.content?.itemContent?.tweet_results?.result) return null;
-                if (IS_DETAIL_MODE) {
-                  if (!tweet?.content?.items?.[0]?.item?.itemContent) return null;
-                  const isMentionThreadCreator =
-                    tweet?.content?.items?.[0]?.item?.itemContent?.tweet_results?.result?.legacy?.entities
-                      ?.user_mentions?.[0];
-                  if (!isMentionThreadCreator) return null;
-                }
-                if (isPromotedTweet) return null;
-
-                const result = IS_SEARCH_MODE
-                  ? tweet.content.itemContent.tweet_results.result
-                  : tweet.content.items[0].item.itemContent.tweet_results.result;
-
-                if (!result.tweet?.core?.user_results && !result.core?.user_results) return null;
-
-                const tweetContent = result.legacy || result.tweet.legacy;
-                const userContent =
-                  result.core?.user_results?.result?.legacy || result.tweet.core.user_results.result.legacy;
-                const userDetail = result.core?.user_results?.result || result.tweet.core.user_results.result;
-                const views = result.views || result.tweet?.views;
-
-                console.log('tweetContent', tweetContent);
-                console.log('userContent', userContent);
-                console.log('userDetail', userDetail);
-
-                return {
-                  tweet: tweetContent,
-                  user: userContent,
-                  userDetail: userDetail,
-                  views: views
-                };
-              })
-              .filter((tweet) => tweet !== null);
-
-            // add tweets and users to allData
-            allData.tweets.push(...tweetContents);
-
-            // write tweets to CSV file
-            const comingTweets = tweetContents;
-
-            if (!fs.existsSync(FOLDER_DESTINATION)) {
-              const dir = fs.mkdirSync(FOLDER_DESTINATION, { recursive: true });
-              const dirFullPath = path.resolve(dir);
-
-              console.info(chalk.green(`Created new directory: ${dirFullPath}`));
-            }
-
-            const rows = comingTweets.reduce((prev: [], current: (typeof tweetContents)[0]) => {
-              const tweet = pick(current.tweet, filteredFields);
-
-              let cleanTweetText = `${tweet.full_text.replace(/,/g, " ").replace(/\n/g, " ")}`;
-
-              if (IS_DETAIL_MODE) {
-                const firstWord = cleanTweetText.split(" ")[0];
-                const replyToUsername = current.tweet.entities.user_mentions[0].screen_name;
-                // firstWord example: "@someone", the 0 index is " and the 1 index is @
-                if (firstWord[1] === "@") {
-                  // remove the first word
-                  cleanTweetText = cleanTweetText.replace(`@${replyToUsername} `, "");
-                }
-              }
-
-              console.log('current', current);
-
-              const userName = current.userDetail?.core?.screen_name;
-              tweet["full_text"] = cleanTweetText;
-              tweet["username"] = userName;
-              tweet["tweet_url"] = `https://twitter.com/${userName}/status/${tweet.id_str}`;
-              tweet["image_url"] = current.tweet.entities?.media?.[0]?.media_url_https || "";
-              tweet["location"] = current.userDetail?.location?.location || "";
-              tweet["views_count"] = current.views?.count;
-
-              const row = Object.values(convertValuesToStrings(tweet)).join(",");
-
-              return [...prev, row];
-            }, []);
-
-            const csv = (rows as []).join("\n") + "\n";
-            const fullPathFilename = appendCsv(FILE_NAME, csv);
-
-            console.info(chalk.blue(`Your tweets saved to: ${fullPathFilename}`));
-
-            // progress:
-            console.info(chalk.yellow(`Total tweets saved: ${allData.tweets.length}`));
-            additionalTweetsCount += comingTweets.length;
-
-            // for every multiple of 100, wait for 5 seconds
-            if (additionalTweetsCount > 100) {
-              additionalTweetsCount = 0;
-              if (DELAY_EVERY_100_TWEETS_SECONDS) {
-                console.info(chalk.gray(`\n--Taking a break, waiting for ${DELAY_EVERY_100_TWEETS_SECONDS} seconds...`));
-                await page.waitForTimeout(DELAY_EVERY_100_TWEETS_SECONDS * 1000);
-              }
-            } else if (additionalTweetsCount > 20) {
-              await page.waitForTimeout(DELAY_EACH_TWEET_SECONDS * 1000);
-            }
-          } else {
-            timeoutCount++;
-            console.info(chalk.gray("Scrolling more..."));
-
-            if (timeoutCount > TIMEOUT_LIMIT) {
-              console.info(chalk.yellow("No more tweets found, please check your search criteria and csv file result"));
-              break;
-            }
-
-            await page.evaluate(() =>
-              window.scrollTo({
-                behavior: "smooth",
-                top: 10_000 * 9_000,
-              })
-            );
-
-            await scrollAndSave(); // call the function again to resume scrolling
-          }
-
-          await page.evaluate(() =>
-            window.scrollTo({
-              behavior: "smooth",
-              top: 10_000 * 9_000,
-            })
-          );
-        }
+        console.info(`Collected ${tweets.length} tweets`);
       }
-    }
-
-    await scrollAndSave();
-
-    if (allData.tweets.length) {
-      console.info(`Already got ${allData.tweets.length} tweets, done scrolling...`);
-    } else {
-      console.info("No tweets found for the search criteria");
     }
   }
 
   try {
+    // Start crawling
     await startCrawlTwitter();
 
+    // If no tweets found, try the other tab
     if (TWEETS_NOT_FOUND_ON_CURRENT_TAB && (SEARCH_FROM_DATE || SEARCH_TO_DATE)) {
       console.info(`No tweets found on "${SEARCH_TAB}" tab, trying "${SWITCHED_SEARCH_TAB}" tab...`);
 
@@ -688,21 +207,21 @@ export async function crawl({
     }
   } catch (error) {
     console.error(error);
-    console.info(chalk.blue(`Keywords: ${MODIFIED_SEARCH_KEYWORDS}`));
+    console.info(chalk.blue(`Keywords: ${SEARCH_KEYWORDS}`));
     console.info(chalk.yellowBright("Twitter Harvest v", CURRENT_PACKAGE_VERSION));
 
-    const errorFilename = FUlL_PATH_FOLDER_DESTINATION + `/Error-${NOW}.png`.replace(/ /g, "_").replace(".csv", "");
-
-    await page.screenshot({ path: path.resolve(errorFilename) }).then(() => {
+    // Take screenshot on error
+    const errorFilename = path.resolve(DEFAULT_DATA_FOLDER, `/Error-${FORMATTED_TIMESTAMP}.png`).replace(/ /g, "_");
+    
+    await page.screenshot({ path: errorFilename }).then(() => {
       console.log(
         chalk.red(
-          `\nIf you need help, please send this error screenshot to the maintainer, it was saved to "${path.resolve(
-            errorFilename
-          )}"`
+          `\nIf you need help, please send this error screenshot to the maintainer, it was saved to "${errorFilename}"`
         )
       );
     });
   } finally {
+    // Close browser if not in debug mode
     if (!DEBUG_MODE) {
       await browser.close();
     }

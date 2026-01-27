@@ -1,5 +1,24 @@
 # Changelog
 
+## 3.1.0 (2023-06-30)
+
+### Changes
+
+- Completely refactored the crawling script for better maintainability and performance
+- Improved code organization with modular architecture
+- Enhanced error handling and type safety
+- Removed debug console logs
+- Fixed potential issues with CSV formatting
+- Added better documentation with JSDoc comments
+
+## 3.0.0 (2023-05-15)
+
+### Changes
+
+- Major version update with breaking changes
+- Updated to work with the latest Twitter API changes
+- Improved authentication mechanism
+
 ## 2.4.2 (2023-11-26)
 
 ### Changes

@@ -1,0 +1,1660 @@
+{
+  "timeline": {
+    "instructions": [
+      {
+        "type": "TimelineAddEntries",
+        "entries": [
+          {
+            "entryId": "user-1326052694612537347",
+            "sortIndex": "1779281262894481135",
+            "content": {
+              "entryType": "TimelineTimelineItem",
+              "__typename": "TimelineTimelineItem",
+              "itemContent": {
+                "itemType": "TimelineUser",
+                "__typename": "TimelineUser",
+                "user_results": {
+                  "result": {
+                    "__typename": "User",
+                    "id": "VXNlcjoxMzI2MDUyNjk0NjEyNTM3MzQ3",
+                    "rest_id": "1326052694612537347",
+                    "affiliates_highlighted_label": {},
+                    "avatar": {
+                      "image_url": "https://pbs.twimg.com/profile_images/1811726364476940288/KGldrh7D_normal.jpg"
+                    },
+                    "core": {
+                      "created_at": "Tue Nov 10 06:43:06 +0000 2020",
+                      "name": "aeong.gongjunim",
+                      "screen_name": "ranicngtp12"
+                    },
+                    "dm_permissions": {
+                      "can_dm": false,
+                      "can_dm_on_xchat": false
+                    },
+                    "has_graduated_access": true,
+                    "is_blue_verified": false,
+                    "legacy": {
+                      "default_profile": true,
+                      "default_profile_image": false,
+                      "description": "tak ada yang berkesan",
+                      "entities": {
+                        "description": {
+                          "urls": []
+                        }
+                      },
+                      "fast_followers_count": 0,
+                      "favourites_count": 19278,
+                      "followers_count": 18,
+                      "friends_count": 147,
+                      "has_custom_timelines": true,
+                      "is_translator": false,
+                      "listed_count": 0,
+                      "media_count": 59,
+                      "normal_followers_count": 18,
+                      "pinned_tweet_ids_str": [],
+                      "possibly_sensitive": false,
+                      "profile_banner_url": "https://pbs.twimg.com/profile_banners/1326052694612537347/1720784213",
+                      "profile_interstitial_type": "",
+                      "statuses_count": 2683,
+                      "translator_type": "none",
+                      "want_retweets": false,
+                      "withheld_in_countries": []
+                    },
+                    "location": {
+                      "location": ""
+                    },
+                    "media_permissions": {
+                      "can_media_tag": false
+                    },
+                    "parody_commentary_fan_label": "None",
+                    "profile_image_shape": "Circle",
+                    "privacy": {
+                      "protected": false
+                    },
+                    "relationship_perspectives": {
+                      "following": false
+                    },
+                    "tipjar_settings": {},
+                    "verification": {
+                      "verified": false
+                    }
+                  }
+                },
+                "userDisplayType": "User"
+              }
+            }
+          },
+          {
+            "entryId": "user-1023634197678702592",
+            "sortIndex": "1778111447531062640",
+            "content": {
+              "entryType": "TimelineTimelineItem",
+              "__typename": "TimelineTimelineItem",
+              "itemContent": {
+                "itemType": "TimelineUser",
+                "__typename": "TimelineUser",
+                "user_results": {
+                  "result": {
+                    "__typename": "User",
+                    "id": "VXNlcjoxMDIzNjM0MTk3Njc4NzAyNTky",
+                    "rest_id": "1023634197678702592",
+                    "affiliates_highlighted_label": {},
+                    "avatar": {
+                      "image_url": "https://pbs.twimg.com/profile_images/1701628546119340032/JbOFY3zZ_normal.jpg"
+                    },
+                    "core": {
+                      "created_at": "Sun Jul 29 18:19:45 +0000 2018",
+                      "name": "Jordy Rafael",
+                      "screen_name": "JordyRafael12"
+                    },
+                    "dm_permissions": {
+                      "can_dm": true,
+                      "can_dm_on_xchat": false
+                    },
+                    "has_graduated_access": true,
+                    "is_blue_verified": false,
+                    "legacy": {
+                      "default_profile": true,
+                      "default_profile_image": false,
+                      "description": "Helo! V Here.",
+                      "entities": {
+                        "description": {
+                          "urls": []
+                        }
+                      },
+                      "fast_followers_count": 0,
+                      "favourites_count": 1749,
+                      "followers_count": 498,
+                      "friends_count": 3457,
+                      "has_custom_timelines": false,
+                      "is_translator": false,
+                      "listed_count": 0,
+                      "media_count": 8,
+                      "normal_followers_count": 498,
+                      "pinned_tweet_ids_str": [],
+                      "possibly_sensitive": false,
+                      "profile_interstitial_type": "",
+                      "statuses_count": 3068,
+                      "translator_type": "none",
+                      "want_retweets": false,
+                      "withheld_in_countries": []
+                    },
+                    "location": {
+                      "location": "Jakarta Capital Region"
+                    },
+                    "media_permissions": {
+                      "can_media_tag": true
+                    },
+                    "parody_commentary_fan_label": "None",
+                    "profile_image_shape": "Circle",
+                    "privacy": {
+                      "protected": false
+                    },
+                    "relationship_perspectives": {
+                      "following": false
+                    },
+                    "tipjar_settings": {},
+                    "verification": {
+                      "verified": false
+                    }
+                  }
+                },
+                "userDisplayType": "User"
+              }
+            }
+          },
+          {
+            "entryId": "user-914160049118781440",
+            "sortIndex": "1775185529875332222",
+            "content": {
+              "entryType": "TimelineTimelineItem",
+              "__typename": "TimelineTimelineItem",
+              "itemContent": {
+                "itemType": "TimelineUser",
+                "__typename": "TimelineUser",
+                "user_results": {
+                  "result": {
+                    "__typename": "User",
+                    "id": "VXNlcjo5MTQxNjAwNDkxMTg3ODE0NDA=",
+                    "rest_id": "914160049118781440",
+                    "affiliates_highlighted_label": {},
+                    "avatar": {
+                      "image_url": "https://pbs.twimg.com/profile_images/1709407887464996864/rXqe0VyI_normal.jpg"
+                    },
+                    "core": {
+                      "created_at": "Sat Sep 30 16:08:34 +0000 2017",
+                      "name": "OK@Y",
+                      "screen_name": "0K4Y08"
+                    },
+                    "dm_permissions": {
+                      "can_dm": true,
+                      "can_dm_on_xchat": false
+                    },
+                    "has_graduated_access": true,
+                    "is_blue_verified": false,
+                    "legacy": {
+                      "default_profile": true,
+                      "default_profile_image": false,
+                      "description": "quote\nsetiap orang ada masanya\nsetiap masa ada orangnya",
+                      "entities": {
+                        "description": {
+                          "urls": []
+                        }
+                      },
+                      "fast_followers_count": 0,
+                      "favourites_count": 3514,
+                      "followers_count": 319,
+                      "friends_count": 353,
+                      "has_custom_timelines": false,
+                      "is_translator": false,
+                      "listed_count": 0,
+                      "media_count": 675,
+                      "normal_followers_count": 319,
+                      "pinned_tweet_ids_str": [],
+                      "possibly_sensitive": false,
+                      "profile_banner_url": "https://pbs.twimg.com/profile_banners/914160049118781440/1698031382",
+                      "profile_interstitial_type": "",
+                      "statuses_count": 4947,
+                      "translator_type": "none",
+                      "want_retweets": false,
+                      "withheld_in_countries": []
+                    },
+                    "location": {
+                      "location": ""
+                    },
+                    "media_permissions": {
+                      "can_media_tag": true
+                    },
+                    "parody_commentary_fan_label": "None",
+                    "profile_image_shape": "Circle",
+                    "privacy": {
+                      "protected": false
+                    },
+                    "relationship_perspectives": {
+                      "following": false
+                    },
+                    "tipjar_settings": {},
+                    "verification": {
+                      "verified": false
+                    }
+                  }
+                },
+                "userDisplayType": "User"
+              }
+            }
+          },
+          {
+            "entryId": "user-1244539536761171969",
+            "sortIndex": "1774729244013474723",
+            "content": {
+              "entryType": "TimelineTimelineItem",
+              "__typename": "TimelineTimelineItem",
+              "itemContent": {
+                "itemType": "TimelineUser",
+                "__typename": "TimelineUser",
+                "user_results": {
+                  "result": {
+                    "__typename": "User",
+                    "id": "VXNlcjoxMjQ0NTM5NTM2NzYxMTcxOTY5",
+                    "rest_id": "1244539536761171969",
+                    "affiliates_highlighted_label": {},
+                    "avatar": {
+                      "image_url": "https://pbs.twimg.com/profile_images/1244539907273445378/qMfuFwVK_normal.jpg"
+                    },
+                    "core": {
+                      "created_at": "Mon Mar 30 08:18:57 +0000 2020",
+                      "name": "DinoRaurrus",
+                      "screen_name": "DRaurrus"
+                    },
+                    "dm_permissions": {
+                      "can_dm": false,
+                      "can_dm_on_xchat": false
+                    },
+                    "has_graduated_access": true,
+                    "is_blue_verified": false,
+                    "legacy": {
+                      "default_profile": true,
+                      "default_profile_image": false,
+                      "description": "Nobody Perf*ck..",
+                      "entities": {
+                        "description": {
+                          "urls": []
+                        }
+                      },
+                      "fast_followers_count": 0,
+                      "favourites_count": 2171,
+                      "followers_count": 5,
+                      "friends_count": 301,
+                      "has_custom_timelines": false,
+                      "is_translator": false,
+                      "listed_count": 0,
+                      "media_count": 8,
+                      "normal_followers_count": 5,
+                      "pinned_tweet_ids_str": [],
+                      "possibly_sensitive": false,
+                      "profile_banner_url": "https://pbs.twimg.com/profile_banners/1244539536761171969/1617730430",
+                      "profile_interstitial_type": "",
+                      "statuses_count": 641,
+                      "translator_type": "none",
+                      "want_retweets": false,
+                      "withheld_in_countries": []
+                    },
+                    "location": {
+                      "location": ""
+                    },
+                    "media_permissions": {
+                      "can_media_tag": true
+                    },
+                    "parody_commentary_fan_label": "None",
+                    "profile_image_shape": "Circle",
+                    "privacy": {
+                      "protected": false
+                    },
+                    "relationship_perspectives": {
+                      "following": false
+                    },
+                    "tipjar_settings": {},
+                    "verification": {
+                      "verified": false
+                    }
+                  }
+                },
+                "userDisplayType": "User"
+              }
+            }
+          },
+          {
+            "entryId": "user-1495420422393057282",
+            "sortIndex": "1774523515525635646",
+            "content": {
+              "entryType": "TimelineTimelineItem",
+              "__typename": "TimelineTimelineItem",
+              "itemContent": {
+                "itemType": "TimelineUser",
+                "__typename": "TimelineUser",
+                "user_results": {
+                  "result": {
+                    "__typename": "User",
+                    "id": "VXNlcjoxNDk1NDIwNDIyMzkzMDU3Mjgy",
+                    "rest_id": "1495420422393057282",
+                    "affiliates_highlighted_label": {},
+                    "avatar": {
+                      "image_url": "https://pbs.twimg.com/profile_images/1837898244304875520/922Ptk7__normal.jpg"
+                    },
+                    "core": {
+                      "created_at": "Sun Feb 20 15:30:04 +0000 2022",
+                      "name": "alex don sasch",
+                      "screen_name": "alexdonsasch"
+                    },
+                    "dm_permissions": {
+                      "can_dm": false,
+                      "can_dm_on_xchat": false
+                    },
+                    "has_graduated_access": true,
+                    "is_blue_verified": false,
+                    "legacy": {
+                      "default_profile": true,
+                      "default_profile_image": false,
+                      "description": "",
+                      "entities": {
+                        "description": {
+                          "urls": []
+                        }
+                      },
+                      "fast_followers_count": 0,
+                      "favourites_count": 120,
+                      "followers_count": 11,
+                      "friends_count": 243,
+                      "has_custom_timelines": true,
+                      "is_translator": false,
+                      "listed_count": 1,
+                      "media_count": 8,
+                      "normal_followers_count": 11,
+                      "pinned_tweet_ids_str": [],
+                      "possibly_sensitive": false,
+                      "profile_interstitial_type": "",
+                      "statuses_count": 4530,
+                      "translator_type": "none",
+                      "want_retweets": false,
+                      "withheld_in_countries": []
+                    },
+                    "location": {
+                      "location": ""
+                    },
+                    "media_permissions": {
+                      "can_media_tag": true
+                    },
+                    "parody_commentary_fan_label": "None",
+                    "profile_image_shape": "Circle",
+                    "privacy": {
+                      "protected": false
+                    },
+                    "relationship_perspectives": {
+                      "following": false
+                    },
+                    "tipjar_settings": {},
+                    "verification": {
+                      "verified": false
+                    }
+                  }
+                },
+                "userDisplayType": "User"
+              }
+            }
+          },
+          {
+            "entryId": "user-1532765383509147648",
+            "sortIndex": "1774414960337576007",
+            "content": {
+              "entryType": "TimelineTimelineItem",
+              "__typename": "TimelineTimelineItem",
+              "itemContent": {
+                "itemType": "TimelineUser",
+                "__typename": "TimelineUser",
+                "user_results": {
+                  "result": {
+                    "__typename": "User",
+                    "id": "VXNlcjoxNTMyNzY1MzgzNTA5MTQ3NjQ4",
+                    "rest_id": "1532765383509147648",
+                    "affiliates_highlighted_label": {},
+                    "avatar": {
+                      "image_url": "https://pbs.twimg.com/profile_images/1590014682173038593/Q1HSQGKi_normal.jpg"
+                    },
+                    "core": {
+                      "created_at": "Fri Jun 03 16:45:29 +0000 2022",
+                      "name": "EL֪",
+                      "screen_name": "akoonsedih"
+                    },
+                    "dm_permissions": {
+                      "can_dm": false,
+                      "can_dm_on_xchat": false
+                    },
+                    "has_graduated_access": true,
+                    "is_blue_verified": false,
+                    "legacy": {
+                      "default_profile": true,
+                      "default_profile_image": false,
+                      "description": "",
+                      "entities": {
+                        "description": {
+                          "urls": []
+                        }
+                      },
+                      "fast_followers_count": 0,
+                      "favourites_count": 46,
+                      "followers_count": 246,
+                      "friends_count": 261,
+                      "has_custom_timelines": true,
+                      "is_translator": false,
+                      "listed_count": 0,
+                      "media_count": 191,
+                      "normal_followers_count": 246,
+                      "pinned_tweet_ids_str": [],
+                      "possibly_sensitive": false,
+                      "profile_banner_url": "https://pbs.twimg.com/profile_banners/1532765383509147648/1655055788",
+                      "profile_interstitial_type": "",
+                      "statuses_count": 6213,
+                      "translator_type": "none",
+                      "want_retweets": false,
+                      "withheld_in_countries": []
+                    },
+                    "location": {
+                      "location": ""
+                    },
+                    "media_permissions": {
+                      "can_media_tag": true
+                    },
+                    "parody_commentary_fan_label": "None",
+                    "profile_image_shape": "Circle",
+                    "privacy": {
+                      "protected": false
+                    },
+                    "relationship_perspectives": {
+                      "following": false
+                    },
+                    "tipjar_settings": {},
+                    "verification": {
+                      "verified": false
+                    }
+                  }
+                },
+                "userDisplayType": "User"
+              }
+            }
+          },
+          {
+            "entryId": "user-1305708488182521857",
+            "sortIndex": "1774376918167118497",
+            "content": {
+              "entryType": "TimelineTimelineItem",
+              "__typename": "TimelineTimelineItem",
+              "itemContent": {
+                "itemType": "TimelineUser",
+                "__typename": "TimelineUser",
+                "user_results": {
+                  "result": {
+                    "__typename": "User",
+                    "id": "VXNlcjoxMzA1NzA4NDg4MTgyNTIxODU3",
+                    "rest_id": "1305708488182521857",
+                    "affiliates_highlighted_label": {},
+                    "avatar": {
+                      "image_url": "https://pbs.twimg.com/profile_images/1557746847979933698/xiutqhz0_normal.jpg"
+                    },
+                    "core": {
+                      "created_at": "Tue Sep 15 03:22:28 +0000 2020",
+                      "name": "INGAT NAMAKU",
+                      "screen_name": "tikitakatikaa"
+                    },
+                    "dm_permissions": {
+                      "can_dm": false,
+                      "can_dm_on_xchat": false
+                    },
+                    "has_graduated_access": true,
+                    "is_blue_verified": false,
+                    "legacy": {
+                      "default_profile": true,
+                      "default_profile_image": false,
+                      "description": "positive fell in love to ‘sun in aquarius with moon in capricorn’",
+                      "entities": {
+                        "description": {
+                          "urls": []
+                        },
+                        "url": {
+                          "urls": [
+                            {
+                              "display_url": "onlyparticulartopichere.com",
+                              "expanded_url": "http://onlyparticulartopichere.com",
+                              "url": "https://t.co/s5AkSw9Ehk",
+                              "indices": [
+                                0,
+                                23
+                              ]
+                            }
+                          ]
+                        }
+                      },
+                      "fast_followers_count": 0,
+                      "favourites_count": 3808,
+                      "followers_count": 25,
+                      "friends_count": 79,
+                      "has_custom_timelines": true,
+                      "is_translator": false,
+                      "listed_count": 0,
+                      "media_count": 90,
+                      "normal_followers_count": 25,
+                      "pinned_tweet_ids_str": [],
+                      "possibly_sensitive": false,
+                      "profile_banner_url": "https://pbs.twimg.com/profile_banners/1305708488182521857/1674964119",
+                      "profile_interstitial_type": "",
+                      "statuses_count": 10547,
+                      "translator_type": "none",
+                      "url": "https://t.co/s5AkSw9Ehk",
+                      "want_retweets": false,
+                      "withheld_in_countries": []
+                    },
+                    "location": {
+                      "location": "instead brain, there is me"
+                    },
+                    "media_permissions": {
+                      "can_media_tag": false
+                    },
+                    "parody_commentary_fan_label": "None",
+                    "profile_image_shape": "Circle",
+                    "privacy": {
+                      "protected": false
+                    },
+                    "relationship_perspectives": {
+                      "following": false
+                    },
+                    "tipjar_settings": {},
+                    "verification": {
+                      "verified": false
+                    }
+                  }
+                },
+                "userDisplayType": "User"
+              }
+            }
+          },
+          {
+            "entryId": "user-233537061",
+            "sortIndex": "1774369404759512419",
+            "content": {
+              "entryType": "TimelineTimelineItem",
+              "__typename": "TimelineTimelineItem",
+              "itemContent": {
+                "itemType": "TimelineUser",
+                "__typename": "TimelineUser",
+                "user_results": {
+                  "result": {
+                    "__typename": "User",
+                    "id": "VXNlcjoyMzM1MzcwNjE=",
+                    "rest_id": "233537061",
+                    "affiliates_highlighted_label": {},
+                    "avatar": {
+                      "image_url": "https://pbs.twimg.com/profile_images/996109712889335808/bNv11GFi_normal.jpg"
+                    },
+                    "core": {
+                      "created_at": "Mon Jan 03 13:59:15 +0000 2011",
+                      "name": "Rachmat Kurnia",
+                      "screen_name": "rachmat_kurnia7"
+                    },
+                    "dm_permissions": {
+                      "can_dm": false,
+                      "can_dm_on_xchat": false
+                    },
+                    "has_graduated_access": true,
+                    "is_blue_verified": false,
+                    "legacy": {
+                      "default_profile": false,
+                      "default_profile_image": false,
+                      "description": "",
+                      "entities": {
+                        "description": {
+                          "urls": []
+                        }
+                      },
+                      "fast_followers_count": 0,
+                      "favourites_count": 32,
+                      "followers_count": 272,
+                      "friends_count": 596,
+                      "has_custom_timelines": false,
+                      "is_translator": false,
+                      "listed_count": 1,
+                      "media_count": 1110,
+                      "normal_followers_count": 272,
+                      "pinned_tweet_ids_str": [],
+                      "possibly_sensitive": false,
+                      "profile_interstitial_type": "",
+                      "statuses_count": 35564,
+                      "translator_type": "regular",
+                      "want_retweets": false,
+                      "withheld_in_countries": []
+                    },
+                    "location": {
+                      "location": ""
+                    },
+                    "media_permissions": {
+                      "can_media_tag": false
+                    },
+                    "parody_commentary_fan_label": "None",
+                    "profile_image_shape": "Circle",
+                    "privacy": {
+                      "protected": false
+                    },
+                    "relationship_perspectives": {
+                      "following": false
+                    },
+                    "tipjar_settings": {},
+                    "verification": {
+                      "verified": false
+                    }
+                  }
+                },
+                "userDisplayType": "User"
+              }
+            }
+          },
+          {
+            "entryId": "user-1513018349734985728",
+            "sortIndex": "1774356020857095214",
+            "content": {
+              "entryType": "TimelineTimelineItem",
+              "__typename": "TimelineTimelineItem",
+              "itemContent": {
+                "itemType": "TimelineUser",
+                "__typename": "TimelineUser",
+                "user_results": {
+                  "result": {
+                    "__typename": "User",
+                    "id": "VXNlcjoxNTEzMDE4MzQ5NzM0OTg1NzI4",
+                    "rest_id": "1513018349734985728",
+                    "affiliates_highlighted_label": {},
+                    "avatar": {
+                      "image_url": "https://pbs.twimg.com/profile_images/1513020240325918726/BcMaAL_Y_normal.jpg"
+                    },
+                    "core": {
+                      "created_at": "Sun Apr 10 04:58:12 +0000 2022",
+                      "name": "Tamara",
+                      "screen_name": "justcheate"
+                    },
+                    "dm_permissions": {
+                      "can_dm": false,
+                      "can_dm_on_xchat": false
+                    },
+                    "has_graduated_access": true,
+                    "is_blue_verified": false,
+                    "legacy": {
+                      "default_profile": true,
+                      "default_profile_image": false,
+                      "description": "welcome to a very important place",
+                      "entities": {
+                        "description": {
+                          "urls": []
+                        }
+                      },
+                      "fast_followers_count": 0,
+                      "favourites_count": 23385,
+                      "followers_count": 4,
+                      "friends_count": 75,
+                      "has_custom_timelines": true,
+                      "is_translator": false,
+                      "listed_count": 0,
+                      "media_count": 77,
+                      "normal_followers_count": 4,
+                      "pinned_tweet_ids_str": [
+                        "1530816877768974336"
+                      ],
+                      "possibly_sensitive": false,
+                      "profile_banner_url": "https://pbs.twimg.com/profile_banners/1513018349734985728/1656317737",
+                      "profile_interstitial_type": "",
+                      "statuses_count": 3304,
+                      "translator_type": "none",
+                      "want_retweets": false,
+                      "withheld_in_countries": []
+                    },
+                    "location": {
+                      "location": ""
+                    },
+                    "media_permissions": {
+                      "can_media_tag": false
+                    },
+                    "parody_commentary_fan_label": "None",
+                    "profile_image_shape": "Circle",
+                    "privacy": {
+                      "protected": false
+                    },
+                    "relationship_perspectives": {
+                      "following": false
+                    },
+                    "tipjar_settings": {
+                      "is_enabled": false
+                    },
+                    "verification": {
+                      "verified": false
+                    }
+                  }
+                },
+                "userDisplayType": "User"
+              }
+            }
+          },
+          {
+            "entryId": "user-1627958503905325056",
+            "sortIndex": "1774345294701247573",
+            "content": {
+              "entryType": "TimelineTimelineItem",
+              "__typename": "TimelineTimelineItem",
+              "itemContent": {
+                "itemType": "TimelineUser",
+                "__typename": "TimelineUser",
+                "user_results": {
+                  "result": {
+                    "__typename": "User",
+                    "id": "VXNlcjoxNjI3OTU4NTAzOTA1MzI1MDU2",
+                    "rest_id": "1627958503905325056",
+                    "affiliates_highlighted_label": {},
+                    "avatar": {
+                      "image_url": "https://pbs.twimg.com/profile_images/1963090318070579209/7XAohzY6_normal.jpg"
+                    },
+                    "core": {
+                      "created_at": "Tue Feb 21 09:09:13 +0000 2023",
+                      "name": "shee",
+                      "screen_name": "uvlxvrs"
+                    },
+                    "dm_permissions": {
+                      "can_dm": true,
+                      "can_dm_on_xchat": false
+                    },
+                    "has_graduated_access": true,
+                    "is_blue_verified": false,
+                    "legacy": {
+                      "default_profile": true,
+                      "default_profile_image": false,
+                      "description": "trying to not let my intrusive thoughts win",
+                      "entities": {
+                        "description": {
+                          "urls": []
+                        }
+                      },
+                      "fast_followers_count": 0,
+                      "favourites_count": 9493,
+                      "followers_count": 136,
+                      "friends_count": 150,
+                      "has_custom_timelines": true,
+                      "is_translator": false,
+                      "listed_count": 1,
+                      "media_count": 88,
+                      "normal_followers_count": 136,
+                      "pinned_tweet_ids_str": [],
+                      "possibly_sensitive": false,
+                      "profile_banner_url": "https://pbs.twimg.com/profile_banners/1627958503905325056/1747066334",
+                      "profile_interstitial_type": "",
+                      "statuses_count": 9777,
+                      "translator_type": "none",
+                      "want_retweets": false,
+                      "withheld_in_countries": []
+                    },
+                    "location": {
+                      "location": ""
+                    },
+                    "media_permissions": {
+                      "can_media_tag": true
+                    },
+                    "parody_commentary_fan_label": "None",
+                    "profile_image_shape": "Circle",
+                    "privacy": {
+                      "protected": false
+                    },
+                    "relationship_perspectives": {
+                      "following": false
+                    },
+                    "tipjar_settings": {},
+                    "verification": {
+                      "verified": false
+                    }
+                  }
+                },
+                "userDisplayType": "User"
+              }
+            }
+          },
+          {
+            "entryId": "user-546693469",
+            "sortIndex": "1774339352309924695",
+            "content": {
+              "entryType": "TimelineTimelineItem",
+              "__typename": "TimelineTimelineItem",
+              "itemContent": {
+                "itemType": "TimelineUser",
+                "__typename": "TimelineUser",
+                "user_results": {
+                  "result": {
+                    "__typename": "User",
+                    "id": "VXNlcjo1NDY2OTM0Njk=",
+                    "rest_id": "546693469",
+                    "affiliates_highlighted_label": {},
+                    "avatar": {
+                      "image_url": "https://pbs.twimg.com/profile_images/1732037215298158592/sJ57Univ_normal.jpg"
+                    },
+                    "core": {
+                      "created_at": "Fri Apr 06 10:15:27 +0000 2012",
+                      "name": "Omen",
+                      "screen_name": "owen_sid"
+                    },
+                    "dm_permissions": {
+                      "can_dm": false,
+                      "can_dm_on_xchat": false
+                    },
+                    "has_graduated_access": true,
+                    "is_blue_verified": false,
+                    "legacy": {
+                      "default_profile": true,
+                      "default_profile_image": false,
+                      "description": "",
+                      "entities": {
+                        "description": {
+                          "urls": []
+                        }
+                      },
+                      "fast_followers_count": 0,
+                      "favourites_count": 178,
+                      "followers_count": 394,
+                      "friends_count": 81,
+                      "has_custom_timelines": false,
+                      "is_translator": false,
+                      "listed_count": 0,
+                      "media_count": 45,
+                      "normal_followers_count": 394,
+                      "pinned_tweet_ids_str": [],
+                      "possibly_sensitive": false,
+                      "profile_banner_url": "https://pbs.twimg.com/profile_banners/546693469/1686144963",
+                      "profile_interstitial_type": "",
+                      "statuses_count": 19333,
+                      "translator_type": "regular",
+                      "want_retweets": false,
+                      "withheld_in_countries": []
+                    },
+                    "location": {
+                      "location": "Indonesia"
+                    },
+                    "media_permissions": {
+                      "can_media_tag": false
+                    },
+                    "parody_commentary_fan_label": "None",
+                    "profile_image_shape": "Circle",
+                    "privacy": {
+                      "protected": false
+                    },
+                    "relationship_perspectives": {
+                      "following": false
+                    },
+                    "tipjar_settings": {},
+                    "verification": {
+                      "verified": false
+                    }
+                  }
+                },
+                "userDisplayType": "User"
+              }
+            }
+          },
+          {
+            "entryId": "user-858266694",
+            "sortIndex": "1774335751746007233",
+            "content": {
+              "entryType": "TimelineTimelineItem",
+              "__typename": "TimelineTimelineItem",
+              "itemContent": {
+                "itemType": "TimelineUser",
+                "__typename": "TimelineUser",
+                "user_results": {
+                  "result": {
+                    "__typename": "User",
+                    "id": "VXNlcjo4NTgyNjY2OTQ=",
+                    "rest_id": "858266694",
+                    "affiliates_highlighted_label": {},
+                    "avatar": {
+                      "image_url": "https://pbs.twimg.com/profile_images/1934149583506137088/8b-BvUzV_normal.jpg"
+                    },
+                    "core": {
+                      "created_at": "Tue Oct 02 15:53:05 +0000 2012",
+                      "name": "elfrendssj",
+                      "screen_name": "elfrendssj"
+                    },
+                    "dm_permissions": {
+                      "can_dm": true,
+                      "can_dm_on_xchat": false
+                    },
+                    "has_graduated_access": true,
+                    "is_blue_verified": false,
+                    "legacy": {
+                      "default_profile": true,
+                      "default_profile_image": false,
+                      "description": "No Challenge No Change",
+                      "entities": {
+                        "description": {
+                          "urls": []
+                        }
+                      },
+                      "fast_followers_count": 0,
+                      "favourites_count": 2745,
+                      "followers_count": 177,
+                      "friends_count": 245,
+                      "has_custom_timelines": true,
+                      "is_translator": false,
+                      "listed_count": 0,
+                      "media_count": 59,
+                      "normal_followers_count": 177,
+                      "pinned_tweet_ids_str": [],
+                      "possibly_sensitive": true,
+                      "profile_banner_url": "https://pbs.twimg.com/profile_banners/858266694/1750086415",
+                      "profile_interstitial_type": "",
+                      "statuses_count": 47899,
+                      "translator_type": "none",
+                      "want_retweets": false,
+                      "withheld_in_countries": []
+                    },
+                    "location": {
+                      "location": "Sapphire, Queensland"
+                    },
+                    "media_permissions": {
+                      "can_media_tag": false
+                    },
+                    "parody_commentary_fan_label": "None",
+                    "profile_image_shape": "Circle",
+                    "privacy": {
+                      "protected": false
+                    },
+                    "relationship_perspectives": {
+                      "following": false
+                    },
+                    "tipjar_settings": {},
+                    "verification": {
+                      "verified": false
+                    }
+                  }
+                },
+                "userDisplayType": "User"
+              }
+            }
+          },
+          {
+            "entryId": "user-1490303661318172682",
+            "sortIndex": "1774310822995407522",
+            "content": {
+              "entryType": "TimelineTimelineItem",
+              "__typename": "TimelineTimelineItem",
+              "itemContent": {
+                "itemType": "TimelineUser",
+                "__typename": "TimelineUser",
+                "user_results": {
+                  "result": {
+                    "__typename": "User",
+                    "id": "VXNlcjoxNDkwMzAzNjYxMzE4MTcyNjgy",
+                    "rest_id": "1490303661318172682",
+                    "affiliates_highlighted_label": {},
+                    "avatar": {
+                      "image_url": "https://pbs.twimg.com/profile_images/1748522048518021120/InUMAzEx_normal.jpg"
+                    },
+                    "core": {
+                      "created_at": "Sun Feb 06 12:37:53 +0000 2022",
+                      "name": "gathaaauu",
+                      "screen_name": "hiiumat"
+                    },
+                    "dm_permissions": {
+                      "can_dm": true,
+                      "can_dm_on_xchat": false
+                    },
+                    "has_graduated_access": true,
+                    "is_blue_verified": false,
+                    "legacy": {
+                      "default_profile": true,
+                      "default_profile_image": false,
+                      "description": "It's me tukang sambat",
+                      "entities": {
+                        "description": {
+                          "urls": []
+                        }
+                      },
+                      "fast_followers_count": 0,
+                      "favourites_count": 25397,
+                      "followers_count": 3,
+                      "friends_count": 206,
+                      "has_custom_timelines": true,
+                      "is_translator": false,
+                      "listed_count": 0,
+                      "media_count": 39,
+                      "normal_followers_count": 3,
+                      "pinned_tweet_ids_str": [
+                        "1620807744902283264"
+                      ],
+                      "possibly_sensitive": false,
+                      "profile_banner_url": "https://pbs.twimg.com/profile_banners/1490303661318172682/1644341126",
+                      "profile_interstitial_type": "",
+                      "statuses_count": 4964,
+                      "translator_type": "none",
+                      "want_retweets": false,
+                      "withheld_in_countries": []
+                    },
+                    "location": {
+                      "location": ""
+                    },
+                    "media_permissions": {
+                      "can_media_tag": false
+                    },
+                    "parody_commentary_fan_label": "None",
+                    "profile_image_shape": "Circle",
+                    "privacy": {
+                      "protected": false
+                    },
+                    "relationship_perspectives": {
+                      "following": false
+                    },
+                    "tipjar_settings": {},
+                    "verification": {
+                      "verified": false
+                    }
+                  }
+                },
+                "userDisplayType": "User"
+              }
+            }
+          },
+          {
+            "entryId": "user-808166448279396352",
+            "sortIndex": "1774305301032660496",
+            "content": {
+              "entryType": "TimelineTimelineItem",
+              "__typename": "TimelineTimelineItem",
+              "itemContent": {
+                "itemType": "TimelineUser",
+                "__typename": "TimelineUser",
+                "user_results": {
+                  "result": {
+                    "__typename": "User",
+                    "id": "VXNlcjo4MDgxNjY0NDgyNzkzOTYzNTI=",
+                    "rest_id": "808166448279396352",
+                    "affiliates_highlighted_label": {},
+                    "avatar": {
+                      "image_url": "https://pbs.twimg.com/profile_images/976474214415851520/eE_b_SFH_normal.jpg"
+                    },
+                    "core": {
+                      "created_at": "Mon Dec 12 04:27:51 +0000 2016",
+                      "name": "PS",
+                      "screen_name": "samosir_panrido"
+                    },
+                    "dm_permissions": {
+                      "can_dm": true,
+                      "can_dm_on_xchat": false
+                    },
+                    "has_graduated_access": true,
+                    "is_blue_verified": false,
+                    "legacy": {
+                      "default_profile": true,
+                      "default_profile_image": false,
+                      "description": "",
+                      "entities": {
+                        "description": {
+                          "urls": []
+                        }
+                      },
+                      "fast_followers_count": 0,
+                      "favourites_count": 68,
+                      "followers_count": 39,
+                      "friends_count": 311,
+                      "has_custom_timelines": true,
+                      "is_translator": false,
+                      "listed_count": 0,
+                      "media_count": 11,
+                      "normal_followers_count": 39,
+                      "pinned_tweet_ids_str": [],
+                      "possibly_sensitive": false,
+                      "profile_interstitial_type": "",
+                      "statuses_count": 1564,
+                      "translator_type": "none",
+                      "want_retweets": false,
+                      "withheld_in_countries": []
+                    },
+                    "location": {
+                      "location": ""
+                    },
+                    "media_permissions": {
+                      "can_media_tag": true
+                    },
+                    "parody_commentary_fan_label": "None",
+                    "profile_image_shape": "Circle",
+                    "privacy": {
+                      "protected": false
+                    },
+                    "relationship_perspectives": {
+                      "following": false
+                    },
+                    "tipjar_settings": {},
+                    "verification": {
+                      "verified": false
+                    }
+                  }
+                },
+                "userDisplayType": "User"
+              }
+            }
+          },
+          {
+            "entryId": "user-3240286730",
+            "sortIndex": "1774304409635896556",
+            "content": {
+              "entryType": "TimelineTimelineItem",
+              "__typename": "TimelineTimelineItem",
+              "itemContent": {
+                "itemType": "TimelineUser",
+                "__typename": "TimelineUser",
+                "user_results": {
+                  "result": {
+                    "__typename": "User",
+                    "id": "VXNlcjozMjQwMjg2NzMw",
+                    "rest_id": "3240286730",
+                    "affiliates_highlighted_label": {},
+                    "avatar": {
+                      "image_url": "https://pbs.twimg.com/profile_images/1770666169541726208/Om77fFrO_normal.jpg"
+                    },
+                    "core": {
+                      "created_at": "Tue Jun 09 00:45:13 +0000 2015",
+                      "name": "jojon badut",
+                      "screen_name": "latteamoon"
+                    },
+                    "dm_permissions": {
+                      "can_dm": false,
+                      "can_dm_on_xchat": false
+                    },
+                    "has_graduated_access": true,
+                    "is_blue_verified": false,
+                    "legacy": {
+                      "default_profile": false,
+                      "default_profile_image": false,
+                      "description": "🤡 siang makan nasi, kalo malem depresi | heavy 🏐 🇯🇵🇮🇹🇺🇲rts | Carats💎/DPR | movie related rts",
+                      "entities": {
+                        "description": {
+                          "urls": []
+                        }
+                      },
+                      "fast_followers_count": 0,
+                      "favourites_count": 5323,
+                      "followers_count": 82,
+                      "friends_count": 180,
+                      "has_custom_timelines": true,
+                      "is_translator": false,
+                      "listed_count": 1,
+                      "media_count": 374,
+                      "normal_followers_count": 82,
+                      "pinned_tweet_ids_str": [
+                        "1316071263186681856"
+                      ],
+                      "possibly_sensitive": false,
+                      "profile_banner_url": "https://pbs.twimg.com/profile_banners/3240286730/1706829331",
+                      "profile_interstitial_type": "",
+                      "statuses_count": 60807,
+                      "translator_type": "none",
+                      "want_retweets": false,
+                      "withheld_in_countries": []
+                    },
+                    "location": {
+                      "location": "ancol dufan"
+                    },
+                    "media_permissions": {
+                      "can_media_tag": false
+                    },
+                    "parody_commentary_fan_label": "None",
+                    "profile_image_shape": "Circle",
+                    "privacy": {
+                      "protected": false
+                    },
+                    "relationship_perspectives": {
+                      "following": false
+                    },
+                    "tipjar_settings": {},
+                    "verification": {
+                      "verified": false
+                    }
+                  }
+                },
+                "userDisplayType": "User"
+              }
+            }
+          },
+          {
+            "entryId": "user-1251549654812000266",
+            "sortIndex": "1774298330756223977",
+            "content": {
+              "entryType": "TimelineTimelineItem",
+              "__typename": "TimelineTimelineItem",
+              "itemContent": {
+                "itemType": "TimelineUser",
+                "__typename": "TimelineUser",
+                "user_results": {
+                  "result": {
+                    "__typename": "User",
+                    "id": "VXNlcjoxMjUxNTQ5NjU0ODEyMDAwMjY2",
+                    "rest_id": "1251549654812000266",
+                    "affiliates_highlighted_label": {},
+                    "avatar": {
+                      "image_url": "https://pbs.twimg.com/profile_images/1799643344307658752/DlUc-ihq_normal.jpg"
+                    },
+                    "core": {
+                      "created_at": "Sat Apr 18 16:34:35 +0000 2020",
+                      "name": "That Alistair Wisesa",
+                      "screen_name": "alserwise"
+                    },
+                    "dm_permissions": {
+                      "can_dm": true,
+                      "can_dm_on_xchat": false
+                    },
+                    "has_graduated_access": true,
+                    "is_blue_verified": false,
+                    "legacy": {
+                      "default_profile": true,
+                      "default_profile_image": false,
+                      "description": "Harta, Tahta, Smut Angst Au, sisanya paling Sambat sih",
+                      "entities": {
+                        "description": {
+                          "urls": []
+                        }
+                      },
+                      "fast_followers_count": 0,
+                      "favourites_count": 26450,
+                      "followers_count": 108,
+                      "friends_count": 1285,
+                      "has_custom_timelines": true,
+                      "is_translator": false,
+                      "listed_count": 0,
+                      "media_count": 57,
+                      "normal_followers_count": 108,
+                      "pinned_tweet_ids_str": [],
+                      "possibly_sensitive": false,
+                      "profile_banner_url": "https://pbs.twimg.com/profile_banners/1251549654812000266/1717903384",
+                      "profile_interstitial_type": "",
+                      "statuses_count": 22470,
+                      "translator_type": "none",
+                      "want_retweets": false,
+                      "withheld_in_countries": []
+                    },
+                    "location": {
+                      "location": "Herapalace"
+                    },
+                    "media_permissions": {
+                      "can_media_tag": false
+                    },
+                    "parody_commentary_fan_label": "None",
+                    "profile_image_shape": "Circle",
+                    "privacy": {
+                      "protected": false
+                    },
+                    "relationship_perspectives": {
+                      "following": false
+                    },
+                    "tipjar_settings": {},
+                    "verification": {
+                      "verified": false
+                    }
+                  }
+                },
+                "userDisplayType": "User"
+              }
+            }
+          },
+          {
+            "entryId": "user-2647128577",
+            "sortIndex": "1774293843981610255",
+            "content": {
+              "entryType": "TimelineTimelineItem",
+              "__typename": "TimelineTimelineItem",
+              "itemContent": {
+                "itemType": "TimelineUser",
+                "__typename": "TimelineUser",
+                "user_results": {
+                  "result": {
+                    "__typename": "User",
+                    "id": "VXNlcjoyNjQ3MTI4NTc3",
+                    "rest_id": "2647128577",
+                    "affiliates_highlighted_label": {},
+                    "avatar": {
+                      "image_url": "https://pbs.twimg.com/profile_images/1706896100916084736/mJcbPbk3_normal.jpg"
+                    },
+                    "core": {
+                      "created_at": "Tue Jul 15 07:29:05 +0000 2014",
+                      "name": "Beary Bozzio",
+                      "screen_name": "you_suphi"
+                    },
+                    "dm_permissions": {
+                      "can_dm": false,
+                      "can_dm_on_xchat": false
+                    },
+                    "has_graduated_access": true,
+                    "is_blue_verified": false,
+                    "legacy": {
+                      "default_profile": true,
+                      "default_profile_image": false,
+                      "description": "\"Bila keadilan sulit didapatkan, maka keadilan akan mencari jalannya sendiri\"\n\nAnti BuzzeRp & #BangsatBangsa\n\nRetweet tidak selalu berarti setuju",
+                      "entities": {
+                        "description": {
+                          "urls": []
+                        }
+                      },
+                      "fast_followers_count": 0,
+                      "favourites_count": 75911,
+                      "followers_count": 666,
+                      "friends_count": 1698,
+                      "has_custom_timelines": true,
+                      "is_translator": false,
+                      "listed_count": 2,
+                      "media_count": 601,
+                      "normal_followers_count": 666,
+                      "pinned_tweet_ids_str": [],
+                      "possibly_sensitive": false,
+                      "profile_banner_url": "https://pbs.twimg.com/profile_banners/2647128577/1662533527",
+                      "profile_interstitial_type": "",
+                      "statuses_count": 58829,
+                      "translator_type": "none",
+                      "want_retweets": false,
+                      "withheld_in_countries": []
+                    },
+                    "location": {
+                      "location": ""
+                    },
+                    "media_permissions": {
+                      "can_media_tag": false
+                    },
+                    "parody_commentary_fan_label": "None",
+                    "profile_image_shape": "Circle",
+                    "privacy": {
+                      "protected": false
+                    },
+                    "relationship_perspectives": {
+                      "following": false
+                    },
+                    "tipjar_settings": {},
+                    "verification": {
+                      "verified": false
+                    }
+                  }
+                },
+                "userDisplayType": "User"
+              }
+            }
+          },
+          {
+            "entryId": "user-2417655242",
+            "sortIndex": "1774290095048579176",
+            "content": {
+              "entryType": "TimelineTimelineItem",
+              "__typename": "TimelineTimelineItem",
+              "itemContent": {
+                "itemType": "TimelineUser",
+                "__typename": "TimelineUser",
+                "user_results": {
+                  "result": {
+                    "__typename": "User",
+                    "id": "VXNlcjoyNDE3NjU1MjQy",
+                    "rest_id": "2417655242",
+                    "affiliates_highlighted_label": {},
+                    "avatar": {
+                      "image_url": "https://pbs.twimg.com/profile_images/1682582203543486465/pKDzPeB6_normal.jpg"
+                    },
+                    "core": {
+                      "created_at": "Sat Mar 29 16:24:39 +0000 2014",
+                      "name": "siswww",
+                      "screen_name": "tyyquwww_"
+                    },
+                    "dm_permissions": {
+                      "can_dm": true,
+                      "can_dm_on_xchat": false
+                    },
+                    "has_graduated_access": true,
+                    "is_blue_verified": false,
+                    "legacy": {
+                      "default_profile": false,
+                      "default_profile_image": false,
+                      "description": "Bismillah, pensiun ngomong kasar.",
+                      "entities": {
+                        "description": {
+                          "urls": []
+                        }
+                      },
+                      "fast_followers_count": 0,
+                      "favourites_count": 1749,
+                      "followers_count": 409,
+                      "friends_count": 340,
+                      "has_custom_timelines": true,
+                      "is_translator": false,
+                      "listed_count": 0,
+                      "media_count": 196,
+                      "normal_followers_count": 409,
+                      "pinned_tweet_ids_str": [],
+                      "possibly_sensitive": false,
+                      "profile_banner_url": "https://pbs.twimg.com/profile_banners/2417655242/1614859632",
+                      "profile_interstitial_type": "",
+                      "statuses_count": 20234,
+                      "translator_type": "none",
+                      "want_retweets": false,
+                      "withheld_in_countries": []
+                    },
+                    "location": {
+                      "location": "Jakarta Capital Region"
+                    },
+                    "media_permissions": {
+                      "can_media_tag": false
+                    },
+                    "parody_commentary_fan_label": "None",
+                    "profile_image_shape": "Circle",
+                    "privacy": {
+                      "protected": false
+                    },
+                    "relationship_perspectives": {
+                      "following": false
+                    },
+                    "tipjar_settings": {},
+                    "verification": {
+                      "verified": false
+                    }
+                  }
+                },
+                "userDisplayType": "User"
+              }
+            }
+          },
+          {
+            "entryId": "user-416779340",
+            "sortIndex": "1774288366315560661",
+            "content": {
+              "entryType": "TimelineTimelineItem",
+              "__typename": "TimelineTimelineItem",
+              "itemContent": {
+                "itemType": "TimelineUser",
+                "__typename": "TimelineUser",
+                "user_results": {
+                  "result": {
+                    "__typename": "User",
+                    "id": "VXNlcjo0MTY3NzkzNDA=",
+                    "rest_id": "416779340",
+                    "affiliates_highlighted_label": {},
+                    "avatar": {
+                      "image_url": "https://pbs.twimg.com/profile_images/1908231487004254208/azhaY_Q3_normal.jpg"
+                    },
+                    "core": {
+                      "created_at": "Sun Nov 20 04:16:44 +0000 2011",
+                      "name": "Wikipediahh",
+                      "screen_name": "wikipediahhudd"
+                    },
+                    "dm_permissions": {
+                      "can_dm": true,
+                      "can_dm_on_xchat": false
+                    },
+                    "has_graduated_access": true,
+                    "is_blue_verified": false,
+                    "legacy": {
+                      "default_profile": false,
+                      "default_profile_image": false,
+                      "description": "tempat sampah sambat.",
+                      "entities": {
+                        "description": {
+                          "urls": []
+                        }
+                      },
+                      "fast_followers_count": 0,
+                      "favourites_count": 1063,
+                      "followers_count": 270,
+                      "friends_count": 209,
+                      "has_custom_timelines": true,
+                      "is_translator": false,
+                      "listed_count": 0,
+                      "media_count": 62,
+                      "normal_followers_count": 270,
+                      "pinned_tweet_ids_str": [
+                        "1908221049713680880"
+                      ],
+                      "possibly_sensitive": false,
+                      "profile_banner_url": "https://pbs.twimg.com/profile_banners/416779340/1749463265",
+                      "profile_interstitial_type": "",
+                      "statuses_count": 14797,
+                      "translator_type": "none",
+                      "want_retweets": false,
+                      "withheld_in_countries": []
+                    },
+                    "location": {
+                      "location": "Jakarta Utara, DKI Jakarta"
+                    },
+                    "media_permissions": {
+                      "can_media_tag": true
+                    },
+                    "parody_commentary_fan_label": "None",
+                    "profile_image_shape": "Circle",
+                    "privacy": {
+                      "protected": false
+                    },
+                    "relationship_perspectives": {
+                      "following": false
+                    },
+                    "tipjar_settings": {
+                      "is_enabled": true
+                    },
+                    "verification": {
+                      "verified": false
+                    }
+                  }
+                },
+                "userDisplayType": "User"
+              }
+            }
+          },
+          {
+            "entryId": "user-702169472",
+            "sortIndex": "1774286262786244072",
+            "content": {
+              "entryType": "TimelineTimelineItem",
+              "__typename": "TimelineTimelineItem",
+              "itemContent": {
+                "itemType": "TimelineUser",
+                "__typename": "TimelineUser",
+                "user_results": {
+                  "result": {
+                    "__typename": "User",
+                    "id": "VXNlcjo3MDIxNjk0NzI=",
+                    "rest_id": "702169472",
+                    "affiliates_highlighted_label": {},
+                    "avatar": {
+                      "image_url": "https://pbs.twimg.com/profile_images/1962809058232246272/yXL5oM_3_normal.jpg"
+                    },
+                    "core": {
+                      "created_at": "Wed Jul 18 02:08:03 +0000 2012",
+                      "name": "Otnas M. Tarabatuh",
+                      "screen_name": "santo_hutabarat"
+                    },
+                    "dm_permissions": {
+                      "can_dm": true,
+                      "can_dm_on_xchat": false
+                    },
+                    "has_graduated_access": true,
+                    "is_blue_verified": false,
+                    "legacy": {
+                      "default_profile": false,
+                      "default_profile_image": false,
+                      "description": "Akun alter. Akun twitter asli saya @POTUS.",
+                      "entities": {
+                        "description": {
+                          "urls": []
+                        }
+                      },
+                      "fast_followers_count": 0,
+                      "favourites_count": 863,
+                      "followers_count": 398,
+                      "friends_count": 389,
+                      "has_custom_timelines": true,
+                      "is_translator": false,
+                      "listed_count": 0,
+                      "media_count": 377,
+                      "normal_followers_count": 398,
+                      "pinned_tweet_ids_str": [
+                        "1587844675603349505"
+                      ],
+                      "possibly_sensitive": true,
+                      "profile_banner_url": "https://pbs.twimg.com/profile_banners/702169472/1749799997",
+                      "profile_interstitial_type": "",
+                      "statuses_count": 27419,
+                      "translator_type": "none",
+                      "want_retweets": false,
+                      "withheld_in_countries": []
+                    },
+                    "location": {
+                      "location": "Indonesia"
+                    },
+                    "media_permissions": {
+                      "can_media_tag": true
+                    },
+                    "parody_commentary_fan_label": "None",
+                    "profile_image_shape": "Circle",
+                    "privacy": {
+                      "protected": false
+                    },
+                    "relationship_perspectives": {
+                      "following": false
+                    },
+                    "tipjar_settings": {},
+                    "verification": {
+                      "verified": false
+                    }
+                  }
+                },
+                "userDisplayType": "User"
+              }
+            }
+          },
+          {
+            "entryId": "cursor-top-1779281262894481136",
+            "sortIndex": "1779281262894481136",
+            "content": {
+              "entryType": "TimelineTimelineCursor",
+              "__typename": "TimelineTimelineCursor",
+              "value": "HCbe+6vltbijsTEAAA==",
+              "cursorType": "Top"
+            }
+          },
+          {
+            "entryId": "cursor-bottom-1774286262786244071",
+            "sortIndex": "1774286262786244071",
+            "content": {
+              "entryType": "TimelineTimelineCursor",
+              "__typename": "TimelineTimelineCursor",
+              "value": "HBbQ99Xzkv3DnzEAAA==",
+              "cursorType": "Bottom",
+              "stopOnEmptyResponse": true
+            }
+          }
+        ]
+      }
+    ],
+    "responseObjects": {
+      "feedbackActions": [],
+      "immediateReactions": []
+    }
+  }
+}

@@ -24,9 +24,9 @@ import { ACCESS_TOKEN } from "./env";
 
 crawl({
   ACCESS_TOKEN: ACCESS_TOKEN,
-  SEARCH_KEYWORDS: `seblak lang:id`,
+  SEARCH_KEYWORDS: `mbg lang:id`,
   TARGET_TWEET_COUNT: 50,
-  OUTPUT_FILENAME: "seblak.csv",
+  OUTPUT_FILENAME: "mbg.csv",
   DELAY_EACH_TWEET_SECONDS: 0.1,
   DELAY_EVERY_100_TWEETS_SECONDS: 0,
   SEARCH_TAB: "TOP",
