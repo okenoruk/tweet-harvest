@@ -28,3 +28,144 @@ Note: You will need a Twitter auth token to use this tool. When prompted, enter 
 ## 1) Go to your project folder
 ```bash
 cd /path/to/tweet-harvest2
+````
+
+---
+
+## 2) Install dependencies
+
+```bash
+pnpm install
+```
+
+---
+
+## 3) Make sure you are logged in to npmjs
+
+Check login:
+
+```bash
+npm whoami
+```
+
+If it errors, login:
+
+```bash
+npm login
+```
+
+(Optional) confirm registry points to npmjs:
+
+```bash
+npm config get registry
+# should be: https://registry.npmjs.org/
+```
+
+---
+
+## 4) Build the project (generate `dist/`)
+
+```bash
+pnpm build
+```
+
+Verify output exists:
+
+```bash
+ls dist
+```
+
+Also verify the CLI entry exists (important):
+
+```bash
+ls dist/bin.js
+```
+
+---
+
+## 5) Bump the version
+
+You MUST bump version before publishing (npm won’t allow re-publishing the same version).
+
+Choose ONE:
+
+* Patch (bugfix):
+
+```bash
+npm version patch
+```
+
+* Minor (new features, backward-compatible):
+
+```bash
+npm version minor
+```
+
+* Major (breaking changes):
+
+```bash
+npm version major
+```
+
+This updates `package.json` and creates a git commit + tag.
+
+---
+
+## 6) Publish to npmjs
+
+```bash
+npm publish
+```
+
+> Note: Your `package.json` includes `"prepublish": "pnpm build"`, so `npm publish` will run the build again automatically.
+
+---
+
+## 7) Verify the published version
+
+```bash
+npm view tweet-harvest2 version
+```
+
+Optional: test install in a fresh place
+
+```bash
+npm i -g tweet-harvest2
+tweet-harvest --help
+```
+
+---
+
+## 8) Push git commits & tags (recommended)
+
+If you use git:
+
+```bash
+git push --follow-tags
+```
+
+---
+
+## Common errors & fixes
+
+### Error: "You cannot publish over the previously published versions"
+
+Fix: bump version again, then publish:
+
+```bash
+npm version patch
+npm publish
+```
+
+### CLI installed but command fails
+
+Fix: ensure `dist/bin.js` exists and is included:
+
+* `pnpm build`
+* check `dist/bin.js`
+* publish again (with a new version)
+
+---
+
+```
+```
