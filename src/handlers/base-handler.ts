@@ -195,7 +195,7 @@ export abstract class BaseHandler {
 
           if (!items || items.length === 0) {
             console.error(`No more ${this.getItemName()} found`);
-            break;
+            continue;
           }
 
           // Add items to allData
