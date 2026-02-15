@@ -150,10 +150,10 @@ export async function crawl({
         DELAY_EACH_LIKES_SECONDS,
         1 // delayEvery100Seconds
       );
-      
+
       const likes = await likesHandler.collect();
       console.info(`Collected ${likes.length} user profiles from likes`);
-    } 
+    }
     else if (TWEET_THREAD_URL && TWEET_THREAD_URL.indexOf('/retweets') > -1) {
       // Handle retweets
       const retweetsHandler = new RetweetsHandler(
@@ -165,10 +165,10 @@ export async function crawl({
         DELAY_EACH_LIKES_SECONDS,
         1 // delayEvery100Seconds
       );
-      
+
       const retweets = await retweetsHandler.collect();
       console.info(`Collected ${retweets.length} user profiles from retweets`);
-    } 
+    }
     else {
       // Handle tweets
       const tweetsHandler = new TweetsHandler(
@@ -181,9 +181,9 @@ export async function crawl({
         DELAY_EACH_TWEET_SECONDS,
         DELAY_EVERY_100_TWEETS_SECONDS
       );
-      
+
       const tweets = await tweetsHandler.collect();
-      
+
       if (tweets.length === 0) {
         TWEETS_NOT_FOUND_ON_CURRENT_TAB = true;
         console.info("No tweets found for the search criteria");
@@ -211,8 +211,8 @@ export async function crawl({
     console.info(chalk.yellowBright("Twitter Harvest v", CURRENT_PACKAGE_VERSION));
 
     // Take screenshot on error
-    const errorFilename = path.resolve(DEFAULT_DATA_FOLDER, `/Error-${FORMATTED_TIMESTAMP}.png`).replace(/ /g, "_");
-    
+    const errorFilename = path.resolve(DEFAULT_DATA_FOLDER, `Error-${FORMATTED_TIMESTAMP}.png`).replace(/ /g, "_");
+
     await page.screenshot({ path: errorFilename }).then(() => {
       console.log(
         chalk.red(
