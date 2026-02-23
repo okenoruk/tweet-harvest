@@ -152,6 +152,11 @@ export async function crawl({
       );
 
       const likes = await likesHandler.collect();
+      if (likes.length === 0) {
+        const screenshotPath = path.resolve(DEFAULT_DATA_FOLDER, `No-Likes-${FORMATTED_TIMESTAMP}.png`).replace(/ /g, "_");
+        // No likes found, screenshot saved
+        await page.screenshot({ path: screenshotPath });
+      }
       console.info(`Collected ${likes.length} user profiles from likes`);
     }
     else if (TWEET_THREAD_URL && TWEET_THREAD_URL.indexOf('/retweets') > -1) {
@@ -167,6 +172,11 @@ export async function crawl({
       );
 
       const retweets = await retweetsHandler.collect();
+      if (retweets.length === 0) {
+        const screenshotPath = path.resolve(DEFAULT_DATA_FOLDER, `No-Retweets-${FORMATTED_TIMESTAMP}.png`).replace(/ /g, "_");
+        // No retweets found, screenshot saved
+        await page.screenshot({ path: screenshotPath });
+      }
       console.info(`Collected ${retweets.length} user profiles from retweets`);
     }
     else {
@@ -187,6 +197,8 @@ export async function crawl({
       if (tweets.length === 0) {
         TWEETS_NOT_FOUND_ON_CURRENT_TAB = true;
         console.info("No tweets found for the search criteria");
+        const screenshotPath = path.resolve(DEFAULT_DATA_FOLDER, `No-Tweets-${FORMATTED_TIMESTAMP}.png`).replace(/ /g, "_");
+        await page.screenshot({ path: screenshotPath });
       } else {
         console.info(`Collected ${tweets.length} tweets`);
       }
