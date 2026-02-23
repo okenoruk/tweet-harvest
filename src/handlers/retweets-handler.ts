@@ -61,20 +61,20 @@ export class RetweetsHandler extends BaseHandler {
    * @param item Item to process
    */
   protected processItemForCsv(item: RetweetEntry): Record<string, any> | null {
-    if (item.entryId.indexOf('user') > -1 && item?.content?.itemContent?.user_results?.result) {
+    if (item.content.entryType === 'TimelineTimelineItem' && item?.content?.itemContent?.user_results?.result) {
       const user = pick(
-        { 
-          id: item?.content?.itemContent?.user_results?.result?.id, 
-          ...item.content.itemContent.user_results.result.legacy 
-        }, 
+        {
+          id: item?.content?.itemContent?.user_results?.result?.id,
+          ...item.content.itemContent.user_results.result.legacy
+        },
         USER_PROFILE_FIELDS
       );
 
       // Clean text fields
       const description = item.content.itemContent.user_results.result.legacy.description || "";
       // Use type assertion to handle potential missing properties
-      const name = item.content.itemContent.user_results.result.core?.name || 
-                  (item.content.itemContent.user_results.result.legacy as any).name || "";
+      const name = item.content.itemContent.user_results.result.core?.name ||
+        (item.content.itemContent.user_results.result.legacy as any).name || "";
 
       user["description"] = description.replace(/,/g, " ").replace(/\n/g, " ");
       user["name"] = name.replace(/,/g, " ").replace(/\n/g, " ");

@@ -146,12 +146,13 @@ export async function crawl({
         FILE_NAME,
         DEFAULT_DATA_FOLDER,
         TARGET_TWEET_COUNT,
-        2, // timeoutLimit
+        20, // timeoutLimit
         DELAY_EACH_LIKES_SECONDS,
         1 // delayEvery100Seconds
       );
 
       const likes = await likesHandler.collect();
+
       if (likes.length === 0) {
         const screenshotPath = path.resolve(DEFAULT_DATA_FOLDER, `No-Likes-${FORMATTED_TIMESTAMP}.png`).replace(/ /g, "_");
         // No likes found, screenshot saved
@@ -166,12 +167,13 @@ export async function crawl({
         FILE_NAME,
         DEFAULT_DATA_FOLDER,
         TARGET_TWEET_COUNT,
-        2, // timeoutLimit
+        20, // timeoutLimit
         DELAY_EACH_LIKES_SECONDS,
         1 // delayEvery100Seconds
       );
 
       const retweets = await retweetsHandler.collect();
+
       if (retweets.length === 0) {
         const screenshotPath = path.resolve(DEFAULT_DATA_FOLDER, `No-Retweets-${FORMATTED_TIMESTAMP}.png`).replace(/ /g, "_");
         // No retweets found, screenshot saved
@@ -187,7 +189,7 @@ export async function crawl({
         DEFAULT_DATA_FOLDER,
         TARGET_TWEET_COUNT,
         CRAWL_MODE,
-        4, // timeoutLimit
+        40, // timeoutLimit
         DELAY_EACH_TWEET_SECONDS,
         DELAY_EVERY_100_TWEETS_SECONDS
       );

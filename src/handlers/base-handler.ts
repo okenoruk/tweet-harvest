@@ -172,17 +172,21 @@ export abstract class BaseHandler {
    * Main method to collect data
    */
   public async collect(): Promise<any[]> {
+    let currentWaitTimeout = 5000;
+    const MAX_WAIT_TIMEOUT = 60000;
+
     while (this.allData.length < this.targetCount && this.timeoutCount < this.timeoutLimit) {
       // Wait for the next response or timeout
       const response = await Promise.race([
         this.page.waitForResponse(
           (response) => response.url().includes(this.getUrlPattern())
         ),
-        this.page.waitForTimeout(5000),
+        this.page.waitForTimeout(currentWaitTimeout),
       ]);
 
       if (response) {
         this.timeoutCount = 0;
+        currentWaitTimeout = 5000; // Reset timeout on success
 
         try {
           const responseJson = await response.json();
@@ -216,7 +220,14 @@ export abstract class BaseHandler {
         }
       } else {
         this.timeoutCount++;
-        console.info(chalk.gray("Scrolling more..."));
+        console.info(
+          chalk.gray(
+            `Scrolling more... (Waiting for ${currentWaitTimeout / 1000}s)`
+          )
+        );
+
+        // Increase timeout for next iteration, capped at 1 minute
+        currentWaitTimeout = Math.min(currentWaitTimeout + 5000, MAX_WAIT_TIMEOUT);
 
         if (this.timeoutCount > this.timeoutLimit) {
           console.info(chalk.yellow(`No more ${this.getItemName()} found, please check your search criteria and csv file result`));

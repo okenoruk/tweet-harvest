@@ -61,12 +61,12 @@ export class LikesHandler extends BaseHandler {
    * @param item Item to process
    */
   protected processItemForCsv(item: FavEntry): Record<string, any> | null {
-    if (item.entryId.indexOf('user') > -1 && item?.content?.itemContent?.user_results?.result) {
+    if (item.content.entryType === 'TimelineTimelineItem' && item?.content?.itemContent?.user_results?.result) {
       const user = pick(
-        { 
-          id: item?.content?.itemContent?.user_results?.result?.id, 
-          ...item.content.itemContent.user_results.result.legacy 
-        }, 
+        {
+          id: item?.content?.itemContent?.user_results?.result?.id,
+          ...item.content.itemContent.user_results.result.legacy
+        },
         USER_PROFILE_FIELDS
       );
 
