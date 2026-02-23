@@ -23,9 +23,9 @@ var env_1 = require("./env");
 // });
 (0, crawl_1.crawl)({
     ACCESS_TOKEN: env_1.ACCESS_TOKEN,
-    SEARCH_KEYWORDS: "mbg lang:id",
+    SEARCH_KEYWORDS: "makan bergizi lang:id",
     TARGET_TWEET_COUNT: 50,
-    OUTPUT_FILENAME: "mbg.csv",
+    OUTPUT_FILENAME: "mbg2.csv",
     DELAY_EACH_TWEET_SECONDS: 0.1,
     DELAY_EVERY_100_TWEETS_SECONDS: 0,
     SEARCH_TAB: "TOP",

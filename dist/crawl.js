@@ -65,7 +65,7 @@ function crawl(_a) {
         function startCrawlTwitter(_a) {
             var _b = _a === void 0 ? {} : _a, _c = _b.twitterSearchUrl, twitterSearchUrl = _c === void 0 ? constants_1.TWITTER_SEARCH_ADVANCED_URL[SEARCH_TAB] : _c;
             return __awaiter(this, void 0, void 0, function () {
-                var isLoggedIn, likesHandler, likes, retweetsHandler, retweets, tweetsHandler, tweets;
+                var isLoggedIn, likesHandler, likes, screenshotPath, retweetsHandler, retweets, screenshotPath, tweetsHandler, tweets, screenshotPath;
                 return __generator(this, function (_d) {
                     switch (_d.label) {
                         case 0:
@@ -93,40 +93,61 @@ function crawl(_a) {
                                     MODIFIED_SEARCH_KEYWORDS: SEARCH_KEYWORDS,
                                 });
                             }
-                            if (!(TWEET_THREAD_URL && TWEET_THREAD_URL.indexOf('/likes') > -1)) return [3 /*break*/, 6];
-                            likesHandler = new likes_handler_1.LikesHandler(page, FILE_NAME, constants_1.DEFAULT_DATA_FOLDER, TARGET_TWEET_COUNT, 2, // timeoutLimit
+                            if (!(TWEET_THREAD_URL && TWEET_THREAD_URL.indexOf('/likes') > -1)) return [3 /*break*/, 8];
+                            likesHandler = new likes_handler_1.LikesHandler(page, FILE_NAME, constants_1.DEFAULT_DATA_FOLDER, TARGET_TWEET_COUNT, 20, // timeoutLimit
                             DELAY_EACH_LIKES_SECONDS, 1 // delayEvery100Seconds
                             );
                             return [4 /*yield*/, likesHandler.collect()];
                         case 5:
                             likes = _d.sent();
-                            console.info("Collected ".concat(likes.length, " user profiles from likes"));
-                            return [3 /*break*/, 10];
+                            if (!(likes.length === 0)) return [3 /*break*/, 7];
+                            screenshotPath = path_1.default.resolve(constants_1.DEFAULT_DATA_FOLDER, "No-Likes-".concat(constants_1.FORMATTED_TIMESTAMP, ".png")).replace(/ /g, "_");
+                            // No likes found, screenshot saved
+                            return [4 /*yield*/, page.screenshot({ path: screenshotPath })];
                         case 6:
-                            if (!(TWEET_THREAD_URL && TWEET_THREAD_URL.indexOf('/retweets') > -1)) return [3 /*break*/, 8];
-                            retweetsHandler = new retweets_handler_1.RetweetsHandler(page, FILE_NAME, constants_1.DEFAULT_DATA_FOLDER, TARGET_TWEET_COUNT, 2, // timeoutLimit
+                            // No likes found, screenshot saved
+                            _d.sent();
+                            _d.label = 7;
+                        case 7:
+                            console.info("Collected ".concat(likes.length, " user profiles from likes"));
+                            return [3 /*break*/, 16];
+                        case 8:
+                            if (!(TWEET_THREAD_URL && TWEET_THREAD_URL.indexOf('/retweets') > -1)) return [3 /*break*/, 12];
+                            retweetsHandler = new retweets_handler_1.RetweetsHandler(page, FILE_NAME, constants_1.DEFAULT_DATA_FOLDER, TARGET_TWEET_COUNT, 20, // timeoutLimit
                             DELAY_EACH_LIKES_SECONDS, 1 // delayEvery100Seconds
                             );
                             return [4 /*yield*/, retweetsHandler.collect()];
-                        case 7:
+                        case 9:
                             retweets = _d.sent();
+                            if (!(retweets.length === 0)) return [3 /*break*/, 11];
+                            screenshotPath = path_1.default.resolve(constants_1.DEFAULT_DATA_FOLDER, "No-Retweets-".concat(constants_1.FORMATTED_TIMESTAMP, ".png")).replace(/ /g, "_");
+                            // No retweets found, screenshot saved
+                            return [4 /*yield*/, page.screenshot({ path: screenshotPath })];
+                        case 10:
+                            // No retweets found, screenshot saved
+                            _d.sent();
+                            _d.label = 11;
+                        case 11:
                             console.info("Collected ".concat(retweets.length, " user profiles from retweets"));
-                            return [3 /*break*/, 10];
-                        case 8:
-                            tweetsHandler = new tweets_handler_1.TweetsHandler(page, FILE_NAME, constants_1.DEFAULT_DATA_FOLDER, TARGET_TWEET_COUNT, CRAWL_MODE, 4, // timeoutLimit
+                            return [3 /*break*/, 16];
+                        case 12:
+                            tweetsHandler = new tweets_handler_1.TweetsHandler(page, FILE_NAME, constants_1.DEFAULT_DATA_FOLDER, TARGET_TWEET_COUNT, CRAWL_MODE, 40, // timeoutLimit
                             DELAY_EACH_TWEET_SECONDS, DELAY_EVERY_100_TWEETS_SECONDS);
                             return [4 /*yield*/, tweetsHandler.collect()];
-                        case 9:
+                        case 13:
                             tweets = _d.sent();
-                            if (tweets.length === 0) {
-                                TWEETS_NOT_FOUND_ON_CURRENT_TAB = true;
-                                console.info("No tweets found for the search criteria");
-                            }
-                            else {
-                                console.info("Collected ".concat(tweets.length, " tweets"));
-                            }
-                            _d.label = 10;
-                        case 10: return [2 /*return*/];
+                            if (!(tweets.length === 0)) return [3 /*break*/, 15];
+                            TWEETS_NOT_FOUND_ON_CURRENT_TAB = true;
+                            console.info("No tweets found for the search criteria");
+                            screenshotPath = path_1.default.resolve(constants_1.DEFAULT_DATA_FOLDER, "No-Tweets-".concat(constants_1.FORMATTED_TIMESTAMP, ".png")).replace(/ /g, "_");
+                            return [4 /*yield*/, page.screenshot({ path: screenshotPath })];
+                        case 14:
+                            _d.sent();
+                            return [3 /*break*/, 16];
+                        case 15:
+                            console.info("Collected ".concat(tweets.length, " tweets"));
+                            _d.label = 16;
+                        case 16: return [2 /*return*/];
                     }
                 });
             });
@@ -198,7 +219,7 @@ function crawl(_a) {
                     console.error(error_1);
                     console.info(chalk_1.default.blue("Keywords: ".concat(SEARCH_KEYWORDS)));
                     console.info(chalk_1.default.yellowBright("Twitter Harvest v", CURRENT_PACKAGE_VERSION));
-                    errorFilename_1 = path_1.default.resolve(constants_1.DEFAULT_DATA_FOLDER, "/Error-".concat(constants_1.FORMATTED_TIMESTAMP, ".png")).replace(/ /g, "_");
+                    errorFilename_1 = path_1.default.resolve(constants_1.DEFAULT_DATA_FOLDER, "Error-".concat(constants_1.FORMATTED_TIMESTAMP, ".png")).replace(/ /g, "_");
                     return [4 /*yield*/, page.screenshot({ path: errorFilename_1 }).then(function () {
                             console.log(chalk_1.default.red("\nIf you need help, please send this error screenshot to the maintainer, it was saved to \"".concat(errorFilename_1, "\"")));
                         })];

@@ -206,77 +206,84 @@ var BaseHandler = /** @class */ (function () {
      */
     BaseHandler.prototype.collect = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var response, responseJson, items, error_1;
+            var currentWaitTimeout, MAX_WAIT_TIMEOUT, response, responseJson, items, error_1;
             var _a;
             var _this = this;
             return __generator(this, function (_b) {
                 switch (_b.label) {
                     case 0:
-                        if (!(this.allData.length < this.targetCount && this.timeoutCount < this.timeoutLimit)) return [3 /*break*/, 15];
+                        currentWaitTimeout = 5000;
+                        MAX_WAIT_TIMEOUT = 60000;
+                        _b.label = 1;
+                    case 1:
+                        if (!(this.allData.length < this.targetCount && this.timeoutCount < this.timeoutLimit)) return [3 /*break*/, 16];
                         return [4 /*yield*/, Promise.race([
                                 this.page.waitForResponse(function (response) { return response.url().includes(_this.getUrlPattern()); }),
-                                this.page.waitForTimeout(5000),
+                                this.page.waitForTimeout(currentWaitTimeout),
                             ])];
-                    case 1:
-                        response = _b.sent();
-                        if (!response) return [3 /*break*/, 11];
-                        this.timeoutCount = 0;
-                        _b.label = 2;
                     case 2:
-                        _b.trys.push([2, 6, , 10]);
-                        return [4 /*yield*/, response.json()];
+                        response = _b.sent();
+                        if (!response) return [3 /*break*/, 12];
+                        this.timeoutCount = 0;
+                        currentWaitTimeout = 5000; // Reset timeout on success
+                        _b.label = 3;
                     case 3:
+                        _b.trys.push([3, 7, , 11]);
+                        return [4 /*yield*/, response.json()];
+                    case 4:
                         responseJson = _b.sent();
                         // Reset the rate limit exception count
                         this.rateLimitCount = 0;
                         items = this.processResponseData(responseJson);
                         if (!items || items.length === 0) {
                             console.error("No more ".concat(this.getItemName(), " found"));
-                            return [3 /*break*/, 0];
+                            return [3 /*break*/, 1];
                         }
                         // Add items to allData
                         (_a = this.allData).push.apply(_a, items);
                         // Write items to CSV
                         return [4 /*yield*/, this.writeItemsToCsv(items)];
-                    case 4:
+                    case 5:
                         // Write items to CSV
                         _b.sent();
                         // Handle delays
                         return [4 /*yield*/, this.handleDelays(items.length)];
-                    case 5:
+                    case 6:
                         // Handle delays
                         _b.sent();
-                        return [3 /*break*/, 10];
-                    case 6:
+                        return [3 /*break*/, 11];
+                    case 7:
                         error_1 = _b.sent();
                         return [4 /*yield*/, this.handleRateLimit(response)];
-                    case 7:
-                        if (!_b.sent()) return [3 /*break*/, 9];
+                    case 8:
+                        if (!_b.sent()) return [3 /*break*/, 10];
                         return [4 /*yield*/, this.collect()];
-                    case 8: return [2 /*return*/, _b.sent()]; // Recursive call after handling rate limit
-                    case 9:
+                    case 9: return [2 /*return*/, _b.sent()]; // Recursive call after handling rate limit
+                    case 10:
                         console.error("Error processing response: ".concat(error_1));
-                        return [3 /*break*/, 15];
-                    case 10: return [3 /*break*/, 13];
-                    case 11:
+                        return [3 /*break*/, 16];
+                    case 11: return [3 /*break*/, 14];
+                    case 12:
                         this.timeoutCount++;
-                        console.info(chalk_1.default.gray("Scrolling more..."));
+                        console.info(chalk_1.default.gray("Scrolling more... (Waiting for ".concat(currentWaitTimeout / 1000, "s)")));
+                        // Increase timeout for next iteration, capped at 1 minute
+                        currentWaitTimeout = Math.min(currentWaitTimeout + 5000, MAX_WAIT_TIMEOUT);
                         if (this.timeoutCount > this.timeoutLimit) {
                             console.info(chalk_1.default.yellow("No more ".concat(this.getItemName(), " found, please check your search criteria and csv file result")));
-                            return [3 /*break*/, 15];
+                            return [3 /*break*/, 16];
                         }
                         return [4 /*yield*/, this.scrollPage()];
-                    case 12:
+                    case 13:
                         _b.sent();
-                        _b.label = 13;
-                    case 13: 
+                        _b.label = 14;
+                    case 14: 
                     // Scroll after each iteration
                     return [4 /*yield*/, this.scrollPage()];
-                    case 14:
+                    case 15:
                         // Scroll after each iteration
                         _b.sent();
-                        return [3 /*break*/, 0];
-                    case 15: return [2 /*return*/, this.allData];
+                        return [3 /*break*/, 1];
+                    case 16: return [2 /*return*/, this.allData];
                 }
             });
         });
