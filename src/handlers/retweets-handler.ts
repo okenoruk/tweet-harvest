@@ -62,19 +62,23 @@ export class RetweetsHandler extends BaseHandler {
    */
   protected processItemForCsv(item: RetweetEntry): Record<string, any> | null {
     if (item.content.entryType === 'TimelineTimelineItem' && item?.content?.itemContent?.user_results?.result) {
+      const result = item.content.itemContent.user_results.result;
+      const isSuspended = result.__typename === 'UserUnavailable';
+
       const user = pick(
         {
-          id: item?.content?.itemContent?.user_results?.result?.id,
-          ...item.content.itemContent.user_results.result.legacy
+          id: result?.id,
+          ...(isSuspended ? {} : result.legacy)
         },
         USER_PROFILE_FIELDS
       );
 
       // Clean text fields
-      const description = item.content.itemContent.user_results.result.legacy.description || "";
+      const description = (isSuspended ? "" : result.legacy?.description) || "";
       // Use type assertion to handle potential missing properties
-      const name = item.content.itemContent.user_results.result.core?.name ||
-        (item.content.itemContent.user_results.result.legacy as any).name || "";
+      const name = isSuspended
+        ? ""
+        : (result.core?.name || (result.legacy as any)?.name || "");
 
       user["description"] = description.replace(/,/g, " ").replace(/\n/g, " ");
       user["name"] = name.replace(/,/g, " ").replace(/\n/g, " ");

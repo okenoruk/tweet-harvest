@@ -62,17 +62,20 @@ export class LikesHandler extends BaseHandler {
    */
   protected processItemForCsv(item: FavEntry): Record<string, any> | null {
     if (item.content.entryType === 'TimelineTimelineItem' && item?.content?.itemContent?.user_results?.result) {
+      const result = item.content.itemContent.user_results.result;
+      const isSuspended = result.__typename === 'UserUnavailable';
+
       const user = pick(
         {
-          id: item?.content?.itemContent?.user_results?.result?.id,
-          ...item.content.itemContent.user_results.result.legacy
+          id: result?.id,
+          ...(isSuspended ? {} : result.legacy)
         },
         USER_PROFILE_FIELDS
       );
 
       // Clean text fields
-      const description = item.content.itemContent.user_results.result.legacy.description || "";
-      const name = item.content.itemContent.user_results.result.legacy.name || "";
+      const description = (isSuspended ? "" : result.legacy?.description) || "";
+      const name = (isSuspended ? "" : result.legacy?.name) || "";
 
       user["description"] = description.replace(/,/g, " ").replace(/\n/g, " ");
       user["name"] = name.replace(/,/g, " ").replace(/\n/g, " ");
