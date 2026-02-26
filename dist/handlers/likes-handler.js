@@ -79,12 +79,14 @@ var LikesHandler = /** @class */ (function (_super) {
      * @param item Item to process
      */
     LikesHandler.prototype.processItemForCsv = function (item) {
-        var _a, _b, _c, _d, _e, _f, _g;
+        var _a, _b, _c, _d, _e;
         if (item.content.entryType === 'TimelineTimelineItem' && ((_c = (_b = (_a = item === null || item === void 0 ? void 0 : item.content) === null || _a === void 0 ? void 0 : _a.itemContent) === null || _b === void 0 ? void 0 : _b.user_results) === null || _c === void 0 ? void 0 : _c.result)) {
-            var user = (0, lodash_1.pick)(__assign({ id: (_g = (_f = (_e = (_d = item === null || item === void 0 ? void 0 : item.content) === null || _d === void 0 ? void 0 : _d.itemContent) === null || _e === void 0 ? void 0 : _e.user_results) === null || _f === void 0 ? void 0 : _f.result) === null || _g === void 0 ? void 0 : _g.id }, item.content.itemContent.user_results.result.legacy), constants_1.USER_PROFILE_FIELDS);
+            var result = item.content.itemContent.user_results.result;
+            var isSuspended = result.__typename === 'UserUnavailable';
+            var user = (0, lodash_1.pick)(__assign({ id: result === null || result === void 0 ? void 0 : result.id }, (isSuspended ? {} : result.legacy)), constants_1.USER_PROFILE_FIELDS);
             // Clean text fields
-            var description = item.content.itemContent.user_results.result.legacy.description || "";
-            var name_1 = item.content.itemContent.user_results.result.legacy.name || "";
+            var description = (isSuspended ? "" : (_d = result.legacy) === null || _d === void 0 ? void 0 : _d.description) || "";
+            var name_1 = (isSuspended ? "" : (_e = result.legacy) === null || _e === void 0 ? void 0 : _e.name) || "";
             user["description"] = description.replace(/,/g, " ").replace(/\n/g, " ");
             user["name"] = name_1.replace(/,/g, " ").replace(/\n/g, " ");
             return user;
