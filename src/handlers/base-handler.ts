@@ -202,6 +202,15 @@ export abstract class BaseHandler {
             continue;
           }
 
+          // TODO: For debugging purpose, delete later
+          const jsonData = JSON.stringify(items, null, 2);
+          var fs = require('fs');
+          fs.writeFile("api_results.json", jsonData, function (err) {
+            if (err) {
+              console.log(err);
+            }
+          });
+
           // Add items to allData
           this.allData.push(...items);
 

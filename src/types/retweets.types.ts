@@ -48,26 +48,31 @@ export interface UserResults {
 
 export interface Result {
   __typename: string
-  id: string
-  rest_id: string
   affiliates_highlighted_label: AffiliatesHighlightedLabel
   avatar: Avatar
   core: Core
   dm_permissions: DmPermissions
+  follow_request_sent: boolean
   has_graduated_access: boolean
+  id: string
   is_blue_verified: boolean
   legacy: Legacy
   location: Location
   media_permissions: MediaPermissions
   parody_commentary_fan_label: string
-  profile_image_shape: string
   privacy: Privacy
+  profile_bio: ProfileBio
+  profile_description_language: string
+  profile_image_shape: string
   relationship_perspectives: RelationshipPerspectives
-  tipjar_settings: TipjarSettings
+  rest_id: string
+  super_follow_eligible: boolean
+  super_followed_by: boolean
+  super_following: boolean
   verification: Verification
 }
 
-export interface AffiliatesHighlightedLabel {}
+export interface AffiliatesHighlightedLabel { }
 
 export interface Avatar {
   image_url: string
@@ -81,7 +86,6 @@ export interface Core {
 
 export interface DmPermissions {
   can_dm: boolean
-  can_dm_on_xchat: boolean
 }
 
 export interface Legacy {
@@ -91,6 +95,7 @@ export interface Legacy {
   entities: Entities
   fast_followers_count: number
   favourites_count: number
+  follow_request_sent: boolean
   followers_count: number
   friends_count: number
   has_custom_timelines: boolean
@@ -98,35 +103,23 @@ export interface Legacy {
   listed_count: number
   media_count: number
   normal_followers_count: number
-  pinned_tweet_ids_str: string[]
+  notifications: boolean
+  pinned_tweet_ids_str: any[]
   possibly_sensitive: boolean
-  profile_banner_url?: string
+  profile_banner_url: string
   profile_interstitial_type: string
   statuses_count: number
   translator_type: string
   want_retweets: boolean
   withheld_in_countries: any[]
-  url?: string
 }
 
 export interface Entities {
   description: Description
-  url?: Url
 }
 
 export interface Description {
   urls: any[]
-}
-
-export interface Url {
-  urls: Url2[]
-}
-
-export interface Url2 {
-  display_url: string
-  expanded_url: string
-  url: string
-  indices: number[]
 }
 
 export interface Location {
@@ -141,12 +134,16 @@ export interface Privacy {
   protected: boolean
 }
 
-export interface RelationshipPerspectives {
-  following: boolean
+export interface ProfileBio {
+  description: string
 }
 
-export interface TipjarSettings {
-  is_enabled?: boolean
+export interface RelationshipPerspectives {
+  blocked_by: boolean
+  blocking: boolean
+  followed_by: boolean
+  following: boolean
+  muting: boolean
 }
 
 export interface Verification {

@@ -64,21 +64,27 @@ export class RetweetsHandler extends BaseHandler {
     if (item.content.entryType === 'TimelineTimelineItem' && item?.content?.itemContent?.user_results?.result) {
       const result = item.content.itemContent.user_results.result;
       const isSuspended = result.__typename === 'UserUnavailable';
-
       const user = pick(
         {
-          id: result?.id,
-          ...(isSuspended ? {} : result.legacy)
+          id: result?.rest_id,
+          created_at: result.core?.created_at || "",
+          description: result.legacy?.description || "",
+          followers_count: result.legacy?.followers_count || 0,
+          friends_count: result.legacy?.friends_count || 0,
+          name: result.core?.name || "",
+          profile_image_url_https: result.avatar?.image_url || "",
+          screen_name: result.core?.screen_name || "",
+          statuses_count: result.legacy?.statuses_count || 0,
+          is_blue_verified: result.is_blue_verified || false,
+          profile_description_language: result.profile_description_language || "unknown",
+          favourites_count: result.legacy?.favourites_count || 0
         },
         USER_PROFILE_FIELDS
       );
 
       // Clean text fields
-      const description = (isSuspended ? "" : result.legacy?.description) || "";
-      // Use type assertion to handle potential missing properties
-      const name = isSuspended
-        ? ""
-        : (result.core?.name || (result.legacy as any)?.name || "");
+      const description = (user["description"] as string) || "";
+      const name = (user["name"] as string) || "";
 
       user["description"] = description.replace(/,/g, " ").replace(/\n/g, " ");
       user["name"] = name.replace(/,/g, " ").replace(/\n/g, " ");

@@ -55,10 +55,11 @@ export interface FavResult {
   is_blue_verified: boolean
   profile_image_shape: string
   legacy: FavLegacy
+  profile_description_language?: string
   professional?: FavProfessional
 }
 
-export interface FavAffiliatesHighlightedLabel {}
+export interface FavAffiliatesHighlightedLabel { }
 
 export interface FavLegacy {
   can_dm: boolean

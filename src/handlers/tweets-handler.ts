@@ -82,17 +82,21 @@ export class TweetsHandler extends BaseHandler {
 
         if (!result.tweet?.core?.user_results && !result.core?.user_results) return null;
 
-        const tweetContent = result.legacy || result.tweet.legacy;
+        const tweetContent = result.legacy || result.tweet?.legacy;
         const userContent =
-          result.core?.user_results?.result?.legacy || result.tweet.core.user_results.result.legacy;
-        const userDetail = result.core?.user_results?.result || result.tweet.core.user_results.result;
+          result.core?.user_results?.result?.legacy || result.tweet?.core?.user_results?.result?.legacy;
+        const userDetail = result.core?.user_results?.result || result.tweet?.core?.user_results?.result;
         const views = result.views || result.tweet?.views;
 
         return {
           tweet: tweetContent,
           user: userContent,
           userDetail: userDetail,
-          views: views
+          views: views,
+          rest_id: result.rest_id || result.tweet?.rest_id,
+          userName: userDetail?.core?.name,
+          userScreenName: userDetail?.core?.screen_name,
+          userLocation: userDetail?.location?.location || ""
         };
       })
       .filter((tweet) => tweet !== null);
@@ -110,7 +114,15 @@ export class TweetsHandler extends BaseHandler {
    * @param item Item to process
    */
   protected processItemForCsv(item: any): Record<string, any> {
-    const tweet = pick(item.tweet, TWEET_FIELDS);
+    const tweet = pick(
+      {
+        ...item.tweet,
+        id_str: item.rest_id || item.tweet.id_str,
+        username: item.userScreenName,
+        location: item.userLocation
+      },
+      TWEET_FIELDS
+    );
 
     let cleanTweetText = `${item.tweet.full_text.replace(/,/g, " ").replace(/\n/g, " ")}`;
 
@@ -124,12 +136,10 @@ export class TweetsHandler extends BaseHandler {
       }
     }
 
-    const userName = item.userDetail?.core?.screen_name || item.userDetail?.screen_name;
+    const userScreenName = item.userScreenName || 'i';
     tweet["full_text"] = cleanTweetText;
-    tweet["username"] = userName;
-    tweet["tweet_url"] = `https://twitter.com/${userName}/status/${tweet.id_str}`;
+    tweet["tweet_url"] = `https://twitter.com/${userScreenName}/status/${tweet.id_str}`;
     tweet["image_url"] = item.tweet.entities?.media?.[0]?.media_url_https || "";
-    tweet["location"] = item.userDetail?.location?.location || "";
     tweet["views_count"] = item.views?.count;
 
     return tweet;

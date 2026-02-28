@@ -168,7 +168,7 @@ export interface Category {
   icon_name: string
 }
 
-export interface UnmentionData {}
+export interface UnmentionData { }
 
 export interface EditControl {
   edit_tweet_ids: string[]
@@ -600,7 +600,7 @@ export interface Result6 {
   verification: Verification2
 }
 
-export interface AffiliatesHighlightedLabel2 {}
+export interface AffiliatesHighlightedLabel2 { }
 
 export interface Avatar2 {
   image_url: string
@@ -678,13 +678,13 @@ export interface RelationshipPerspectives2 {
   following: boolean
 }
 
-export interface TipjarSettings2 {}
+export interface TipjarSettings2 { }
 
 export interface Verification2 {
   verified: boolean
 }
 
-export interface UnmentionData2 {}
+export interface UnmentionData2 { }
 
 export interface EditControl2 {
   edit_tweet_ids: string[]
@@ -1031,7 +1031,7 @@ export interface Result10 {
   verification: Verification3
 }
 
-export interface AffiliatesHighlightedLabel3 {}
+export interface AffiliatesHighlightedLabel3 { }
 
 export interface Avatar3 {
   image_url: string
@@ -1109,7 +1109,7 @@ export interface RelationshipPerspectives3 {
   following: boolean
 }
 
-export interface TipjarSettings3 {}
+export interface TipjarSettings3 { }
 
 export interface Verification3 {
   verified: boolean
