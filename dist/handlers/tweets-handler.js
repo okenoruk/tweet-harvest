@@ -14,6 +14,17 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
         if (ar || !(i in from)) {
@@ -80,7 +91,7 @@ var TweetsHandler = /** @class */ (function (_super) {
         // Process tweets to extract content
         return tweets
             .map(function (tweet) {
-            var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _0, _1;
+            var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13;
             var isPromotedTweet = tweet.entryId.includes("promoted");
             if (_this.crawlMode === constants_2.CrawlMode.SEARCH && !((_c = (_b = (_a = tweet === null || tweet === void 0 ? void 0 : tweet.content) === null || _a === void 0 ? void 0 : _a.itemContent) === null || _b === void 0 ? void 0 : _b.tweet_results) === null || _c === void 0 ? void 0 : _c.result))
                 return null;
@@ -98,15 +109,19 @@ var TweetsHandler = /** @class */ (function (_super) {
                 : tweet.content.items[0].item.itemContent.tweet_results.result;
             if (!((_u = (_t = result.tweet) === null || _t === void 0 ? void 0 : _t.core) === null || _u === void 0 ? void 0 : _u.user_results) && !((_v = result.core) === null || _v === void 0 ? void 0 : _v.user_results))
                 return null;
-            var tweetContent = result.legacy || result.tweet.legacy;
-            var userContent = ((_y = (_x = (_w = result.core) === null || _w === void 0 ? void 0 : _w.user_results) === null || _x === void 0 ? void 0 : _x.result) === null || _y === void 0 ? void 0 : _y.legacy) || result.tweet.core.user_results.result.legacy;
-            var userDetail = ((_0 = (_z = result.core) === null || _z === void 0 ? void 0 : _z.user_results) === null || _0 === void 0 ? void 0 : _0.result) || result.tweet.core.user_results.result;
-            var views = result.views || ((_1 = result.tweet) === null || _1 === void 0 ? void 0 : _1.views);
+            var tweetContent = result.legacy || ((_w = result.tweet) === null || _w === void 0 ? void 0 : _w.legacy);
+            var userContent = ((_z = (_y = (_x = result.core) === null || _x === void 0 ? void 0 : _x.user_results) === null || _y === void 0 ? void 0 : _y.result) === null || _z === void 0 ? void 0 : _z.legacy) || ((_3 = (_2 = (_1 = (_0 = result.tweet) === null || _0 === void 0 ? void 0 : _0.core) === null || _1 === void 0 ? void 0 : _1.user_results) === null || _2 === void 0 ? void 0 : _2.result) === null || _3 === void 0 ? void 0 : _3.legacy);
+            var userDetail = ((_5 = (_4 = result.core) === null || _4 === void 0 ? void 0 : _4.user_results) === null || _5 === void 0 ? void 0 : _5.result) || ((_8 = (_7 = (_6 = result.tweet) === null || _6 === void 0 ? void 0 : _6.core) === null || _7 === void 0 ? void 0 : _7.user_results) === null || _8 === void 0 ? void 0 : _8.result);
+            var views = result.views || ((_9 = result.tweet) === null || _9 === void 0 ? void 0 : _9.views);
             return {
                 tweet: tweetContent,
                 user: userContent,
                 userDetail: userDetail,
-                views: views
+                views: views,
+                rest_id: result.rest_id || ((_10 = result.tweet) === null || _10 === void 0 ? void 0 : _10.rest_id),
+                userName: (_11 = userDetail === null || userDetail === void 0 ? void 0 : userDetail.core) === null || _11 === void 0 ? void 0 : _11.name,
+                userScreenName: (_12 = userDetail === null || userDetail === void 0 ? void 0 : userDetail.core) === null || _12 === void 0 ? void 0 : _12.screen_name,
+                userLocation: ((_13 = userDetail === null || userDetail === void 0 ? void 0 : userDetail.location) === null || _13 === void 0 ? void 0 : _13.location) || ""
             };
         })
             .filter(function (tweet) { return tweet !== null; });
@@ -122,8 +137,8 @@ var TweetsHandler = /** @class */ (function (_super) {
      * @param item Item to process
      */
     TweetsHandler.prototype.processItemForCsv = function (item) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-        var tweet = (0, lodash_1.pick)(item.tweet, constants_1.TWEET_FIELDS);
+        var _a, _b, _c, _d, _e, _f, _g;
+        var tweet = (0, lodash_1.pick)(__assign(__assign({}, item.tweet), { id_str: item.rest_id || item.tweet.id_str, username: item.userScreenName, location: item.userLocation }), constants_1.TWEET_FIELDS);
         var cleanTweetText = "".concat(item.tweet.full_text.replace(/,/g, " ").replace(/\n/g, " "));
         if (this.crawlMode === constants_2.CrawlMode.DETAIL) {
             var firstWord = cleanTweetText.split(" ")[0];
@@ -134,13 +149,11 @@ var TweetsHandler = /** @class */ (function (_super) {
                 cleanTweetText = cleanTweetText.replace("@".concat(replyToUsername, " "), "");
             }
         }
-        var userName = ((_e = (_d = item.userDetail) === null || _d === void 0 ? void 0 : _d.core) === null || _e === void 0 ? void 0 : _e.screen_name) || ((_f = item.userDetail) === null || _f === void 0 ? void 0 : _f.screen_name);
+        var userScreenName = item.userScreenName || 'i';
         tweet["full_text"] = cleanTweetText;
-        tweet["username"] = userName;
-        tweet["tweet_url"] = "https://twitter.com/".concat(userName, "/status/").concat(tweet.id_str);
-        tweet["image_url"] = ((_j = (_h = (_g = item.tweet.entities) === null || _g === void 0 ? void 0 : _g.media) === null || _h === void 0 ? void 0 : _h[0]) === null || _j === void 0 ? void 0 : _j.media_url_https) || "";
-        tweet["location"] = ((_l = (_k = item.userDetail) === null || _k === void 0 ? void 0 : _k.location) === null || _l === void 0 ? void 0 : _l.location) || "";
-        tweet["views_count"] = (_m = item.views) === null || _m === void 0 ? void 0 : _m.count;
+        tweet["tweet_url"] = "https://twitter.com/".concat(userScreenName, "/status/").concat(tweet.id_str);
+        tweet["image_url"] = ((_f = (_e = (_d = item.tweet.entities) === null || _d === void 0 ? void 0 : _d.media) === null || _e === void 0 ? void 0 : _e[0]) === null || _f === void 0 ? void 0 : _f.media_url_https) || "";
+        tweet["views_count"] = (_g = item.views) === null || _g === void 0 ? void 0 : _g.count;
         return tweet;
     };
     /**

@@ -206,7 +206,7 @@ var BaseHandler = /** @class */ (function () {
      */
     BaseHandler.prototype.collect = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var currentWaitTimeout, MAX_WAIT_TIMEOUT, response, responseJson, items, error_1;
+            var currentWaitTimeout, MAX_WAIT_TIMEOUT, response, responseJson, items, jsonData, fs, error_1;
             var _a;
             var _this = this;
             return __generator(this, function (_b) {
@@ -239,6 +239,13 @@ var BaseHandler = /** @class */ (function () {
                             console.error("No more ".concat(this.getItemName(), " found"));
                             return [3 /*break*/, 1];
                         }
+                        jsonData = JSON.stringify(items, null, 2);
+                        fs = require('fs');
+                        fs.writeFile("api_results.json", jsonData, function (err) {
+                            if (err) {
+                                console.log(err);
+                            }
+                        });
                         // Add items to allData
                         (_a = this.allData).push.apply(_a, items);
                         // Write items to CSV

@@ -14,17 +14,6 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.RetweetsHandler = void 0;
 var lodash_1 = require("lodash");
@@ -79,17 +68,27 @@ var RetweetsHandler = /** @class */ (function (_super) {
      * @param item Item to process
      */
     RetweetsHandler.prototype.processItemForCsv = function (item) {
-        var _a, _b, _c, _d, _e, _f;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
         if (item.content.entryType === 'TimelineTimelineItem' && ((_c = (_b = (_a = item === null || item === void 0 ? void 0 : item.content) === null || _a === void 0 ? void 0 : _a.itemContent) === null || _b === void 0 ? void 0 : _b.user_results) === null || _c === void 0 ? void 0 : _c.result)) {
             var result = item.content.itemContent.user_results.result;
             var isSuspended = result.__typename === 'UserUnavailable';
-            var user = (0, lodash_1.pick)(__assign({ id: result === null || result === void 0 ? void 0 : result.id }, (isSuspended ? {} : result.legacy)), constants_1.USER_PROFILE_FIELDS);
+            var user = (0, lodash_1.pick)({
+                id: result === null || result === void 0 ? void 0 : result.rest_id,
+                created_at: ((_d = result.core) === null || _d === void 0 ? void 0 : _d.created_at) || "",
+                description: ((_e = result.legacy) === null || _e === void 0 ? void 0 : _e.description) || "",
+                followers_count: ((_f = result.legacy) === null || _f === void 0 ? void 0 : _f.followers_count) || 0,
+                friends_count: ((_g = result.legacy) === null || _g === void 0 ? void 0 : _g.friends_count) || 0,
+                name: ((_h = result.core) === null || _h === void 0 ? void 0 : _h.name) || "",
+                profile_image_url_https: ((_j = result.avatar) === null || _j === void 0 ? void 0 : _j.image_url) || "",
+                screen_name: ((_k = result.core) === null || _k === void 0 ? void 0 : _k.screen_name) || "",
+                statuses_count: ((_l = result.legacy) === null || _l === void 0 ? void 0 : _l.statuses_count) || 0,
+                is_blue_verified: result.is_blue_verified || false,
+                profile_description_language: result.profile_description_language || "unknown",
+                favourites_count: ((_m = result.legacy) === null || _m === void 0 ? void 0 : _m.favourites_count) || 0
+            }, constants_1.USER_PROFILE_FIELDS);
             // Clean text fields
-            var description = (isSuspended ? "" : (_d = result.legacy) === null || _d === void 0 ? void 0 : _d.description) || "";
-            // Use type assertion to handle potential missing properties
-            var name_1 = isSuspended
-                ? ""
-                : (((_e = result.core) === null || _e === void 0 ? void 0 : _e.name) || ((_f = result.legacy) === null || _f === void 0 ? void 0 : _f.name) || "");
+            var description = user["description"] || "";
+            var name_1 = user["name"] || "";
             user["description"] = description.replace(/,/g, " ").replace(/\n/g, " ");
             user["name"] = name_1.replace(/,/g, " ").replace(/\n/g, " ");
             return user;

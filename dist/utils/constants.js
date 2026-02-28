@@ -38,7 +38,10 @@ exports.USER_PROFILE_FIELDS = [
     "name",
     "profile_image_url_https",
     "screen_name",
-    "statuses_count"
+    "statuses_count",
+    "is_blue_verified",
+    "profile_description_language",
+    "favourites_count"
 ];
 // Current timestamp formatted for filenames
 exports.FORMATTED_TIMESTAMP = (0, dayjs_1.default)().format("DD-MM-YYYY HH-mm-ss");
