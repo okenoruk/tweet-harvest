@@ -1,8 +1,10 @@
 import { Page, Response } from "@playwright/test";
 import chalk from "chalk";
+import path from "path";
 import { pick } from "lodash";
 import { appendCsv, convertValuesToStrings, createCsvHeaderRow, ensureDirectoryExists } from "../utils/file";
 import { calculateForRateLimit } from "../features/exponential-backoff";
+import { FORMATTED_TIMESTAMP } from "../utils/constants";
 
 /**
  * Base class for Twitter data handlers
@@ -177,12 +179,30 @@ export abstract class BaseHandler {
 
     while (this.allData.length < this.targetCount && this.timeoutCount < this.timeoutLimit) {
       // Wait for the next response or timeout
-      const response = await Promise.race([
-        this.page.waitForResponse(
-          (response) => response.url().includes(this.getUrlPattern())
-        ),
-        this.page.waitForTimeout(currentWaitTimeout),
-      ]);
+      let response: Response | void;
+      try {
+        response = await Promise.race([
+          this.page.waitForResponse(
+            (response) => response.url().includes(this.getUrlPattern())
+          ),
+          this.page.waitForTimeout(currentWaitTimeout),
+        ]);
+      } catch (error) {
+        if (error instanceof Error && error.name === 'TimeoutError') {
+          this.timeoutCount++;
+          console.error(chalk.red(`Timeout waiting for ${this.getItemName()} response (${currentWaitTimeout}ms)`));
+
+          // Take screenshot on timeout
+          const screenshotPath = path.resolve(this.dataFolder, `Timeout-${this.getItemName().replace(/ /g, "_")}-${FORMATTED_TIMESTAMP}.png`);
+          await this.page.screenshot({ path: screenshotPath });
+          console.info(chalk.yellow(`Screenshot saved to: ${screenshotPath}`));
+
+          await this.scrollPage();
+          currentWaitTimeout = Math.min(currentWaitTimeout + 5000, MAX_WAIT_TIMEOUT);
+          continue;
+        }
+        throw error;
+      }
 
       if (response) {
         this.timeoutCount = 0;

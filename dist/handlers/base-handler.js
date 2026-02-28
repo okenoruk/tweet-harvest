@@ -50,8 +50,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BaseHandler = void 0;
 var chalk_1 = __importDefault(require("chalk"));
+var path_1 = __importDefault(require("path"));
 var file_1 = require("../utils/file");
 var exponential_backoff_1 = require("../features/exponential-backoff");
+var constants_1 = require("../utils/constants");
 /**
  * Base class for Twitter data handlers
  */
@@ -206,7 +208,7 @@ var BaseHandler = /** @class */ (function () {
      */
     BaseHandler.prototype.collect = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var currentWaitTimeout, MAX_WAIT_TIMEOUT, response, responseJson, items, jsonData, fs, error_1;
+            var currentWaitTimeout, MAX_WAIT_TIMEOUT, response, error_1, screenshotPath, responseJson, items, jsonData, fs, error_2;
             var _a;
             var _this = this;
             return __generator(this, function (_b) {
@@ -216,21 +218,43 @@ var BaseHandler = /** @class */ (function () {
                         MAX_WAIT_TIMEOUT = 60000;
                         _b.label = 1;
                     case 1:
-                        if (!(this.allData.length < this.targetCount && this.timeoutCount < this.timeoutLimit)) return [3 /*break*/, 16];
+                        if (!(this.allData.length < this.targetCount && this.timeoutCount < this.timeoutLimit)) return [3 /*break*/, 22];
+                        response = void 0;
+                        _b.label = 2;
+                    case 2:
+                        _b.trys.push([2, 4, , 8]);
                         return [4 /*yield*/, Promise.race([
                                 this.page.waitForResponse(function (response) { return response.url().includes(_this.getUrlPattern()); }),
                                 this.page.waitForTimeout(currentWaitTimeout),
                             ])];
-                    case 2:
+                    case 3:
                         response = _b.sent();
-                        if (!response) return [3 /*break*/, 12];
+                        return [3 /*break*/, 8];
+                    case 4:
+                        error_1 = _b.sent();
+                        if (!(error_1 instanceof Error && error_1.name === 'TimeoutError')) return [3 /*break*/, 7];
+                        this.timeoutCount++;
+                        console.error(chalk_1.default.red("Timeout waiting for ".concat(this.getItemName(), " response (").concat(currentWaitTimeout, "ms)")));
+                        screenshotPath = path_1.default.resolve(this.dataFolder, "Timeout-".concat(this.getItemName().replace(/ /g, "_"), "-").concat(constants_1.FORMATTED_TIMESTAMP, ".png"));
+                        return [4 /*yield*/, this.page.screenshot({ path: screenshotPath })];
+                    case 5:
+                        _b.sent();
+                        console.info(chalk_1.default.yellow("Screenshot saved to: ".concat(screenshotPath)));
+                        return [4 /*yield*/, this.scrollPage()];
+                    case 6:
+                        _b.sent();
+                        currentWaitTimeout = Math.min(currentWaitTimeout + 5000, MAX_WAIT_TIMEOUT);
+                        return [3 /*break*/, 1];
+                    case 7: throw error_1;
+                    case 8:
+                        if (!response) return [3 /*break*/, 18];
                         this.timeoutCount = 0;
                         currentWaitTimeout = 5000; // Reset timeout on success
-                        _b.label = 3;
-                    case 3:
-                        _b.trys.push([3, 7, , 11]);
+                        _b.label = 9;
+                    case 9:
+                        _b.trys.push([9, 13, , 17]);
                         return [4 /*yield*/, response.json()];
-                    case 4:
+                    case 10:
                         responseJson = _b.sent();
                         // Reset the rate limit exception count
                         this.rateLimitCount = 0;
@@ -250,47 +274,47 @@ var BaseHandler = /** @class */ (function () {
                         (_a = this.allData).push.apply(_a, items);
                         // Write items to CSV
                         return [4 /*yield*/, this.writeItemsToCsv(items)];
-                    case 5:
+                    case 11:
                         // Write items to CSV
                         _b.sent();
                         // Handle delays
                         return [4 /*yield*/, this.handleDelays(items.length)];
-                    case 6:
+                    case 12:
                         // Handle delays
                         _b.sent();
-                        return [3 /*break*/, 11];
-                    case 7:
-                        error_1 = _b.sent();
+                        return [3 /*break*/, 17];
+                    case 13:
+                        error_2 = _b.sent();
                         return [4 /*yield*/, this.handleRateLimit(response)];
-                    case 8:
-                        if (!_b.sent()) return [3 /*break*/, 10];
+                    case 14:
+                        if (!_b.sent()) return [3 /*break*/, 16];
                         return [4 /*yield*/, this.collect()];
-                    case 9: return [2 /*return*/, _b.sent()]; // Recursive call after handling rate limit
-                    case 10:
-                        console.error("Error processing response: ".concat(error_1));
-                        return [3 /*break*/, 16];
-                    case 11: return [3 /*break*/, 14];
-                    case 12:
+                    case 15: return [2 /*return*/, _b.sent()]; // Recursive call after handling rate limit
+                    case 16:
+                        console.error("Error processing response: ".concat(error_2));
+                        return [3 /*break*/, 22];
+                    case 17: return [3 /*break*/, 20];
+                    case 18:
                         this.timeoutCount++;
                         console.info(chalk_1.default.gray("Scrolling more... (Waiting for ".concat(currentWaitTimeout / 1000, "s)")));
                         // Increase timeout for next iteration, capped at 1 minute
                         currentWaitTimeout = Math.min(currentWaitTimeout + 5000, MAX_WAIT_TIMEOUT);
                         if (this.timeoutCount > this.timeoutLimit) {
                             console.info(chalk_1.default.yellow("No more ".concat(this.getItemName(), " found, please check your search criteria and csv file result")));
-                            return [3 /*break*/, 16];
+                            return [3 /*break*/, 22];
                         }
                         return [4 /*yield*/, this.scrollPage()];
-                    case 13:
+                    case 19:
                         _b.sent();
-                        _b.label = 14;
-                    case 14: 
+                        _b.label = 20;
+                    case 20: 
                     // Scroll after each iteration
                     return [4 /*yield*/, this.scrollPage()];
-                    case 15:
+                    case 21:
                         // Scroll after each iteration
                         _b.sent();
                         return [3 /*break*/, 1];
-                    case 16: return [2 /*return*/, this.allData];
+                    case 22: return [2 /*return*/, this.allData];
                 }
             });
         });
