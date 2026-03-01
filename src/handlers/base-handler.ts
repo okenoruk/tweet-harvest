@@ -27,6 +27,9 @@ export abstract class BaseHandler {
   // Data storage
   protected allData: any[] = [];
 
+  // Response buffer
+  protected responseQueue: Response[] = [];
+
   /**
    * Constructor for BaseHandler
    * @param page Playwright page object
@@ -56,6 +59,13 @@ export abstract class BaseHandler {
 
     // Ensure the data folder exists
     ensureDirectoryExists(dataFolder);
+
+    // Start listening for responses immediately
+    this.page.on('response', (response) => {
+      if (response.url().includes(this.getUrlPattern())) {
+        this.responseQueue.push(response);
+      }
+    });
   }
 
   /**
@@ -178,30 +188,42 @@ export abstract class BaseHandler {
     const MAX_WAIT_TIMEOUT = 60000;
 
     while (this.allData.length < this.targetCount && this.timeoutCount < this.timeoutLimit) {
-      // Wait for the next response or timeout
-      let response: Response | void;
-      try {
-        response = await Promise.race([
-          this.page.waitForResponse(
-            (response) => response.url().includes(this.getUrlPattern())
-          ),
-          this.page.waitForTimeout(currentWaitTimeout),
-        ]);
-      } catch (error) {
-        if (error instanceof Error && error.name === 'TimeoutError') {
-          this.timeoutCount++;
-          console.error(chalk.red(`Timeout waiting for ${this.getItemName()} response (${currentWaitTimeout}ms)`));
+      // Check the buffer first
+      let response: Response | undefined = this.responseQueue.shift();
 
-          // Take screenshot on timeout
-          const screenshotPath = path.resolve(this.dataFolder, `Timeout-${this.getItemName().replace(/ /g, "_")}-${FORMATTED_TIMESTAMP}.png`);
-          await this.page.screenshot({ path: screenshotPath });
-          console.info(chalk.yellow(`Screenshot saved to: ${screenshotPath}`));
+      if (!response) {
+        // Wait for the next response or timeout
+        try {
+          // Promise.race will either return a new response or undefined (on timeout)
+          const raceResult = await Promise.race([
+            this.page.waitForResponse(
+              (response) => response.url().includes(this.getUrlPattern())
+            ),
+            this.page.waitForTimeout(currentWaitTimeout),
+          ]);
 
-          await this.scrollPage();
-          currentWaitTimeout = Math.min(currentWaitTimeout + 5000, MAX_WAIT_TIMEOUT);
-          continue;
+          if (raceResult) {
+            response = raceResult;
+          } else {
+            // Check the queue again after timeout just in case the listener caught it
+            response = this.responseQueue.shift();
+          }
+        } catch (error) {
+          if (error instanceof Error && error.name === 'TimeoutError') {
+            this.timeoutCount++;
+            console.error(chalk.red(`Timeout waiting for ${this.getItemName()} response (${currentWaitTimeout}ms)`));
+
+            // Take screenshot on timeout
+            const screenshotPath = path.resolve(this.dataFolder, `Timeout-${this.getItemName().replace(/ /g, "_")}-${FORMATTED_TIMESTAMP}.png`);
+            await this.page.screenshot({ path: screenshotPath });
+            console.info(chalk.yellow(`Screenshot saved to: ${screenshotPath}`));
+
+            await this.scrollPage();
+            // currentWaitTimeout = Math.min(currentWaitTimeout + 5000, MAX_WAIT_TIMEOUT);
+            break;
+          }
+          throw error;
         }
-        throw error;
       }
 
       if (response) {
@@ -258,7 +280,10 @@ export abstract class BaseHandler {
         // Increase timeout for next iteration, capped at 1 minute
         currentWaitTimeout = Math.min(currentWaitTimeout + 5000, MAX_WAIT_TIMEOUT);
 
-        if (this.timeoutCount > this.timeoutLimit) {
+        if (this.timeoutCount > this.timeoutLimit || currentWaitTimeout > MAX_WAIT_TIMEOUT) {
+          if (currentWaitTimeout > MAX_WAIT_TIMEOUT) {
+            console.info(chalk.red(`Timeout waiting for ${this.getItemName()} response (${currentWaitTimeout}ms)`));
+          }
           console.info(chalk.yellow(`No more ${this.getItemName()} found, please check your search criteria and csv file result`));
           break;
         }

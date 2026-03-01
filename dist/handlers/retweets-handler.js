@@ -51,11 +51,14 @@ var RetweetsHandler = /** @class */ (function (_super) {
      * @param responseJson Response JSON data
      */
     RetweetsHandler.prototype.processResponseData = function (responseJson) {
-        var _a, _b, _c, _d, _e;
-        if (!((_e = (_d = (_c = (_b = (_a = responseJson.data) === null || _a === void 0 ? void 0 : _a.retweeters_timeline) === null || _b === void 0 ? void 0 : _b.timeline) === null || _c === void 0 ? void 0 : _c.instructions) === null || _d === void 0 ? void 0 : _d[0]) === null || _e === void 0 ? void 0 : _e.entries)) {
+        var _a, _b, _c;
+        var instructions = (_c = (_b = (_a = responseJson.data) === null || _a === void 0 ? void 0 : _a.retweeters_timeline) === null || _b === void 0 ? void 0 : _b.timeline) === null || _c === void 0 ? void 0 : _c.instructions;
+        if (!instructions || !Array.isArray(instructions)) {
             return [];
         }
-        return responseJson.data.retweeters_timeline.timeline.instructions[0].entries;
+        // Search for any instruction that has entries
+        var entriesInstruction = instructions.find(function (instruction) { return instruction.entries; });
+        return (entriesInstruction === null || entriesInstruction === void 0 ? void 0 : entriesInstruction.entries) || [];
     };
     /**
      * Get the fields to extract

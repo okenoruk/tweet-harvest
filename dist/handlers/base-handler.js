@@ -69,6 +69,7 @@ var BaseHandler = /** @class */ (function () {
      * @param delayEvery100Seconds Delay after every 100 items in seconds
      */
     function BaseHandler(page, filePath, dataFolder, targetCount, timeoutLimit, delaySeconds, delayEvery100Seconds) {
+        var _this = this;
         // Tracking variables
         this.timeoutCount = 0;
         this.additionalItemsCount = 0;
@@ -76,6 +77,8 @@ var BaseHandler = /** @class */ (function () {
         this.headerWritten = false;
         // Data storage
         this.allData = [];
+        // Response buffer
+        this.responseQueue = [];
         this.page = page;
         this.filePath = filePath;
         this.dataFolder = dataFolder;
@@ -85,6 +88,12 @@ var BaseHandler = /** @class */ (function () {
         this.delayEvery100Seconds = delayEvery100Seconds;
         // Ensure the data folder exists
         (0, file_1.ensureDirectoryExists)(dataFolder);
+        // Start listening for responses immediately
+        this.page.on('response', function (response) {
+            if (response.url().includes(_this.getUrlPattern())) {
+                _this.responseQueue.push(response);
+            }
+        });
     }
     /**
      * Handle a rate limit error
@@ -208,7 +217,7 @@ var BaseHandler = /** @class */ (function () {
      */
     BaseHandler.prototype.collect = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var currentWaitTimeout, MAX_WAIT_TIMEOUT, response, error_1, screenshotPath, responseJson, items, jsonData, fs, error_2;
+            var currentWaitTimeout, MAX_WAIT_TIMEOUT, response, raceResult, error_1, screenshotPath, responseJson, items, jsonData, fs, error_2;
             var _a;
             var _this = this;
             return __generator(this, function (_b) {
@@ -219,16 +228,24 @@ var BaseHandler = /** @class */ (function () {
                         _b.label = 1;
                     case 1:
                         if (!(this.allData.length < this.targetCount && this.timeoutCount < this.timeoutLimit)) return [3 /*break*/, 22];
-                        response = void 0;
+                        response = this.responseQueue.shift();
+                        if (!!response) return [3 /*break*/, 8];
                         _b.label = 2;
                     case 2:
                         _b.trys.push([2, 4, , 8]);
                         return [4 /*yield*/, Promise.race([
-                                this.page.waitForResponse(function (response) { return response.url().includes(_this.getUrlPattern()); }),
-                                this.page.waitForTimeout(currentWaitTimeout),
+                                this.page.waitForResponse(function (response) { return response.url().includes(_this.getUrlPattern()); }).catch(function () { return undefined; }),
+                                this.page.waitForTimeout(currentWaitTimeout).then(function () { return undefined; }),
                             ])];
                     case 3:
-                        response = _b.sent();
+                        raceResult = _b.sent();
+                        if (raceResult) {
+                            response = raceResult;
+                        }
+                        else {
+                            // Check the queue again after timeout just in case the listener caught it
+                            response = this.responseQueue.shift();
+                        }
                         return [3 /*break*/, 8];
                     case 4:
                         error_1 = _b.sent();

@@ -42,11 +42,15 @@ export class RetweetsHandler extends BaseHandler {
    * @param responseJson Response JSON data
    */
   protected processResponseData(responseJson: any): RetweetEntry[] {
-    if (!responseJson.data?.retweeters_timeline?.timeline?.instructions?.[0]?.entries) {
+    const instructions = responseJson.data?.retweeters_timeline?.timeline?.instructions;
+    if (!instructions || !Array.isArray(instructions)) {
       return [];
     }
 
-    return responseJson.data.retweeters_timeline.timeline.instructions[0].entries;
+    // Search for any instruction that has entries
+    const entriesInstruction = instructions.find((instruction: any) => instruction.entries);
+
+    return entriesInstruction?.entries || [];
   }
 
   /**

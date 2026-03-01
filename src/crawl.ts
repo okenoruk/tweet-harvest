@@ -10,6 +10,7 @@ import { CrawlMode, DEFAULT_DATA_FOLDER, FORMATTED_TIMESTAMP, SearchTab, TWITTER
 import { LikesHandler } from "./handlers/likes-handler";
 import { RetweetsHandler } from "./handlers/retweets-handler";
 import { TweetsHandler } from "./handlers/tweets-handler";
+import { BaseHandler } from "./handlers/base-handler";
 
 // Initialize stealth mode
 chromium.use(stealth());
@@ -114,12 +115,61 @@ export async function crawl({
   async function startCrawlTwitter({
     twitterSearchUrl = TWITTER_SEARCH_ADVANCED_URL[SEARCH_TAB],
   }: StartCrawlTwitterParams = {}) {
-    // Navigate to the appropriate URL
+    // Determine which handler to use based on URL and mode
+    let handler: BaseHandler;
+    let urlToGo = "";
+
     if (CRAWL_MODE === CrawlMode.DETAIL) {
-      await page.goto(TWEET_THREAD_URL);
+      urlToGo = TWEET_THREAD_URL!;
+      if (TWEET_THREAD_URL!.indexOf('/likes') > -1) {
+        handler = new LikesHandler(
+          page,
+          FILE_NAME,
+          DEFAULT_DATA_FOLDER,
+          TARGET_TWEET_COUNT,
+          20, // timeoutLimit
+          DELAY_EACH_LIKES_SECONDS,
+          1 // delayEvery100Seconds
+        );
+      } else if (TWEET_THREAD_URL!.indexOf('/retweets') > -1) {
+        handler = new RetweetsHandler(
+          page,
+          FILE_NAME,
+          DEFAULT_DATA_FOLDER,
+          TARGET_TWEET_COUNT,
+          20, // timeoutLimit
+          DELAY_EACH_LIKES_SECONDS,
+          1 // delayEvery100Seconds
+        );
+      } else {
+        handler = new TweetsHandler(
+          page,
+          FILE_NAME,
+          DEFAULT_DATA_FOLDER,
+          TARGET_TWEET_COUNT,
+          CRAWL_MODE,
+          40, // timeoutLimit
+          DELAY_EACH_TWEET_SECONDS,
+          DELAY_EVERY_100_TWEETS_SECONDS
+        );
+      }
     } else {
-      await page.goto(twitterSearchUrl);
+      urlToGo = twitterSearchUrl;
+      handler = new TweetsHandler(
+        page,
+        FILE_NAME,
+        DEFAULT_DATA_FOLDER,
+        TARGET_TWEET_COUNT,
+        CRAWL_MODE,
+        40, // timeoutLimit
+        DELAY_EACH_TWEET_SECONDS,
+        DELAY_EVERY_100_TWEETS_SECONDS
+      );
     }
+
+    // Navigate to the appropriate URL
+    console.info(chalk.gray(`Navigating to ${urlToGo}...`));
+    await page.goto(urlToGo, { waitUntil: 'domcontentloaded' });
 
     // Check if logged in
     const isLoggedIn = !page.url().includes("/login");
@@ -138,72 +188,17 @@ export async function crawl({
       });
     }
 
-    // Determine which handler to use based on URL and mode
-    if (TWEET_THREAD_URL && TWEET_THREAD_URL.indexOf('/likes') > -1) {
-      // Handle likes
-      const likesHandler = new LikesHandler(
-        page,
-        FILE_NAME,
-        DEFAULT_DATA_FOLDER,
-        TARGET_TWEET_COUNT,
-        20, // timeoutLimit
-        DELAY_EACH_LIKES_SECONDS,
-        1 // delayEvery100Seconds
-      );
+    const items = await handler.collect();
 
-      const likes = await likesHandler.collect();
-
-      if (likes.length === 0) {
-        const screenshotPath = path.resolve(DEFAULT_DATA_FOLDER, `No-Likes-${FORMATTED_TIMESTAMP}.png`).replace(/ /g, "_");
-        // No likes found, screenshot saved
-        await page.screenshot({ path: screenshotPath });
-      }
-      console.info(`Collected ${likes.length} user profiles from likes`);
-    }
-    else if (TWEET_THREAD_URL && TWEET_THREAD_URL.indexOf('/retweets') > -1) {
-      // Handle retweets
-      const retweetsHandler = new RetweetsHandler(
-        page,
-        FILE_NAME,
-        DEFAULT_DATA_FOLDER,
-        TARGET_TWEET_COUNT,
-        20, // timeoutLimit
-        DELAY_EACH_LIKES_SECONDS,
-        1 // delayEvery100Seconds
-      );
-
-      const retweets = await retweetsHandler.collect();
-
-      if (retweets.length === 0) {
-        const screenshotPath = path.resolve(DEFAULT_DATA_FOLDER, `No-Retweets-${FORMATTED_TIMESTAMP}.png`).replace(/ /g, "_");
-        // No retweets found, screenshot saved
-        await page.screenshot({ path: screenshotPath });
-      }
-      console.info(`Collected ${retweets.length} user profiles from retweets`);
-    }
-    else {
-      // Handle tweets
-      const tweetsHandler = new TweetsHandler(
-        page,
-        FILE_NAME,
-        DEFAULT_DATA_FOLDER,
-        TARGET_TWEET_COUNT,
-        CRAWL_MODE,
-        40, // timeoutLimit
-        DELAY_EACH_TWEET_SECONDS,
-        DELAY_EVERY_100_TWEETS_SECONDS
-      );
-
-      const tweets = await tweetsHandler.collect();
-
-      if (tweets.length === 0) {
+    if (items.length === 0) {
+      if (handler instanceof TweetsHandler) {
         TWEETS_NOT_FOUND_ON_CURRENT_TAB = true;
         console.info("No tweets found for the search criteria");
-        const screenshotPath = path.resolve(DEFAULT_DATA_FOLDER, `No-Tweets-${FORMATTED_TIMESTAMP}.png`).replace(/ /g, "_");
-        await page.screenshot({ path: screenshotPath });
-      } else {
-        console.info(`Collected ${tweets.length} tweets`);
       }
+      const screenshotPath = path.resolve(DEFAULT_DATA_FOLDER, `No-${handler.constructor.name}-${FORMATTED_TIMESTAMP}.png`).replace(/ /g, "_");
+      await page.screenshot({ path: screenshotPath });
+    } else {
+      console.info(`Collected ${items.length} items using ${handler.constructor.name}`);
     }
   }
 

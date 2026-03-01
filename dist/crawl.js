@@ -65,20 +65,38 @@ function crawl(_a) {
         function startCrawlTwitter(_a) {
             var _b = _a === void 0 ? {} : _a, _c = _b.twitterSearchUrl, twitterSearchUrl = _c === void 0 ? constants_1.TWITTER_SEARCH_ADVANCED_URL[SEARCH_TAB] : _c;
             return __awaiter(this, void 0, void 0, function () {
-                var isLoggedIn, likesHandler, likes, screenshotPath, retweetsHandler, retweets, screenshotPath, tweetsHandler, tweets, screenshotPath;
+                var handler, urlToGo, isLoggedIn, items, screenshotPath;
                 return __generator(this, function (_d) {
                     switch (_d.label) {
                         case 0:
-                            if (!(CRAWL_MODE === constants_1.CrawlMode.DETAIL)) return [3 /*break*/, 2];
-                            return [4 /*yield*/, page.goto(TWEET_THREAD_URL)];
+                            urlToGo = "";
+                            if (CRAWL_MODE === constants_1.CrawlMode.DETAIL) {
+                                urlToGo = TWEET_THREAD_URL;
+                                if (TWEET_THREAD_URL.indexOf('/likes') > -1) {
+                                    handler = new likes_handler_1.LikesHandler(page, FILE_NAME, constants_1.DEFAULT_DATA_FOLDER, TARGET_TWEET_COUNT, 20, // timeoutLimit
+                                    DELAY_EACH_LIKES_SECONDS, 1 // delayEvery100Seconds
+                                    );
+                                }
+                                else if (TWEET_THREAD_URL.indexOf('/retweets') > -1) {
+                                    handler = new retweets_handler_1.RetweetsHandler(page, FILE_NAME, constants_1.DEFAULT_DATA_FOLDER, TARGET_TWEET_COUNT, 20, // timeoutLimit
+                                    DELAY_EACH_LIKES_SECONDS, 1 // delayEvery100Seconds
+                                    );
+                                }
+                                else {
+                                    handler = new tweets_handler_1.TweetsHandler(page, FILE_NAME, constants_1.DEFAULT_DATA_FOLDER, TARGET_TWEET_COUNT, CRAWL_MODE, 40, // timeoutLimit
+                                    DELAY_EACH_TWEET_SECONDS, DELAY_EVERY_100_TWEETS_SECONDS);
+                                }
+                            }
+                            else {
+                                urlToGo = twitterSearchUrl;
+                                handler = new tweets_handler_1.TweetsHandler(page, FILE_NAME, constants_1.DEFAULT_DATA_FOLDER, TARGET_TWEET_COUNT, CRAWL_MODE, 40, // timeoutLimit
+                                DELAY_EACH_TWEET_SECONDS, DELAY_EVERY_100_TWEETS_SECONDS);
+                            }
+                            // Navigate to the appropriate URL
+                            console.info(chalk_1.default.gray("Navigating to ".concat(urlToGo, "...")));
+                            return [4 /*yield*/, page.goto(urlToGo, { waitUntil: 'domcontentloaded' })];
                         case 1:
                             _d.sent();
-                            return [3 /*break*/, 4];
-                        case 2: return [4 /*yield*/, page.goto(twitterSearchUrl)];
-                        case 3:
-                            _d.sent();
-                            _d.label = 4;
-                        case 4:
                             isLoggedIn = !page.url().includes("/login");
                             if (!isLoggedIn) {
                                 console.error("Invalid twitter auth token. Please check your auth token");
@@ -93,61 +111,23 @@ function crawl(_a) {
                                     MODIFIED_SEARCH_KEYWORDS: SEARCH_KEYWORDS,
                                 });
                             }
-                            if (!(TWEET_THREAD_URL && TWEET_THREAD_URL.indexOf('/likes') > -1)) return [3 /*break*/, 8];
-                            likesHandler = new likes_handler_1.LikesHandler(page, FILE_NAME, constants_1.DEFAULT_DATA_FOLDER, TARGET_TWEET_COUNT, 20, // timeoutLimit
-                            DELAY_EACH_LIKES_SECONDS, 1 // delayEvery100Seconds
-                            );
-                            return [4 /*yield*/, likesHandler.collect()];
-                        case 5:
-                            likes = _d.sent();
-                            if (!(likes.length === 0)) return [3 /*break*/, 7];
-                            screenshotPath = path_1.default.resolve(constants_1.DEFAULT_DATA_FOLDER, "No-Likes-".concat(constants_1.FORMATTED_TIMESTAMP, ".png")).replace(/ /g, "_");
-                            // No likes found, screenshot saved
+                            return [4 /*yield*/, handler.collect()];
+                        case 2:
+                            items = _d.sent();
+                            if (!(items.length === 0)) return [3 /*break*/, 4];
+                            if (handler instanceof tweets_handler_1.TweetsHandler) {
+                                TWEETS_NOT_FOUND_ON_CURRENT_TAB = true;
+                                console.info("No tweets found for the search criteria");
+                            }
+                            screenshotPath = path_1.default.resolve(constants_1.DEFAULT_DATA_FOLDER, "No-".concat(handler.constructor.name, "-").concat(constants_1.FORMATTED_TIMESTAMP, ".png")).replace(/ /g, "_");
                             return [4 /*yield*/, page.screenshot({ path: screenshotPath })];
-                        case 6:
-                            // No likes found, screenshot saved
+                        case 3:
                             _d.sent();
-                            _d.label = 7;
-                        case 7:
-                            console.info("Collected ".concat(likes.length, " user profiles from likes"));
-                            return [3 /*break*/, 16];
-                        case 8:
-                            if (!(TWEET_THREAD_URL && TWEET_THREAD_URL.indexOf('/retweets') > -1)) return [3 /*break*/, 12];
-                            retweetsHandler = new retweets_handler_1.RetweetsHandler(page, FILE_NAME, constants_1.DEFAULT_DATA_FOLDER, TARGET_TWEET_COUNT, 20, // timeoutLimit
-                            DELAY_EACH_LIKES_SECONDS, 1 // delayEvery100Seconds
-                            );
-                            return [4 /*yield*/, retweetsHandler.collect()];
-                        case 9:
-                            retweets = _d.sent();
-                            if (!(retweets.length === 0)) return [3 /*break*/, 11];
-                            screenshotPath = path_1.default.resolve(constants_1.DEFAULT_DATA_FOLDER, "No-Retweets-".concat(constants_1.FORMATTED_TIMESTAMP, ".png")).replace(/ /g, "_");
-                            // No retweets found, screenshot saved
-                            return [4 /*yield*/, page.screenshot({ path: screenshotPath })];
-                        case 10:
-                            // No retweets found, screenshot saved
-                            _d.sent();
-                            _d.label = 11;
-                        case 11:
-                            console.info("Collected ".concat(retweets.length, " user profiles from retweets"));
-                            return [3 /*break*/, 16];
-                        case 12:
-                            tweetsHandler = new tweets_handler_1.TweetsHandler(page, FILE_NAME, constants_1.DEFAULT_DATA_FOLDER, TARGET_TWEET_COUNT, CRAWL_MODE, 40, // timeoutLimit
-                            DELAY_EACH_TWEET_SECONDS, DELAY_EVERY_100_TWEETS_SECONDS);
-                            return [4 /*yield*/, tweetsHandler.collect()];
-                        case 13:
-                            tweets = _d.sent();
-                            if (!(tweets.length === 0)) return [3 /*break*/, 15];
-                            TWEETS_NOT_FOUND_ON_CURRENT_TAB = true;
-                            console.info("No tweets found for the search criteria");
-                            screenshotPath = path_1.default.resolve(constants_1.DEFAULT_DATA_FOLDER, "No-Tweets-".concat(constants_1.FORMATTED_TIMESTAMP, ".png")).replace(/ /g, "_");
-                            return [4 /*yield*/, page.screenshot({ path: screenshotPath })];
-                        case 14:
-                            _d.sent();
-                            return [3 /*break*/, 16];
-                        case 15:
-                            console.info("Collected ".concat(tweets.length, " tweets"));
-                            _d.label = 16;
-                        case 16: return [2 /*return*/];
+                            return [3 /*break*/, 5];
+                        case 4:
+                            console.info("Collected ".concat(items.length, " items using ").concat(handler.constructor.name));
+                            _d.label = 5;
+                        case 5: return [2 /*return*/];
                     }
                 });
             });

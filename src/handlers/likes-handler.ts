@@ -42,11 +42,15 @@ export class LikesHandler extends BaseHandler {
    * @param responseJson Response JSON data
    */
   protected processResponseData(responseJson: any): FavEntry[] {
-    if (!responseJson.data?.favoriters_timeline?.timeline?.instructions?.[0]?.entries) {
+    const instructions = responseJson.data?.favoriters_timeline?.timeline?.instructions;
+    if (!instructions || !Array.isArray(instructions)) {
       return [];
     }
 
-    return responseJson.data.favoriters_timeline.timeline.instructions[0].entries;
+    // Search for any instruction that has entries
+    const entriesInstruction = instructions.find((instruction: any) => instruction.entries);
+
+    return entriesInstruction?.entries || [];
   }
 
   /**
