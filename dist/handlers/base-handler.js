@@ -234,8 +234,8 @@ var BaseHandler = /** @class */ (function () {
                     case 2:
                         _b.trys.push([2, 4, , 8]);
                         return [4 /*yield*/, Promise.race([
-                                this.page.waitForResponse(function (response) { return response.url().includes(_this.getUrlPattern()); }).catch(function () { return undefined; }),
-                                this.page.waitForTimeout(currentWaitTimeout).then(function () { return undefined; }),
+                                this.page.waitForResponse(function (response) { return response.url().includes(_this.getUrlPattern()); }),
+                                this.page.waitForTimeout(currentWaitTimeout),
                             ])];
                     case 3:
                         raceResult = _b.sent();
@@ -260,8 +260,8 @@ var BaseHandler = /** @class */ (function () {
                         return [4 /*yield*/, this.scrollPage()];
                     case 6:
                         _b.sent();
-                        currentWaitTimeout = Math.min(currentWaitTimeout + 5000, MAX_WAIT_TIMEOUT);
-                        return [3 /*break*/, 1];
+                        // currentWaitTimeout = Math.min(currentWaitTimeout + 5000, MAX_WAIT_TIMEOUT);
+                        return [3 /*break*/, 22];
                     case 7: throw error_1;
                     case 8:
                         if (!response) return [3 /*break*/, 18];
@@ -316,7 +316,10 @@ var BaseHandler = /** @class */ (function () {
                         console.info(chalk_1.default.gray("Scrolling more... (Waiting for ".concat(currentWaitTimeout / 1000, "s)")));
                         // Increase timeout for next iteration, capped at 1 minute
                         currentWaitTimeout = Math.min(currentWaitTimeout + 5000, MAX_WAIT_TIMEOUT);
-                        if (this.timeoutCount > this.timeoutLimit) {
+                        if (this.timeoutCount > this.timeoutLimit || currentWaitTimeout > MAX_WAIT_TIMEOUT) {
+                            if (currentWaitTimeout > MAX_WAIT_TIMEOUT) {
+                                console.info(chalk_1.default.red("Timeout waiting for ".concat(this.getItemName(), " response (").concat(currentWaitTimeout, "ms)")));
+                            }
                             console.info(chalk_1.default.yellow("No more ".concat(this.getItemName(), " found, please check your search criteria and csv file result")));
                             return [3 /*break*/, 22];
                         }
