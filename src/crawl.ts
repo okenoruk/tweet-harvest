@@ -10,6 +10,7 @@ import { CrawlMode, DEFAULT_DATA_FOLDER, FORMATTED_TIMESTAMP, SearchTab, TWITTER
 import { LikesHandler } from "./handlers/likes-handler";
 import { RetweetsHandler } from "./handlers/retweets-handler";
 import { TweetsHandler } from "./handlers/tweets-handler";
+import { RepliesHandler } from "./handlers/replies-handler";
 import { BaseHandler } from "./handlers/base-handler";
 
 // Initialize stealth mode
@@ -142,15 +143,15 @@ export async function crawl({
           1 // delayEvery100Seconds
         );
       } else {
-        handler = new TweetsHandler(
+        // Plain tweet URL → collect all replies via TweetDetail API
+        handler = new RepliesHandler(
           page,
           FILE_NAME,
           DEFAULT_DATA_FOLDER,
           TARGET_TWEET_COUNT,
-          CRAWL_MODE,
-          40, // timeoutLimit
-          DELAY_EACH_TWEET_SECONDS,
-          DELAY_EVERY_100_TWEETS_SECONDS
+          20, // timeoutLimit
+          DELAY_EACH_LIKES_SECONDS,
+          1 // delayEvery100Seconds
         );
       }
     } else {

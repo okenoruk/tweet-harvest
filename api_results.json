@@ -1,476 +1,643 @@
 [
   {
-    "content": {
-      "__typename": "TimelineTimelineItem",
-      "entryType": "TimelineTimelineItem",
-      "itemContent": {
-        "__typename": "TimelineUser",
-        "itemType": "TimelineUser",
-        "userDisplayType": "User",
-        "user_results": {
-          "result": {
-            "__typename": "User",
-            "affiliates_highlighted_label": {},
-            "avatar": {
-              "image_url": "https://pbs.twimg.com/profile_images/1364487032429449217/8KT4k5Ay_normal.jpg"
-            },
-            "core": {
-              "created_at": "Wed Feb 24 08:04:42 +0000 2021",
-              "name": "Furayah",
-              "screen_name": "Furayah2"
-            },
-            "dm_permissions": {
-              "can_dm": true
-            },
-            "follow_request_sent": false,
-            "has_graduated_access": true,
-            "id": "VXNlcjoxMzY0NDg2MjcyMTE5NTI5NDc5",
-            "is_blue_verified": false,
-            "legacy": {
-              "default_profile": true,
-              "default_profile_image": false,
-              "description": "happy beauty",
-              "entities": {
-                "description": {
-                  "urls": []
-                }
-              },
-              "fast_followers_count": 0,
-              "favourites_count": 828,
-              "follow_request_sent": false,
-              "followers_count": 1702,
-              "friends_count": 1824,
-              "has_custom_timelines": true,
-              "is_translator": false,
-              "listed_count": 0,
-              "media_count": 604,
-              "normal_followers_count": 1702,
-              "notifications": false,
-              "pinned_tweet_ids_str": [
-                "1619927802710732800"
-              ],
-              "possibly_sensitive": false,
-              "profile_interstitial_type": "",
-              "statuses_count": 2678,
-              "translator_type": "none",
-              "want_retweets": false,
-              "withheld_in_countries": []
-            },
-            "location": {
-              "location": ""
-            },
-            "media_permissions": {
-              "can_media_tag": true
-            },
-            "parody_commentary_fan_label": "None",
-            "privacy": {
-              "protected": false
-            },
-            "professional": {
-              "category": [
-                {
-                  "icon_name": "IconBriefcaseStroke",
-                  "id": 103,
-                  "name": "Beauty, Cosmetic & Personal Care"
-                }
-              ],
-              "professional_type": "Creator",
-              "rest_id": "1570712314751623178"
-            },
-            "profile_bio": {
-              "description": "happy beauty"
-            },
-            "profile_description_language": "en",
-            "profile_image_shape": "Circle",
-            "relationship_perspectives": {
-              "blocked_by": false,
-              "blocking": false,
-              "followed_by": false,
-              "following": false,
-              "muting": false
-            },
-            "rest_id": "1364486272119529479",
-            "super_follow_eligible": false,
-            "super_followed_by": false,
-            "super_following": false,
-            "verification": {
-              "verified": false
-            }
+    "tweet": {
+      "bookmark_count": 0,
+      "bookmarked": false,
+      "conversation_id_str": "2026826810747715848",
+      "created_at": "Fri Feb 27 03:07:56 +0000 2026",
+      "display_text_range": [
+        16,
+        121
+      ],
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "timestamps": [],
+        "urls": [],
+        "user_mentions": [
+          {
+            "id_str": "346303384",
+            "indices": [
+              0,
+              15
+            ],
+            "name": "BNPB Indonesia",
+            "screen_name": "BNPB_Indonesia"
+          },
+          {
+            "id_str": "1720665183188922368",
+            "indices": [
+              115,
+              120
+            ],
+            "name": "Grok",
+            "screen_name": "grok"
           }
+        ]
+      },
+      "favorite_count": 0,
+      "favorited": false,
+      "full_text": "@BNPB_Indonesia Berapa Kepala keluarga korban bencana di aceh tamiang yang menjadi korban bencana kehilangan rumah @grok?",
+      "id_str": "2027219119905603767",
+      "in_reply_to_screen_name": "BNPB_Indonesia",
+      "in_reply_to_status_id_str": "2026826810747715848",
+      "in_reply_to_user_id_str": "346303384",
+      "is_quote_status": false,
+      "lang": "in",
+      "quote_count": 0,
+      "reply_count": 1,
+      "retweet_count": 0,
+      "retweeted": false,
+      "user_id_str": "1527122829938139136"
+    },
+    "user": {
+      "default_profile": true,
+      "default_profile_image": false,
+      "description": "mencari kebenaran yang tertindas",
+      "entities": {
+        "description": {
+          "urls": []
         }
+      },
+      "fast_followers_count": 0,
+      "favourites_count": 8662,
+      "follow_request_sent": false,
+      "followers_count": 101,
+      "friends_count": 14,
+      "has_custom_timelines": false,
+      "is_translator": false,
+      "listed_count": 0,
+      "media_count": 512,
+      "normal_followers_count": 101,
+      "notifications": false,
+      "pinned_tweet_ids_str": [],
+      "possibly_sensitive": false,
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/1527122829938139136/1652930262",
+      "profile_interstitial_type": "",
+      "statuses_count": 12050,
+      "translator_type": "none",
+      "want_retweets": false,
+      "withheld_in_countries": []
+    },
+    "userDetail": {
+      "__typename": "User",
+      "affiliates_highlighted_label": {},
+      "avatar": {
+        "image_url": "https://pbs.twimg.com/profile_images/1527126321410674689/Ez_nkPC6_normal.jpg"
+      },
+      "core": {
+        "created_at": "Thu May 19 03:04:05 +0000 2022",
+        "name": "SUARA KRISTEN 🇮🇩🇮🇩🇮🇩🇮🇩",
+        "screen_name": "SUARAKRISTEN1"
+      },
+      "dm_permissions": {
+        "can_dm": true
+      },
+      "follow_request_sent": false,
+      "has_graduated_access": true,
+      "id": "VXNlcjoxNTI3MTIyODI5OTM4MTM5MTM2",
+      "is_blue_verified": false,
+      "legacy": {
+        "default_profile": true,
+        "default_profile_image": false,
+        "description": "mencari kebenaran yang tertindas",
+        "entities": {
+          "description": {
+            "urls": []
+          }
+        },
+        "fast_followers_count": 0,
+        "favourites_count": 8662,
+        "follow_request_sent": false,
+        "followers_count": 101,
+        "friends_count": 14,
+        "has_custom_timelines": false,
+        "is_translator": false,
+        "listed_count": 0,
+        "media_count": 512,
+        "normal_followers_count": 101,
+        "notifications": false,
+        "pinned_tweet_ids_str": [],
+        "possibly_sensitive": false,
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/1527122829938139136/1652930262",
+        "profile_interstitial_type": "",
+        "statuses_count": 12050,
+        "translator_type": "none",
+        "want_retweets": false,
+        "withheld_in_countries": []
+      },
+      "location": {
+        "location": "East Borneo, Indonesia"
+      },
+      "media_permissions": {
+        "can_media_tag": true
+      },
+      "parody_commentary_fan_label": "None",
+      "privacy": {
+        "protected": false
+      },
+      "profile_bio": {
+        "description": "mencari kebenaran yang tertindas"
+      },
+      "profile_description_language": "in",
+      "profile_image_shape": "Circle",
+      "relationship_perspectives": {
+        "blocked_by": false,
+        "blocking": false,
+        "followed_by": false,
+        "following": false,
+        "muting": false
+      },
+      "rest_id": "1527122829938139136",
+      "super_follow_eligible": false,
+      "super_followed_by": false,
+      "super_following": false,
+      "verification": {
+        "verified": false
       }
     },
-    "entryId": "entry-1000000",
-    "sortIndex": "1000000"
+    "views": {
+      "count": "22",
+      "state": "EnabledWithCount"
+    },
+    "rest_id": "2027219119905603767",
+    "userName": "SUARA KRISTEN 🇮🇩🇮🇩🇮🇩🇮🇩",
+    "userScreenName": "SUARAKRISTEN1",
+    "userLocation": "East Borneo, Indonesia"
   },
   {
-    "content": {
-      "__typename": "TimelineTimelineItem",
-      "entryType": "TimelineTimelineItem",
-      "itemContent": {
-        "__typename": "TimelineUser",
-        "itemType": "TimelineUser",
-        "userDisplayType": "User",
-        "user_results": {
-          "result": {
-            "__typename": "User",
-            "affiliates_highlighted_label": {},
-            "avatar": {
-              "image_url": "https://pbs.twimg.com/profile_images/1440932039/DSC_0000022_normal.jpg"
-            },
-            "core": {
-              "created_at": "Wed Nov 04 18:20:53 +0000 2009",
-              "name": "Nur afandy",
-              "screen_name": "Nur_Afandy_PKH"
-            },
-            "dm_permissions": {
-              "can_dm": false
-            },
-            "follow_request_sent": false,
-            "has_graduated_access": true,
-            "id": "VXNlcjo4NzQ5Nzc1Nw==",
-            "is_blue_verified": false,
-            "legacy": {
-              "default_profile": true,
-              "default_profile_image": false,
-              "description": "",
-              "entities": {
-                "description": {
-                  "urls": []
-                }
-              },
-              "fast_followers_count": 0,
-              "favourites_count": 7069,
-              "follow_request_sent": false,
-              "followers_count": 147,
-              "friends_count": 900,
-              "has_custom_timelines": true,
-              "is_translator": false,
-              "listed_count": 0,
-              "media_count": 32,
-              "normal_followers_count": 147,
-              "notifications": false,
-              "pinned_tweet_ids_str": [],
-              "possibly_sensitive": false,
-              "profile_interstitial_type": "",
-              "statuses_count": 1054,
-              "translator_type": "none",
-              "want_retweets": false,
-              "withheld_in_countries": []
-            },
-            "location": {
-              "location": "Indonesia"
-            },
-            "media_permissions": {
-              "can_media_tag": false
-            },
-            "parody_commentary_fan_label": "None",
-            "privacy": {
-              "protected": false
-            },
-            "profile_bio": {
-              "description": ""
-            },
-            "profile_image_shape": "Circle",
-            "relationship_perspectives": {
-              "blocked_by": false,
-              "blocking": false,
-              "followed_by": false,
-              "following": false,
-              "muting": false
-            },
-            "rest_id": "87497757",
-            "super_follow_eligible": false,
-            "super_followed_by": false,
-            "super_following": false,
-            "verification": {
-              "verified": false
-            }
+    "tweet": {
+      "bookmark_count": 0,
+      "bookmarked": false,
+      "conversation_id_str": "2026826810747715848",
+      "created_at": "Fri Feb 27 03:08:29 +0000 2026",
+      "display_text_range": [
+        16,
+        60
+      ],
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "timestamps": [],
+        "urls": [],
+        "user_mentions": [
+          {
+            "id_str": "346303384",
+            "indices": [
+              0,
+              15
+            ],
+            "name": "BNPB Indonesia",
+            "screen_name": "BNPB_Indonesia"
           }
+        ]
+      },
+      "favorite_count": 0,
+      "favorited": false,
+      "full_text": "@BNPB_Indonesia Kapan pencairan dana yang sudah didata itu?.",
+      "id_str": "2027219255268348041",
+      "in_reply_to_screen_name": "BNPB_Indonesia",
+      "in_reply_to_status_id_str": "2026826810747715848",
+      "in_reply_to_user_id_str": "346303384",
+      "is_quote_status": false,
+      "lang": "in",
+      "quote_count": 0,
+      "reply_count": 0,
+      "retweet_count": 0,
+      "retweeted": false,
+      "user_id_str": "1527122829938139136"
+    },
+    "user": {
+      "default_profile": true,
+      "default_profile_image": false,
+      "description": "mencari kebenaran yang tertindas",
+      "entities": {
+        "description": {
+          "urls": []
         }
+      },
+      "fast_followers_count": 0,
+      "favourites_count": 8662,
+      "follow_request_sent": false,
+      "followers_count": 101,
+      "friends_count": 14,
+      "has_custom_timelines": false,
+      "is_translator": false,
+      "listed_count": 0,
+      "media_count": 512,
+      "normal_followers_count": 101,
+      "notifications": false,
+      "pinned_tweet_ids_str": [],
+      "possibly_sensitive": false,
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/1527122829938139136/1652930262",
+      "profile_interstitial_type": "",
+      "statuses_count": 12050,
+      "translator_type": "none",
+      "want_retweets": false,
+      "withheld_in_countries": []
+    },
+    "userDetail": {
+      "__typename": "User",
+      "affiliates_highlighted_label": {},
+      "avatar": {
+        "image_url": "https://pbs.twimg.com/profile_images/1527126321410674689/Ez_nkPC6_normal.jpg"
+      },
+      "core": {
+        "created_at": "Thu May 19 03:04:05 +0000 2022",
+        "name": "SUARA KRISTEN 🇮🇩🇮🇩🇮🇩🇮🇩",
+        "screen_name": "SUARAKRISTEN1"
+      },
+      "dm_permissions": {
+        "can_dm": true
+      },
+      "follow_request_sent": false,
+      "has_graduated_access": true,
+      "id": "VXNlcjoxNTI3MTIyODI5OTM4MTM5MTM2",
+      "is_blue_verified": false,
+      "legacy": {
+        "default_profile": true,
+        "default_profile_image": false,
+        "description": "mencari kebenaran yang tertindas",
+        "entities": {
+          "description": {
+            "urls": []
+          }
+        },
+        "fast_followers_count": 0,
+        "favourites_count": 8662,
+        "follow_request_sent": false,
+        "followers_count": 101,
+        "friends_count": 14,
+        "has_custom_timelines": false,
+        "is_translator": false,
+        "listed_count": 0,
+        "media_count": 512,
+        "normal_followers_count": 101,
+        "notifications": false,
+        "pinned_tweet_ids_str": [],
+        "possibly_sensitive": false,
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/1527122829938139136/1652930262",
+        "profile_interstitial_type": "",
+        "statuses_count": 12050,
+        "translator_type": "none",
+        "want_retweets": false,
+        "withheld_in_countries": []
+      },
+      "location": {
+        "location": "East Borneo, Indonesia"
+      },
+      "media_permissions": {
+        "can_media_tag": true
+      },
+      "parody_commentary_fan_label": "None",
+      "privacy": {
+        "protected": false
+      },
+      "profile_bio": {
+        "description": "mencari kebenaran yang tertindas"
+      },
+      "profile_description_language": "in",
+      "profile_image_shape": "Circle",
+      "relationship_perspectives": {
+        "blocked_by": false,
+        "blocking": false,
+        "followed_by": false,
+        "following": false,
+        "muting": false
+      },
+      "rest_id": "1527122829938139136",
+      "super_follow_eligible": false,
+      "super_followed_by": false,
+      "super_following": false,
+      "verification": {
+        "verified": false
       }
     },
-    "entryId": "entry-999999",
-    "sortIndex": "999999"
+    "views": {
+      "count": "16",
+      "state": "EnabledWithCount"
+    },
+    "rest_id": "2027219255268348041",
+    "userName": "SUARA KRISTEN 🇮🇩🇮🇩🇮🇩🇮🇩",
+    "userScreenName": "SUARAKRISTEN1",
+    "userLocation": "East Borneo, Indonesia"
   },
   {
-    "content": {
-      "__typename": "TimelineTimelineItem",
-      "entryType": "TimelineTimelineItem",
-      "itemContent": {
-        "__typename": "TimelineUser",
-        "itemType": "TimelineUser",
-        "userDisplayType": "User",
-        "user_results": {
-          "result": {
-            "__typename": "User",
-            "affiliates_highlighted_label": {},
-            "avatar": {
-              "image_url": "https://pbs.twimg.com/profile_images/1954066610953883648/LrT-KMtx_normal.jpg"
-            },
-            "core": {
-              "created_at": "Sat Aug 09 06:24:44 +0000 2025",
-              "name": "Mokhamad Irwan",
-              "screen_name": "MIrwan74091"
-            },
-            "dm_permissions": {
-              "can_dm": false
-            },
-            "follow_request_sent": false,
-            "has_graduated_access": true,
-            "id": "VXNlcjoxOTU0MDY2MTg2MjkzMTk0NzUy",
-            "is_blue_verified": false,
-            "legacy": {
-              "default_profile": true,
-              "default_profile_image": false,
-              "description": "",
-              "entities": {
-                "description": {
-                  "urls": []
-                }
-              },
-              "fast_followers_count": 0,
-              "favourites_count": 286,
-              "follow_request_sent": false,
-              "followers_count": 2,
-              "friends_count": 12,
-              "has_custom_timelines": false,
-              "is_translator": false,
-              "listed_count": 0,
-              "media_count": 0,
-              "normal_followers_count": 2,
-              "notifications": false,
-              "pinned_tweet_ids_str": [],
-              "possibly_sensitive": false,
-              "profile_interstitial_type": "",
-              "statuses_count": 362,
-              "translator_type": "none",
-              "want_retweets": false,
-              "withheld_in_countries": []
-            },
-            "location": {
-              "location": ""
-            },
-            "media_permissions": {
-              "can_media_tag": true
-            },
-            "parody_commentary_fan_label": "None",
-            "privacy": {
-              "protected": false
-            },
-            "profile_bio": {
-              "description": ""
-            },
-            "profile_image_shape": "Circle",
-            "relationship_perspectives": {
-              "blocked_by": false,
-              "blocking": false,
-              "followed_by": false,
-              "following": false,
-              "muting": false
-            },
-            "rest_id": "1954066186293194752",
-            "super_follow_eligible": false,
-            "super_followed_by": false,
-            "super_following": false,
-            "verification": {
-              "verified": false
-            }
+    "tweet": {
+      "bookmark_count": 0,
+      "bookmarked": false,
+      "conversation_id_str": "2026826810747715848",
+      "created_at": "Fri Feb 27 03:07:16 +0000 2026",
+      "display_text_range": [
+        16,
+        59
+      ],
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "timestamps": [],
+        "urls": [],
+        "user_mentions": [
+          {
+            "id_str": "346303384",
+            "indices": [
+              0,
+              15
+            ],
+            "name": "BNPB Indonesia",
+            "screen_name": "BNPB_Indonesia"
           }
+        ]
+      },
+      "favorite_count": 0,
+      "favorited": false,
+      "full_text": "@BNPB_Indonesia Apakah hanya 30 kk yang sanggup ditampung?.",
+      "id_str": "2027218949419803121",
+      "in_reply_to_screen_name": "BNPB_Indonesia",
+      "in_reply_to_status_id_str": "2026826810747715848",
+      "in_reply_to_user_id_str": "346303384",
+      "is_quote_status": false,
+      "lang": "in",
+      "quote_count": 0,
+      "reply_count": 0,
+      "retweet_count": 0,
+      "retweeted": false,
+      "user_id_str": "1527122829938139136"
+    },
+    "user": {
+      "default_profile": true,
+      "default_profile_image": false,
+      "description": "mencari kebenaran yang tertindas",
+      "entities": {
+        "description": {
+          "urls": []
         }
+      },
+      "fast_followers_count": 0,
+      "favourites_count": 8662,
+      "follow_request_sent": false,
+      "followers_count": 101,
+      "friends_count": 14,
+      "has_custom_timelines": false,
+      "is_translator": false,
+      "listed_count": 0,
+      "media_count": 512,
+      "normal_followers_count": 101,
+      "notifications": false,
+      "pinned_tweet_ids_str": [],
+      "possibly_sensitive": false,
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/1527122829938139136/1652930262",
+      "profile_interstitial_type": "",
+      "statuses_count": 12050,
+      "translator_type": "none",
+      "want_retweets": false,
+      "withheld_in_countries": []
+    },
+    "userDetail": {
+      "__typename": "User",
+      "affiliates_highlighted_label": {},
+      "avatar": {
+        "image_url": "https://pbs.twimg.com/profile_images/1527126321410674689/Ez_nkPC6_normal.jpg"
+      },
+      "core": {
+        "created_at": "Thu May 19 03:04:05 +0000 2022",
+        "name": "SUARA KRISTEN 🇮🇩🇮🇩🇮🇩🇮🇩",
+        "screen_name": "SUARAKRISTEN1"
+      },
+      "dm_permissions": {
+        "can_dm": true
+      },
+      "follow_request_sent": false,
+      "has_graduated_access": true,
+      "id": "VXNlcjoxNTI3MTIyODI5OTM4MTM5MTM2",
+      "is_blue_verified": false,
+      "legacy": {
+        "default_profile": true,
+        "default_profile_image": false,
+        "description": "mencari kebenaran yang tertindas",
+        "entities": {
+          "description": {
+            "urls": []
+          }
+        },
+        "fast_followers_count": 0,
+        "favourites_count": 8662,
+        "follow_request_sent": false,
+        "followers_count": 101,
+        "friends_count": 14,
+        "has_custom_timelines": false,
+        "is_translator": false,
+        "listed_count": 0,
+        "media_count": 512,
+        "normal_followers_count": 101,
+        "notifications": false,
+        "pinned_tweet_ids_str": [],
+        "possibly_sensitive": false,
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/1527122829938139136/1652930262",
+        "profile_interstitial_type": "",
+        "statuses_count": 12050,
+        "translator_type": "none",
+        "want_retweets": false,
+        "withheld_in_countries": []
+      },
+      "location": {
+        "location": "East Borneo, Indonesia"
+      },
+      "media_permissions": {
+        "can_media_tag": true
+      },
+      "parody_commentary_fan_label": "None",
+      "privacy": {
+        "protected": false
+      },
+      "profile_bio": {
+        "description": "mencari kebenaran yang tertindas"
+      },
+      "profile_description_language": "in",
+      "profile_image_shape": "Circle",
+      "relationship_perspectives": {
+        "blocked_by": false,
+        "blocking": false,
+        "followed_by": false,
+        "following": false,
+        "muting": false
+      },
+      "rest_id": "1527122829938139136",
+      "super_follow_eligible": false,
+      "super_followed_by": false,
+      "super_following": false,
+      "verification": {
+        "verified": false
       }
     },
-    "entryId": "entry-999998",
-    "sortIndex": "999998"
+    "views": {
+      "count": "15",
+      "state": "EnabledWithCount"
+    },
+    "rest_id": "2027218949419803121",
+    "userName": "SUARA KRISTEN 🇮🇩🇮🇩🇮🇩🇮🇩",
+    "userScreenName": "SUARAKRISTEN1",
+    "userLocation": "East Borneo, Indonesia"
   },
   {
-    "content": {
-      "__typename": "TimelineTimelineItem",
-      "entryType": "TimelineTimelineItem",
-      "itemContent": {
-        "__typename": "TimelineUser",
-        "itemType": "TimelineUser",
-        "userDisplayType": "User",
-        "user_results": {
-          "result": {
-            "__typename": "User",
-            "affiliates_highlighted_label": {},
-            "avatar": {
-              "image_url": "https://pbs.twimg.com/profile_images/1920318939550396416/zq8phjLB_normal.png"
-            },
-            "core": {
-              "created_at": "Thu May 08 03:24:47 +0000 2025",
-              "name": "alfirah fifi",
-              "screen_name": "fifi06109"
-            },
-            "dm_permissions": {
-              "can_dm": false
-            },
-            "follow_request_sent": false,
-            "has_graduated_access": true,
-            "id": "VXNlcjoxOTIwMzE4ODU4MTg5MjA5NjAw",
-            "is_blue_verified": false,
-            "legacy": {
-              "default_profile": true,
-              "default_profile_image": false,
-              "description": "",
-              "entities": {
-                "description": {
-                  "urls": []
-                }
-              },
-              "fast_followers_count": 0,
-              "favourites_count": 1,
-              "follow_request_sent": false,
-              "followers_count": 0,
-              "friends_count": 2,
-              "has_custom_timelines": false,
-              "is_translator": false,
-              "listed_count": 0,
-              "media_count": 0,
-              "normal_followers_count": 0,
-              "notifications": false,
-              "pinned_tweet_ids_str": [],
-              "possibly_sensitive": false,
-              "profile_interstitial_type": "",
-              "statuses_count": 2,
-              "translator_type": "none",
-              "want_retweets": false,
-              "withheld_in_countries": []
-            },
-            "location": {
-              "location": ""
-            },
-            "media_permissions": {
-              "can_media_tag": true
-            },
-            "parody_commentary_fan_label": "None",
-            "privacy": {
-              "protected": false
-            },
-            "profile_bio": {
-              "description": ""
-            },
-            "profile_image_shape": "Circle",
-            "relationship_perspectives": {
-              "blocked_by": false,
-              "blocking": false,
-              "followed_by": false,
-              "following": false,
-              "muting": false
-            },
-            "rest_id": "1920318858189209600",
-            "super_follow_eligible": false,
-            "super_followed_by": false,
-            "super_following": false,
-            "verification": {
-              "verified": false
-            }
+    "tweet": {
+      "bookmark_count": 0,
+      "bookmarked": false,
+      "conversation_id_str": "2026826810747715848",
+      "created_at": "Thu Feb 26 01:20:03 +0000 2026",
+      "display_text_range": [
+        16,
+        26
+      ],
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "timestamps": [],
+        "urls": [],
+        "user_mentions": [
+          {
+            "id_str": "346303384",
+            "indices": [
+              0,
+              15
+            ],
+            "name": "BNPB Indonesia",
+            "screen_name": "BNPB_Indonesia"
           }
+        ]
+      },
+      "favorite_count": 0,
+      "favorited": false,
+      "full_text": "@BNPB_Indonesia Halo juga.",
+      "id_str": "2026829581177729129",
+      "in_reply_to_screen_name": "BNPB_Indonesia",
+      "in_reply_to_status_id_str": "2026826810747715848",
+      "in_reply_to_user_id_str": "346303384",
+      "is_quote_status": false,
+      "lang": "in",
+      "quote_count": 0,
+      "reply_count": 0,
+      "retweet_count": 0,
+      "retweeted": false,
+      "user_id_str": "1594969791588016130"
+    },
+    "user": {
+      "default_profile": true,
+      "default_profile_image": false,
+      "description": "#HukumTuhanYMEPastiBerlaku.\n#GakFollowPorno\n#hambaAllah",
+      "entities": {
+        "description": {
+          "urls": []
         }
+      },
+      "fast_followers_count": 0,
+      "favourites_count": 30211,
+      "follow_request_sent": false,
+      "followers_count": 550,
+      "friends_count": 529,
+      "has_custom_timelines": false,
+      "is_translator": false,
+      "listed_count": 1,
+      "media_count": 104,
+      "normal_followers_count": 550,
+      "notifications": false,
+      "pinned_tweet_ids_str": [
+        "1962402818649915631"
+      ],
+      "possibly_sensitive": false,
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/1594969791588016130/1753959519",
+      "profile_interstitial_type": "",
+      "statuses_count": 36937,
+      "translator_type": "none",
+      "want_retweets": false,
+      "withheld_in_countries": []
+    },
+    "userDetail": {
+      "__typename": "User",
+      "affiliates_highlighted_label": {},
+      "avatar": {
+        "image_url": "https://pbs.twimg.com/profile_images/1983453613688279041/NsUl12NV_normal.jpg"
+      },
+      "core": {
+        "created_at": "Tue Nov 22 08:24:21 +0000 2022",
+        "name": "ISA",
+        "screen_name": "Dirgahayu394"
+      },
+      "dm_permissions": {
+        "can_dm": true
+      },
+      "follow_request_sent": false,
+      "has_graduated_access": true,
+      "id": "VXNlcjoxNTk0OTY5NzkxNTg4MDE2MTMw",
+      "is_blue_verified": false,
+      "legacy": {
+        "default_profile": true,
+        "default_profile_image": false,
+        "description": "#HukumTuhanYMEPastiBerlaku.\n#GakFollowPorno\n#hambaAllah",
+        "entities": {
+          "description": {
+            "urls": []
+          }
+        },
+        "fast_followers_count": 0,
+        "favourites_count": 30211,
+        "follow_request_sent": false,
+        "followers_count": 550,
+        "friends_count": 529,
+        "has_custom_timelines": false,
+        "is_translator": false,
+        "listed_count": 1,
+        "media_count": 104,
+        "normal_followers_count": 550,
+        "notifications": false,
+        "pinned_tweet_ids_str": [
+          "1962402818649915631"
+        ],
+        "possibly_sensitive": false,
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/1594969791588016130/1753959519",
+        "profile_interstitial_type": "",
+        "statuses_count": 36937,
+        "translator_type": "none",
+        "want_retweets": false,
+        "withheld_in_countries": []
+      },
+      "location": {
+        "location": "Bumi Allah"
+      },
+      "media_permissions": {
+        "can_media_tag": true
+      },
+      "parody_commentary_fan_label": "None",
+      "privacy": {
+        "protected": false
+      },
+      "profile_bio": {
+        "description": "#HukumTuhanYMEPastiBerlaku.\n#GakFollowPorno\n#hambaAllah"
+      },
+      "profile_description_language": "qht",
+      "profile_image_shape": "Circle",
+      "relationship_perspectives": {
+        "blocked_by": false,
+        "blocking": false,
+        "followed_by": false,
+        "following": false,
+        "muting": false
+      },
+      "rest_id": "1594969791588016130",
+      "super_follow_eligible": false,
+      "super_followed_by": false,
+      "super_following": false,
+      "verification": {
+        "verified": false
       }
     },
-    "entryId": "entry-999997",
-    "sortIndex": "999997"
-  },
-  {
-    "content": {
-      "__typename": "TimelineTimelineItem",
-      "entryType": "TimelineTimelineItem",
-      "itemContent": {
-        "__typename": "TimelineUser",
-        "itemType": "TimelineUser",
-        "userDisplayType": "User",
-        "user_results": {
-          "result": {
-            "__typename": "User",
-            "affiliates_highlighted_label": {},
-            "avatar": {
-              "image_url": "https://pbs.twimg.com/profile_images/1923670379379425289/mm9Dzcul_normal.png"
-            },
-            "core": {
-              "created_at": "Sat May 17 09:22:12 +0000 2025",
-              "name": "mohammad Irawan",
-              "screen_name": "Irawan61070"
-            },
-            "dm_permissions": {
-              "can_dm": false
-            },
-            "follow_request_sent": false,
-            "has_graduated_access": true,
-            "id": "VXNlcjoxOTIzNjcwMjUzMDQ2OTg4ODAy",
-            "is_blue_verified": false,
-            "legacy": {
-              "default_profile": true,
-              "default_profile_image": false,
-              "description": "",
-              "entities": {
-                "description": {
-                  "urls": []
-                }
-              },
-              "fast_followers_count": 0,
-              "favourites_count": 217,
-              "follow_request_sent": false,
-              "followers_count": 0,
-              "friends_count": 4,
-              "has_custom_timelines": false,
-              "is_translator": false,
-              "listed_count": 0,
-              "media_count": 0,
-              "normal_followers_count": 0,
-              "notifications": false,
-              "pinned_tweet_ids_str": [],
-              "possibly_sensitive": false,
-              "profile_interstitial_type": "",
-              "statuses_count": 184,
-              "translator_type": "none",
-              "want_retweets": false,
-              "withheld_in_countries": []
-            },
-            "location": {
-              "location": ""
-            },
-            "media_permissions": {
-              "can_media_tag": true
-            },
-            "parody_commentary_fan_label": "None",
-            "privacy": {
-              "protected": false
-            },
-            "profile_bio": {
-              "description": ""
-            },
-            "profile_image_shape": "Circle",
-            "relationship_perspectives": {
-              "blocked_by": false,
-              "blocking": false,
-              "followed_by": false,
-              "following": false,
-              "muting": false
-            },
-            "rest_id": "1923670253046988802",
-            "super_follow_eligible": false,
-            "super_followed_by": false,
-            "super_following": false,
-            "verification": {
-              "verified": false
-            }
-          }
-        }
-      }
+    "views": {
+      "count": "33",
+      "state": "EnabledWithCount"
     },
-    "entryId": "entry-999996",
-    "sortIndex": "999996"
-  },
-  {
-    "content": {
-      "__typename": "TimelineTimelineCursor",
-      "cursorType": "Bottom",
-      "entryType": "TimelineTimelineCursor",
-      "value": "eyJpZCI6IjE5ODY1OTY2NDIyNjM2MDU0OTIiLCJmbG9ja0N1cnNvciI6IjY1MzUzNTYyNzE0NzQzNzY3MDYiLCJvcmlnaW5hbERpcmVjdGlvbiI6IkRlc2NlbmRpbmcifQ==-999994"
-    },
-    "entryId": "cursor-bottom-999995",
-    "sortIndex": "999995"
+    "rest_id": "2026829581177729129",
+    "userName": "ISA",
+    "userScreenName": "Dirgahayu394",
+    "userLocation": "Bumi Allah"
   }
 ]
