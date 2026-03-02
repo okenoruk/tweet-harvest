@@ -31,15 +31,25 @@ var env_1 = require("./env");
 //   DELAY_EVERY_100_TWEETS_SECONDS: 10,
 //   SEARCH_TAB: "TOP",
 // });
+// crawl({
+//   ACCESS_TOKEN: ACCESS_TOKEN,
+//   SEARCH_KEYWORDS: ``,
+//   TWEET_THREAD_URL: "https://twitter.com/KemensosRI/status/1986596642263605492/retweets",
+//   TARGET_TWEET_COUNT: 100000,
+//   OUTPUT_FILENAME: "kemensos.csv",
+//   DELAY_EACH_TWEET_SECONDS: 0.1,
+//   DELAY_EVERY_100_TWEETS_SECONDS: 10,
+//   SEARCH_TAB: "TOP",
+// });
+// TEST: Check if existing code handles replies from a plain tweet URL
+// Using the same tweet as in tweet-detail.json (BNPB_Indonesia)
 (0, crawl_1.crawl)({
     ACCESS_TOKEN: env_1.ACCESS_TOKEN,
-    SEARCH_KEYWORDS: "",
-    TWEET_THREAD_URL: "https://twitter.com/KemensosRI/status/1986596642263605492/retweets",
-    TARGET_TWEET_COUNT: 100000,
-    OUTPUT_FILENAME: "kemensos.csv",
+    TWEET_THREAD_URL: "https://twitter.com/BNPB_Indonesia/status/2026826810747715848",
+    TARGET_TWEET_COUNT: 50,
+    OUTPUT_FILENAME: "replies_test.csv",
     DELAY_EACH_TWEET_SECONDS: 0.1,
-    DELAY_EVERY_100_TWEETS_SECONDS: 10,
-    SEARCH_TAB: "TOP",
+    DELAY_EVERY_100_TWEETS_SECONDS: 0,
 });
 // crawl({
 //   ACCESS_TOKEN: ACCESS_TOKEN,

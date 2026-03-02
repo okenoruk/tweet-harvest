@@ -51,6 +51,7 @@ var constants_1 = require("./utils/constants");
 var likes_handler_1 = require("./handlers/likes-handler");
 var retweets_handler_1 = require("./handlers/retweets-handler");
 var tweets_handler_1 = require("./handlers/tweets-handler");
+var replies_handler_1 = require("./handlers/replies-handler");
 // Initialize stealth mode
 playwright_extra_1.chromium.use((0, puppeteer_extra_plugin_stealth_1.default)());
 /**
@@ -83,8 +84,10 @@ function crawl(_a) {
                                     );
                                 }
                                 else {
-                                    handler = new tweets_handler_1.TweetsHandler(page, FILE_NAME, constants_1.DEFAULT_DATA_FOLDER, TARGET_TWEET_COUNT, CRAWL_MODE, 40, // timeoutLimit
-                                    DELAY_EACH_TWEET_SECONDS, DELAY_EVERY_100_TWEETS_SECONDS);
+                                    // Plain tweet URL → collect all replies via TweetDetail API
+                                    handler = new replies_handler_1.RepliesHandler(page, FILE_NAME, constants_1.DEFAULT_DATA_FOLDER, TARGET_TWEET_COUNT, 20, // timeoutLimit
+                                    DELAY_EACH_LIKES_SECONDS, 1 // delayEvery100Seconds
+                                    );
                                 }
                             }
                             else {
