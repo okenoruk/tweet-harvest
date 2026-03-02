@@ -135,7 +135,7 @@ export class RepliesHandler extends BaseHandler {
         tweet["image_url"] = item.tweet.entities?.media?.[0]?.media_url_https || "";
         tweet["views_count"] = item.views?.count || "";
 
-        return tweet;
+        return pick(tweet, this.getFields());
     }
 
     /**

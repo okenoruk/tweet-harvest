@@ -109,10 +109,6 @@ export class TweetsHandler extends BaseHandler {
     return [...TWEET_FIELDS, "views_count"];
   }
 
-  /**
-   * Process an item for CSV output
-   * @param item Item to process
-   */
   protected processItemForCsv(item: any): Record<string, any> {
     const tweet = pick(
       {
@@ -142,7 +138,7 @@ export class TweetsHandler extends BaseHandler {
     tweet["image_url"] = item.tweet.entities?.media?.[0]?.media_url_https || "";
     tweet["views_count"] = item.views?.count;
 
-    return tweet;
+    return pick(tweet, this.getFields());
   }
 
   /**

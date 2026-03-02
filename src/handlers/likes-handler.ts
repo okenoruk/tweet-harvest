@@ -93,7 +93,7 @@ export class LikesHandler extends BaseHandler {
       user["description"] = description.replace(/,/g, " ").replace(/\n/g, " ");
       user["name"] = name.replace(/,/g, " ").replace(/\n/g, " ");
 
-      return user;
+      return pick(user, this.getFields());
     }
 
     return null;

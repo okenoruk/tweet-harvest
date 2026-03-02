@@ -94,7 +94,7 @@ var RetweetsHandler = /** @class */ (function (_super) {
             var name_1 = user["name"] || "";
             user["description"] = description.replace(/,/g, " ").replace(/\n/g, " ");
             user["name"] = name_1.replace(/,/g, " ").replace(/\n/g, " ");
-            return user;
+            return (0, lodash_1.pick)(user, this.getFields());
         }
         return null;
     };

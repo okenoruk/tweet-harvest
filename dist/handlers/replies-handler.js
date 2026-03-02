@@ -144,7 +144,7 @@ var RepliesHandler = /** @class */ (function (_super) {
         tweet["tweet_url"] = "https://twitter.com/".concat(userScreenName, "/status/").concat(tweet.id_str);
         tweet["image_url"] = ((_c = (_b = (_a = item.tweet.entities) === null || _a === void 0 ? void 0 : _a.media) === null || _b === void 0 ? void 0 : _b[0]) === null || _c === void 0 ? void 0 : _c.media_url_https) || "";
         tweet["views_count"] = ((_d = item.views) === null || _d === void 0 ? void 0 : _d.count) || "";
-        return tweet;
+        return (0, lodash_1.pick)(tweet, this.getFields());
     };
     /**
      * Get the name of the items being collected (for logging)

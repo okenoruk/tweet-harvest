@@ -132,10 +132,6 @@ var TweetsHandler = /** @class */ (function (_super) {
     TweetsHandler.prototype.getFields = function () {
         return __spreadArray(__spreadArray([], constants_1.TWEET_FIELDS, true), ["views_count"], false);
     };
-    /**
-     * Process an item for CSV output
-     * @param item Item to process
-     */
     TweetsHandler.prototype.processItemForCsv = function (item) {
         var _a, _b, _c, _d, _e, _f, _g;
         var tweet = (0, lodash_1.pick)(__assign(__assign({}, item.tweet), { id_str: item.rest_id || item.tweet.id_str, username: item.userScreenName, location: item.userLocation }), constants_1.TWEET_FIELDS);
@@ -154,7 +150,7 @@ var TweetsHandler = /** @class */ (function (_super) {
         tweet["tweet_url"] = "https://twitter.com/".concat(userScreenName, "/status/").concat(tweet.id_str);
         tweet["image_url"] = ((_f = (_e = (_d = item.tweet.entities) === null || _d === void 0 ? void 0 : _d.media) === null || _e === void 0 ? void 0 : _e[0]) === null || _f === void 0 ? void 0 : _f.media_url_https) || "";
         tweet["views_count"] = (_g = item.views) === null || _g === void 0 ? void 0 : _g.count;
-        return tweet;
+        return (0, lodash_1.pick)(tweet, this.getFields());
     };
     /**
      * Get the name of the items being collected (for logging)
