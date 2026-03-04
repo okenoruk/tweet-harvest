@@ -95,6 +95,11 @@ function run() {
                             type: "number",
                             default: 3,
                         },
+                        timeout: {
+                            describe: "Timeout limit for scrolling/crawling",
+                            type: "number",
+                            default: 20,
+                        },
                         debug: {},
                         output_filename: {
                             alias: "o",
@@ -187,6 +192,7 @@ function run() {
                             DELAY_EACH_TWEET_SECONDS: argv.delay_each_tweet,
                             OUTPUT_FILENAME: argv.output_filename,
                             SEARCH_TAB: String(argv.search_tab).toUpperCase(),
+                            TIMEOUT_LIMIT: argv.timeout,
                         });
                     }
                     catch (err) {

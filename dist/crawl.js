@@ -58,7 +58,7 @@ playwright_extra_1.chromium.use((0, puppeteer_extra_plugin_stealth_1.default)())
  * Main crawl function
  */
 function crawl(_a) {
-    var ACCESS_TOKEN = _a.ACCESS_TOKEN, SEARCH_KEYWORDS = _a.SEARCH_KEYWORDS, TWEET_THREAD_URL = _a.TWEET_THREAD_URL, SEARCH_FROM_DATE = _a.SEARCH_FROM_DATE, SEARCH_TO_DATE = _a.SEARCH_TO_DATE, _b = _a.TARGET_TWEET_COUNT, TARGET_TWEET_COUNT = _b === void 0 ? 10 : _b, _c = _a.DELAY_EACH_TWEET_SECONDS, DELAY_EACH_TWEET_SECONDS = _c === void 0 ? 3 : _c, _d = _a.DELAY_EACH_LIKES_SECONDS, DELAY_EACH_LIKES_SECONDS = _d === void 0 ? 1 : _d, _e = _a.DELAY_EVERY_100_TWEETS_SECONDS, DELAY_EVERY_100_TWEETS_SECONDS = _e === void 0 ? 5 : _e, DEBUG_MODE = _a.DEBUG_MODE, OUTPUT_FILENAME = _a.OUTPUT_FILENAME, _f = _a.SEARCH_TAB, SEARCH_TAB = _f === void 0 ? "LATEST" : _f;
+    var ACCESS_TOKEN = _a.ACCESS_TOKEN, SEARCH_KEYWORDS = _a.SEARCH_KEYWORDS, TWEET_THREAD_URL = _a.TWEET_THREAD_URL, SEARCH_FROM_DATE = _a.SEARCH_FROM_DATE, SEARCH_TO_DATE = _a.SEARCH_TO_DATE, _b = _a.TARGET_TWEET_COUNT, TARGET_TWEET_COUNT = _b === void 0 ? 10 : _b, _c = _a.DELAY_EACH_TWEET_SECONDS, DELAY_EACH_TWEET_SECONDS = _c === void 0 ? 3 : _c, _d = _a.DELAY_EACH_LIKES_SECONDS, DELAY_EACH_LIKES_SECONDS = _d === void 0 ? 1 : _d, _e = _a.DELAY_EVERY_100_TWEETS_SECONDS, DELAY_EVERY_100_TWEETS_SECONDS = _e === void 0 ? 5 : _e, DEBUG_MODE = _a.DEBUG_MODE, OUTPUT_FILENAME = _a.OUTPUT_FILENAME, _f = _a.SEARCH_TAB, SEARCH_TAB = _f === void 0 ? "LATEST" : _f, _g = _a.TIMEOUT_LIMIT, TIMEOUT_LIMIT = _g === void 0 ? 20 : _g;
     return __awaiter(this, void 0, void 0, function () {
         /**
          * Start crawling Twitter
@@ -74,25 +74,25 @@ function crawl(_a) {
                             if (CRAWL_MODE === constants_1.CrawlMode.DETAIL) {
                                 urlToGo = TWEET_THREAD_URL;
                                 if (TWEET_THREAD_URL.indexOf('/likes') > -1) {
-                                    handler = new likes_handler_1.LikesHandler(page, FILE_NAME, constants_1.DEFAULT_DATA_FOLDER, TARGET_TWEET_COUNT, 20, // timeoutLimit
+                                    handler = new likes_handler_1.LikesHandler(page, FILE_NAME, constants_1.DEFAULT_DATA_FOLDER, TARGET_TWEET_COUNT, TIMEOUT_LIMIT, // timeoutLimit
                                     DELAY_EACH_LIKES_SECONDS, 1 // delayEvery100Seconds
                                     );
                                 }
                                 else if (TWEET_THREAD_URL.indexOf('/retweets') > -1) {
-                                    handler = new retweets_handler_1.RetweetsHandler(page, FILE_NAME, constants_1.DEFAULT_DATA_FOLDER, TARGET_TWEET_COUNT, 20, // timeoutLimit
+                                    handler = new retweets_handler_1.RetweetsHandler(page, FILE_NAME, constants_1.DEFAULT_DATA_FOLDER, TARGET_TWEET_COUNT, TIMEOUT_LIMIT, // timeoutLimit
                                     DELAY_EACH_LIKES_SECONDS, 1 // delayEvery100Seconds
                                     );
                                 }
                                 else {
                                     // Plain tweet URL → collect all replies via TweetDetail API
-                                    handler = new replies_handler_1.RepliesHandler(page, FILE_NAME, constants_1.DEFAULT_DATA_FOLDER, TARGET_TWEET_COUNT, 20, // timeoutLimit
+                                    handler = new replies_handler_1.RepliesHandler(page, FILE_NAME, constants_1.DEFAULT_DATA_FOLDER, TARGET_TWEET_COUNT, TIMEOUT_LIMIT, // timeoutLimit
                                     DELAY_EACH_LIKES_SECONDS, 1 // delayEvery100Seconds
                                     );
                                 }
                             }
                             else {
                                 urlToGo = twitterSearchUrl;
-                                handler = new tweets_handler_1.TweetsHandler(page, FILE_NAME, constants_1.DEFAULT_DATA_FOLDER, TARGET_TWEET_COUNT, CRAWL_MODE, 40, // timeoutLimit
+                                handler = new tweets_handler_1.TweetsHandler(page, FILE_NAME, constants_1.DEFAULT_DATA_FOLDER, TARGET_TWEET_COUNT, CRAWL_MODE, TIMEOUT_LIMIT, // timeoutLimit
                                 DELAY_EACH_TWEET_SECONDS, DELAY_EVERY_100_TWEETS_SECONDS);
                             }
                             // Navigate to the appropriate URL
@@ -136,8 +136,8 @@ function crawl(_a) {
             });
         }
         var CRAWL_MODE, SWITCHED_SEARCH_TAB, filename, FILE_NAME, fs, TWEETS_NOT_FOUND_ON_CURRENT_TAB, CURRENT_PACKAGE_VERSION, browser, context, page, error_1, errorFilename_1;
-        return __generator(this, function (_g) {
-            switch (_g.label) {
+        return __generator(this, function (_h) {
+            switch (_h.label) {
                 case 0:
                     CRAWL_MODE = TWEET_THREAD_URL ? constants_1.CrawlMode.DETAIL : constants_1.CrawlMode.SEARCH;
                     SWITCHED_SEARCH_TAB = SEARCH_TAB === "TOP" ? "LATEST" : "TOP";
@@ -153,7 +153,7 @@ function crawl(_a) {
                     CURRENT_PACKAGE_VERSION = require("../package.json").version;
                     return [4 /*yield*/, playwright_extra_1.chromium.launch({ headless: env_1.HEADLESS_MODE })];
                 case 1:
-                    browser = _g.sent();
+                    browser = _h.sent();
                     return [4 /*yield*/, browser.newContext({
                             screen: { width: 1240, height: 1080 },
                             storageState: {
@@ -173,32 +173,32 @@ function crawl(_a) {
                             },
                         })];
                 case 2:
-                    context = _g.sent();
+                    context = _h.sent();
                     return [4 /*yield*/, context.newPage()];
                 case 3:
-                    page = _g.sent();
+                    page = _h.sent();
                     page.setDefaultTimeout(60 * 1000);
                     // Listen for network requests
                     (0, listen_network_requests_1.listenNetworkRequests)(page);
-                    _g.label = 4;
+                    _h.label = 4;
                 case 4:
-                    _g.trys.push([4, 8, 10, 13]);
+                    _h.trys.push([4, 8, 10, 13]);
                     // Start crawling
                     return [4 /*yield*/, startCrawlTwitter()];
                 case 5:
                     // Start crawling
-                    _g.sent();
+                    _h.sent();
                     if (!(TWEETS_NOT_FOUND_ON_CURRENT_TAB && (SEARCH_FROM_DATE || SEARCH_TO_DATE))) return [3 /*break*/, 7];
                     console.info("No tweets found on \"".concat(SEARCH_TAB, "\" tab, trying \"").concat(SWITCHED_SEARCH_TAB, "\" tab..."));
                     return [4 /*yield*/, startCrawlTwitter({
                             twitterSearchUrl: constants_1.TWITTER_SEARCH_ADVANCED_URL[SWITCHED_SEARCH_TAB],
                         })];
                 case 6:
-                    _g.sent();
-                    _g.label = 7;
+                    _h.sent();
+                    _h.label = 7;
                 case 7: return [3 /*break*/, 13];
                 case 8:
-                    error_1 = _g.sent();
+                    error_1 = _h.sent();
                     console.error(error_1);
                     console.info(chalk_1.default.blue("Keywords: ".concat(SEARCH_KEYWORDS)));
                     console.info(chalk_1.default.yellowBright("Twitter Harvest v", CURRENT_PACKAGE_VERSION));
@@ -207,14 +207,14 @@ function crawl(_a) {
                             console.log(chalk_1.default.red("\nIf you need help, please send this error screenshot to the maintainer, it was saved to \"".concat(errorFilename_1, "\"")));
                         })];
                 case 9:
-                    _g.sent();
+                    _h.sent();
                     return [3 /*break*/, 13];
                 case 10:
                     if (!!DEBUG_MODE) return [3 /*break*/, 12];
                     return [4 /*yield*/, browser.close()];
                 case 11:
-                    _g.sent();
-                    _g.label = 12;
+                    _h.sent();
+                    _h.label = 12;
                 case 12: return [7 /*endfinally*/];
                 case 13: return [2 /*return*/];
             }
