@@ -32,6 +32,7 @@ interface CrawlParams {
   OUTPUT_FILENAME?: string;
   TWEET_THREAD_URL?: string;
   SEARCH_TAB?: "LATEST" | "TOP";
+  TIMEOUT_LIMIT?: number;
 }
 
 /**
@@ -57,6 +58,7 @@ export async function crawl({
   DEBUG_MODE,
   OUTPUT_FILENAME,
   SEARCH_TAB = "LATEST",
+  TIMEOUT_LIMIT = 20,
 }: CrawlParams) {
   // Determine crawl mode based on URL
   const CRAWL_MODE = TWEET_THREAD_URL ? CrawlMode.DETAIL : CrawlMode.SEARCH;
@@ -128,7 +130,7 @@ export async function crawl({
           FILE_NAME,
           DEFAULT_DATA_FOLDER,
           TARGET_TWEET_COUNT,
-          20, // timeoutLimit
+          TIMEOUT_LIMIT, // timeoutLimit
           DELAY_EACH_LIKES_SECONDS,
           1 // delayEvery100Seconds
         );
@@ -138,7 +140,7 @@ export async function crawl({
           FILE_NAME,
           DEFAULT_DATA_FOLDER,
           TARGET_TWEET_COUNT,
-          20, // timeoutLimit
+          TIMEOUT_LIMIT, // timeoutLimit
           DELAY_EACH_LIKES_SECONDS,
           1 // delayEvery100Seconds
         );
@@ -149,7 +151,7 @@ export async function crawl({
           FILE_NAME,
           DEFAULT_DATA_FOLDER,
           TARGET_TWEET_COUNT,
-          20, // timeoutLimit
+          TIMEOUT_LIMIT, // timeoutLimit
           DELAY_EACH_LIKES_SECONDS,
           1 // delayEvery100Seconds
         );
@@ -162,7 +164,7 @@ export async function crawl({
         DEFAULT_DATA_FOLDER,
         TARGET_TWEET_COUNT,
         CRAWL_MODE,
-        40, // timeoutLimit
+        TIMEOUT_LIMIT, // timeoutLimit
         DELAY_EACH_TWEET_SECONDS,
         DELAY_EVERY_100_TWEETS_SECONDS
       );

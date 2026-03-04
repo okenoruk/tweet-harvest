@@ -52,6 +52,11 @@ async function run() {
         type: "number",
         default: 3,
       },
+      timeout: {
+        describe: "Timeout limit for scrolling/crawling",
+        type: "number",
+        default: 20,
+      },
       debug: {},
       output_filename: {
         alias: "o",
@@ -152,6 +157,7 @@ async function run() {
       DELAY_EACH_TWEET_SECONDS: argv.delay_each_tweet,
       OUTPUT_FILENAME: argv.output_filename,
       SEARCH_TAB: String(argv.search_tab).toUpperCase() as "TOP" | "LATEST",
+      TIMEOUT_LIMIT: argv.timeout,
     });
   } catch (err) {
     console.error("Error running script:", err);
