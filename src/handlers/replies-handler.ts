@@ -127,10 +127,8 @@ export class RepliesHandler extends BaseHandler {
             TWEET_FIELDS
         );
 
-        const cleanTweetText = `${item.tweet.full_text.replace(/,/g, " ").replace(/\n/g, " ")}`;
-
         const userScreenName = item.userScreenName || "i";
-        tweet["full_text"] = cleanTweetText;
+        tweet["full_text"] = this.cleanText(item.tweet.full_text);
         tweet["tweet_url"] = `https://twitter.com/${userScreenName}/status/${tweet.id_str}`;
         tweet["image_url"] = item.tweet.entities?.media?.[0]?.media_url_https || "";
         tweet["views_count"] = item.views?.count || "";
@@ -143,5 +141,13 @@ export class RepliesHandler extends BaseHandler {
      */
     protected getItemName(): string {
         return "tweet replies";
+    }
+
+    /**
+     * Get the unique ID of a tweet reply
+     * @param item Tweet reply item
+     */
+    protected getUniqueId(item: any): string | null {
+        return item.rest_id;
     }
 }

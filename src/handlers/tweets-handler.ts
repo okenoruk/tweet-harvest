@@ -126,14 +126,14 @@ export class TweetsHandler extends BaseHandler {
       const firstWord = cleanTweetText.split(" ")[0];
       const replyToUsername = item.tweet.entities?.user_mentions?.[0]?.screen_name;
       // firstWord example: "@someone", the 0 index is " and the 1 index is @
-      if (firstWord[1] === "@" && replyToUsername) {
+      if ((firstWord.startsWith("@") || firstWord[1] === "@") && replyToUsername) {
         // remove the first word
         cleanTweetText = cleanTweetText.replace(`@${replyToUsername} `, "");
       }
     }
 
     const userScreenName = item.userScreenName || 'i';
-    tweet["full_text"] = cleanTweetText;
+    tweet["full_text"] = this.cleanText(cleanTweetText || item.tweet.full_text);
     tweet["tweet_url"] = `https://twitter.com/${userScreenName}/status/${tweet.id_str}`;
     tweet["image_url"] = item.tweet.entities?.media?.[0]?.media_url_https || "";
     tweet["views_count"] = item.views?.count;
@@ -146,5 +146,13 @@ export class TweetsHandler extends BaseHandler {
    */
   protected getItemName(): string {
     return "tweets";
+  }
+
+  /**
+   * Get the unique ID of a tweet
+   * @param item Tweet item
+   */
+  protected getUniqueId(item: any): string | null {
+    return item.rest_id;
   }
 }

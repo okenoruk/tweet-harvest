@@ -80,18 +80,14 @@ export class RetweetsHandler extends BaseHandler {
           screen_name: result.core?.screen_name || "",
           statuses_count: result.legacy?.statuses_count || 0,
           is_blue_verified: result.is_blue_verified || false,
-          profile_description_language: result.profile_description_language || "unknown",
+          profile_description_language: this.cleanText(result.profile_description_language),
           favourites_count: result.legacy?.favourites_count || 0
         },
         USER_PROFILE_FIELDS
       );
 
-      // Clean text fields
-      const description = (user["description"] as string) || "";
-      const name = (user["name"] as string) || "";
-
-      user["description"] = description.replace(/,/g, " ").replace(/\n/g, " ");
-      user["name"] = name.replace(/,/g, " ").replace(/\n/g, " ");
+      user["description"] = this.cleanText(user["description"] as string);
+      user["name"] = this.cleanText(user["name"] as string);
 
       return pick(user, this.getFields());
     }
@@ -104,5 +100,13 @@ export class RetweetsHandler extends BaseHandler {
    */
   protected getItemName(): string {
     return "user profiles (retweets)";
+  }
+
+  /**
+   * Get the unique ID of a user profile
+   * @param item User profile item
+   */
+  protected getUniqueId(item: any): string | null {
+    return item.content?.itemContent?.user_results?.result?.rest_id || item.entryId || null;
   }
 }

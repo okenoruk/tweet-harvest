@@ -26,6 +26,7 @@ export abstract class BaseHandler {
 
   // Data storage
   protected allData: any[] = [];
+  protected seenIds: Set<string> = new Set();
 
   // Response buffer
   protected responseQueue: Response[] = [];
@@ -91,9 +92,24 @@ export abstract class BaseHandler {
   protected abstract processItemForCsv(item: any): Record<string, any>;
 
   /**
+   * Get the unique ID of an item
+   * @param item Item to get the ID for
+   */
+  protected abstract getUniqueId(item: any): string | null;
+
+  /**
    * Get the name of the items being collected (for logging)
    */
   protected abstract getItemName(): string;
+
+  /**
+   * Clean text for CSV output
+   * @param text Text to clean
+   */
+  protected cleanText(text: string | null | undefined): string {
+    if (!text) return "";
+    return text.toString().replace(/[\r\n,]+/g, " ").trim();
+  }
 
   /**
    * Handle a rate limit error
@@ -253,11 +269,23 @@ export abstract class BaseHandler {
             }
           });
 
-          // Add items to allData
-          this.allData.push(...items);
+          // Filter out duplicate items
+          const uniqueItems = items.filter((item) => {
+            const id = this.getUniqueId(item);
+            if (id) {
+              if (this.seenIds.has(id)) return false;
+              this.seenIds.add(id);
+            }
+            return true;
+          });
 
-          // Write items to CSV
-          await this.writeItemsToCsv(items);
+          if (uniqueItems.length > 0) {
+            // Add items to allData
+            this.allData.push(...uniqueItems);
+
+            // Write items to CSV
+            await this.writeItemsToCsv(uniqueItems);
+          }
 
           // Handle delays
           await this.handleDelays(items.length);
