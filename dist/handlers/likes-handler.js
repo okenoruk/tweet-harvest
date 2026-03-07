@@ -86,14 +86,11 @@ var LikesHandler = /** @class */ (function (_super) {
                 screen_name: ((_k = result.legacy) === null || _k === void 0 ? void 0 : _k.screen_name) || "",
                 statuses_count: ((_l = result.legacy) === null || _l === void 0 ? void 0 : _l.statuses_count) || 0,
                 is_blue_verified: result.is_blue_verified || false,
-                profile_description_language: result.profile_description_language || "unknown",
+                profile_description_language: this.cleanText(result.profile_description_language),
                 favourites_count: ((_m = result.legacy) === null || _m === void 0 ? void 0 : _m.favourites_count) || 0
             }, constants_1.USER_PROFILE_FIELDS);
-            // Clean text fields
-            var description = user["description"] || "";
-            var name_1 = user["name"] || "";
-            user["description"] = description.replace(/,/g, " ").replace(/\n/g, " ");
-            user["name"] = name_1.replace(/,/g, " ").replace(/\n/g, " ");
+            user["description"] = this.cleanText(user["description"]);
+            user["name"] = this.cleanText(user["name"]);
             return (0, lodash_1.pick)(user, this.getFields());
         }
         return null;
@@ -103,6 +100,14 @@ var LikesHandler = /** @class */ (function (_super) {
      */
     LikesHandler.prototype.getItemName = function () {
         return "user profiles (likes)";
+    };
+    /**
+     * Get the unique ID of a user profile
+     * @param item User profile item
+     */
+    LikesHandler.prototype.getUniqueId = function (item) {
+        var _a, _b, _c, _d;
+        return ((_d = (_c = (_b = (_a = item.content) === null || _a === void 0 ? void 0 : _a.itemContent) === null || _b === void 0 ? void 0 : _b.user_results) === null || _c === void 0 ? void 0 : _c.result) === null || _d === void 0 ? void 0 : _d.rest_id) || item.entryId || null;
     };
     return LikesHandler;
 }(base_handler_1.BaseHandler));

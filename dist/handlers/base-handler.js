@@ -77,6 +77,7 @@ var BaseHandler = /** @class */ (function () {
         this.headerWritten = false;
         // Data storage
         this.allData = [];
+        this.seenIds = new Set();
         // Response buffer
         this.responseQueue = [];
         this.page = page;
@@ -95,6 +96,15 @@ var BaseHandler = /** @class */ (function () {
             }
         });
     }
+    /**
+     * Clean text for CSV output
+     * @param text Text to clean
+     */
+    BaseHandler.prototype.cleanText = function (text) {
+        if (!text)
+            return "";
+        return text.toString().replace(/[\r\n,]+/g, " ").trim();
+    };
     /**
      * Handle a rate limit error
      * @param response Response object
@@ -217,7 +227,7 @@ var BaseHandler = /** @class */ (function () {
      */
     BaseHandler.prototype.collect = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var currentWaitTimeout, MAX_WAIT_TIMEOUT, response, raceResult, error_1, screenshotPath, responseJson, items, jsonData, fs, error_2;
+            var currentWaitTimeout, MAX_WAIT_TIMEOUT, response, raceResult, error_1, screenshotPath, responseJson, items, jsonData, fs, uniqueItems, error_2;
             var _a;
             var _this = this;
             return __generator(this, function (_b) {
@@ -227,7 +237,7 @@ var BaseHandler = /** @class */ (function () {
                         MAX_WAIT_TIMEOUT = 60000;
                         _b.label = 1;
                     case 1:
-                        if (!(this.allData.length < this.targetCount && this.timeoutCount < this.timeoutLimit)) return [3 /*break*/, 22];
+                        if (!(this.allData.length < this.targetCount && this.timeoutCount < this.timeoutLimit)) return [3 /*break*/, 23];
                         response = this.responseQueue.shift();
                         if (!!response) return [3 /*break*/, 8];
                         _b.label = 2;
@@ -261,15 +271,15 @@ var BaseHandler = /** @class */ (function () {
                     case 6:
                         _b.sent();
                         // currentWaitTimeout = Math.min(currentWaitTimeout + 5000, MAX_WAIT_TIMEOUT);
-                        return [3 /*break*/, 22];
+                        return [3 /*break*/, 23];
                     case 7: throw error_1;
                     case 8:
-                        if (!response) return [3 /*break*/, 18];
+                        if (!response) return [3 /*break*/, 19];
                         this.timeoutCount = 0;
                         currentWaitTimeout = 5000; // Reset timeout on success
                         _b.label = 9;
                     case 9:
-                        _b.trys.push([9, 13, , 17]);
+                        _b.trys.push([9, 14, , 18]);
                         return [4 /*yield*/, response.json()];
                     case 10:
                         responseJson = _b.sent();
@@ -287,31 +297,43 @@ var BaseHandler = /** @class */ (function () {
                                 console.log(err);
                             }
                         });
+                        uniqueItems = items.filter(function (item) {
+                            var id = _this.getUniqueId(item);
+                            if (id) {
+                                if (_this.seenIds.has(id))
+                                    return false;
+                                _this.seenIds.add(id);
+                            }
+                            return true;
+                        });
+                        if (!(uniqueItems.length > 0)) return [3 /*break*/, 12];
                         // Add items to allData
-                        (_a = this.allData).push.apply(_a, items);
+                        (_a = this.allData).push.apply(_a, uniqueItems);
                         // Write items to CSV
-                        return [4 /*yield*/, this.writeItemsToCsv(items)];
+                        return [4 /*yield*/, this.writeItemsToCsv(uniqueItems)];
                     case 11:
                         // Write items to CSV
                         _b.sent();
-                        // Handle delays
-                        return [4 /*yield*/, this.handleDelays(items.length)];
-                    case 12:
+                        _b.label = 12;
+                    case 12: 
+                    // Handle delays
+                    return [4 /*yield*/, this.handleDelays(items.length)];
+                    case 13:
                         // Handle delays
                         _b.sent();
-                        return [3 /*break*/, 17];
-                    case 13:
+                        return [3 /*break*/, 18];
+                    case 14:
                         error_2 = _b.sent();
                         return [4 /*yield*/, this.handleRateLimit(response)];
-                    case 14:
-                        if (!_b.sent()) return [3 /*break*/, 16];
+                    case 15:
+                        if (!_b.sent()) return [3 /*break*/, 17];
                         return [4 /*yield*/, this.collect()];
-                    case 15: return [2 /*return*/, _b.sent()]; // Recursive call after handling rate limit
-                    case 16:
+                    case 16: return [2 /*return*/, _b.sent()]; // Recursive call after handling rate limit
+                    case 17:
                         console.error("Error processing response: ".concat(error_2));
-                        return [3 /*break*/, 22];
-                    case 17: return [3 /*break*/, 20];
-                    case 18:
+                        return [3 /*break*/, 23];
+                    case 18: return [3 /*break*/, 21];
+                    case 19:
                         this.timeoutCount++;
                         console.info(chalk_1.default.gray("Scrolling more... (Waiting for ".concat(currentWaitTimeout / 1000, "s)")));
                         // Increase timeout for next iteration, capped at 1 minute
@@ -321,20 +343,20 @@ var BaseHandler = /** @class */ (function () {
                                 console.info(chalk_1.default.red("Timeout waiting for ".concat(this.getItemName(), " response (").concat(currentWaitTimeout, "ms)")));
                             }
                             console.info(chalk_1.default.yellow("No more ".concat(this.getItemName(), " found, please check your search criteria and csv file result")));
-                            return [3 /*break*/, 22];
+                            return [3 /*break*/, 23];
                         }
                         return [4 /*yield*/, this.scrollPage()];
-                    case 19:
+                    case 20:
                         _b.sent();
-                        _b.label = 20;
-                    case 20: 
+                        _b.label = 21;
+                    case 21: 
                     // Scroll after each iteration
                     return [4 /*yield*/, this.scrollPage()];
-                    case 21:
+                    case 22:
                         // Scroll after each iteration
                         _b.sent();
                         return [3 /*break*/, 1];
-                    case 22: return [2 /*return*/, this.allData];
+                    case 23: return [2 /*return*/, this.allData];
                 }
             });
         });

@@ -140,13 +140,13 @@ var TweetsHandler = /** @class */ (function (_super) {
             var firstWord = cleanTweetText.split(" ")[0];
             var replyToUsername = (_c = (_b = (_a = item.tweet.entities) === null || _a === void 0 ? void 0 : _a.user_mentions) === null || _b === void 0 ? void 0 : _b[0]) === null || _c === void 0 ? void 0 : _c.screen_name;
             // firstWord example: "@someone", the 0 index is " and the 1 index is @
-            if (firstWord[1] === "@" && replyToUsername) {
+            if ((firstWord.startsWith("@") || firstWord[1] === "@") && replyToUsername) {
                 // remove the first word
                 cleanTweetText = cleanTweetText.replace("@".concat(replyToUsername, " "), "");
             }
         }
         var userScreenName = item.userScreenName || 'i';
-        tweet["full_text"] = cleanTweetText;
+        tweet["full_text"] = this.cleanText(cleanTweetText || item.tweet.full_text);
         tweet["tweet_url"] = "https://twitter.com/".concat(userScreenName, "/status/").concat(tweet.id_str);
         tweet["image_url"] = ((_f = (_e = (_d = item.tweet.entities) === null || _d === void 0 ? void 0 : _d.media) === null || _e === void 0 ? void 0 : _e[0]) === null || _f === void 0 ? void 0 : _f.media_url_https) || "";
         tweet["views_count"] = (_g = item.views) === null || _g === void 0 ? void 0 : _g.count;
@@ -157,6 +157,13 @@ var TweetsHandler = /** @class */ (function (_super) {
      */
     TweetsHandler.prototype.getItemName = function () {
         return "tweets";
+    };
+    /**
+     * Get the unique ID of a tweet
+     * @param item Tweet item
+     */
+    TweetsHandler.prototype.getUniqueId = function (item) {
+        return item.rest_id;
     };
     return TweetsHandler;
 }(base_handler_1.BaseHandler));
