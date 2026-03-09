@@ -23,6 +23,8 @@ export const TWEET_FIELDS = [
   "tweet_url",
   "image_url",
   "location",
+  "followers",
+  "following",
 ];
 
 // Fields to extract from user profiles (used for both favorites and retweets)

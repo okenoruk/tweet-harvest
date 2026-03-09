@@ -137,6 +137,8 @@ export class TweetsHandler extends BaseHandler {
     tweet["tweet_url"] = `https://twitter.com/${userScreenName}/status/${tweet.id_str}`;
     tweet["image_url"] = item.tweet.entities?.media?.[0]?.media_url_https || "";
     tweet["views_count"] = item.views?.count;
+    tweet["followers"] = item.user?.followers_count;
+    tweet["following"] = item.user?.friends_count;
 
     return pick(tweet, this.getFields());
   }

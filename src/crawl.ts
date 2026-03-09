@@ -246,7 +246,7 @@ export async function crawl({
       const originalVideoPath = video ? await video.path() : null;
       await browser.close();
       if (originalVideoPath) {
-        const videoPath = finalizeVideo(originalVideoPath, path.join(path.resolve(DEFAULT_DATA_FOLDER), cleanFilename));
+        const videoPath = await finalizeVideo(originalVideoPath, path.join(path.resolve(DEFAULT_DATA_FOLDER), cleanFilename));
         if (videoPath) {
           console.info(chalk.green(`Video recording saved to: ${videoPath}`));
         }

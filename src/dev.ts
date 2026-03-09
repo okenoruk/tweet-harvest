@@ -58,7 +58,7 @@ import { ACCESS_TOKEN } from "./env";
 crawl({
   ACCESS_TOKEN: ACCESS_TOKEN,
   SEARCH_KEYWORDS: `perang iran lang:id`,
-  TARGET_TWEET_COUNT: 50,
+  TARGET_TWEET_COUNT: 20,
   DEBUG_MODE: true,
   OUTPUT_FILENAME: "perang_iran.csv",
   DELAY_EACH_TWEET_SECONDS: 0.1,

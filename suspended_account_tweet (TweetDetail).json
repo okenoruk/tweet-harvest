@@ -1,0 +1,79 @@
+{
+    "data": {
+        "threaded_conversation_with_injections_v2": {
+            "instructions": [
+                {
+                    "type": "TimelineClearCache"
+                },
+                {
+                    "entries": [
+                        {
+                            "content": {
+                                "__typename": "TimelineTimelineItem",
+                                "clientEventInfo": {
+                                    "component": "tweet",
+                                    "element": "tweet"
+                                },
+                                "entryType": "TimelineTimelineItem",
+                                "itemContent": {
+                                    "__typename": "TimelineTweet",
+                                    "itemType": "TimelineTweet",
+                                    "tweetDisplayType": "Tweet",
+                                    "tweet_results": {
+                                        "result": {
+                                            "__typename": "TweetTombstone",
+                                            "tombstone": {
+                                                "__typename": "TextTombstone",
+                                                "text": {
+                                                    "entities": [
+                                                        {
+                                                            "fromIndex": 39,
+                                                            "ref": {
+                                                                "type": "TimelineUrl",
+                                                                "url": "https://help.twitter.com/rules-and-policies/notices-on-twitter",
+                                                                "urlType": "ExternalUrl"
+                                                            },
+                                                            "toIndex": 49
+                                                        }
+                                                    ],
+                                                    "rtl": false,
+                                                    "text": "This Post is from a suspended account. Learn more"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "entryId": "tweet-1994552961251643429",
+                            "sortIndex": "2030649893395103744"
+                        },
+                        {
+                            "content": {
+                                "__typename": "TimelineTimelineCursor",
+                                "cursorType": "Bottom",
+                                "entryType": "TimelineTimelineCursor",
+                                "value": "DAAKCgABHC5RUbb___0LAAIAAAAoRW1QQzZ3QUFBZlEvZ0dKTjB2R3AvQUFBQUFFYnJoTlp4UnVRSlE9PQgAAwAAAAILAAQAAAAGQm90dG9tAAA"
+                            },
+                            "entryId": "cursor-bottom-2030649893395103743",
+                            "sortIndex": "2030649893395103743"
+                        }
+                    ],
+                    "type": "TimelineAddEntries"
+                },
+                {
+                    "direction": "Top",
+                    "type": "TimelineTerminateTimeline"
+                },
+                {
+                    "direction": "Bottom",
+                    "type": "TimelineTerminateTimeline"
+                }
+            ],
+            "metadata": {
+                "scribeConfig": {
+                    "page": "ranked_replies"
+                }
+            }
+        }
+    }
+}
