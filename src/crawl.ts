@@ -12,6 +12,7 @@ import { RetweetsHandler } from "./handlers/retweets-handler";
 import { TweetsHandler } from "./handlers/tweets-handler";
 import { RepliesHandler } from "./handlers/replies-handler";
 import { BaseHandler } from "./handlers/base-handler";
+import { finalizeVideo } from "./utils/video";
 
 // Initialize stealth mode
 chromium.use(stealth());
@@ -66,7 +67,8 @@ export async function crawl({
 
   // Set up file paths
   const filename = (OUTPUT_FILENAME || `${SEARCH_KEYWORDS} ${FORMATTED_TIMESTAMP}`).trim().replace(".csv", "");
-  const FILE_NAME = `${DEFAULT_DATA_FOLDER}/${filename}.csv`.replace(/ /g, "_").replace(/:/g, "-");
+  const cleanFilename = filename.replace(/ /g, "_").replace(/:/g, "-");
+  const FILE_NAME = path.join(DEFAULT_DATA_FOLDER, `${cleanFilename}.csv`);
 
   console.info(chalk.blue("\nOpening twitter search page...\n"));
 
@@ -103,6 +105,12 @@ export async function crawl({
       ],
       origins: [],
     },
+    ...(DEBUG_MODE ? {
+      recordVideo: {
+        dir: DEFAULT_DATA_FOLDER,
+        size: { width: 1240, height: 1080 }
+      }
+    } : {})
   });
 
   // Create new page
@@ -233,8 +241,17 @@ export async function crawl({
       );
     });
   } finally {
-    // Close browser if not in debug mode
-    if (!DEBUG_MODE) {
+    if (DEBUG_MODE) {
+      const video = page.video();
+      const originalVideoPath = video ? await video.path() : null;
+      await browser.close();
+      if (originalVideoPath) {
+        const videoPath = finalizeVideo(originalVideoPath, path.join(path.resolve(DEFAULT_DATA_FOLDER), cleanFilename));
+        if (videoPath) {
+          console.info(chalk.green(`Video recording saved to: ${videoPath}`));
+        }
+      }
+    } else {
       await browser.close();
     }
   }

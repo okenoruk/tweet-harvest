@@ -57,7 +57,11 @@ async function run() {
         type: "number",
         default: 20,
       },
-      debug: {},
+      debug: {
+        describe: "Enable debug mode (record video)",
+        type: "boolean",
+        default: false,
+      },
       output_filename: {
         alias: "o",
         describe: "Output filename",
@@ -158,6 +162,7 @@ async function run() {
       OUTPUT_FILENAME: argv.output_filename,
       SEARCH_TAB: String(argv.search_tab).toUpperCase() as "TOP" | "LATEST",
       TIMEOUT_LIMIT: argv.timeout,
+      DEBUG_MODE: argv.debug,
     });
   } catch (err) {
     console.error("Error running script:", err);
