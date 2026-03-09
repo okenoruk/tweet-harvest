@@ -84,6 +84,11 @@ function run() {
                             describe: "Tweet thread URL",
                             type: "string",
                         },
+                        screen_names: {
+                            alias: "sn",
+                            describe: "List of screen names to fetch info from (comma separated)",
+                            type: "string",
+                        },
                         limit: {
                             alias: "l",
                             describe: "Limit number of tweets to crawl",
@@ -100,7 +105,11 @@ function run() {
                             type: "number",
                             default: 20,
                         },
-                        debug: {},
+                        debug: {
+                            describe: "Enable debug mode (record video)",
+                            type: "boolean",
+                            default: false,
+                        },
                         output_filename: {
                             alias: "o",
                             describe: "Output filename",
@@ -131,20 +140,37 @@ function run() {
                             },
                         });
                     }
-                    if (!argv.search_keyword && !argv.tweet_thread_url) {
+                    if (!argv.search_keyword && !argv.tweet_thread_url && !argv.screen_names) {
                         questions.push({
-                            type: "text",
+                            type: "select",
+                            name: "crawl_mode",
+                            message: "What do you want to crawl?",
+                            choices: [
+                                { title: "Search Mode", value: "search" },
+                                { title: "Detail Mode (Replies/Likes/Retweets)", value: "detail" },
+                                { title: "User Info Mode", value: "user_info" },
+                            ],
+                        });
+                        questions.push({
+                            type: function (_, values) { return (values.crawl_mode === "search" ? "text" : null); },
                             name: "search_keyword",
                             message: "What's the search keyword?",
-                            validate: function (value) {
-                                if (value.length < 1) {
-                                    return "Please enter a search keyword";
-                                }
-                                return true;
-                            },
+                            validate: function (value) { return (value.length < 1 ? "Please enter a search keyword" : true); },
+                        });
+                        questions.push({
+                            type: function (_, values) { return (values.crawl_mode === "detail" ? "text" : null); },
+                            name: "tweet_thread_url",
+                            message: "What's the tweet thread URL?",
+                            validate: function (value) { return (value.length < 1 ? "Please enter a tweet thread URL" : true); },
+                        });
+                        questions.push({
+                            type: function (_, values) { return (values.crawl_mode === "user_info" ? "text" : null); },
+                            name: "screen_names",
+                            message: "Enter screen names (comma separated):",
+                            validate: function (value) { return (value.length < 1 ? "Please enter at least one screen name" : true); },
                         });
                     }
-                    if (!argv.limit) {
+                    if (!argv.limit && !argv.screen_names) {
                         questions.push({
                             type: "number",
                             name: "target_tweet_count",
@@ -171,7 +197,13 @@ function run() {
                     if (!argv.search_keyword) {
                         argv.search_keyword = answers.search_keyword;
                     }
-                    if (!argv.limit) {
+                    if (answers.tweet_thread_url) {
+                        argv.tweet_thread_url = answers.tweet_thread_url;
+                    }
+                    if (answers.screen_names) {
+                        argv.screen_names = answers.screen_names;
+                    }
+                    if (!argv.limit && !argv.screen_names) {
                         argv.limit = answers.target_tweet_count;
                     }
                     try {
@@ -193,6 +225,8 @@ function run() {
                             OUTPUT_FILENAME: argv.output_filename,
                             SEARCH_TAB: String(argv.search_tab).toUpperCase(),
                             TIMEOUT_LIMIT: argv.timeout,
+                            DEBUG_MODE: argv.debug,
+                            SCREEN_NAMES: argv.screen_names ? argv.screen_names.split(",").map(function (s) { return s.trim(); }) : undefined,
                         });
                     }
                     catch (err) {

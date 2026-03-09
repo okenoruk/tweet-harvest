@@ -134,7 +134,7 @@ var RepliesHandler = /** @class */ (function (_super) {
      * @param item Item to process
      */
     RepliesHandler.prototype.processItemForCsv = function (item) {
-        var _a, _b, _c, _d;
+        var _a, _b, _c, _d, _e, _f;
         if (!(item === null || item === void 0 ? void 0 : item.tweet) || !(item === null || item === void 0 ? void 0 : item.userScreenName))
             return null;
         var tweet = (0, lodash_1.pick)(__assign(__assign({}, item.tweet), { id_str: item.rest_id || item.tweet.id_str, username: item.userScreenName, location: item.userLocation }), constants_1.TWEET_FIELDS);
@@ -143,6 +143,8 @@ var RepliesHandler = /** @class */ (function (_super) {
         tweet["tweet_url"] = "https://twitter.com/".concat(userScreenName, "/status/").concat(tweet.id_str);
         tweet["image_url"] = ((_c = (_b = (_a = item.tweet.entities) === null || _a === void 0 ? void 0 : _a.media) === null || _b === void 0 ? void 0 : _b[0]) === null || _c === void 0 ? void 0 : _c.media_url_https) || "";
         tweet["views_count"] = ((_d = item.views) === null || _d === void 0 ? void 0 : _d.count) || "";
+        tweet["followers"] = (_e = item.user) === null || _e === void 0 ? void 0 : _e.followers_count;
+        tweet["following"] = (_f = item.user) === null || _f === void 0 ? void 0 : _f.friends_count;
         return (0, lodash_1.pick)(tweet, this.getFields());
     };
     /**
