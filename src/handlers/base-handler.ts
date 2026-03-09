@@ -1,4 +1,5 @@
 import { Page, Response } from "@playwright/test";
+import * as fs from "fs";
 import chalk from "chalk";
 import path from "path";
 import { pick } from "lodash";
@@ -140,11 +141,16 @@ export abstract class BaseHandler {
   protected async writeItemsToCsv(items: any[]): Promise<void> {
     if (items.length === 0) return;
 
-    // Write header if not already written
+    // Write header if not already written and file is empty
     if (!this.headerWritten) {
+      const fileExists = fs.existsSync(this.filePath);
+      const isFileEmpty = fileExists ? fs.statSync(this.filePath).size === 0 : true;
+
+      if (isFileEmpty) {
+        const headerRow = createCsvHeaderRow(this.getFields());
+        appendCsv(this.filePath, headerRow);
+      }
       this.headerWritten = true;
-      const headerRow = createCsvHeaderRow(this.getFields());
-      appendCsv(this.filePath, headerRow);
     }
 
     // Process items for CSV

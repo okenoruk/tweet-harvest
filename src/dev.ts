@@ -55,13 +55,22 @@ import { ACCESS_TOKEN } from "./env";
 //   DELAY_EVERY_100_TWEETS_SECONDS: 0,
 // });
 
+// crawl({
+//   ACCESS_TOKEN: ACCESS_TOKEN,
+//   SEARCH_KEYWORDS: `perang iran lang:id`,
+//   TARGET_TWEET_COUNT: 20,
+//   DEBUG_MODE: true,
+//   OUTPUT_FILENAME: "perang_iran.csv",
+//   DELAY_EACH_TWEET_SECONDS: 0.1,
+//   DELAY_EVERY_100_TWEETS_SECONDS: 0,
+//   SEARCH_TAB: "TOP",
+// });
+
 crawl({
   ACCESS_TOKEN: ACCESS_TOKEN,
-  SEARCH_KEYWORDS: `perang iran lang:id`,
-  TARGET_TWEET_COUNT: 20,
+  SCREEN_NAMES: ["aniesbaswedan", "MiskinTV_", "tirta_cipeng"],
   DEBUG_MODE: true,
-  OUTPUT_FILENAME: "perang_iran.csv",
+  OUTPUT_FILENAME: "user_info.csv",
   DELAY_EACH_TWEET_SECONDS: 0.1,
   DELAY_EVERY_100_TWEETS_SECONDS: 0,
-  SEARCH_TAB: "TOP",
 });

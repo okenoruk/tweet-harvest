@@ -43,6 +43,27 @@ export const USER_PROFILE_FIELDS = [
   "favourites_count"
 ];
 
+// Fields to extract from user details (UserByScreenName API)
+export const USER_INFO_FIELDS = [
+  "id",
+  "rest_id",
+  "created_at",
+  "name",
+  "screen_name",
+  "description",
+  "location",
+  "followers_count",
+  "friends_count",
+  "statuses_count",
+  "favourites_count",
+  "listed_count",
+  "media_count",
+  "profile_image_url",
+  "profile_banner_url",
+  "is_blue_verified",
+  "is_identity_verified",
+];
+
 // Current timestamp formatted for filenames
 export const FORMATTED_TIMESTAMP = dayjs().format("DD-MM-YYYY HH-mm-ss");
 
@@ -52,7 +73,8 @@ export const DEFAULT_DATA_FOLDER = "./tweets-data";
 // Crawl modes
 export enum CrawlMode {
   SEARCH = "SEARCH",
-  DETAIL = "DETAIL"
+  DETAIL = "DETAIL",
+  USER_INFO = "USER_INFO"
 }
 
 // Search tabs

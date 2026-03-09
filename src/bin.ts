@@ -41,6 +41,11 @@ async function run() {
         describe: "Tweet thread URL",
         type: "string",
       },
+      screen_names: {
+        alias: "sn",
+        describe: "List of screen names to fetch info from (comma separated)",
+        type: "string",
+      },
       limit: {
         alias: "l",
         describe: "Limit number of tweets to crawl",
@@ -94,21 +99,41 @@ async function run() {
     });
   }
 
-  if (!argv.search_keyword && !argv.tweet_thread_url) {
+  if (!argv.search_keyword && !argv.tweet_thread_url && !argv.screen_names) {
     questions.push({
-      type: "text",
+      type: "select",
+      name: "crawl_mode",
+      message: "What do you want to crawl?",
+      choices: [
+        { title: "Search Mode", value: "search" },
+        { title: "Detail Mode (Replies/Likes/Retweets)", value: "detail" },
+        { title: "User Info Mode", value: "user_info" },
+      ],
+    });
+
+    questions.push({
+      type: (_, values) => (values.crawl_mode === "search" ? "text" : null),
       name: "search_keyword",
       message: "What's the search keyword?",
-      validate: (value) => {
-        if (value.length < 1) {
-          return "Please enter a search keyword";
-        }
-        return true;
-      },
+      validate: (value) => (value.length < 1 ? "Please enter a search keyword" : true),
+    });
+
+    questions.push({
+      type: (_, values) => (values.crawl_mode === "detail" ? "text" : null),
+      name: "tweet_thread_url",
+      message: "What's the tweet thread URL?",
+      validate: (value) => (value.length < 1 ? "Please enter a tweet thread URL" : true),
+    });
+
+    questions.push({
+      type: (_, values) => (values.crawl_mode === "user_info" ? "text" : null),
+      name: "screen_names",
+      message: "Enter screen names (comma separated):",
+      validate: (value) => (value.length < 1 ? "Please enter at least one screen name" : true),
     });
   }
 
-  if (!argv.limit) {
+  if (!argv.limit && !argv.screen_names) {
     questions.push({
       type: "number",
       name: "target_tweet_count",
@@ -137,7 +162,15 @@ async function run() {
     argv.search_keyword = answers.search_keyword;
   }
 
-  if (!argv.limit) {
+  if (answers.tweet_thread_url) {
+    argv.tweet_thread_url = answers.tweet_thread_url;
+  }
+
+  if (answers.screen_names) {
+    argv.screen_names = answers.screen_names;
+  }
+
+  if (!argv.limit && !argv.screen_names) {
     argv.limit = answers.target_tweet_count;
   }
 
@@ -163,6 +196,7 @@ async function run() {
       SEARCH_TAB: String(argv.search_tab).toUpperCase() as "TOP" | "LATEST",
       TIMEOUT_LIMIT: argv.timeout,
       DEBUG_MODE: argv.debug,
+      SCREEN_NAMES: argv.screen_names ? argv.screen_names.split(",").map((s: string) => s.trim()) : undefined,
     });
   } catch (err) {
     console.error("Error running script:", err);

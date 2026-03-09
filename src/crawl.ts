@@ -11,6 +11,7 @@ import { LikesHandler } from "./handlers/likes-handler";
 import { RetweetsHandler } from "./handlers/retweets-handler";
 import { TweetsHandler } from "./handlers/tweets-handler";
 import { RepliesHandler } from "./handlers/replies-handler";
+import { UserInfoHandler } from "./handlers/user-info-handler";
 import { BaseHandler } from "./handlers/base-handler";
 import { finalizeVideo } from "./utils/video";
 
@@ -32,6 +33,7 @@ interface CrawlParams {
   DEBUG_MODE?: boolean;
   OUTPUT_FILENAME?: string;
   TWEET_THREAD_URL?: string;
+  SCREEN_NAMES?: string[];
   SEARCH_TAB?: "LATEST" | "TOP";
   TIMEOUT_LIMIT?: number;
 }
@@ -60,9 +62,10 @@ export async function crawl({
   OUTPUT_FILENAME,
   SEARCH_TAB = "LATEST",
   TIMEOUT_LIMIT = 20,
+  SCREEN_NAMES,
 }: CrawlParams) {
-  // Determine crawl mode based on URL
-  const CRAWL_MODE = TWEET_THREAD_URL ? CrawlMode.DETAIL : CrawlMode.SEARCH;
+  // Determine crawl mode based on URL or screen names
+  const CRAWL_MODE = SCREEN_NAMES ? CrawlMode.USER_INFO : (TWEET_THREAD_URL ? CrawlMode.DETAIL : CrawlMode.SEARCH);
   const SWITCHED_SEARCH_TAB = SEARCH_TAB === "TOP" ? "LATEST" : "TOP";
 
   // Set up file paths
@@ -125,7 +128,8 @@ export async function crawl({
    */
   async function startCrawlTwitter({
     twitterSearchUrl = TWITTER_SEARCH_ADVANCED_URL[SEARCH_TAB],
-  }: StartCrawlTwitterParams = {}) {
+    screenName,
+  }: StartCrawlTwitterParams & { screenName?: string } = {}) {
     // Determine which handler to use based on URL and mode
     let handler: BaseHandler;
     let urlToGo = "";
@@ -164,6 +168,16 @@ export async function crawl({
           1 // delayEvery100Seconds
         );
       }
+    } else if (CRAWL_MODE === CrawlMode.USER_INFO) {
+      urlToGo = `https://x.com/${screenName}`;
+      handler = new UserInfoHandler(
+        page,
+        FILE_NAME,
+        DEFAULT_DATA_FOLDER,
+        TIMEOUT_LIMIT,
+        DELAY_EACH_TWEET_SECONDS,
+        1
+      );
     } else {
       urlToGo = twitterSearchUrl;
       handler = new TweetsHandler(
@@ -215,7 +229,13 @@ export async function crawl({
 
   try {
     // Start crawling
-    await startCrawlTwitter();
+    if (CRAWL_MODE === CrawlMode.USER_INFO && SCREEN_NAMES) {
+      for (const screenName of SCREEN_NAMES) {
+        await startCrawlTwitter({ screenName });
+      }
+    } else {
+      await startCrawlTwitter();
+    }
 
     // If no tweets found, try the other tab
     if (TWEETS_NOT_FOUND_ON_CURRENT_TAB && (SEARCH_FROM_DATE || SEARCH_TO_DATE)) {
