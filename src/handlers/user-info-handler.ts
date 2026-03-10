@@ -1,5 +1,6 @@
 import { Page } from "@playwright/test";
 import { pick } from "lodash";
+import chalk from "chalk";
 import { BaseHandler } from "./base-handler";
 import { USER_INFO_FIELDS } from "../utils/constants";
 
@@ -40,7 +41,15 @@ export class UserInfoHandler extends BaseHandler {
      * @param responseJson Response JSON data
      */
     protected processResponseData(responseJson: any): any[] {
-        const user = responseJson.data?.user?.result;
+        const data = responseJson.data;
+
+        if (!data || Object.keys(data).length === 0) {
+            console.warn(chalk.yellow("\nWarning: Received empty data from Twitter API."));
+            console.warn(chalk.yellow("This usually means the account is deleted. Skipping..."));
+            return [];
+        }
+
+        const user = data?.user?.result;
         if (!user) {
             return [];
         }
