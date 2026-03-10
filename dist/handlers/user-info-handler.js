@@ -14,9 +14,13 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserInfoHandler = void 0;
 var lodash_1 = require("lodash");
+var chalk_1 = __importDefault(require("chalk"));
 var base_handler_1 = require("./base-handler");
 var constants_1 = require("../utils/constants");
 /**
@@ -51,8 +55,14 @@ var UserInfoHandler = /** @class */ (function (_super) {
      * @param responseJson Response JSON data
      */
     UserInfoHandler.prototype.processResponseData = function (responseJson) {
-        var _a, _b;
-        var user = (_b = (_a = responseJson.data) === null || _a === void 0 ? void 0 : _a.user) === null || _b === void 0 ? void 0 : _b.result;
+        var _a;
+        var data = responseJson.data;
+        if (!data || Object.keys(data).length === 0) {
+            console.warn(chalk_1.default.yellow("\nWarning: Received empty data from Twitter API."));
+            console.warn(chalk_1.default.yellow("This usually means the account is deleted. Skipping..."));
+            return [];
+        }
+        var user = (_a = data === null || data === void 0 ? void 0 : data.user) === null || _a === void 0 ? void 0 : _a.result;
         if (!user) {
             return [];
         }
