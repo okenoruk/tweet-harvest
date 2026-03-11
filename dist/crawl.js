@@ -199,7 +199,7 @@ function crawl(_a) {
                     page = _j.sent();
                     page.setDefaultTimeout(60 * 1000);
                     // Listen for network requests
-                    (0, listen_network_requests_1.listenNetworkRequests)(page);
+                    (0, listen_network_requests_1.listenNetworkRequests)(page, SEARCH_TAB);
                     _j.label = 4;
                 case 4:
                     _j.trys.push([4, 14, 16, 26]);

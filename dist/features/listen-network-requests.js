@@ -41,7 +41,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.listenNetworkRequests = void 0;
 var chalk_1 = __importDefault(require("chalk"));
-var listenNetworkRequests = function (page) { return __awaiter(void 0, void 0, void 0, function () {
+var listenNetworkRequests = function (page, searchTab) { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0: 
@@ -51,6 +51,23 @@ var listenNetworkRequests = function (page) { return __awaiter(void 0, void 0, v
                     // only log requests that includes SearchTimeline
                     if (url.includes("SearchTimeline")) {
                         console.info(chalk_1.default.blue("\nGot some tweets, saving to file..."));
+                    }
+                    // Intercept Retweeters URL to change enableRanking
+                    if (url.includes("Retweeters")) {
+                        var urlObj = new URL(url);
+                        var variablesStr = urlObj.searchParams.get("variables");
+                        if (variablesStr) {
+                            try {
+                                var variables = JSON.parse(variablesStr);
+                                // Set enableRanking to false if LATEST, else true
+                                variables.enableRanking = searchTab !== "LATEST";
+                                urlObj.searchParams.set("variables", JSON.stringify(variables));
+                                return route.continue({ url: urlObj.toString() });
+                            }
+                            catch (e) {
+                                console.error(chalk_1.default.red("Error parsing variables in Retweeters URL: ".concat(e)));
+                            }
+                        }
                     }
                     // block pictures and videos
                     if (url.includes(".jpg") || url.includes(".png") || url.includes(".mp4")) {
