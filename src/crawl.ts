@@ -121,7 +121,7 @@ export async function crawl({
   page.setDefaultTimeout(60 * 1000);
 
   // Listen for network requests
-  listenNetworkRequests(page);
+  listenNetworkRequests(page, SEARCH_TAB);
 
   /**
    * Start crawling Twitter
