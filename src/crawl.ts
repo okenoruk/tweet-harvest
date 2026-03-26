@@ -11,6 +11,7 @@ import { LikesHandler } from "./handlers/likes-handler";
 import { RetweetsHandler } from "./handlers/retweets-handler";
 import { TweetsHandler } from "./handlers/tweets-handler";
 import { RepliesHandler } from "./handlers/replies-handler";
+import { QuotesHandler } from "./handlers/quotes-handler";
 import { UserInfoHandler } from "./handlers/user-info-handler";
 import { BaseHandler } from "./handlers/base-handler";
 import { finalizeVideo } from "./utils/video";
@@ -148,6 +149,16 @@ export async function crawl({
         );
       } else if (TWEET_THREAD_URL!.indexOf('/retweets') > -1) {
         handler = new RetweetsHandler(
+          page,
+          FILE_NAME,
+          DEFAULT_DATA_FOLDER,
+          TARGET_TWEET_COUNT,
+          TIMEOUT_LIMIT, // timeoutLimit
+          DELAY_EACH_LIKES_SECONDS,
+          1 // delayEvery100Seconds
+        );
+      } else if (TWEET_THREAD_URL!.indexOf('/quotes') > -1) {
+        handler = new QuotesHandler(
           page,
           FILE_NAME,
           DEFAULT_DATA_FOLDER,
