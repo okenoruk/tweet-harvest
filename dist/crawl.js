@@ -63,6 +63,7 @@ var likes_handler_1 = require("./handlers/likes-handler");
 var retweets_handler_1 = require("./handlers/retweets-handler");
 var tweets_handler_1 = require("./handlers/tweets-handler");
 var replies_handler_1 = require("./handlers/replies-handler");
+var quotes_handler_1 = require("./handlers/quotes-handler");
 var user_info_handler_1 = require("./handlers/user-info-handler");
 var video_1 = require("./utils/video");
 // Initialize stealth mode
@@ -93,6 +94,11 @@ function crawl(_a) {
                                 }
                                 else if (TWEET_THREAD_URL.indexOf('/retweets') > -1) {
                                     handler = new retweets_handler_1.RetweetsHandler(page, FILE_NAME, constants_1.DEFAULT_DATA_FOLDER, TARGET_TWEET_COUNT, TIMEOUT_LIMIT, // timeoutLimit
+                                    DELAY_EACH_LIKES_SECONDS, 1 // delayEvery100Seconds
+                                    );
+                                }
+                                else if (TWEET_THREAD_URL.indexOf('/quotes') > -1) {
+                                    handler = new quotes_handler_1.QuotesHandler(page, FILE_NAME, constants_1.DEFAULT_DATA_FOLDER, TARGET_TWEET_COUNT, TIMEOUT_LIMIT, // timeoutLimit
                                     DELAY_EACH_LIKES_SECONDS, 1 // delayEvery100Seconds
                                     );
                                 }
