@@ -3,11 +3,11 @@
     "tweet": {
       "bookmark_count": 0,
       "bookmarked": false,
-      "conversation_id_str": "1998649534986207635",
-      "created_at": "Wed Dec 10 07:02:36 +0000 2025",
+      "conversation_id_str": "1998632308023373973",
+      "created_at": "Wed Dec 10 05:54:09 +0000 2025",
       "display_text_range": [
         0,
-        11
+        23
       ],
       "entities": {
         "hashtags": [],
@@ -18,48 +18,48 @@
       },
       "favorite_count": 0,
       "favorited": false,
-      "full_text": "J.E.M.B.U.T",
-      "id_str": "1998649534986207635",
+      "full_text": "layak mendapatkan Oscar",
+      "id_str": "1998632308023373973",
       "is_quote_status": true,
-      "lang": "ht",
+      "lang": "in",
       "quote_count": 0,
       "quoted_status_id_str": "1998285789864849715",
       "quoted_status_permalink": {
-        "display": "x.com/BNPB_Indonesia…",
-        "expanded": "https://twitter.com/BNPB_Indonesia/status/1998285789864849715",
-        "url": "https://t.co/3KK3MEFqGR"
+        "display": "x.com/bnpb_indonesia…",
+        "expanded": "https://twitter.com/bnpb_indonesia/status/1998285789864849715",
+        "url": "https://t.co/XqMJKC6f5M"
       },
       "reply_count": 0,
       "retweet_count": 0,
       "retweeted": false,
-      "user_id_str": "1192399116401143808"
+      "user_id_str": "95842406"
     },
     "user": {
-      "default_profile": true,
+      "default_profile": false,
       "default_profile_image": false,
-      "description": "awkwarder",
+      "description": "",
       "entities": {
         "description": {
           "urls": []
         }
       },
       "fast_followers_count": 0,
-      "favourites_count": 19165,
+      "favourites_count": 839,
       "follow_request_sent": false,
-      "followers_count": 367,
-      "friends_count": 417,
-      "has_custom_timelines": false,
+      "followers_count": 1401,
+      "friends_count": 549,
+      "has_custom_timelines": true,
       "is_translator": false,
-      "listed_count": 0,
-      "media_count": 229,
-      "normal_followers_count": 367,
+      "listed_count": 1,
+      "media_count": 2149,
+      "normal_followers_count": 1401,
       "notifications": false,
       "pinned_tweet_ids_str": [],
       "possibly_sensitive": false,
-      "profile_banner_url": "https://pbs.twimg.com/profile_banners/1192399116401143808/1692461821",
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/95842406/1665504100",
       "profile_interstitial_type": "",
-      "statuses_count": 12218,
-      "translator_type": "none",
+      "statuses_count": 72135,
+      "translator_type": "regular",
       "want_retweets": false,
       "withheld_in_countries": []
     },
@@ -67,51 +67,51 @@
       "__typename": "User",
       "affiliates_highlighted_label": {},
       "avatar": {
-        "image_url": "https://pbs.twimg.com/profile_images/1963583773620183040/9OvFBnYu_normal.jpg"
+        "image_url": "https://pbs.twimg.com/profile_images/1579864622622199808/tjCy3wn1_normal.jpg"
       },
       "core": {
-        "created_at": "Thu Nov 07 11:11:26 +0000 2019",
-        "name": "bongkeng",
-        "screen_name": "bungbongkeng"
+        "created_at": "Thu Dec 10 06:39:58 +0000 2009",
+        "name": "Josu",
+        "screen_name": "joshuasuu"
       },
       "dm_permissions": {
         "can_dm": true
       },
       "follow_request_sent": false,
       "has_graduated_access": true,
-      "id": "VXNlcjoxMTkyMzk5MTE2NDAxMTQzODA4",
+      "id": "VXNlcjo5NTg0MjQwNg==",
       "is_blue_verified": false,
       "legacy": {
-        "default_profile": true,
+        "default_profile": false,
         "default_profile_image": false,
-        "description": "awkwarder",
+        "description": "",
         "entities": {
           "description": {
             "urls": []
           }
         },
         "fast_followers_count": 0,
-        "favourites_count": 19165,
+        "favourites_count": 839,
         "follow_request_sent": false,
-        "followers_count": 367,
-        "friends_count": 417,
-        "has_custom_timelines": false,
+        "followers_count": 1401,
+        "friends_count": 549,
+        "has_custom_timelines": true,
         "is_translator": false,
-        "listed_count": 0,
-        "media_count": 229,
-        "normal_followers_count": 367,
+        "listed_count": 1,
+        "media_count": 2149,
+        "normal_followers_count": 1401,
         "notifications": false,
         "pinned_tweet_ids_str": [],
         "possibly_sensitive": false,
-        "profile_banner_url": "https://pbs.twimg.com/profile_banners/1192399116401143808/1692461821",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/95842406/1665504100",
         "profile_interstitial_type": "",
-        "statuses_count": 12218,
-        "translator_type": "none",
+        "statuses_count": 72135,
+        "translator_type": "regular",
         "want_retweets": false,
         "withheld_in_countries": []
       },
       "location": {
-        "location": "West Java, Indonesia"
+        "location": ""
       },
       "media_permissions": {
         "can_media_tag": false
@@ -121,7 +121,313 @@
         "protected": false
       },
       "profile_bio": {
-        "description": "awkwarder"
+        "description": ""
+      },
+      "profile_image_shape": "Circle",
+      "relationship_perspectives": {
+        "blocked_by": false,
+        "blocking": false,
+        "followed_by": false,
+        "following": false,
+        "muting": false
+      },
+      "rest_id": "95842406",
+      "super_follow_eligible": false,
+      "super_followed_by": false,
+      "super_following": false,
+      "verification": {
+        "verified": false
+      }
+    },
+    "views": {
+      "count": "43",
+      "state": "EnabledWithCount"
+    },
+    "rest_id": "1998632308023373973",
+    "userName": "Josu",
+    "userScreenName": "joshuasuu",
+    "userLocation": ""
+  },
+  {
+    "tweet": {
+      "bookmark_count": 0,
+      "bookmarked": false,
+      "conversation_id_str": "1998679335042166979",
+      "created_at": "Wed Dec 10 09:01:01 +0000 2025",
+      "display_text_range": [
+        0,
+        20
+      ],
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "timestamps": [],
+        "urls": [],
+        "user_mentions": []
+      },
+      "favorite_count": 0,
+      "favorited": false,
+      "full_text": "konten apaan dah ini",
+      "id_str": "1998679335042166979",
+      "is_quote_status": true,
+      "lang": "in",
+      "quote_count": 0,
+      "quoted_status_id_str": "1998285789864849715",
+      "quoted_status_permalink": {
+        "display": "x.com/BNPB_Indonesia…",
+        "expanded": "https://twitter.com/BNPB_Indonesia/status/1998285789864849715",
+        "url": "https://t.co/rSdlmBFDGr"
+      },
+      "reply_count": 0,
+      "retweet_count": 0,
+      "retweeted": false,
+      "user_id_str": "231810435"
+    },
+    "user": {
+      "default_profile": false,
+      "default_profile_image": false,
+      "description": "Suka K-Pop",
+      "entities": {
+        "description": {
+          "urls": []
+        }
+      },
+      "fast_followers_count": 0,
+      "favourites_count": 2719,
+      "follow_request_sent": false,
+      "followers_count": 1001,
+      "friends_count": 982,
+      "has_custom_timelines": true,
+      "is_translator": false,
+      "listed_count": 4,
+      "media_count": 1453,
+      "normal_followers_count": 1001,
+      "notifications": false,
+      "pinned_tweet_ids_str": [
+        "1536993212627226624"
+      ],
+      "possibly_sensitive": false,
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/231810435/1759157441",
+      "profile_interstitial_type": "",
+      "statuses_count": 39855,
+      "translator_type": "none",
+      "want_retweets": false,
+      "withheld_in_countries": []
+    },
+    "userDetail": {
+      "__typename": "User",
+      "affiliates_highlighted_label": {},
+      "avatar": {
+        "image_url": "https://pbs.twimg.com/profile_images/1314431253978861568/TNpwwyv5_normal.jpg"
+      },
+      "core": {
+        "created_at": "Wed Dec 29 14:47:35 +0000 2010",
+        "name": "DOT.➡The luckiest",
+        "screen_name": "qquartera"
+      },
+      "dm_permissions": {
+        "can_dm": true
+      },
+      "follow_request_sent": false,
+      "has_graduated_access": true,
+      "id": "VXNlcjoyMzE4MTA0MzU=",
+      "is_blue_verified": false,
+      "legacy": {
+        "default_profile": false,
+        "default_profile_image": false,
+        "description": "Suka K-Pop",
+        "entities": {
+          "description": {
+            "urls": []
+          }
+        },
+        "fast_followers_count": 0,
+        "favourites_count": 2719,
+        "follow_request_sent": false,
+        "followers_count": 1001,
+        "friends_count": 982,
+        "has_custom_timelines": true,
+        "is_translator": false,
+        "listed_count": 4,
+        "media_count": 1453,
+        "normal_followers_count": 1001,
+        "notifications": false,
+        "pinned_tweet_ids_str": [
+          "1536993212627226624"
+        ],
+        "possibly_sensitive": false,
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/231810435/1759157441",
+        "profile_interstitial_type": "",
+        "statuses_count": 39855,
+        "translator_type": "none",
+        "want_retweets": false,
+        "withheld_in_countries": []
+      },
+      "location": {
+        "location": "Samudra Hindia"
+      },
+      "media_permissions": {
+        "can_media_tag": false
+      },
+      "parody_commentary_fan_label": "None",
+      "privacy": {
+        "protected": false
+      },
+      "profile_bio": {
+        "description": "Suka K-Pop"
+      },
+      "profile_image_shape": "Circle",
+      "relationship_perspectives": {
+        "blocked_by": false,
+        "blocking": false,
+        "followed_by": false,
+        "following": false,
+        "muting": false
+      },
+      "rest_id": "231810435",
+      "super_follow_eligible": false,
+      "super_followed_by": false,
+      "super_following": false,
+      "verification": {
+        "verified": false
+      }
+    },
+    "views": {
+      "count": "68",
+      "state": "EnabledWithCount"
+    },
+    "rest_id": "1998679335042166979",
+    "userName": "DOT.➡The luckiest",
+    "userScreenName": "qquartera",
+    "userLocation": "Samudra Hindia"
+  },
+  {
+    "tweet": {
+      "bookmark_count": 0,
+      "bookmarked": false,
+      "conversation_id_str": "1998606449833078840",
+      "created_at": "Wed Dec 10 04:11:24 +0000 2025",
+      "display_text_range": [
+        0,
+        16
+      ],
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "timestamps": [],
+        "urls": [],
+        "user_mentions": []
+      },
+      "favorite_count": 0,
+      "favorited": false,
+      "full_text": "Jilat terus tot.",
+      "id_str": "1998606449833078840",
+      "is_quote_status": true,
+      "lang": "in",
+      "quote_count": 0,
+      "quoted_status_id_str": "1998285789864849715",
+      "quoted_status_permalink": {
+        "display": "x.com/BNPB_Indonesia…",
+        "expanded": "https://twitter.com/BNPB_Indonesia/status/1998285789864849715",
+        "url": "https://t.co/YP22iducjr"
+      },
+      "reply_count": 0,
+      "retweet_count": 0,
+      "retweeted": false,
+      "user_id_str": "1466250199089614848"
+    },
+    "user": {
+      "default_profile": true,
+      "default_profile_image": false,
+      "description": "Where were you while we were getting high?",
+      "entities": {
+        "description": {
+          "urls": []
+        }
+      },
+      "fast_followers_count": 0,
+      "favourites_count": 887,
+      "follow_request_sent": false,
+      "followers_count": 537,
+      "friends_count": 567,
+      "has_custom_timelines": true,
+      "is_translator": false,
+      "listed_count": 1,
+      "media_count": 4396,
+      "normal_followers_count": 537,
+      "notifications": false,
+      "pinned_tweet_ids_str": [
+        "1756006635443806395"
+      ],
+      "possibly_sensitive": false,
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/1466250199089614848/1638439189",
+      "profile_interstitial_type": "",
+      "statuses_count": 34206,
+      "translator_type": "none",
+      "want_retweets": false,
+      "withheld_in_countries": []
+    },
+    "userDetail": {
+      "__typename": "User",
+      "affiliates_highlighted_label": {},
+      "avatar": {
+        "image_url": "https://pbs.twimg.com/profile_images/1980008121545216000/hrJkUmuV_normal.jpg"
+      },
+      "core": {
+        "created_at": "Thu Dec 02 03:38:00 +0000 2021",
+        "name": "OKNUM",
+        "screen_name": "papajahat_3gp"
+      },
+      "dm_permissions": {
+        "can_dm": false
+      },
+      "follow_request_sent": false,
+      "has_graduated_access": true,
+      "id": "VXNlcjoxNDY2MjUwMTk5MDg5NjE0ODQ4",
+      "is_blue_verified": false,
+      "legacy": {
+        "default_profile": true,
+        "default_profile_image": false,
+        "description": "Where were you while we were getting high?",
+        "entities": {
+          "description": {
+            "urls": []
+          }
+        },
+        "fast_followers_count": 0,
+        "favourites_count": 887,
+        "follow_request_sent": false,
+        "followers_count": 537,
+        "friends_count": 567,
+        "has_custom_timelines": true,
+        "is_translator": false,
+        "listed_count": 1,
+        "media_count": 4396,
+        "normal_followers_count": 537,
+        "notifications": false,
+        "pinned_tweet_ids_str": [
+          "1756006635443806395"
+        ],
+        "possibly_sensitive": false,
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/1466250199089614848/1638439189",
+        "profile_interstitial_type": "",
+        "statuses_count": 34206,
+        "translator_type": "none",
+        "want_retweets": false,
+        "withheld_in_countries": []
+      },
+      "location": {
+        "location": "di lipatan kutang nyi blorong."
+      },
+      "media_permissions": {
+        "can_media_tag": false
+      },
+      "parody_commentary_fan_label": "None",
+      "privacy": {
+        "protected": false
+      },
+      "profile_bio": {
+        "description": "Where were you while we were getting high?"
       },
       "profile_description_language": "en",
       "profile_image_shape": "Circle",
@@ -132,7 +438,7 @@
         "following": false,
         "muting": false
       },
-      "rest_id": "1192399116401143808",
+      "rest_id": "1466250199089614848",
       "super_follow_eligible": false,
       "super_followed_by": false,
       "super_following": false,
@@ -141,13 +447,188 @@
       }
     },
     "views": {
-      "count": "48",
+      "count": "44",
       "state": "EnabledWithCount"
     },
-    "rest_id": "1998649534986207635",
-    "userName": "bongkeng",
-    "userScreenName": "bungbongkeng",
-    "userLocation": "West Java, Indonesia"
+    "rest_id": "1998606449833078840",
+    "userName": "OKNUM",
+    "userScreenName": "papajahat_3gp",
+    "userLocation": "di lipatan kutang nyi blorong."
+  },
+  {
+    "tweet": {
+      "bookmark_count": 0,
+      "bookmarked": false,
+      "conversation_id_str": "1998726445154369596",
+      "created_at": "Wed Dec 10 12:08:13 +0000 2025",
+      "display_text_range": [
+        0,
+        88
+      ],
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "timestamps": [],
+        "urls": [],
+        "user_mentions": [
+          {
+            "id_str": "381870160",
+            "indices": [
+              10,
+              20
+            ],
+            "name": "Sutopo Purwo Nugroho",
+            "screen_name": "Sutopo_PN"
+          }
+        ]
+      },
+      "favorite_count": 0,
+      "favorited": false,
+      "full_text": "Pasti pak @Sutopo_PN, Pak Doni, dan Pak Yuri sedih lihat BNPB sekarang dari Surga hehehe",
+      "id_str": "1998726445154369596",
+      "is_quote_status": true,
+      "lang": "in",
+      "quote_count": 0,
+      "quoted_status_id_str": "1998285789864849715",
+      "quoted_status_permalink": {
+        "display": "x.com/BNPB_Indonesia…",
+        "expanded": "https://twitter.com/BNPB_Indonesia/status/1998285789864849715",
+        "url": "https://t.co/W20rQ43pfH"
+      },
+      "reply_count": 0,
+      "retweet_count": 0,
+      "retweeted": false,
+      "user_id_str": "96932909"
+    },
+    "user": {
+      "default_profile": false,
+      "default_profile_image": false,
+      "description": "Hai, selamat datang. Mau cari info nyindir ya?",
+      "entities": {
+        "description": {
+          "urls": []
+        }
+      },
+      "fast_followers_count": 0,
+      "favourites_count": 85660,
+      "follow_request_sent": false,
+      "followers_count": 1335,
+      "friends_count": 572,
+      "has_custom_timelines": true,
+      "is_translator": false,
+      "listed_count": 7,
+      "media_count": 5341,
+      "normal_followers_count": 1335,
+      "notifications": false,
+      "pinned_tweet_ids_str": [
+        "1616774515346010116"
+      ],
+      "possibly_sensitive": false,
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/96932909/1766509350",
+      "profile_interstitial_type": "",
+      "statuses_count": 106923,
+      "translator_type": "none",
+      "want_retweets": false,
+      "withheld_in_countries": []
+    },
+    "userDetail": {
+      "__typename": "User",
+      "affiliates_highlighted_label": {},
+      "avatar": {
+        "image_url": "https://pbs.twimg.com/profile_images/2003511066152857600/S2TQfbCE_normal.jpg"
+      },
+      "core": {
+        "created_at": "Tue Dec 15 07:14:02 +0000 2009",
+        "name": "N",
+        "screen_name": "tuhkanasu"
+      },
+      "dm_permissions": {
+        "can_dm": true
+      },
+      "follow_request_sent": false,
+      "has_graduated_access": true,
+      "id": "VXNlcjo5NjkzMjkwOQ==",
+      "is_blue_verified": false,
+      "legacy": {
+        "default_profile": false,
+        "default_profile_image": false,
+        "description": "Hai, selamat datang. Mau cari info nyindir ya?",
+        "entities": {
+          "description": {
+            "urls": []
+          }
+        },
+        "fast_followers_count": 0,
+        "favourites_count": 85660,
+        "follow_request_sent": false,
+        "followers_count": 1335,
+        "friends_count": 572,
+        "has_custom_timelines": true,
+        "is_translator": false,
+        "listed_count": 7,
+        "media_count": 5341,
+        "normal_followers_count": 1335,
+        "notifications": false,
+        "pinned_tweet_ids_str": [
+          "1616774515346010116"
+        ],
+        "possibly_sensitive": false,
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/96932909/1766509350",
+        "profile_interstitial_type": "",
+        "statuses_count": 106923,
+        "translator_type": "none",
+        "want_retweets": false,
+        "withheld_in_countries": []
+      },
+      "location": {
+        "location": ""
+      },
+      "media_permissions": {
+        "can_media_tag": false
+      },
+      "parody_commentary_fan_label": "None",
+      "privacy": {
+        "protected": false
+      },
+      "professional": {
+        "category": [
+          {
+            "icon_name": "IconBriefcaseStroke",
+            "id": 957,
+            "name": "Author"
+          }
+        ],
+        "professional_type": "Creator",
+        "rest_id": "1473704502545068050"
+      },
+      "profile_bio": {
+        "description": "Hai, selamat datang. Mau cari info nyindir ya?"
+      },
+      "profile_description_language": "id",
+      "profile_image_shape": "Circle",
+      "relationship_perspectives": {
+        "blocked_by": false,
+        "blocking": false,
+        "followed_by": false,
+        "following": false,
+        "muting": false
+      },
+      "rest_id": "96932909",
+      "super_follow_eligible": false,
+      "super_followed_by": false,
+      "super_following": false,
+      "verification": {
+        "verified": false
+      }
+    },
+    "views": {
+      "count": "47",
+      "state": "EnabledWithCount"
+    },
+    "rest_id": "1998726445154369596",
+    "userName": "N",
+    "userScreenName": "tuhkanasu",
+    "userLocation": ""
   },
   {
     "tweet": {
@@ -194,7 +675,7 @@
         }
       },
       "fast_followers_count": 0,
-      "favourites_count": 3908,
+      "favourites_count": 3909,
       "follow_request_sent": false,
       "followers_count": 126,
       "friends_count": 308,
@@ -210,7 +691,7 @@
       "possibly_sensitive": false,
       "profile_banner_url": "https://pbs.twimg.com/profile_banners/1723724316041441280/1748905549",
       "profile_interstitial_type": "",
-      "statuses_count": 3194,
+      "statuses_count": 3195,
       "translator_type": "none",
       "want_retweets": false,
       "withheld_in_countries": []
@@ -243,7 +724,7 @@
           }
         },
         "fast_followers_count": 0,
-        "favourites_count": 3908,
+        "favourites_count": 3909,
         "follow_request_sent": false,
         "followers_count": 126,
         "friends_count": 308,
@@ -259,7 +740,7 @@
         "possibly_sensitive": false,
         "profile_banner_url": "https://pbs.twimg.com/profile_banners/1723724316041441280/1748905549",
         "profile_interstitial_type": "",
-        "statuses_count": 3194,
+        "statuses_count": 3195,
         "translator_type": "none",
         "want_retweets": false,
         "withheld_in_countries": []
@@ -307,6 +788,349 @@
     "tweet": {
       "bookmark_count": 0,
       "bookmarked": false,
+      "conversation_id_str": "1998625587842486410",
+      "created_at": "Wed Dec 10 05:27:27 +0000 2025",
+      "display_text_range": [
+        0,
+        43
+      ],
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "timestamps": [],
+        "urls": [],
+        "user_mentions": []
+      },
+      "favorite_count": 1,
+      "favorited": false,
+      "full_text": "\"bapak tolong dibuatkan konten dramatis ya\"",
+      "id_str": "1998625587842486410",
+      "is_quote_status": true,
+      "lang": "in",
+      "quote_count": 0,
+      "quoted_status_id_str": "1998285789864849715",
+      "quoted_status_permalink": {
+        "display": "x.com/BNPB_Indonesia…",
+        "expanded": "https://twitter.com/BNPB_Indonesia/status/1998285789864849715",
+        "url": "https://t.co/s7zvdfFIPl"
+      },
+      "reply_count": 0,
+      "retweet_count": 0,
+      "retweeted": false,
+      "user_id_str": "272692490"
+    },
+    "user": {
+      "default_profile": false,
+      "default_profile_image": false,
+      "description": "cuma tukang berijazah",
+      "entities": {
+        "description": {
+          "urls": []
+        }
+      },
+      "fast_followers_count": 0,
+      "favourites_count": 11351,
+      "follow_request_sent": false,
+      "followers_count": 1061,
+      "friends_count": 1069,
+      "has_custom_timelines": true,
+      "is_translator": false,
+      "listed_count": 3,
+      "media_count": 1978,
+      "normal_followers_count": 1061,
+      "notifications": false,
+      "pinned_tweet_ids_str": [],
+      "possibly_sensitive": false,
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/272692490/1668176465",
+      "profile_interstitial_type": "",
+      "statuses_count": 52161,
+      "translator_type": "none",
+      "want_retweets": false,
+      "withheld_in_countries": []
+    },
+    "userDetail": {
+      "__typename": "User",
+      "affiliates_highlighted_label": {},
+      "avatar": {
+        "image_url": "https://pbs.twimg.com/profile_images/1796880953534783488/ijWYu5En_normal.jpg"
+      },
+      "core": {
+        "created_at": "Sun Mar 27 00:37:09 +0000 2011",
+        "name": "Oky Laksa Indra K.",
+        "screen_name": "indra_kencana"
+      },
+      "dm_permissions": {
+        "can_dm": true
+      },
+      "follow_request_sent": false,
+      "has_graduated_access": true,
+      "id": "VXNlcjoyNzI2OTI0OTA=",
+      "is_blue_verified": false,
+      "legacy": {
+        "default_profile": false,
+        "default_profile_image": false,
+        "description": "cuma tukang berijazah",
+        "entities": {
+          "description": {
+            "urls": []
+          }
+        },
+        "fast_followers_count": 0,
+        "favourites_count": 11351,
+        "follow_request_sent": false,
+        "followers_count": 1061,
+        "friends_count": 1069,
+        "has_custom_timelines": true,
+        "is_translator": false,
+        "listed_count": 3,
+        "media_count": 1978,
+        "normal_followers_count": 1061,
+        "notifications": false,
+        "pinned_tweet_ids_str": [],
+        "possibly_sensitive": false,
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/272692490/1668176465",
+        "profile_interstitial_type": "",
+        "statuses_count": 52161,
+        "translator_type": "none",
+        "want_retweets": false,
+        "withheld_in_countries": []
+      },
+      "location": {
+        "location": "Gresik, Indonesia (currently)"
+      },
+      "media_permissions": {
+        "can_media_tag": true
+      },
+      "parody_commentary_fan_label": "None",
+      "privacy": {
+        "protected": false
+      },
+      "profile_bio": {
+        "description": "cuma tukang berijazah"
+      },
+      "profile_description_language": "id",
+      "profile_image_shape": "Circle",
+      "relationship_perspectives": {
+        "blocked_by": false,
+        "blocking": false,
+        "followed_by": false,
+        "following": false,
+        "muting": false
+      },
+      "rest_id": "272692490",
+      "super_follow_eligible": false,
+      "super_followed_by": false,
+      "super_following": false,
+      "verification": {
+        "verified": false
+      }
+    },
+    "views": {
+      "count": "155",
+      "state": "EnabledWithCount"
+    },
+    "rest_id": "1998625587842486410",
+    "userName": "Oky Laksa Indra K.",
+    "userScreenName": "indra_kencana",
+    "userLocation": "Gresik, Indonesia (currently)"
+  },
+  {
+    "tweet": {
+      "bookmark_count": 1,
+      "bookmarked": false,
+      "conversation_id_str": "1998598163708653916",
+      "created_at": "Wed Dec 10 03:38:29 +0000 2025",
+      "display_text_range": [
+        0,
+        93
+      ],
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "timestamps": [],
+        "urls": [],
+        "user_mentions": []
+      },
+      "favorite_count": 44,
+      "favorited": false,
+      "full_text": "Heyyy nanti dulu sinetronnya.\nYang harus you urus itu banyak.\nYou bukan cari engagement kan??",
+      "id_str": "1998598163708653916",
+      "is_quote_status": true,
+      "lang": "in",
+      "quote_count": 0,
+      "quoted_status_id_str": "1998285789864849715",
+      "quoted_status_permalink": {
+        "display": "x.com/BNPB_Indonesia…",
+        "expanded": "https://twitter.com/BNPB_Indonesia/status/1998285789864849715",
+        "url": "https://t.co/8H4xlHnpAd"
+      },
+      "reply_count": 0,
+      "retweet_count": 21,
+      "retweeted": false,
+      "user_id_str": "60062718"
+    },
+    "user": {
+      "default_profile": false,
+      "default_profile_image": false,
+      "description": "Tukang Masak Amatir.",
+      "entities": {
+        "description": {
+          "urls": []
+        },
+        "url": {
+          "urls": [
+            {
+              "display_url": "7Langit.com",
+              "expanded_url": "http://7Langit.com",
+              "indices": [
+                0,
+                23
+              ],
+              "url": "https://t.co/T0d7c7UjFb"
+            }
+          ]
+        }
+      },
+      "fast_followers_count": 0,
+      "favourites_count": 6297,
+      "follow_request_sent": false,
+      "followers_count": 15587,
+      "friends_count": 1384,
+      "has_custom_timelines": true,
+      "is_translator": false,
+      "listed_count": 28,
+      "media_count": 6156,
+      "normal_followers_count": 15587,
+      "notifications": false,
+      "pinned_tweet_ids_str": [
+        "1246775732518268929"
+      ],
+      "possibly_sensitive": false,
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/60062718/1560433549",
+      "profile_interstitial_type": "",
+      "statuses_count": 85830,
+      "translator_type": "none",
+      "url": "https://t.co/T0d7c7UjFb",
+      "want_retweets": false,
+      "withheld_in_countries": []
+    },
+    "userDetail": {
+      "__typename": "User",
+      "affiliates_highlighted_label": {},
+      "avatar": {
+        "image_url": "https://pbs.twimg.com/profile_images/1586417455965999104/G-PlqObU_normal.jpg"
+      },
+      "core": {
+        "created_at": "Sat Jul 25 13:59:34 +0000 2009",
+        "name": "Titi Rusdi",
+        "screen_name": "TitiRusdi"
+      },
+      "dm_permissions": {
+        "can_dm": true
+      },
+      "follow_request_sent": false,
+      "has_graduated_access": true,
+      "id": "VXNlcjo2MDA2MjcxOA==",
+      "is_blue_verified": true,
+      "legacy": {
+        "default_profile": false,
+        "default_profile_image": false,
+        "description": "Tukang Masak Amatir.",
+        "entities": {
+          "description": {
+            "urls": []
+          },
+          "url": {
+            "urls": [
+              {
+                "display_url": "7Langit.com",
+                "expanded_url": "http://7Langit.com",
+                "indices": [
+                  0,
+                  23
+                ],
+                "url": "https://t.co/T0d7c7UjFb"
+              }
+            ]
+          }
+        },
+        "fast_followers_count": 0,
+        "favourites_count": 6297,
+        "follow_request_sent": false,
+        "followers_count": 15587,
+        "friends_count": 1384,
+        "has_custom_timelines": true,
+        "is_translator": false,
+        "listed_count": 28,
+        "media_count": 6156,
+        "normal_followers_count": 15587,
+        "notifications": false,
+        "pinned_tweet_ids_str": [
+          "1246775732518268929"
+        ],
+        "possibly_sensitive": false,
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/60062718/1560433549",
+        "profile_interstitial_type": "",
+        "statuses_count": 85830,
+        "translator_type": "none",
+        "url": "https://t.co/T0d7c7UjFb",
+        "want_retweets": false,
+        "withheld_in_countries": []
+      },
+      "location": {
+        "location": "Jakarta "
+      },
+      "media_permissions": {
+        "can_media_tag": true
+      },
+      "parody_commentary_fan_label": "None",
+      "privacy": {
+        "protected": false
+      },
+      "professional": {
+        "category": [
+          {
+            "icon_name": "IconBriefcaseStroke",
+            "id": 958,
+            "name": "Entrepreneur"
+          }
+        ],
+        "professional_type": "Creator",
+        "rest_id": "1513937977395015687"
+      },
+      "profile_bio": {
+        "description": "Tukang Masak Amatir."
+      },
+      "profile_description_language": "in",
+      "profile_image_shape": "Circle",
+      "relationship_perspectives": {
+        "blocked_by": false,
+        "blocking": false,
+        "followed_by": false,
+        "following": false,
+        "muting": false
+      },
+      "rest_id": "60062718",
+      "super_follow_eligible": false,
+      "super_followed_by": false,
+      "super_following": false,
+      "verification": {
+        "verified": false
+      }
+    },
+    "views": {
+      "count": "3393",
+      "state": "EnabledWithCount"
+    },
+    "rest_id": "1998598163708653916",
+    "userName": "Titi Rusdi",
+    "userScreenName": "TitiRusdi",
+    "userLocation": "Jakarta "
+  },
+  {
+    "tweet": {
+      "bookmark_count": 0,
+      "bookmarked": false,
       "conversation_id_str": "1998691026907836701",
       "created_at": "Wed Dec 10 09:47:29 +0000 2025",
       "display_text_range": [
@@ -348,7 +1172,7 @@
         }
       },
       "fast_followers_count": 0,
-      "favourites_count": 8083,
+      "favourites_count": 8091,
       "follow_request_sent": false,
       "followers_count": 334,
       "friends_count": 409,
@@ -364,7 +1188,7 @@
       "possibly_sensitive": false,
       "profile_banner_url": "https://pbs.twimg.com/profile_banners/1646193235042373632/1718628905",
       "profile_interstitial_type": "",
-      "statuses_count": 13303,
+      "statuses_count": 13309,
       "translator_type": "none",
       "want_retweets": false,
       "withheld_in_countries": []
@@ -397,7 +1221,7 @@
           }
         },
         "fast_followers_count": 0,
-        "favourites_count": 8083,
+        "favourites_count": 8091,
         "follow_request_sent": false,
         "followers_count": 334,
         "friends_count": 409,
@@ -413,7 +1237,7 @@
         "possibly_sensitive": false,
         "profile_banner_url": "https://pbs.twimg.com/profile_banners/1646193235042373632/1718628905",
         "profile_interstitial_type": "",
-        "statuses_count": 13303,
+        "statuses_count": 13309,
         "translator_type": "none",
         "want_retweets": false,
         "withheld_in_countries": []
@@ -455,161 +1279,6 @@
     "userName": "Nyambik Blirik",
     "userScreenName": "billsnotgates",
     "userLocation": ""
-  },
-  {
-    "tweet": {
-      "bookmark_count": 0,
-      "bookmarked": false,
-      "conversation_id_str": "1998613485044031716",
-      "created_at": "Wed Dec 10 04:39:21 +0000 2025",
-      "display_text_range": [
-        0,
-        90
-      ],
-      "entities": {
-        "hashtags": [],
-        "symbols": [],
-        "timestamps": [],
-        "urls": [],
-        "user_mentions": []
-      },
-      "favorite_count": 0,
-      "favorited": false,
-      "full_text": "Terus gw harus guling guling netesin air mata sambil bilang bilang Wow....gitu.\nBasi bngat",
-      "id_str": "1998613485044031716",
-      "is_quote_status": true,
-      "lang": "in",
-      "quote_count": 0,
-      "quoted_status_id_str": "1998285789864849715",
-      "quoted_status_permalink": {
-        "display": "x.com/BNPB_Indonesia…",
-        "expanded": "https://twitter.com/BNPB_Indonesia/status/1998285789864849715",
-        "url": "https://t.co/kZZtCtPQfn"
-      },
-      "reply_count": 0,
-      "retweet_count": 0,
-      "retweeted": false,
-      "user_id_str": "1096811650915528707"
-    },
-    "user": {
-      "default_profile": true,
-      "default_profile_image": false,
-      "description": "Non Blok / Aktifnya sa'at ada Viral / JKT - TEGAL\n💥 WAKANDA NO MORE, \nINDONESIA FOREVER 💥",
-      "entities": {
-        "description": {
-          "urls": []
-        }
-      },
-      "fast_followers_count": 0,
-      "favourites_count": 45783,
-      "follow_request_sent": false,
-      "followers_count": 2978,
-      "friends_count": 510,
-      "has_custom_timelines": true,
-      "is_translator": false,
-      "listed_count": 0,
-      "media_count": 449,
-      "normal_followers_count": 2978,
-      "notifications": false,
-      "pinned_tweet_ids_str": [],
-      "possibly_sensitive": false,
-      "profile_banner_url": "https://pbs.twimg.com/profile_banners/1096811650915528707/1721470525",
-      "profile_interstitial_type": "",
-      "statuses_count": 10117,
-      "translator_type": "none",
-      "want_retweets": false,
-      "withheld_in_countries": []
-    },
-    "userDetail": {
-      "__typename": "User",
-      "affiliates_highlighted_label": {},
-      "avatar": {
-        "image_url": "https://pbs.twimg.com/profile_images/2017886037641703424/dx-hdEUZ_normal.jpg"
-      },
-      "core": {
-        "created_at": "Sat Feb 16 16:40:50 +0000 2019",
-        "name": "Dzikra_Tsabitha",
-        "screen_name": "Dzikra_deva"
-      },
-      "dm_permissions": {
-        "can_dm": true
-      },
-      "follow_request_sent": false,
-      "has_graduated_access": true,
-      "id": "VXNlcjoxMDk2ODExNjUwOTE1NTI4NzA3",
-      "is_blue_verified": false,
-      "legacy": {
-        "default_profile": true,
-        "default_profile_image": false,
-        "description": "Non Blok / Aktifnya sa'at ada Viral / JKT - TEGAL\n💥 WAKANDA NO MORE, \nINDONESIA FOREVER 💥",
-        "entities": {
-          "description": {
-            "urls": []
-          }
-        },
-        "fast_followers_count": 0,
-        "favourites_count": 45783,
-        "follow_request_sent": false,
-        "followers_count": 2978,
-        "friends_count": 510,
-        "has_custom_timelines": true,
-        "is_translator": false,
-        "listed_count": 0,
-        "media_count": 449,
-        "normal_followers_count": 2978,
-        "notifications": false,
-        "pinned_tweet_ids_str": [],
-        "possibly_sensitive": false,
-        "profile_banner_url": "https://pbs.twimg.com/profile_banners/1096811650915528707/1721470525",
-        "profile_interstitial_type": "",
-        "statuses_count": 10117,
-        "translator_type": "none",
-        "want_retweets": false,
-        "withheld_in_countries": []
-      },
-      "location": {
-        "location": "indonesia"
-      },
-      "media_permissions": {
-        "can_media_tag": false
-      },
-      "parody_commentary_fan_label": "None",
-      "privacy": {
-        "protected": false
-      },
-      "professional": {
-        "category": [],
-        "professional_type": "Business",
-        "rest_id": "1547225870103851010"
-      },
-      "profile_bio": {
-        "description": "Non Blok / Aktifnya sa'at ada Viral / JKT - TEGAL\n💥 WAKANDA NO MORE, \nINDONESIA FOREVER 💥"
-      },
-      "profile_description_language": "id",
-      "profile_image_shape": "Circle",
-      "relationship_perspectives": {
-        "blocked_by": false,
-        "blocking": false,
-        "followed_by": false,
-        "following": false,
-        "muting": false
-      },
-      "rest_id": "1096811650915528707",
-      "super_follow_eligible": false,
-      "super_followed_by": false,
-      "super_following": false,
-      "verification": {
-        "verified": false
-      }
-    },
-    "views": {
-      "count": "73",
-      "state": "EnabledWithCount"
-    },
-    "rest_id": "1998613485044031716",
-    "userName": "Dzikra_Tsabitha",
-    "userScreenName": "Dzikra_deva",
-    "userLocation": "indonesia"
   },
   {
     "tweet": {
@@ -919,15 +1588,15 @@
         }
       },
       "fast_followers_count": 0,
-      "favourites_count": 41198,
+      "favourites_count": 41215,
       "follow_request_sent": false,
-      "followers_count": 1511,
-      "friends_count": 1444,
+      "followers_count": 1514,
+      "friends_count": 1452,
       "has_custom_timelines": true,
       "is_translator": false,
       "listed_count": 0,
-      "media_count": 1607,
-      "normal_followers_count": 1511,
+      "media_count": 1608,
+      "normal_followers_count": 1514,
       "notifications": false,
       "pinned_tweet_ids_str": [
         "2030475072495055100"
@@ -935,7 +1604,7 @@
       "possibly_sensitive": false,
       "profile_banner_url": "https://pbs.twimg.com/profile_banners/1436629523227807752/1765209717",
       "profile_interstitial_type": "",
-      "statuses_count": 17682,
+      "statuses_count": 17695,
       "translator_type": "none",
       "url": "https://t.co/S5q5ylrZId",
       "want_retweets": false,
@@ -982,15 +1651,15 @@
           }
         },
         "fast_followers_count": 0,
-        "favourites_count": 41198,
+        "favourites_count": 41215,
         "follow_request_sent": false,
-        "followers_count": 1511,
-        "friends_count": 1444,
+        "followers_count": 1514,
+        "friends_count": 1452,
         "has_custom_timelines": true,
         "is_translator": false,
         "listed_count": 0,
-        "media_count": 1607,
-        "normal_followers_count": 1511,
+        "media_count": 1608,
+        "normal_followers_count": 1514,
         "notifications": false,
         "pinned_tweet_ids_str": [
           "2030475072495055100"
@@ -998,7 +1667,7 @@
         "possibly_sensitive": false,
         "profile_banner_url": "https://pbs.twimg.com/profile_banners/1436629523227807752/1765209717",
         "profile_interstitial_type": "",
-        "statuses_count": 17682,
+        "statuses_count": 17695,
         "translator_type": "none",
         "url": "https://t.co/S5q5ylrZId",
         "want_retweets": false,
@@ -1046,164 +1715,11 @@
     "tweet": {
       "bookmark_count": 0,
       "bookmarked": false,
-      "conversation_id_str": "1998718829653012634",
-      "created_at": "Wed Dec 10 11:37:58 +0000 2025",
+      "conversation_id_str": "1998698691310621087",
+      "created_at": "Wed Dec 10 10:17:56 +0000 2025",
       "display_text_range": [
         0,
-        44
-      ],
-      "entities": {
-        "hashtags": [],
-        "symbols": [],
-        "timestamps": [],
-        "urls": [],
-        "user_mentions": []
-      },
-      "favorite_count": 1,
-      "favorited": false,
-      "full_text": "Saking gada hal baik yang bisa diberitakan 🫤",
-      "id_str": "1998718829653012634",
-      "is_quote_status": true,
-      "lang": "in",
-      "quote_count": 0,
-      "quoted_status_id_str": "1998285789864849715",
-      "quoted_status_permalink": {
-        "display": "x.com/bnpb_indonesia…",
-        "expanded": "https://twitter.com/bnpb_indonesia/status/1998285789864849715",
-        "url": "https://t.co/tVPLR7sFZJ"
-      },
-      "reply_count": 0,
-      "retweet_count": 0,
-      "retweeted": false,
-      "user_id_str": "249479404"
-    },
-    "user": {
-      "default_profile": false,
-      "default_profile_image": false,
-      "description": "",
-      "entities": {
-        "description": {
-          "urls": []
-        }
-      },
-      "fast_followers_count": 0,
-      "favourites_count": 91309,
-      "follow_request_sent": false,
-      "followers_count": 578,
-      "friends_count": 706,
-      "has_custom_timelines": true,
-      "is_translator": false,
-      "listed_count": 0,
-      "media_count": 2755,
-      "normal_followers_count": 578,
-      "notifications": false,
-      "pinned_tweet_ids_str": [
-        "1990436855515693285"
-      ],
-      "possibly_sensitive": false,
-      "profile_banner_url": "https://pbs.twimg.com/profile_banners/249479404/1684593160",
-      "profile_interstitial_type": "",
-      "statuses_count": 36264,
-      "translator_type": "none",
-      "want_retweets": false,
-      "withheld_in_countries": []
-    },
-    "userDetail": {
-      "__typename": "User",
-      "affiliates_highlighted_label": {},
-      "avatar": {
-        "image_url": "https://pbs.twimg.com/profile_images/1729399114893561856/p8If57ig_normal.jpg"
-      },
-      "core": {
-        "created_at": "Wed Feb 09 03:49:11 +0000 2011",
-        "name": "lumba-lumba jawa",
-        "screen_name": "dipsyid"
-      },
-      "dm_permissions": {
-        "can_dm": true
-      },
-      "follow_request_sent": false,
-      "has_graduated_access": true,
-      "id": "VXNlcjoyNDk0Nzk0MDQ=",
-      "is_blue_verified": false,
-      "legacy": {
-        "default_profile": false,
-        "default_profile_image": false,
-        "description": "",
-        "entities": {
-          "description": {
-            "urls": []
-          }
-        },
-        "fast_followers_count": 0,
-        "favourites_count": 91309,
-        "follow_request_sent": false,
-        "followers_count": 578,
-        "friends_count": 706,
-        "has_custom_timelines": true,
-        "is_translator": false,
-        "listed_count": 0,
-        "media_count": 2755,
-        "normal_followers_count": 578,
-        "notifications": false,
-        "pinned_tweet_ids_str": [
-          "1990436855515693285"
-        ],
-        "possibly_sensitive": false,
-        "profile_banner_url": "https://pbs.twimg.com/profile_banners/249479404/1684593160",
-        "profile_interstitial_type": "",
-        "statuses_count": 36264,
-        "translator_type": "none",
-        "want_retweets": false,
-        "withheld_in_countries": []
-      },
-      "location": {
-        "location": "East Borneo, Indonesia"
-      },
-      "media_permissions": {
-        "can_media_tag": false
-      },
-      "parody_commentary_fan_label": "None",
-      "privacy": {
-        "protected": false
-      },
-      "profile_bio": {
-        "description": ""
-      },
-      "profile_image_shape": "Circle",
-      "relationship_perspectives": {
-        "blocked_by": false,
-        "blocking": false,
-        "followed_by": false,
-        "following": false,
-        "muting": false
-      },
-      "rest_id": "249479404",
-      "super_follow_eligible": false,
-      "super_followed_by": false,
-      "super_following": false,
-      "verification": {
-        "verified": false
-      }
-    },
-    "views": {
-      "count": "127",
-      "state": "EnabledWithCount"
-    },
-    "rest_id": "1998718829653012634",
-    "userName": "lumba-lumba jawa",
-    "userScreenName": "dipsyid",
-    "userLocation": "East Borneo, Indonesia"
-  },
-  {
-    "tweet": {
-      "bookmark_count": 0,
-      "bookmarked": false,
-      "conversation_id_str": "1998618996929884455",
-      "created_at": "Wed Dec 10 05:01:16 +0000 2025",
-      "display_text_range": [
-        0,
-        43
+        23
       ],
       "entities": {
         "hashtags": [],
@@ -1214,8 +1730,8 @@
       },
       "favorite_count": 0,
       "favorited": false,
-      "full_text": "Tanpa berpikir panjang, kapan mundur ketua?",
-      "id_str": "1998618996929884455",
+      "full_text": "Apaan dah??? Sehat pak?",
+      "id_str": "1998698691310621087",
       "is_quote_status": true,
       "lang": "in",
       "quote_count": 0,
@@ -1223,17 +1739,17 @@
       "quoted_status_permalink": {
         "display": "x.com/BNPB_Indonesia…",
         "expanded": "https://twitter.com/BNPB_Indonesia/status/1998285789864849715",
-        "url": "https://t.co/8ldTv9hgJy"
+        "url": "https://t.co/HKGF976BJv"
       },
       "reply_count": 0,
       "retweet_count": 0,
       "retweeted": false,
-      "user_id_str": "40631150"
+      "user_id_str": "40791440"
     },
     "user": {
       "default_profile": false,
       "default_profile_image": false,
-      "description": "I write legal essays to expose impunity and demand justice. Not journalism. Not neutrality. This is resistance. Free Palestine.",
+      "description": "You'll write my name on your story.",
       "entities": {
         "description": {
           "urls": []
@@ -1241,37 +1757,37 @@
         "url": {
           "urls": [
             {
-              "display_url": "rsfakmal.substack.com",
-              "expanded_url": "http://rsfakmal.substack.com",
+              "display_url": "gustarialce.wordpress.com",
+              "expanded_url": "http://gustarialce.wordpress.com",
               "indices": [
                 0,
                 23
               ],
-              "url": "https://t.co/sQteTTkLQY"
+              "url": "https://t.co/daDZqB1eVw"
             }
           ]
         }
       },
       "fast_followers_count": 0,
-      "favourites_count": 51075,
+      "favourites_count": 693,
       "follow_request_sent": false,
-      "followers_count": 1236,
-      "friends_count": 1151,
+      "followers_count": 396,
+      "friends_count": 286,
       "has_custom_timelines": true,
       "is_translator": false,
       "listed_count": 2,
-      "media_count": 696,
-      "normal_followers_count": 1236,
+      "media_count": 96,
+      "normal_followers_count": 396,
       "notifications": false,
       "pinned_tweet_ids_str": [
-        "1925871377233441237"
+        "1620836857524400131"
       ],
       "possibly_sensitive": false,
-      "profile_banner_url": "https://pbs.twimg.com/profile_banners/40631150/1434804131",
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/40791440/1402157711",
       "profile_interstitial_type": "",
-      "statuses_count": 62852,
-      "translator_type": "regular",
-      "url": "https://t.co/sQteTTkLQY",
+      "statuses_count": 11688,
+      "translator_type": "none",
+      "url": "https://t.co/daDZqB1eVw",
       "want_retweets": false,
       "withheld_in_countries": []
     },
@@ -1279,24 +1795,24 @@
       "__typename": "User",
       "affiliates_highlighted_label": {},
       "avatar": {
-        "image_url": "https://pbs.twimg.com/profile_images/585493915454799872/VYOFBKNr_normal.jpg"
+        "image_url": "https://pbs.twimg.com/profile_images/1909999984289693696/fDNkyfW3_normal.jpg"
       },
       "core": {
-        "created_at": "Sun May 17 08:47:58 +0000 2009",
-        "name": "suharyo",
-        "screen_name": "sfakmal"
+        "created_at": "Mon May 18 02:20:02 +0000 2009",
+        "name": "mba pepper potts",
+        "screen_name": "gustarialce"
       },
       "dm_permissions": {
         "can_dm": false
       },
       "follow_request_sent": false,
       "has_graduated_access": true,
-      "id": "VXNlcjo0MDYzMTE1MA==",
-      "is_blue_verified": true,
+      "id": "VXNlcjo0MDc5MTQ0MA==",
+      "is_blue_verified": false,
       "legacy": {
         "default_profile": false,
         "default_profile_image": false,
-        "description": "I write legal essays to expose impunity and demand justice. Not journalism. Not neutrality. This is resistance. Free Palestine.",
+        "description": "You'll write my name on your story.",
         "entities": {
           "description": {
             "urls": []
@@ -1304,37 +1820,37 @@
           "url": {
             "urls": [
               {
-                "display_url": "rsfakmal.substack.com",
-                "expanded_url": "http://rsfakmal.substack.com",
+                "display_url": "gustarialce.wordpress.com",
+                "expanded_url": "http://gustarialce.wordpress.com",
                 "indices": [
                   0,
                   23
                 ],
-                "url": "https://t.co/sQteTTkLQY"
+                "url": "https://t.co/daDZqB1eVw"
               }
             ]
           }
         },
         "fast_followers_count": 0,
-        "favourites_count": 51075,
+        "favourites_count": 693,
         "follow_request_sent": false,
-        "followers_count": 1236,
-        "friends_count": 1151,
+        "followers_count": 396,
+        "friends_count": 286,
         "has_custom_timelines": true,
         "is_translator": false,
         "listed_count": 2,
-        "media_count": 696,
-        "normal_followers_count": 1236,
+        "media_count": 96,
+        "normal_followers_count": 396,
         "notifications": false,
         "pinned_tweet_ids_str": [
-          "1925871377233441237"
+          "1620836857524400131"
         ],
         "possibly_sensitive": false,
-        "profile_banner_url": "https://pbs.twimg.com/profile_banners/40631150/1434804131",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/40791440/1402157711",
         "profile_interstitial_type": "",
-        "statuses_count": 62852,
-        "translator_type": "regular",
-        "url": "https://t.co/sQteTTkLQY",
+        "statuses_count": 11688,
+        "translator_type": "none",
+        "url": "https://t.co/daDZqB1eVw",
         "want_retweets": false,
         "withheld_in_countries": []
       },
@@ -1342,14 +1858,14 @@
         "location": ""
       },
       "media_permissions": {
-        "can_media_tag": true
+        "can_media_tag": false
       },
       "parody_commentary_fan_label": "None",
       "privacy": {
         "protected": false
       },
       "profile_bio": {
-        "description": "I write legal essays to expose impunity and demand justice. Not journalism. Not neutrality. This is resistance. Free Palestine."
+        "description": "You'll write my name on your story."
       },
       "profile_description_language": "en",
       "profile_image_shape": "Circle",
@@ -1360,7 +1876,7 @@
         "following": false,
         "muting": false
       },
-      "rest_id": "40631150",
+      "rest_id": "40791440",
       "super_follow_eligible": false,
       "super_followed_by": false,
       "super_following": false,
@@ -1369,1132 +1885,13 @@
       }
     },
     "views": {
-      "count": "17",
+      "count": "63",
       "state": "EnabledWithCount"
     },
-    "rest_id": "1998618996929884455",
-    "userName": "suharyo",
-    "userScreenName": "sfakmal",
+    "rest_id": "1998698691310621087",
+    "userName": "mba pepper potts",
+    "userScreenName": "gustarialce",
     "userLocation": ""
-  },
-  {
-    "tweet": {
-      "bookmark_count": 0,
-      "bookmarked": false,
-      "conversation_id_str": "1998621774205051367",
-      "created_at": "Wed Dec 10 05:12:18 +0000 2025",
-      "display_text_range": [
-        0,
-        35
-      ],
-      "entities": {
-        "hashtags": [],
-        "symbols": [],
-        "timestamps": [],
-        "urls": [],
-        "user_mentions": []
-      },
-      "favorite_count": 1,
-      "favorited": false,
-      "full_text": "terharu. siapa yg naro bawang. 😭😭😭😭",
-      "id_str": "1998621774205051367",
-      "is_quote_status": true,
-      "lang": "in",
-      "quote_count": 0,
-      "quoted_status_id_str": "1998285789864849715",
-      "quoted_status_permalink": {
-        "display": "x.com/BNPB_Indonesia…",
-        "expanded": "https://twitter.com/BNPB_Indonesia/status/1998285789864849715",
-        "url": "https://t.co/avYzxbOI4U"
-      },
-      "reply_count": 0,
-      "retweet_count": 0,
-      "retweeted": false,
-      "user_id_str": "1303805490627923968"
-    },
-    "user": {
-      "default_profile": true,
-      "default_profile_image": false,
-      "description": "",
-      "entities": {
-        "description": {
-          "urls": []
-        }
-      },
-      "fast_followers_count": 0,
-      "favourites_count": 224248,
-      "follow_request_sent": false,
-      "followers_count": 2377,
-      "friends_count": 1773,
-      "has_custom_timelines": true,
-      "is_translator": false,
-      "listed_count": 2,
-      "media_count": 16677,
-      "normal_followers_count": 2377,
-      "notifications": false,
-      "pinned_tweet_ids_str": [
-        "2000608709328966007"
-      ],
-      "possibly_sensitive": true,
-      "profile_banner_url": "https://pbs.twimg.com/profile_banners/1303805490627923968/1721292734",
-      "profile_interstitial_type": "sensitive_media",
-      "statuses_count": 222384,
-      "translator_type": "none",
-      "want_retweets": false,
-      "withheld_in_countries": []
-    },
-    "userDetail": {
-      "__typename": "User",
-      "affiliates_highlighted_label": {},
-      "avatar": {
-        "image_url": "https://pbs.twimg.com/profile_images/1965248091264884736/az13bjPN_normal.jpg"
-      },
-      "core": {
-        "created_at": "Wed Sep 09 21:22:05 +0000 2020",
-        "name": "TongSate",
-        "screen_name": "SateTong"
-      },
-      "dm_permissions": {
-        "can_dm": true
-      },
-      "follow_request_sent": false,
-      "has_graduated_access": true,
-      "id": "VXNlcjoxMzAzODA1NDkwNjI3OTIzOTY4",
-      "is_blue_verified": false,
-      "legacy": {
-        "default_profile": true,
-        "default_profile_image": false,
-        "description": "",
-        "entities": {
-          "description": {
-            "urls": []
-          }
-        },
-        "fast_followers_count": 0,
-        "favourites_count": 224248,
-        "follow_request_sent": false,
-        "followers_count": 2377,
-        "friends_count": 1773,
-        "has_custom_timelines": true,
-        "is_translator": false,
-        "listed_count": 2,
-        "media_count": 16677,
-        "normal_followers_count": 2377,
-        "notifications": false,
-        "pinned_tweet_ids_str": [
-          "2000608709328966007"
-        ],
-        "possibly_sensitive": true,
-        "profile_banner_url": "https://pbs.twimg.com/profile_banners/1303805490627923968/1721292734",
-        "profile_interstitial_type": "sensitive_media",
-        "statuses_count": 222384,
-        "translator_type": "none",
-        "want_retweets": false,
-        "withheld_in_countries": []
-      },
-      "location": {
-        "location": ""
-      },
-      "media_permissions": {
-        "can_media_tag": false
-      },
-      "parody_commentary_fan_label": "Commentary",
-      "privacy": {
-        "protected": false
-      },
-      "profile_bio": {
-        "description": ""
-      },
-      "profile_image_shape": "Circle",
-      "relationship_perspectives": {
-        "blocked_by": false,
-        "blocking": false,
-        "followed_by": false,
-        "following": false,
-        "muting": false
-      },
-      "rest_id": "1303805490627923968",
-      "super_follow_eligible": false,
-      "super_followed_by": false,
-      "super_following": false,
-      "verification": {
-        "verified": false
-      }
-    },
-    "views": {
-      "count": "52",
-      "state": "EnabledWithCount"
-    },
-    "rest_id": "1998621774205051367",
-    "userName": "TongSate",
-    "userScreenName": "SateTong",
-    "userLocation": ""
-  },
-  {
-    "tweet": {
-      "bookmark_count": 36,
-      "bookmarked": false,
-      "conversation_id_str": "1998692808392323416",
-      "created_at": "Wed Dec 10 09:54:34 +0000 2025",
-      "display_text_range": [
-        0,
-        5
-      ],
-      "entities": {
-        "hashtags": [],
-        "symbols": [],
-        "timestamps": [],
-        "urls": [],
-        "user_mentions": []
-      },
-      "favorite_count": 439,
-      "favorited": false,
-      "full_text": ":))))",
-      "id_str": "1998692808392323416",
-      "is_quote_status": true,
-      "lang": "qst",
-      "quote_count": 3,
-      "quoted_status_id_str": "1998285789864849715",
-      "quoted_status_permalink": {
-        "display": "x.com/BNPB_Indonesia…",
-        "expanded": "https://twitter.com/BNPB_Indonesia/status/1998285789864849715",
-        "url": "https://t.co/SeqUKP8gGJ"
-      },
-      "reply_count": 29,
-      "retweet_count": 75,
-      "retweeted": false,
-      "user_id_str": "257207822"
-    },
-    "user": {
-      "default_profile": true,
-      "default_profile_image": false,
-      "description": "akun yang ngomongin PNS wakanda | PNS NKRI sangat profesional #ASNKiniBeda | kumpulan orang bego yang disuruh pintar sama yang lebih bego. untung digaji.",
-      "entities": {
-        "description": {
-          "urls": []
-        },
-        "url": {
-          "urls": [
-            {
-              "display_url": "s.id/pns_ababil",
-              "expanded_url": "http://s.id/pns_ababil",
-              "indices": [
-                0,
-                23
-              ],
-              "url": "https://t.co/2BKpv5yElY"
-            }
-          ]
-        }
-      },
-      "fast_followers_count": 0,
-      "favourites_count": 2882,
-      "follow_request_sent": false,
-      "followers_count": 169590,
-      "friends_count": 389,
-      "has_custom_timelines": true,
-      "is_translator": false,
-      "listed_count": 293,
-      "media_count": 813,
-      "normal_followers_count": 169590,
-      "notifications": false,
-      "pinned_tweet_ids_str": [
-        "1408962178791612417"
-      ],
-      "possibly_sensitive": false,
-      "profile_banner_url": "https://pbs.twimg.com/profile_banners/257207822/1750051824",
-      "profile_interstitial_type": "",
-      "statuses_count": 127088,
-      "translator_type": "none",
-      "url": "https://t.co/2BKpv5yElY",
-      "want_retweets": false,
-      "withheld_in_countries": []
-    },
-    "userDetail": {
-      "__typename": "User",
-      "affiliates_highlighted_label": {},
-      "avatar": {
-        "image_url": "https://pbs.twimg.com/profile_images/1455027140659802114/7PUH7F8O_normal.jpg"
-      },
-      "core": {
-        "created_at": "Thu Feb 24 23:32:06 +0000 2011",
-        "name": "Pi en ice Ababil",
-        "screen_name": "PNS_Ababil"
-      },
-      "dm_permissions": {
-        "can_dm": true
-      },
-      "follow_request_sent": false,
-      "has_graduated_access": true,
-      "id": "VXNlcjoyNTcyMDc4MjI=",
-      "is_blue_verified": false,
-      "legacy": {
-        "default_profile": true,
-        "default_profile_image": false,
-        "description": "akun yang ngomongin PNS wakanda | PNS NKRI sangat profesional #ASNKiniBeda | kumpulan orang bego yang disuruh pintar sama yang lebih bego. untung digaji.",
-        "entities": {
-          "description": {
-            "urls": []
-          },
-          "url": {
-            "urls": [
-              {
-                "display_url": "s.id/pns_ababil",
-                "expanded_url": "http://s.id/pns_ababil",
-                "indices": [
-                  0,
-                  23
-                ],
-                "url": "https://t.co/2BKpv5yElY"
-              }
-            ]
-          }
-        },
-        "fast_followers_count": 0,
-        "favourites_count": 2882,
-        "follow_request_sent": false,
-        "followers_count": 169590,
-        "friends_count": 389,
-        "has_custom_timelines": true,
-        "is_translator": false,
-        "listed_count": 293,
-        "media_count": 813,
-        "normal_followers_count": 169590,
-        "notifications": false,
-        "pinned_tweet_ids_str": [
-          "1408962178791612417"
-        ],
-        "possibly_sensitive": false,
-        "profile_banner_url": "https://pbs.twimg.com/profile_banners/257207822/1750051824",
-        "profile_interstitial_type": "",
-        "statuses_count": 127088,
-        "translator_type": "none",
-        "url": "https://t.co/2BKpv5yElY",
-        "want_retweets": false,
-        "withheld_in_countries": []
-      },
-      "location": {
-        "location": "yg pasti bukan di kantor"
-      },
-      "media_permissions": {
-        "can_media_tag": true
-      },
-      "parody_commentary_fan_label": "None",
-      "privacy": {
-        "protected": false
-      },
-      "profile_bio": {
-        "description": "akun yang ngomongin PNS wakanda | PNS NKRI sangat profesional #ASNKiniBeda | kumpulan orang bego yang disuruh pintar sama yang lebih bego. untung digaji."
-      },
-      "profile_description_language": "in",
-      "profile_image_shape": "Circle",
-      "relationship_perspectives": {
-        "blocked_by": false,
-        "blocking": false,
-        "followed_by": false,
-        "following": false,
-        "muting": false
-      },
-      "rest_id": "257207822",
-      "super_follow_eligible": false,
-      "super_followed_by": false,
-      "super_following": false,
-      "verification": {
-        "verified": false
-      }
-    },
-    "views": {
-      "count": "97274",
-      "state": "EnabledWithCount"
-    },
-    "rest_id": "1998692808392323416",
-    "userName": "Pi en ice Ababil",
-    "userScreenName": "PNS_Ababil",
-    "userLocation": "yg pasti bukan di kantor"
-  },
-  {
-    "tweet": {
-      "bookmark_count": 1,
-      "bookmarked": false,
-      "conversation_id_str": "1998600254409871640",
-      "created_at": "Wed Dec 10 03:46:47 +0000 2025",
-      "display_text_range": [
-        0,
-        107
-      ],
-      "entities": {
-        "hashtags": [],
-        "symbols": [],
-        "timestamps": [],
-        "urls": [],
-        "user_mentions": []
-      },
-      "favorite_count": 20,
-      "favorited": false,
-      "full_text": "Mgkn waktu bantu si bapak yg sakit itu sekalian ditanya min.\n\n“Pak kemarin waktu banjir mencekam gak pak?”.",
-      "id_str": "1998600254409871640",
-      "is_quote_status": true,
-      "lang": "in",
-      "quote_count": 0,
-      "quoted_status_id_str": "1998285789864849715",
-      "quoted_status_permalink": {
-        "display": "x.com/bnpb_indonesia…",
-        "expanded": "https://twitter.com/bnpb_indonesia/status/1998285789864849715",
-        "url": "https://t.co/x70Xp4xHVw"
-      },
-      "reply_count": 2,
-      "retweet_count": 0,
-      "retweeted": false,
-      "user_id_str": "53322619"
-    },
-    "user": {
-      "default_profile": false,
-      "default_profile_image": false,
-      "description": "Guardian Of Bekasi Cabang Surabaya",
-      "entities": {
-        "description": {
-          "urls": []
-        }
-      },
-      "fast_followers_count": 0,
-      "favourites_count": 21748,
-      "follow_request_sent": false,
-      "followers_count": 33491,
-      "friends_count": 2894,
-      "has_custom_timelines": true,
-      "is_translator": false,
-      "listed_count": 125,
-      "media_count": 5560,
-      "normal_followers_count": 33491,
-      "notifications": false,
-      "pinned_tweet_ids_str": [
-        "1551079112823152640"
-      ],
-      "possibly_sensitive": false,
-      "profile_banner_url": "https://pbs.twimg.com/profile_banners/53322619/1626680473",
-      "profile_interstitial_type": "",
-      "statuses_count": 66278,
-      "translator_type": "none",
-      "want_retweets": false,
-      "withheld_in_countries": []
-    },
-    "userDetail": {
-      "__typename": "User",
-      "affiliates_highlighted_label": {},
-      "avatar": {
-        "image_url": "https://pbs.twimg.com/profile_images/1969388077266452483/b4D7S9Z5_normal.jpg"
-      },
-      "core": {
-        "created_at": "Fri Jul 03 07:19:43 +0000 2009",
-        "name": "Guardian Of Bekasi",
-        "screen_name": "rgoestama"
-      },
-      "dm_permissions": {
-        "can_dm": true
-      },
-      "follow_request_sent": false,
-      "has_graduated_access": true,
-      "id": "VXNlcjo1MzMyMjYxOQ==",
-      "is_blue_verified": true,
-      "legacy": {
-        "default_profile": false,
-        "default_profile_image": false,
-        "description": "Guardian Of Bekasi Cabang Surabaya",
-        "entities": {
-          "description": {
-            "urls": []
-          }
-        },
-        "fast_followers_count": 0,
-        "favourites_count": 21748,
-        "follow_request_sent": false,
-        "followers_count": 33491,
-        "friends_count": 2894,
-        "has_custom_timelines": true,
-        "is_translator": false,
-        "listed_count": 125,
-        "media_count": 5560,
-        "normal_followers_count": 33491,
-        "notifications": false,
-        "pinned_tweet_ids_str": [
-          "1551079112823152640"
-        ],
-        "possibly_sensitive": false,
-        "profile_banner_url": "https://pbs.twimg.com/profile_banners/53322619/1626680473",
-        "profile_interstitial_type": "",
-        "statuses_count": 66278,
-        "translator_type": "none",
-        "want_retweets": false,
-        "withheld_in_countries": []
-      },
-      "location": {
-        "location": "Bekasi Barat, Indonesia"
-      },
-      "media_permissions": {
-        "can_media_tag": false
-      },
-      "parody_commentary_fan_label": "None",
-      "privacy": {
-        "protected": false
-      },
-      "professional": {
-        "category": [
-          {
-            "icon_name": "IconBriefcaseStroke",
-            "id": 516,
-            "name": "Business Consultant"
-          }
-        ],
-        "professional_type": "Creator",
-        "rest_id": "1687012045273899008"
-      },
-      "profile_bio": {
-        "description": "Guardian Of Bekasi Cabang Surabaya"
-      },
-      "profile_image_shape": "Circle",
-      "relationship_perspectives": {
-        "blocked_by": false,
-        "blocking": false,
-        "followed_by": false,
-        "following": false,
-        "muting": false
-      },
-      "rest_id": "53322619",
-      "super_follow_eligible": false,
-      "super_followed_by": false,
-      "super_following": false,
-      "verification": {
-        "verified": false
-      }
-    },
-    "views": {
-      "count": "2960",
-      "state": "EnabledWithCount"
-    },
-    "rest_id": "1998600254409871640",
-    "userName": "Guardian Of Bekasi",
-    "userScreenName": "rgoestama",
-    "userLocation": "Bekasi Barat, Indonesia"
-  },
-  {
-    "tweet": {
-      "bookmark_count": 0,
-      "bookmarked": false,
-      "conversation_id_str": "1998615316944089296",
-      "created_at": "Wed Dec 10 04:46:38 +0000 2025",
-      "display_text_range": [
-        0,
-        21
-      ],
-      "entities": {
-        "hashtags": [],
-        "symbols": [],
-        "timestamps": [],
-        "urls": [],
-        "user_mentions": []
-      },
-      "favorite_count": 0,
-      "favorited": false,
-      "full_text": "Mana ekspresi nya..?!",
-      "id_str": "1998615316944089296",
-      "is_quote_status": true,
-      "lang": "in",
-      "quote_count": 0,
-      "quoted_status_id_str": "1998285789864849715",
-      "quoted_status_permalink": {
-        "display": "x.com/BNPB_Indonesia…",
-        "expanded": "https://twitter.com/BNPB_Indonesia/status/1998285789864849715",
-        "url": "https://t.co/oqFfuOZiij"
-      },
-      "reply_count": 0,
-      "retweet_count": 0,
-      "retweeted": false,
-      "user_id_str": "317120486"
-    },
-    "user": {
-      "default_profile": true,
-      "default_profile_image": false,
-      "description": "",
-      "entities": {
-        "description": {
-          "urls": []
-        }
-      },
-      "fast_followers_count": 0,
-      "favourites_count": 43983,
-      "follow_request_sent": false,
-      "followers_count": 591,
-      "friends_count": 782,
-      "has_custom_timelines": true,
-      "is_translator": false,
-      "listed_count": 0,
-      "media_count": 5718,
-      "normal_followers_count": 591,
-      "notifications": false,
-      "pinned_tweet_ids_str": [
-        "1747597566949425429"
-      ],
-      "possibly_sensitive": false,
-      "profile_banner_url": "https://pbs.twimg.com/profile_banners/317120486/1393763900",
-      "profile_interstitial_type": "",
-      "statuses_count": 52312,
-      "translator_type": "none",
-      "want_retweets": false,
-      "withheld_in_countries": []
-    },
-    "userDetail": {
-      "__typename": "User",
-      "affiliates_highlighted_label": {},
-      "avatar": {
-        "image_url": "https://pbs.twimg.com/profile_images/1746403997693739008/BjG7L_BW_normal.jpg"
-      },
-      "core": {
-        "created_at": "Tue Jun 14 13:29:53 +0000 2011",
-        "name": "Agus Gomala",
-        "screen_name": "agomala"
-      },
-      "dm_permissions": {
-        "can_dm": false
-      },
-      "follow_request_sent": false,
-      "has_graduated_access": true,
-      "id": "VXNlcjozMTcxMjA0ODY=",
-      "is_blue_verified": false,
-      "legacy": {
-        "default_profile": true,
-        "default_profile_image": false,
-        "description": "",
-        "entities": {
-          "description": {
-            "urls": []
-          }
-        },
-        "fast_followers_count": 0,
-        "favourites_count": 43983,
-        "follow_request_sent": false,
-        "followers_count": 591,
-        "friends_count": 782,
-        "has_custom_timelines": true,
-        "is_translator": false,
-        "listed_count": 0,
-        "media_count": 5718,
-        "normal_followers_count": 591,
-        "notifications": false,
-        "pinned_tweet_ids_str": [
-          "1747597566949425429"
-        ],
-        "possibly_sensitive": false,
-        "profile_banner_url": "https://pbs.twimg.com/profile_banners/317120486/1393763900",
-        "profile_interstitial_type": "",
-        "statuses_count": 52312,
-        "translator_type": "none",
-        "want_retweets": false,
-        "withheld_in_countries": []
-      },
-      "location": {
-        "location": ""
-      },
-      "media_permissions": {
-        "can_media_tag": false
-      },
-      "parody_commentary_fan_label": "None",
-      "privacy": {
-        "protected": false
-      },
-      "profile_bio": {
-        "description": ""
-      },
-      "profile_image_shape": "Circle",
-      "relationship_perspectives": {
-        "blocked_by": false,
-        "blocking": false,
-        "followed_by": false,
-        "following": false,
-        "muting": false
-      },
-      "rest_id": "317120486",
-      "super_follow_eligible": false,
-      "super_followed_by": false,
-      "super_following": false,
-      "verification": {
-        "verified": false
-      }
-    },
-    "views": {
-      "count": "15",
-      "state": "EnabledWithCount"
-    },
-    "rest_id": "1998615316944089296",
-    "userName": "Agus Gomala",
-    "userScreenName": "agomala",
-    "userLocation": ""
-  },
-  {
-    "tweet": {
-      "bookmark_count": 0,
-      "bookmarked": false,
-      "conversation_id_str": "1998748961591668738",
-      "created_at": "Wed Dec 10 13:37:42 +0000 2025",
-      "display_text_range": [
-        0,
-        6
-      ],
-      "entities": {
-        "hashtags": [],
-        "symbols": [],
-        "timestamps": [],
-        "urls": [],
-        "user_mentions": []
-      },
-      "favorite_count": 0,
-      "favorited": false,
-      "full_text": "LAWAKK",
-      "id_str": "1998748961591668738",
-      "is_quote_status": true,
-      "lang": "in",
-      "quote_count": 0,
-      "quoted_status_id_str": "1998285789864849715",
-      "quoted_status_permalink": {
-        "display": "x.com/BNPB_Indonesia…",
-        "expanded": "https://twitter.com/BNPB_Indonesia/status/1998285789864849715",
-        "url": "https://t.co/F5pJEnsqG1"
-      },
-      "reply_count": 0,
-      "retweet_count": 0,
-      "retweeted": false,
-      "user_id_str": "55598427"
-    },
-    "user": {
-      "default_profile": false,
-      "default_profile_image": false,
-      "description": "",
-      "entities": {
-        "description": {
-          "urls": []
-        }
-      },
-      "fast_followers_count": 0,
-      "favourites_count": 20983,
-      "follow_request_sent": false,
-      "followers_count": 305,
-      "friends_count": 520,
-      "has_custom_timelines": true,
-      "is_translator": false,
-      "listed_count": 2,
-      "media_count": 272,
-      "normal_followers_count": 305,
-      "notifications": false,
-      "pinned_tweet_ids_str": [],
-      "possibly_sensitive": false,
-      "profile_banner_url": "https://pbs.twimg.com/profile_banners/55598427/1493741156",
-      "profile_interstitial_type": "",
-      "statuses_count": 20116,
-      "translator_type": "none",
-      "want_retweets": false,
-      "withheld_in_countries": []
-    },
-    "userDetail": {
-      "__typename": "User",
-      "affiliates_highlighted_label": {},
-      "avatar": {
-        "image_url": "https://pbs.twimg.com/profile_images/1168764994403500032/OlJpLARs_normal.jpg"
-      },
-      "core": {
-        "created_at": "Fri Jul 10 16:05:11 +0000 2009",
-        "name": "Ver",
-        "screen_name": "avistovero"
-      },
-      "dm_permissions": {
-        "can_dm": false
-      },
-      "follow_request_sent": false,
-      "has_graduated_access": true,
-      "id": "VXNlcjo1NTU5ODQyNw==",
-      "is_blue_verified": false,
-      "legacy": {
-        "default_profile": false,
-        "default_profile_image": false,
-        "description": "",
-        "entities": {
-          "description": {
-            "urls": []
-          }
-        },
-        "fast_followers_count": 0,
-        "favourites_count": 20983,
-        "follow_request_sent": false,
-        "followers_count": 305,
-        "friends_count": 520,
-        "has_custom_timelines": true,
-        "is_translator": false,
-        "listed_count": 2,
-        "media_count": 272,
-        "normal_followers_count": 305,
-        "notifications": false,
-        "pinned_tweet_ids_str": [],
-        "possibly_sensitive": false,
-        "profile_banner_url": "https://pbs.twimg.com/profile_banners/55598427/1493741156",
-        "profile_interstitial_type": "",
-        "statuses_count": 20116,
-        "translator_type": "none",
-        "want_retweets": false,
-        "withheld_in_countries": []
-      },
-      "location": {
-        "location": "Indonesia"
-      },
-      "media_permissions": {
-        "can_media_tag": false
-      },
-      "parody_commentary_fan_label": "None",
-      "privacy": {
-        "protected": false
-      },
-      "profile_bio": {
-        "description": ""
-      },
-      "profile_image_shape": "Circle",
-      "relationship_perspectives": {
-        "blocked_by": false,
-        "blocking": false,
-        "followed_by": false,
-        "following": false,
-        "muting": false
-      },
-      "rest_id": "55598427",
-      "super_follow_eligible": false,
-      "super_followed_by": false,
-      "super_following": false,
-      "verification": {
-        "verified": false
-      }
-    },
-    "views": {
-      "count": "23",
-      "state": "EnabledWithCount"
-    },
-    "rest_id": "1998748961591668738",
-    "userName": "Ver",
-    "userScreenName": "avistovero",
-    "userLocation": "Indonesia"
-  },
-  {
-    "tweet": {
-      "bookmark_count": 0,
-      "bookmarked": false,
-      "conversation_id_str": "1998677153962139804",
-      "created_at": "Wed Dec 10 08:52:21 +0000 2025",
-      "display_text_range": [
-        0,
-        65
-      ],
-      "entities": {
-        "hashtags": [],
-        "symbols": [],
-        "timestamps": [],
-        "urls": [],
-        "user_mentions": [
-          {
-            "id_str": "178272889",
-            "indices": [
-              24,
-              37
-            ],
-            "name": "Fitriandika Nugraha",
-            "screen_name": "FitriandikaN"
-          },
-          {
-            "id_str": "1931534884608393216",
-            "indices": [
-              47,
-              62
-            ],
-            "name": "BeGado!",
-            "screen_name": "BegadoOfficial"
-          }
-        ]
-      },
-      "favorite_count": 0,
-      "favorited": false,
-      "full_text": "Inimah kayak saya nulis @FitriandikaN di koran @BegadoOfficial 😂🤣",
-      "id_str": "1998677153962139804",
-      "is_quote_status": true,
-      "lang": "in",
-      "quote_count": 0,
-      "quoted_status_id_str": "1998285789864849715",
-      "quoted_status_permalink": {
-        "display": "x.com/BNPB_Indonesia…",
-        "expanded": "https://twitter.com/BNPB_Indonesia/status/1998285789864849715",
-        "url": "https://t.co/CzWbDQV5nQ"
-      },
-      "reply_count": 1,
-      "retweet_count": 0,
-      "retweeted": false,
-      "user_id_str": "251994348"
-    },
-    "user": {
-      "default_profile": false,
-      "default_profile_image": false,
-      "description": "Balap 🏍️🏎️ | Bola ⚽",
-      "entities": {
-        "description": {
-          "urls": []
-        }
-      },
-      "fast_followers_count": 0,
-      "favourites_count": 2654,
-      "follow_request_sent": false,
-      "followers_count": 2532,
-      "friends_count": 1767,
-      "has_custom_timelines": true,
-      "is_translator": false,
-      "listed_count": 4,
-      "media_count": 521,
-      "normal_followers_count": 2532,
-      "notifications": false,
-      "pinned_tweet_ids_str": [],
-      "possibly_sensitive": false,
-      "profile_banner_url": "https://pbs.twimg.com/profile_banners/251994348/1748225565",
-      "profile_interstitial_type": "",
-      "statuses_count": 12166,
-      "translator_type": "none",
-      "want_retweets": false,
-      "withheld_in_countries": []
-    },
-    "userDetail": {
-      "__typename": "User",
-      "affiliates_highlighted_label": {},
-      "avatar": {
-        "image_url": "https://pbs.twimg.com/profile_images/1986086858305224704/a2RyjE-C_normal.jpg"
-      },
-      "core": {
-        "created_at": "Mon Feb 14 07:56:35 +0000 2011",
-        "name": "shura_ans",
-        "screen_name": "radibinselih"
-      },
-      "dm_permissions": {
-        "can_dm": false
-      },
-      "follow_request_sent": false,
-      "has_graduated_access": true,
-      "id": "VXNlcjoyNTE5OTQzNDg=",
-      "is_blue_verified": true,
-      "legacy": {
-        "default_profile": false,
-        "default_profile_image": false,
-        "description": "Balap 🏍️🏎️ | Bola ⚽",
-        "entities": {
-          "description": {
-            "urls": []
-          }
-        },
-        "fast_followers_count": 0,
-        "favourites_count": 2654,
-        "follow_request_sent": false,
-        "followers_count": 2532,
-        "friends_count": 1767,
-        "has_custom_timelines": true,
-        "is_translator": false,
-        "listed_count": 4,
-        "media_count": 521,
-        "normal_followers_count": 2532,
-        "notifications": false,
-        "pinned_tweet_ids_str": [],
-        "possibly_sensitive": false,
-        "profile_banner_url": "https://pbs.twimg.com/profile_banners/251994348/1748225565",
-        "profile_interstitial_type": "",
-        "statuses_count": 12166,
-        "translator_type": "none",
-        "want_retweets": false,
-        "withheld_in_countries": []
-      },
-      "location": {
-        "location": "Jakarta Capital Region"
-      },
-      "media_permissions": {
-        "can_media_tag": false
-      },
-      "parody_commentary_fan_label": "None",
-      "privacy": {
-        "protected": false
-      },
-      "profile_bio": {
-        "description": "Balap 🏍️🏎️ | Bola ⚽"
-      },
-      "profile_image_shape": "Circle",
-      "relationship_perspectives": {
-        "blocked_by": false,
-        "blocking": false,
-        "followed_by": false,
-        "following": false,
-        "muting": false
-      },
-      "rest_id": "251994348",
-      "super_follow_eligible": false,
-      "super_followed_by": false,
-      "super_following": false,
-      "verification": {
-        "verified": false
-      }
-    },
-    "views": {
-      "count": "149",
-      "state": "EnabledWithCount"
-    },
-    "rest_id": "1998677153962139804",
-    "userName": "shura_ans",
-    "userScreenName": "radibinselih",
-    "userLocation": "Jakarta Capital Region"
-  },
-  {
-    "tweet": {
-      "bookmark_count": 0,
-      "bookmarked": false,
-      "conversation_id_str": "1998625587842486410",
-      "created_at": "Wed Dec 10 05:27:27 +0000 2025",
-      "display_text_range": [
-        0,
-        43
-      ],
-      "entities": {
-        "hashtags": [],
-        "symbols": [],
-        "timestamps": [],
-        "urls": [],
-        "user_mentions": []
-      },
-      "favorite_count": 1,
-      "favorited": false,
-      "full_text": "\"bapak tolong dibuatkan konten dramatis ya\"",
-      "id_str": "1998625587842486410",
-      "is_quote_status": true,
-      "lang": "in",
-      "quote_count": 0,
-      "quoted_status_id_str": "1998285789864849715",
-      "quoted_status_permalink": {
-        "display": "x.com/BNPB_Indonesia…",
-        "expanded": "https://twitter.com/BNPB_Indonesia/status/1998285789864849715",
-        "url": "https://t.co/s7zvdfFIPl"
-      },
-      "reply_count": 0,
-      "retweet_count": 0,
-      "retweeted": false,
-      "user_id_str": "272692490"
-    },
-    "user": {
-      "default_profile": false,
-      "default_profile_image": false,
-      "description": "cuma tukang berijazah",
-      "entities": {
-        "description": {
-          "urls": []
-        }
-      },
-      "fast_followers_count": 0,
-      "favourites_count": 11348,
-      "follow_request_sent": false,
-      "followers_count": 1060,
-      "friends_count": 1069,
-      "has_custom_timelines": true,
-      "is_translator": false,
-      "listed_count": 3,
-      "media_count": 1977,
-      "normal_followers_count": 1060,
-      "notifications": false,
-      "pinned_tweet_ids_str": [],
-      "possibly_sensitive": false,
-      "profile_banner_url": "https://pbs.twimg.com/profile_banners/272692490/1668176465",
-      "profile_interstitial_type": "",
-      "statuses_count": 52144,
-      "translator_type": "none",
-      "want_retweets": false,
-      "withheld_in_countries": []
-    },
-    "userDetail": {
-      "__typename": "User",
-      "affiliates_highlighted_label": {},
-      "avatar": {
-        "image_url": "https://pbs.twimg.com/profile_images/1796880953534783488/ijWYu5En_normal.jpg"
-      },
-      "core": {
-        "created_at": "Sun Mar 27 00:37:09 +0000 2011",
-        "name": "Oky Laksa Indra K.",
-        "screen_name": "indra_kencana"
-      },
-      "dm_permissions": {
-        "can_dm": true
-      },
-      "follow_request_sent": false,
-      "has_graduated_access": true,
-      "id": "VXNlcjoyNzI2OTI0OTA=",
-      "is_blue_verified": false,
-      "legacy": {
-        "default_profile": false,
-        "default_profile_image": false,
-        "description": "cuma tukang berijazah",
-        "entities": {
-          "description": {
-            "urls": []
-          }
-        },
-        "fast_followers_count": 0,
-        "favourites_count": 11348,
-        "follow_request_sent": false,
-        "followers_count": 1060,
-        "friends_count": 1069,
-        "has_custom_timelines": true,
-        "is_translator": false,
-        "listed_count": 3,
-        "media_count": 1977,
-        "normal_followers_count": 1060,
-        "notifications": false,
-        "pinned_tweet_ids_str": [],
-        "possibly_sensitive": false,
-        "profile_banner_url": "https://pbs.twimg.com/profile_banners/272692490/1668176465",
-        "profile_interstitial_type": "",
-        "statuses_count": 52144,
-        "translator_type": "none",
-        "want_retweets": false,
-        "withheld_in_countries": []
-      },
-      "location": {
-        "location": "Gresik, Indonesia (currently)"
-      },
-      "media_permissions": {
-        "can_media_tag": true
-      },
-      "parody_commentary_fan_label": "None",
-      "privacy": {
-        "protected": false
-      },
-      "profile_bio": {
-        "description": "cuma tukang berijazah"
-      },
-      "profile_description_language": "id",
-      "profile_image_shape": "Circle",
-      "relationship_perspectives": {
-        "blocked_by": false,
-        "blocking": false,
-        "followed_by": false,
-        "following": false,
-        "muting": false
-      },
-      "rest_id": "272692490",
-      "super_follow_eligible": false,
-      "super_followed_by": false,
-      "super_following": false,
-      "verification": {
-        "verified": false
-      }
-    },
-    "views": {
-      "count": "155",
-      "state": "EnabledWithCount"
-    },
-    "rest_id": "1998625587842486410",
-    "userName": "Oky Laksa Indra K.",
-    "userScreenName": "indra_kencana",
-    "userLocation": "Gresik, Indonesia (currently)"
   },
   {
     "tweet": {
@@ -2554,15 +1951,15 @@
         }
       },
       "fast_followers_count": 0,
-      "favourites_count": 23186,
+      "favourites_count": 23201,
       "follow_request_sent": false,
-      "followers_count": 1635,
-      "friends_count": 1350,
+      "followers_count": 1636,
+      "friends_count": 1358,
       "has_custom_timelines": true,
       "is_translator": false,
       "listed_count": 1,
       "media_count": 1123,
-      "normal_followers_count": 1635,
+      "normal_followers_count": 1636,
       "notifications": false,
       "pinned_tweet_ids_str": [
         "1299246127808614401"
@@ -2617,15 +2014,15 @@
           }
         },
         "fast_followers_count": 0,
-        "favourites_count": 23186,
+        "favourites_count": 23201,
         "follow_request_sent": false,
-        "followers_count": 1635,
-        "friends_count": 1350,
+        "followers_count": 1636,
+        "friends_count": 1358,
         "has_custom_timelines": true,
         "is_translator": false,
         "listed_count": 1,
         "media_count": 1123,
-        "normal_followers_count": 1635,
+        "normal_followers_count": 1636,
         "notifications": false,
         "pinned_tweet_ids_str": [
           "1299246127808614401"
@@ -2693,11 +2090,11 @@
     "tweet": {
       "bookmark_count": 0,
       "bookmarked": false,
-      "conversation_id_str": "1998791851017687198",
-      "created_at": "Wed Dec 10 16:28:07 +0000 2025",
+      "conversation_id_str": "1998595870544244764",
+      "created_at": "Wed Dec 10 03:29:22 +0000 2025",
       "display_text_range": [
         0,
-        6
+        15
       ],
       "entities": {
         "hashtags": [],
@@ -2708,49 +2105,47 @@
       },
       "favorite_count": 0,
       "favorited": false,
-      "full_text": "🤢🤢🤢🤢🤢🤢",
-      "id_str": "1998791851017687198",
+      "full_text": "Apaan si kontol",
+      "id_str": "1998595870544244764",
       "is_quote_status": true,
-      "lang": "art",
+      "lang": "in",
       "quote_count": 0,
       "quoted_status_id_str": "1998285789864849715",
       "quoted_status_permalink": {
-        "display": "x.com/bnpb_indonesia…",
-        "expanded": "https://twitter.com/bnpb_indonesia/status/1998285789864849715",
-        "url": "https://t.co/sQUcK7AF9h"
+        "display": "x.com/BNPB_Indonesia…",
+        "expanded": "https://twitter.com/BNPB_Indonesia/status/1998285789864849715",
+        "url": "https://t.co/GZVIROjgBV"
       },
       "reply_count": 0,
       "retweet_count": 0,
       "retweeted": false,
-      "user_id_str": "150937441"
+      "user_id_str": "150338467"
     },
     "user": {
       "default_profile": false,
       "default_profile_image": false,
-      "description": "Barely use her head",
+      "description": "|| No Colour ever be brighter for me than BLACK n WHITE _ @delpieroale ||",
       "entities": {
         "description": {
           "urls": []
         }
       },
       "fast_followers_count": 0,
-      "favourites_count": 5938,
+      "favourites_count": 3095,
       "follow_request_sent": false,
-      "followers_count": 427,
-      "friends_count": 794,
+      "followers_count": 1078,
+      "friends_count": 740,
       "has_custom_timelines": true,
       "is_translator": false,
-      "listed_count": 0,
-      "media_count": 1455,
-      "normal_followers_count": 427,
+      "listed_count": 8,
+      "media_count": 7760,
+      "normal_followers_count": 1078,
       "notifications": false,
-      "pinned_tweet_ids_str": [
-        "887899547699040258"
-      ],
-      "possibly_sensitive": false,
-      "profile_banner_url": "https://pbs.twimg.com/profile_banners/150937441/1680923947",
+      "pinned_tweet_ids_str": [],
+      "possibly_sensitive": true,
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/150338467/1718178746",
       "profile_interstitial_type": "",
-      "statuses_count": 36338,
+      "statuses_count": 98050,
       "translator_type": "none",
       "want_retweets": false,
       "withheld_in_countries": []
@@ -2759,63 +2154,61 @@
       "__typename": "User",
       "affiliates_highlighted_label": {},
       "avatar": {
-        "image_url": "https://pbs.twimg.com/profile_images/1970771873882624000/nq-TwqR6_normal.jpg"
+        "image_url": "https://pbs.twimg.com/profile_images/1967448472917053440/jNB_n9sC_normal.jpg"
       },
       "core": {
-        "created_at": "Wed Jun 02 05:45:14 +0000 2010",
-        "name": "Kiki",
-        "screen_name": "bankoftheriver"
+        "created_at": "Mon May 31 17:48:09 +0000 2010",
+        "name": "GJS",
+        "screen_name": "sir_agilsandro"
       },
       "dm_permissions": {
-        "can_dm": true
+        "can_dm": false
       },
       "follow_request_sent": false,
       "has_graduated_access": true,
-      "id": "VXNlcjoxNTA5Mzc0NDE=",
+      "id": "VXNlcjoxNTAzMzg0Njc=",
       "is_blue_verified": false,
       "legacy": {
         "default_profile": false,
         "default_profile_image": false,
-        "description": "Barely use her head",
+        "description": "|| No Colour ever be brighter for me than BLACK n WHITE _ @delpieroale ||",
         "entities": {
           "description": {
             "urls": []
           }
         },
         "fast_followers_count": 0,
-        "favourites_count": 5938,
+        "favourites_count": 3095,
         "follow_request_sent": false,
-        "followers_count": 427,
-        "friends_count": 794,
+        "followers_count": 1078,
+        "friends_count": 740,
         "has_custom_timelines": true,
         "is_translator": false,
-        "listed_count": 0,
-        "media_count": 1455,
-        "normal_followers_count": 427,
+        "listed_count": 8,
+        "media_count": 7760,
+        "normal_followers_count": 1078,
         "notifications": false,
-        "pinned_tweet_ids_str": [
-          "887899547699040258"
-        ],
-        "possibly_sensitive": false,
-        "profile_banner_url": "https://pbs.twimg.com/profile_banners/150937441/1680923947",
+        "pinned_tweet_ids_str": [],
+        "possibly_sensitive": true,
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/150338467/1718178746",
         "profile_interstitial_type": "",
-        "statuses_count": 36338,
+        "statuses_count": 98050,
         "translator_type": "none",
         "want_retweets": false,
         "withheld_in_countries": []
       },
       "location": {
-        "location": "Jakarta"
+        "location": "Indonesia Una"
       },
       "media_permissions": {
-        "can_media_tag": false
+        "can_media_tag": true
       },
       "parody_commentary_fan_label": "None",
       "privacy": {
         "protected": false
       },
       "profile_bio": {
-        "description": "Barely use her head"
+        "description": "|| No Colour ever be brighter for me than BLACK n WHITE _ @delpieroale ||"
       },
       "profile_description_language": "en",
       "profile_image_shape": "Circle",
@@ -2826,7 +2219,7 @@
         "following": false,
         "muting": false
       },
-      "rest_id": "150937441",
+      "rest_id": "150338467",
       "super_follow_eligible": false,
       "super_followed_by": false,
       "super_following": false,
@@ -2835,604 +2228,13 @@
       }
     },
     "views": {
-      "count": "74",
+      "count": "77",
       "state": "EnabledWithCount"
     },
-    "rest_id": "1998791851017687198",
-    "userName": "Kiki",
-    "userScreenName": "bankoftheriver",
-    "userLocation": "Jakarta"
-  },
-  {
-    "tweet": {
-      "bookmark_count": 0,
-      "bookmarked": false,
-      "conversation_id_str": "1998725409215754375",
-      "created_at": "Wed Dec 10 12:04:06 +0000 2025",
-      "display_text_range": [
-        0,
-        76
-      ],
-      "entities": {
-        "hashtags": [],
-        "symbols": [],
-        "timestamps": [],
-        "urls": [],
-        "user_mentions": []
-      },
-      "favorite_count": 0,
-      "favorited": false,
-      "full_text": "Menebak-nebak apa kisah yang terjadi tentang penyusunan copy dan video ini 🤔",
-      "id_str": "1998725409215754375",
-      "is_quote_status": true,
-      "lang": "in",
-      "quote_count": 0,
-      "quoted_status_id_str": "1998285789864849715",
-      "quoted_status_permalink": {
-        "display": "x.com/bnpb_indonesia…",
-        "expanded": "https://twitter.com/bnpb_indonesia/status/1998285789864849715",
-        "url": "https://t.co/1A8geHHbaF"
-      },
-      "reply_count": 0,
-      "retweet_count": 0,
-      "retweeted": false,
-      "user_id_str": "353985663"
-    },
-    "user": {
-      "default_profile": false,
-      "default_profile_image": false,
-      "description": "Mostly tweets about public policy. DTO. Awragoers. Bahagia Paripurna. Bangga buatan 🇲🇨",
-      "entities": {
-        "description": {
-          "urls": []
-        }
-      },
-      "fast_followers_count": 0,
-      "favourites_count": 11725,
-      "follow_request_sent": false,
-      "followers_count": 2360,
-      "friends_count": 512,
-      "has_custom_timelines": true,
-      "is_translator": false,
-      "listed_count": 20,
-      "media_count": 1595,
-      "normal_followers_count": 2360,
-      "notifications": false,
-      "pinned_tweet_ids_str": [],
-      "possibly_sensitive": false,
-      "profile_banner_url": "https://pbs.twimg.com/profile_banners/353985663/1710765597",
-      "profile_interstitial_type": "",
-      "statuses_count": 36602,
-      "translator_type": "none",
-      "want_retweets": false,
-      "withheld_in_countries": []
-    },
-    "userDetail": {
-      "__typename": "User",
-      "affiliates_highlighted_label": {},
-      "avatar": {
-        "image_url": "https://pbs.twimg.com/profile_images/1834026782166745088/uHmVQohT_normal.jpg"
-      },
-      "core": {
-        "created_at": "Fri Aug 12 23:28:11 +0000 2011",
-        "name": "Karina Kusumawardani",
-        "screen_name": "KKusumawardani"
-      },
-      "dm_permissions": {
-        "can_dm": false
-      },
-      "follow_request_sent": false,
-      "has_graduated_access": true,
-      "id": "VXNlcjozNTM5ODU2NjM=",
-      "is_blue_verified": false,
-      "legacy": {
-        "default_profile": false,
-        "default_profile_image": false,
-        "description": "Mostly tweets about public policy. DTO. Awragoers. Bahagia Paripurna. Bangga buatan 🇲🇨",
-        "entities": {
-          "description": {
-            "urls": []
-          }
-        },
-        "fast_followers_count": 0,
-        "favourites_count": 11725,
-        "follow_request_sent": false,
-        "followers_count": 2360,
-        "friends_count": 512,
-        "has_custom_timelines": true,
-        "is_translator": false,
-        "listed_count": 20,
-        "media_count": 1595,
-        "normal_followers_count": 2360,
-        "notifications": false,
-        "pinned_tweet_ids_str": [],
-        "possibly_sensitive": false,
-        "profile_banner_url": "https://pbs.twimg.com/profile_banners/353985663/1710765597",
-        "profile_interstitial_type": "",
-        "statuses_count": 36602,
-        "translator_type": "none",
-        "want_retweets": false,
-        "withheld_in_countries": []
-      },
-      "location": {
-        "location": "Indonesia"
-      },
-      "media_permissions": {
-        "can_media_tag": false
-      },
-      "parody_commentary_fan_label": "None",
-      "privacy": {
-        "protected": false
-      },
-      "profile_bio": {
-        "description": "Mostly tweets about public policy. DTO. Awragoers. Bahagia Paripurna. Bangga buatan 🇲🇨"
-      },
-      "profile_image_shape": "Circle",
-      "relationship_perspectives": {
-        "blocked_by": false,
-        "blocking": false,
-        "followed_by": false,
-        "following": false,
-        "muting": false
-      },
-      "rest_id": "353985663",
-      "super_follow_eligible": false,
-      "super_followed_by": false,
-      "super_following": false,
-      "verification": {
-        "verified": false
-      }
-    },
-    "views": {
-      "count": "233",
-      "state": "EnabledWithCount"
-    },
-    "rest_id": "1998725409215754375",
-    "userName": "Karina Kusumawardani",
-    "userScreenName": "KKusumawardani",
-    "userLocation": "Indonesia"
-  },
-  {
-    "tweet": {
-      "bookmark_count": 0,
-      "bookmarked": false,
-      "conversation_id_str": "1998706188561842304",
-      "created_at": "Wed Dec 10 10:47:44 +0000 2025",
-      "display_text_range": [
-        0,
-        0
-      ],
-      "entities": {
-        "hashtags": [],
-        "media": [
-          {
-            "display_url": "pic.x.com/5qKawepKbc",
-            "expanded_url": "https://x.com/revisimas/status/1998706188561842304/photo/1",
-            "ext_media_availability": {
-              "status": "Available"
-            },
-            "features": {
-              "large": {
-                "faces": [
-                  {
-                    "h": 49,
-                    "w": 49,
-                    "x": 28,
-                    "y": 33
-                  }
-                ]
-              },
-              "medium": {
-                "faces": [
-                  {
-                    "h": 49,
-                    "w": 49,
-                    "x": 28,
-                    "y": 33
-                  }
-                ]
-              },
-              "orig": {
-                "faces": [
-                  {
-                    "h": 49,
-                    "w": 49,
-                    "x": 28,
-                    "y": 33
-                  }
-                ]
-              },
-              "small": {
-                "faces": [
-                  {
-                    "h": 49,
-                    "w": 49,
-                    "x": 28,
-                    "y": 33
-                  }
-                ]
-              }
-            },
-            "id_str": "1998706185550311424",
-            "indices": [
-              0,
-              23
-            ],
-            "media_key": "3_1998706185550311424",
-            "media_results": {
-              "result": {
-                "media_key": "3_1998706185550311424"
-              }
-            },
-            "media_url_https": "https://pbs.twimg.com/media/G7zUr6gaMAAGtep.jpg",
-            "original_info": {
-              "focus_rects": [
-                {
-                  "h": 172,
-                  "w": 307,
-                  "x": 0,
-                  "y": 0
-                },
-                {
-                  "h": 172,
-                  "w": 172,
-                  "x": 67,
-                  "y": 0
-                },
-                {
-                  "h": 172,
-                  "w": 151,
-                  "x": 78,
-                  "y": 0
-                },
-                {
-                  "h": 172,
-                  "w": 86,
-                  "x": 110,
-                  "y": 0
-                },
-                {
-                  "h": 172,
-                  "w": 473,
-                  "x": 0,
-                  "y": 0
-                }
-              ],
-              "height": 172,
-              "width": 473
-            },
-            "sizes": {
-              "large": {
-                "h": 172,
-                "resize": "fit",
-                "w": 473
-              },
-              "medium": {
-                "h": 172,
-                "resize": "fit",
-                "w": 473
-              },
-              "small": {
-                "h": 172,
-                "resize": "fit",
-                "w": 473
-              },
-              "thumb": {
-                "h": 150,
-                "resize": "crop",
-                "w": 150
-              }
-            },
-            "type": "photo",
-            "url": "https://t.co/5qKawepKbc"
-          }
-        ],
-        "symbols": [],
-        "timestamps": [],
-        "urls": [],
-        "user_mentions": []
-      },
-      "extended_entities": {
-        "media": [
-          {
-            "display_url": "pic.x.com/5qKawepKbc",
-            "expanded_url": "https://x.com/revisimas/status/1998706188561842304/photo/1",
-            "ext_media_availability": {
-              "status": "Available"
-            },
-            "features": {
-              "large": {
-                "faces": [
-                  {
-                    "h": 49,
-                    "w": 49,
-                    "x": 28,
-                    "y": 33
-                  }
-                ]
-              },
-              "medium": {
-                "faces": [
-                  {
-                    "h": 49,
-                    "w": 49,
-                    "x": 28,
-                    "y": 33
-                  }
-                ]
-              },
-              "orig": {
-                "faces": [
-                  {
-                    "h": 49,
-                    "w": 49,
-                    "x": 28,
-                    "y": 33
-                  }
-                ]
-              },
-              "small": {
-                "faces": [
-                  {
-                    "h": 49,
-                    "w": 49,
-                    "x": 28,
-                    "y": 33
-                  }
-                ]
-              }
-            },
-            "id_str": "1998706185550311424",
-            "indices": [
-              0,
-              23
-            ],
-            "media_key": "3_1998706185550311424",
-            "media_results": {
-              "result": {
-                "media_key": "3_1998706185550311424"
-              }
-            },
-            "media_url_https": "https://pbs.twimg.com/media/G7zUr6gaMAAGtep.jpg",
-            "original_info": {
-              "focus_rects": [
-                {
-                  "h": 172,
-                  "w": 307,
-                  "x": 0,
-                  "y": 0
-                },
-                {
-                  "h": 172,
-                  "w": 172,
-                  "x": 67,
-                  "y": 0
-                },
-                {
-                  "h": 172,
-                  "w": 151,
-                  "x": 78,
-                  "y": 0
-                },
-                {
-                  "h": 172,
-                  "w": 86,
-                  "x": 110,
-                  "y": 0
-                },
-                {
-                  "h": 172,
-                  "w": 473,
-                  "x": 0,
-                  "y": 0
-                }
-              ],
-              "height": 172,
-              "width": 473
-            },
-            "sizes": {
-              "large": {
-                "h": 172,
-                "resize": "fit",
-                "w": 473
-              },
-              "medium": {
-                "h": 172,
-                "resize": "fit",
-                "w": 473
-              },
-              "small": {
-                "h": 172,
-                "resize": "fit",
-                "w": 473
-              },
-              "thumb": {
-                "h": 150,
-                "resize": "crop",
-                "w": 150
-              }
-            },
-            "type": "photo",
-            "url": "https://t.co/5qKawepKbc"
-          }
-        ]
-      },
-      "favorite_count": 0,
-      "favorited": false,
-      "full_text": "https://t.co/5qKawepKbc",
-      "id_str": "1998706188561842304",
-      "is_quote_status": true,
-      "lang": "zxx",
-      "possibly_sensitive": false,
-      "possibly_sensitive_editable": true,
-      "quote_count": 0,
-      "quoted_status_id_str": "1998285789864849715",
-      "quoted_status_permalink": {
-        "display": "x.com/BNPB_Indonesia…",
-        "expanded": "https://twitter.com/BNPB_Indonesia/status/1998285789864849715",
-        "url": "https://t.co/DzpRHzlYtZ"
-      },
-      "reply_count": 0,
-      "retweet_count": 0,
-      "retweeted": false,
-      "user_id_str": "3148402416"
-    },
-    "user": {
-      "default_profile": false,
-      "default_profile_image": false,
-      "description": "Mas-mas tukang nyekel mouse 🖱",
-      "entities": {
-        "description": {
-          "urls": []
-        },
-        "url": {
-          "urls": [
-            {
-              "display_url": "id.pngtree.com/kastem-design_…",
-              "expanded_url": "https://id.pngtree.com/kastem-design_37898031?type=1",
-              "indices": [
-                0,
-                23
-              ],
-              "url": "https://t.co/rmBmntq23H"
-            }
-          ]
-        }
-      },
-      "fast_followers_count": 0,
-      "favourites_count": 176,
-      "follow_request_sent": false,
-      "followers_count": 58,
-      "friends_count": 73,
-      "has_custom_timelines": true,
-      "is_translator": false,
-      "listed_count": 3,
-      "media_count": 323,
-      "normal_followers_count": 58,
-      "notifications": false,
-      "pinned_tweet_ids_str": [
-        "1973008566849245349"
-      ],
-      "possibly_sensitive": false,
-      "profile_banner_url": "https://pbs.twimg.com/profile_banners/3148402416/1716917577",
-      "profile_interstitial_type": "",
-      "statuses_count": 1161,
-      "translator_type": "none",
-      "url": "https://t.co/rmBmntq23H",
-      "want_retweets": false,
-      "withheld_in_countries": []
-    },
-    "userDetail": {
-      "__typename": "User",
-      "affiliates_highlighted_label": {},
-      "avatar": {
-        "image_url": "https://pbs.twimg.com/profile_images/2015374757022056449/PiDG4ygX_normal.jpg"
-      },
-      "core": {
-        "created_at": "Fri Apr 10 17:32:56 +0000 2015",
-        "name": "supra𝕏",
-        "screen_name": "revisimas"
-      },
-      "dm_permissions": {
-        "can_dm": true
-      },
-      "follow_request_sent": false,
-      "has_graduated_access": true,
-      "id": "VXNlcjozMTQ4NDAyNDE2",
-      "is_blue_verified": false,
-      "legacy": {
-        "default_profile": false,
-        "default_profile_image": false,
-        "description": "Mas-mas tukang nyekel mouse 🖱",
-        "entities": {
-          "description": {
-            "urls": []
-          },
-          "url": {
-            "urls": [
-              {
-                "display_url": "id.pngtree.com/kastem-design_…",
-                "expanded_url": "https://id.pngtree.com/kastem-design_37898031?type=1",
-                "indices": [
-                  0,
-                  23
-                ],
-                "url": "https://t.co/rmBmntq23H"
-              }
-            ]
-          }
-        },
-        "fast_followers_count": 0,
-        "favourites_count": 176,
-        "follow_request_sent": false,
-        "followers_count": 58,
-        "friends_count": 73,
-        "has_custom_timelines": true,
-        "is_translator": false,
-        "listed_count": 3,
-        "media_count": 323,
-        "normal_followers_count": 58,
-        "notifications": false,
-        "pinned_tweet_ids_str": [
-          "1973008566849245349"
-        ],
-        "possibly_sensitive": false,
-        "profile_banner_url": "https://pbs.twimg.com/profile_banners/3148402416/1716917577",
-        "profile_interstitial_type": "",
-        "statuses_count": 1161,
-        "translator_type": "none",
-        "url": "https://t.co/rmBmntq23H",
-        "want_retweets": false,
-        "withheld_in_countries": []
-      },
-      "location": {
-        "location": "Sakmapane"
-      },
-      "media_permissions": {
-        "can_media_tag": true
-      },
-      "parody_commentary_fan_label": "Parody",
-      "privacy": {
-        "protected": false
-      },
-      "professional": {
-        "category": [
-          {
-            "icon_name": "IconBriefcaseStroke",
-            "id": 15,
-            "name": "Entertainment & Recreation"
-          }
-        ],
-        "professional_type": "Creator",
-        "rest_id": "1617213165481361408"
-      },
-      "profile_bio": {
-        "description": "Mas-mas tukang nyekel mouse 🖱"
-      },
-      "profile_image_shape": "Circle",
-      "relationship_perspectives": {
-        "blocked_by": false,
-        "blocking": false,
-        "followed_by": false,
-        "following": false,
-        "muting": false
-      },
-      "rest_id": "3148402416",
-      "super_follow_eligible": false,
-      "super_followed_by": false,
-      "super_following": false,
-      "verification": {
-        "verified": false
-      }
-    },
-    "views": {
-      "count": "254",
-      "state": "EnabledWithCount"
-    },
-    "rest_id": "1998706188561842304",
-    "userName": "supra𝕏",
-    "userScreenName": "revisimas",
-    "userLocation": "Sakmapane"
+    "rest_id": "1998595870544244764",
+    "userName": "GJS",
+    "userScreenName": "sir_agilsandro",
+    "userLocation": "Indonesia Una"
   },
   {
     "tweet": {
@@ -3479,7 +2281,7 @@
         }
       },
       "fast_followers_count": 0,
-      "favourites_count": 42799,
+      "favourites_count": 42800,
       "follow_request_sent": false,
       "followers_count": 127,
       "friends_count": 608,
@@ -3493,7 +2295,7 @@
       "possibly_sensitive": false,
       "profile_banner_url": "https://pbs.twimg.com/profile_banners/926570897225297921/1756768783",
       "profile_interstitial_type": "",
-      "statuses_count": 70450,
+      "statuses_count": 70453,
       "translator_type": "none",
       "want_retweets": false,
       "withheld_in_countries": []
@@ -3526,7 +2328,7 @@
           }
         },
         "fast_followers_count": 0,
-        "favourites_count": 42799,
+        "favourites_count": 42800,
         "follow_request_sent": false,
         "followers_count": 127,
         "friends_count": 608,
@@ -3540,7 +2342,7 @@
         "possibly_sensitive": false,
         "profile_banner_url": "https://pbs.twimg.com/profile_banners/926570897225297921/1756768783",
         "profile_interstitial_type": "",
-        "statuses_count": 70450,
+        "statuses_count": 70453,
         "translator_type": "none",
         "want_retweets": false,
         "withheld_in_countries": []
@@ -3599,11 +2401,11 @@
     "tweet": {
       "bookmark_count": 0,
       "bookmarked": false,
-      "conversation_id_str": "1998741665788367265",
-      "created_at": "Wed Dec 10 13:08:42 +0000 2025",
+      "conversation_id_str": "1998737307688489126",
+      "created_at": "Wed Dec 10 12:51:23 +0000 2025",
       "display_text_range": [
         0,
-        198
+        48
       ],
       "entities": {
         "hashtags": [],
@@ -3612,10 +2414,10 @@
         "urls": [],
         "user_mentions": []
       },
-      "favorite_count": 5,
+      "favorite_count": 0,
       "favorited": false,
-      "full_text": "pemerintah geblek ni gangerti apa ya? masyarakat tu gabutuh yg gini2an. lu pada kerja yg bener aja udah cukup. masalah apresiasi pasti dtg sendiri nanti kalau kerjanya memang uda bener. mabok sosmed",
-      "id_str": "1998741665788367265",
+      "full_text": "Repliesnyaa 😭😂\nMin udah min..stop bikin sinetron",
+      "id_str": "1998737307688489126",
       "is_quote_status": true,
       "lang": "in",
       "quote_count": 0,
@@ -3623,38 +2425,40 @@
       "quoted_status_permalink": {
         "display": "x.com/BNPB_Indonesia…",
         "expanded": "https://twitter.com/BNPB_Indonesia/status/1998285789864849715",
-        "url": "https://t.co/e6vum964Be"
+        "url": "https://t.co/fQ4UB4Mqwz"
       },
       "reply_count": 0,
-      "retweet_count": 2,
+      "retweet_count": 0,
       "retweeted": false,
-      "user_id_str": "439749275"
+      "user_id_str": "1336262963888410624"
     },
     "user": {
-      "default_profile": false,
+      "default_profile": true,
       "default_profile_image": false,
-      "description": "🩷 Billlie - B.A.P - Jungsis",
+      "description": "Marketing Head of LTY Ent | Here for 이태용🌹 변백현🐶 주지훈🦊 | Selective",
       "entities": {
         "description": {
           "urls": []
         }
       },
       "fast_followers_count": 0,
-      "favourites_count": 21528,
+      "favourites_count": 97005,
       "follow_request_sent": false,
-      "followers_count": 285,
-      "friends_count": 664,
+      "followers_count": 1324,
+      "friends_count": 603,
       "has_custom_timelines": true,
       "is_translator": false,
-      "listed_count": 0,
-      "media_count": 747,
-      "normal_followers_count": 285,
+      "listed_count": 4,
+      "media_count": 2646,
+      "normal_followers_count": 1324,
       "notifications": false,
-      "pinned_tweet_ids_str": [],
+      "pinned_tweet_ids_str": [
+        "2033061504933835025"
+      ],
       "possibly_sensitive": false,
-      "profile_banner_url": "https://pbs.twimg.com/profile_banners/439749275/1626353659",
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/1336262963888410624/1711553209",
       "profile_interstitial_type": "",
-      "statuses_count": 20492,
+      "statuses_count": 47743,
       "translator_type": "none",
       "want_retweets": false,
       "withheld_in_countries": []
@@ -3663,45 +2467,1074 @@
       "__typename": "User",
       "affiliates_highlighted_label": {},
       "avatar": {
-        "image_url": "https://pbs.twimg.com/profile_images/1821797274680430592/8OYIhj7Y_normal.jpg"
+        "image_url": "https://pbs.twimg.com/profile_images/1921211279106023424/BXZH0Gs3_normal.jpg"
       },
       "core": {
-        "created_at": "Sun Dec 18 04:53:57 +0000 2011",
-        "name": "suwa",
-        "screen_name": "_syuaaaa"
+        "created_at": "Tue Dec 08 10:55:04 +0000 2020",
+        "name": "Oma 🍙🌹",
+        "screen_name": "gwendTY"
       },
       "dm_permissions": {
         "can_dm": true
       },
       "follow_request_sent": false,
       "has_graduated_access": true,
-      "id": "VXNlcjo0Mzk3NDkyNzU=",
+      "id": "VXNlcjoxMzM2MjYyOTYzODg4NDEwNjI0",
       "is_blue_verified": false,
       "legacy": {
-        "default_profile": false,
+        "default_profile": true,
         "default_profile_image": false,
-        "description": "🩷 Billlie - B.A.P - Jungsis",
+        "description": "Marketing Head of LTY Ent | Here for 이태용🌹 변백현🐶 주지훈🦊 | Selective",
         "entities": {
           "description": {
             "urls": []
           }
         },
         "fast_followers_count": 0,
-        "favourites_count": 21528,
+        "favourites_count": 97005,
         "follow_request_sent": false,
-        "followers_count": 285,
-        "friends_count": 664,
+        "followers_count": 1324,
+        "friends_count": 603,
         "has_custom_timelines": true,
         "is_translator": false,
-        "listed_count": 0,
-        "media_count": 747,
-        "normal_followers_count": 285,
+        "listed_count": 4,
+        "media_count": 2646,
+        "normal_followers_count": 1324,
         "notifications": false,
-        "pinned_tweet_ids_str": [],
+        "pinned_tweet_ids_str": [
+          "2033061504933835025"
+        ],
         "possibly_sensitive": false,
-        "profile_banner_url": "https://pbs.twimg.com/profile_banners/439749275/1626353659",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/1336262963888410624/1711553209",
         "profile_interstitial_type": "",
-        "statuses_count": 20492,
+        "statuses_count": 47743,
+        "translator_type": "none",
+        "want_retweets": false,
+        "withheld_in_countries": []
+      },
+      "location": {
+        "location": "TOLO"
+      },
+      "media_permissions": {
+        "can_media_tag": false
+      },
+      "parody_commentary_fan_label": "None",
+      "privacy": {
+        "protected": false
+      },
+      "profile_bio": {
+        "description": "Marketing Head of LTY Ent | Here for 이태용🌹 변백현🐶 주지훈🦊 | Selective"
+      },
+      "profile_description_language": "ko",
+      "profile_image_shape": "Circle",
+      "relationship_perspectives": {
+        "blocked_by": false,
+        "blocking": false,
+        "followed_by": false,
+        "following": false,
+        "muting": false
+      },
+      "rest_id": "1336262963888410624",
+      "super_follow_eligible": false,
+      "super_followed_by": false,
+      "super_following": false,
+      "verification": {
+        "verified": false
+      }
+    },
+    "views": {
+      "count": "257",
+      "state": "EnabledWithCount"
+    },
+    "rest_id": "1998737307688489126",
+    "userName": "Oma 🍙🌹",
+    "userScreenName": "gwendTY",
+    "userLocation": "TOLO"
+  },
+  {
+    "tweet": {
+      "bookmark_count": 0,
+      "bookmarked": false,
+      "conversation_id_str": "1998630274633195689",
+      "created_at": "Wed Dec 10 05:46:04 +0000 2025",
+      "display_text_range": [
+        0,
+        72
+      ],
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "timestamps": [],
+        "urls": [],
+        "user_mentions": []
+      },
+      "favorite_count": 1,
+      "favorited": false,
+      "full_text": "Ga penting banget. Bloon abis jadi self branding gini akun badan negara.",
+      "id_str": "1998630274633195689",
+      "is_quote_status": true,
+      "lang": "in",
+      "quote_count": 0,
+      "quoted_status_id_str": "1998285789864849715",
+      "quoted_status_permalink": {
+        "display": "x.com/bnpb_indonesia…",
+        "expanded": "https://twitter.com/bnpb_indonesia/status/1998285789864849715",
+        "url": "https://t.co/jI9nTLN8yE"
+      },
+      "reply_count": 0,
+      "retweet_count": 0,
+      "retweeted": false,
+      "user_id_str": "299477734"
+    },
+    "user": {
+      "default_profile": false,
+      "default_profile_image": false,
+      "description": "Pengembara kehidupan. Tweet bersifat opini pribadi dan dijamin tidak sopan.",
+      "entities": {
+        "description": {
+          "urls": []
+        },
+        "url": {
+          "urls": [
+            {
+              "display_url": "paypal.me/santoprakoso",
+              "expanded_url": "https://www.paypal.me/santoprakoso",
+              "indices": [
+                0,
+                23
+              ],
+              "url": "https://t.co/hHSApwwuzC"
+            }
+          ]
+        }
+      },
+      "fast_followers_count": 0,
+      "favourites_count": 76170,
+      "follow_request_sent": false,
+      "followers_count": 904,
+      "friends_count": 824,
+      "has_custom_timelines": true,
+      "is_translator": false,
+      "listed_count": 2,
+      "media_count": 1079,
+      "normal_followers_count": 904,
+      "notifications": false,
+      "pinned_tweet_ids_str": [
+        "1959265363969106217"
+      ],
+      "possibly_sensitive": false,
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/299477734/1752778514",
+      "profile_interstitial_type": "",
+      "statuses_count": 35940,
+      "translator_type": "none",
+      "url": "https://t.co/hHSApwwuzC",
+      "want_retweets": false,
+      "withheld_in_countries": []
+    },
+    "userDetail": {
+      "__typename": "User",
+      "affiliates_highlighted_label": {},
+      "avatar": {
+        "image_url": "https://pbs.twimg.com/profile_images/1579407551162388480/iz8JTfKv_normal.jpg"
+      },
+      "core": {
+        "created_at": "Mon May 16 04:46:43 +0000 2011",
+        "name": "Susanto H. Prakoso",
+        "screen_name": "dibicarakandulu"
+      },
+      "dm_permissions": {
+        "can_dm": true
+      },
+      "follow_request_sent": false,
+      "has_graduated_access": true,
+      "id": "VXNlcjoyOTk0Nzc3MzQ=",
+      "is_blue_verified": false,
+      "legacy": {
+        "default_profile": false,
+        "default_profile_image": false,
+        "description": "Pengembara kehidupan. Tweet bersifat opini pribadi dan dijamin tidak sopan.",
+        "entities": {
+          "description": {
+            "urls": []
+          },
+          "url": {
+            "urls": [
+              {
+                "display_url": "paypal.me/santoprakoso",
+                "expanded_url": "https://www.paypal.me/santoprakoso",
+                "indices": [
+                  0,
+                  23
+                ],
+                "url": "https://t.co/hHSApwwuzC"
+              }
+            ]
+          }
+        },
+        "fast_followers_count": 0,
+        "favourites_count": 76170,
+        "follow_request_sent": false,
+        "followers_count": 904,
+        "friends_count": 824,
+        "has_custom_timelines": true,
+        "is_translator": false,
+        "listed_count": 2,
+        "media_count": 1079,
+        "normal_followers_count": 904,
+        "notifications": false,
+        "pinned_tweet_ids_str": [
+          "1959265363969106217"
+        ],
+        "possibly_sensitive": false,
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/299477734/1752778514",
+        "profile_interstitial_type": "",
+        "statuses_count": 35940,
+        "translator_type": "none",
+        "url": "https://t.co/hHSApwwuzC",
+        "want_retweets": false,
+        "withheld_in_countries": []
+      },
+      "location": {
+        "location": "Bekasi, Jawa Barat"
+      },
+      "media_permissions": {
+        "can_media_tag": false
+      },
+      "parody_commentary_fan_label": "None",
+      "privacy": {
+        "protected": false
+      },
+      "profile_bio": {
+        "description": "Pengembara kehidupan. Tweet bersifat opini pribadi dan dijamin tidak sopan."
+      },
+      "profile_description_language": "in",
+      "profile_image_shape": "Circle",
+      "relationship_perspectives": {
+        "blocked_by": false,
+        "blocking": false,
+        "followed_by": false,
+        "following": false,
+        "muting": false
+      },
+      "rest_id": "299477734",
+      "super_follow_eligible": false,
+      "super_followed_by": false,
+      "super_following": false,
+      "verification": {
+        "verified": false
+      }
+    },
+    "views": {
+      "count": "101",
+      "state": "EnabledWithCount"
+    },
+    "rest_id": "1998630274633195689",
+    "userName": "Susanto H. Prakoso",
+    "userScreenName": "dibicarakandulu",
+    "userLocation": "Bekasi, Jawa Barat"
+  },
+  {
+    "tweet": {
+      "bookmark_count": 36,
+      "bookmarked": false,
+      "conversation_id_str": "1998692808392323416",
+      "created_at": "Wed Dec 10 09:54:34 +0000 2025",
+      "display_text_range": [
+        0,
+        5
+      ],
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "timestamps": [],
+        "urls": [],
+        "user_mentions": []
+      },
+      "favorite_count": 439,
+      "favorited": false,
+      "full_text": ":))))",
+      "id_str": "1998692808392323416",
+      "is_quote_status": true,
+      "lang": "qst",
+      "quote_count": 3,
+      "quoted_status_id_str": "1998285789864849715",
+      "quoted_status_permalink": {
+        "display": "x.com/BNPB_Indonesia…",
+        "expanded": "https://twitter.com/BNPB_Indonesia/status/1998285789864849715",
+        "url": "https://t.co/SeqUKP8gGJ"
+      },
+      "reply_count": 29,
+      "retweet_count": 75,
+      "retweeted": false,
+      "user_id_str": "257207822"
+    },
+    "user": {
+      "default_profile": true,
+      "default_profile_image": false,
+      "description": "akun yang ngomongin PNS wakanda | PNS NKRI sangat profesional #ASNKiniBeda | kumpulan orang bego yang disuruh pintar sama yang lebih bego. untung digaji.",
+      "entities": {
+        "description": {
+          "urls": []
+        },
+        "url": {
+          "urls": [
+            {
+              "display_url": "s.id/pns_ababil",
+              "expanded_url": "http://s.id/pns_ababil",
+              "indices": [
+                0,
+                23
+              ],
+              "url": "https://t.co/2BKpv5yElY"
+            }
+          ]
+        }
+      },
+      "fast_followers_count": 0,
+      "favourites_count": 2882,
+      "follow_request_sent": false,
+      "followers_count": 169592,
+      "friends_count": 389,
+      "has_custom_timelines": true,
+      "is_translator": false,
+      "listed_count": 293,
+      "media_count": 813,
+      "normal_followers_count": 169592,
+      "notifications": false,
+      "pinned_tweet_ids_str": [
+        "1408962178791612417"
+      ],
+      "possibly_sensitive": false,
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/257207822/1750051824",
+      "profile_interstitial_type": "",
+      "statuses_count": 127090,
+      "translator_type": "none",
+      "url": "https://t.co/2BKpv5yElY",
+      "want_retweets": false,
+      "withheld_in_countries": []
+    },
+    "userDetail": {
+      "__typename": "User",
+      "affiliates_highlighted_label": {},
+      "avatar": {
+        "image_url": "https://pbs.twimg.com/profile_images/1455027140659802114/7PUH7F8O_normal.jpg"
+      },
+      "core": {
+        "created_at": "Thu Feb 24 23:32:06 +0000 2011",
+        "name": "Pi en ice Ababil",
+        "screen_name": "PNS_Ababil"
+      },
+      "dm_permissions": {
+        "can_dm": true
+      },
+      "follow_request_sent": false,
+      "has_graduated_access": true,
+      "id": "VXNlcjoyNTcyMDc4MjI=",
+      "is_blue_verified": false,
+      "legacy": {
+        "default_profile": true,
+        "default_profile_image": false,
+        "description": "akun yang ngomongin PNS wakanda | PNS NKRI sangat profesional #ASNKiniBeda | kumpulan orang bego yang disuruh pintar sama yang lebih bego. untung digaji.",
+        "entities": {
+          "description": {
+            "urls": []
+          },
+          "url": {
+            "urls": [
+              {
+                "display_url": "s.id/pns_ababil",
+                "expanded_url": "http://s.id/pns_ababil",
+                "indices": [
+                  0,
+                  23
+                ],
+                "url": "https://t.co/2BKpv5yElY"
+              }
+            ]
+          }
+        },
+        "fast_followers_count": 0,
+        "favourites_count": 2882,
+        "follow_request_sent": false,
+        "followers_count": 169592,
+        "friends_count": 389,
+        "has_custom_timelines": true,
+        "is_translator": false,
+        "listed_count": 293,
+        "media_count": 813,
+        "normal_followers_count": 169592,
+        "notifications": false,
+        "pinned_tweet_ids_str": [
+          "1408962178791612417"
+        ],
+        "possibly_sensitive": false,
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/257207822/1750051824",
+        "profile_interstitial_type": "",
+        "statuses_count": 127090,
+        "translator_type": "none",
+        "url": "https://t.co/2BKpv5yElY",
+        "want_retweets": false,
+        "withheld_in_countries": []
+      },
+      "location": {
+        "location": "yg pasti bukan di kantor"
+      },
+      "media_permissions": {
+        "can_media_tag": true
+      },
+      "parody_commentary_fan_label": "None",
+      "privacy": {
+        "protected": false
+      },
+      "profile_bio": {
+        "description": "akun yang ngomongin PNS wakanda | PNS NKRI sangat profesional #ASNKiniBeda | kumpulan orang bego yang disuruh pintar sama yang lebih bego. untung digaji."
+      },
+      "profile_description_language": "in",
+      "profile_image_shape": "Circle",
+      "relationship_perspectives": {
+        "blocked_by": false,
+        "blocking": false,
+        "followed_by": false,
+        "following": false,
+        "muting": false
+      },
+      "rest_id": "257207822",
+      "super_follow_eligible": false,
+      "super_followed_by": false,
+      "super_following": false,
+      "verification": {
+        "verified": false
+      }
+    },
+    "views": {
+      "count": "97274",
+      "state": "EnabledWithCount"
+    },
+    "rest_id": "1998692808392323416",
+    "userName": "Pi en ice Ababil",
+    "userScreenName": "PNS_Ababil",
+    "userLocation": "yg pasti bukan di kantor"
+  },
+  {
+    "tweet": {
+      "bookmark_count": 0,
+      "bookmarked": false,
+      "conversation_id_str": "1998796696462176582",
+      "created_at": "Wed Dec 10 16:47:22 +0000 2025",
+      "display_text_range": [
+        0,
+        3
+      ],
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "timestamps": [],
+        "urls": [],
+        "user_mentions": []
+      },
+      "favorite_count": 0,
+      "favorited": false,
+      "full_text": "???",
+      "id_str": "1998796696462176582",
+      "is_quote_status": true,
+      "lang": "qst",
+      "quote_count": 0,
+      "quoted_status_id_str": "1998285789864849715",
+      "quoted_status_permalink": {
+        "display": "x.com/BNPB_Indonesia…",
+        "expanded": "https://twitter.com/BNPB_Indonesia/status/1998285789864849715",
+        "url": "https://t.co/kdxWckrDYe"
+      },
+      "reply_count": 0,
+      "retweet_count": 0,
+      "retweeted": false,
+      "user_id_str": "942444182479572992"
+    },
+    "user": {
+      "default_profile": true,
+      "default_profile_image": false,
+      "description": "",
+      "entities": {
+        "description": {
+          "urls": []
+        }
+      },
+      "fast_followers_count": 0,
+      "favourites_count": 140445,
+      "follow_request_sent": false,
+      "followers_count": 7935,
+      "friends_count": 5851,
+      "has_custom_timelines": true,
+      "is_translator": false,
+      "listed_count": 4,
+      "media_count": 13404,
+      "normal_followers_count": 7935,
+      "notifications": false,
+      "pinned_tweet_ids_str": [
+        "1131447696319926272"
+      ],
+      "possibly_sensitive": false,
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/942444182479572992/1637055002",
+      "profile_interstitial_type": "",
+      "statuses_count": 182897,
+      "translator_type": "none",
+      "want_retweets": false,
+      "withheld_in_countries": []
+    },
+    "userDetail": {
+      "__typename": "User",
+      "affiliates_highlighted_label": {},
+      "avatar": {
+        "image_url": "https://pbs.twimg.com/profile_images/1985842130741514240/1G2Rwqeg_normal.jpg"
+      },
+      "core": {
+        "created_at": "Sun Dec 17 17:19:37 +0000 2017",
+        "name": "Mahesa Syailendra™️",
+        "screen_name": "MahesaSyilendra"
+      },
+      "dm_permissions": {
+        "can_dm": false
+      },
+      "follow_request_sent": false,
+      "has_graduated_access": true,
+      "id": "VXNlcjo5NDI0NDQxODI0Nzk1NzI5OTI=",
+      "is_blue_verified": false,
+      "legacy": {
+        "default_profile": true,
+        "default_profile_image": false,
+        "description": "",
+        "entities": {
+          "description": {
+            "urls": []
+          }
+        },
+        "fast_followers_count": 0,
+        "favourites_count": 140445,
+        "follow_request_sent": false,
+        "followers_count": 7935,
+        "friends_count": 5851,
+        "has_custom_timelines": true,
+        "is_translator": false,
+        "listed_count": 4,
+        "media_count": 13404,
+        "normal_followers_count": 7935,
+        "notifications": false,
+        "pinned_tweet_ids_str": [
+          "1131447696319926272"
+        ],
+        "possibly_sensitive": false,
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/942444182479572992/1637055002",
+        "profile_interstitial_type": "",
+        "statuses_count": 182897,
+        "translator_type": "none",
+        "want_retweets": false,
+        "withheld_in_countries": []
+      },
+      "location": {
+        "location": "not found"
+      },
+      "media_permissions": {
+        "can_media_tag": false
+      },
+      "parody_commentary_fan_label": "Parody",
+      "privacy": {
+        "protected": false
+      },
+      "professional": {
+        "category": [
+          {
+            "icon_name": "IconBriefcaseStroke",
+            "id": 30,
+            "name": "Circus"
+          }
+        ],
+        "professional_type": "Business",
+        "rest_id": "1462146836798472194"
+      },
+      "profile_bio": {
+        "description": ""
+      },
+      "profile_image_shape": "Circle",
+      "relationship_perspectives": {
+        "blocked_by": false,
+        "blocking": false,
+        "followed_by": false,
+        "following": false,
+        "muting": false
+      },
+      "rest_id": "942444182479572992",
+      "super_follow_eligible": false,
+      "super_followed_by": false,
+      "super_following": false,
+      "verification": {
+        "verified": false
+      }
+    },
+    "views": {
+      "count": "53",
+      "state": "EnabledWithCount"
+    },
+    "rest_id": "1998796696462176582",
+    "userName": "Mahesa Syailendra™️",
+    "userScreenName": "MahesaSyilendra",
+    "userLocation": "not found"
+  },
+  {
+    "tweet": {
+      "bookmark_count": 0,
+      "bookmarked": false,
+      "conversation_id_str": "1998748002115268748",
+      "created_at": "Wed Dec 10 13:33:53 +0000 2025",
+      "display_text_range": [
+        0,
+        109
+      ],
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "timestamps": [],
+        "urls": [],
+        "user_mentions": []
+      },
+      "favorite_count": 0,
+      "favorited": false,
+      "full_text": "Izin saran, Min. Satu paragraf terakhir baiknya diremove aja. Itu bisa jadi ruang interpretasi untuk audiens.",
+      "id_str": "1998748002115268748",
+      "is_quote_status": true,
+      "lang": "in",
+      "quote_count": 0,
+      "quoted_status_id_str": "1998285789864849715",
+      "quoted_status_permalink": {
+        "display": "x.com/bnpb_indonesia…",
+        "expanded": "https://twitter.com/bnpb_indonesia/status/1998285789864849715",
+        "url": "https://t.co/0MIUZF3RT5"
+      },
+      "reply_count": 0,
+      "retweet_count": 0,
+      "retweeted": false,
+      "user_id_str": "250061173"
+    },
+    "user": {
+      "default_profile": false,
+      "default_profile_image": false,
+      "description": "Beda platform beda kepribadian 🙏🏻☺️",
+      "entities": {
+        "description": {
+          "urls": []
+        }
+      },
+      "fast_followers_count": 0,
+      "favourites_count": 6748,
+      "follow_request_sent": false,
+      "followers_count": 694,
+      "friends_count": 691,
+      "has_custom_timelines": true,
+      "is_translator": false,
+      "listed_count": 4,
+      "media_count": 539,
+      "normal_followers_count": 694,
+      "notifications": false,
+      "pinned_tweet_ids_str": [
+        "1816870144351895708"
+      ],
+      "possibly_sensitive": false,
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/250061173/1700823038",
+      "profile_interstitial_type": "",
+      "statuses_count": 16869,
+      "translator_type": "none",
+      "want_retweets": false,
+      "withheld_in_countries": []
+    },
+    "userDetail": {
+      "__typename": "User",
+      "affiliates_highlighted_label": {},
+      "avatar": {
+        "image_url": "https://pbs.twimg.com/profile_images/1906388195278983168/EY6Xchlr_normal.jpg"
+      },
+      "core": {
+        "created_at": "Thu Feb 10 10:17:56 +0000 2011",
+        "name": "Aya Aulia",
+        "screen_name": "ayaliara"
+      },
+      "dm_permissions": {
+        "can_dm": true
+      },
+      "follow_request_sent": false,
+      "has_graduated_access": true,
+      "id": "VXNlcjoyNTAwNjExNzM=",
+      "is_blue_verified": false,
+      "legacy": {
+        "default_profile": false,
+        "default_profile_image": false,
+        "description": "Beda platform beda kepribadian 🙏🏻☺️",
+        "entities": {
+          "description": {
+            "urls": []
+          }
+        },
+        "fast_followers_count": 0,
+        "favourites_count": 6748,
+        "follow_request_sent": false,
+        "followers_count": 694,
+        "friends_count": 691,
+        "has_custom_timelines": true,
+        "is_translator": false,
+        "listed_count": 4,
+        "media_count": 539,
+        "normal_followers_count": 694,
+        "notifications": false,
+        "pinned_tweet_ids_str": [
+          "1816870144351895708"
+        ],
+        "possibly_sensitive": false,
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/250061173/1700823038",
+        "profile_interstitial_type": "",
+        "statuses_count": 16869,
+        "translator_type": "none",
+        "want_retweets": false,
+        "withheld_in_countries": []
+      },
+      "location": {
+        "location": "INDONESIA"
+      },
+      "media_permissions": {
+        "can_media_tag": false
+      },
+      "parody_commentary_fan_label": "None",
+      "privacy": {
+        "protected": false
+      },
+      "professional": {
+        "category": [
+          {
+            "icon_name": "IconBriefcaseStroke",
+            "id": 958,
+            "name": "Entrepreneur"
+          }
+        ],
+        "professional_type": "Business",
+        "rest_id": "1523692864865116162"
+      },
+      "profile_bio": {
+        "description": "Beda platform beda kepribadian 🙏🏻☺️"
+      },
+      "profile_image_shape": "Circle",
+      "relationship_perspectives": {
+        "blocked_by": false,
+        "blocking": false,
+        "followed_by": false,
+        "following": false,
+        "muting": false
+      },
+      "rest_id": "250061173",
+      "super_follow_eligible": false,
+      "super_followed_by": false,
+      "super_following": false,
+      "verification": {
+        "verified": false
+      }
+    },
+    "views": {
+      "count": "56",
+      "state": "EnabledWithCount"
+    },
+    "rest_id": "1998748002115268748",
+    "userName": "Aya Aulia",
+    "userScreenName": "ayaliara",
+    "userLocation": "INDONESIA"
+  },
+  {
+    "tweet": {
+      "bookmark_count": 0,
+      "bookmarked": false,
+      "conversation_id_str": "1998889406732911002",
+      "created_at": "Wed Dec 10 22:55:46 +0000 2025",
+      "display_text_range": [
+        0,
+        49
+      ],
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "timestamps": [],
+        "urls": [],
+        "user_mentions": []
+      },
+      "favorite_count": 0,
+      "favorited": false,
+      "full_text": "what’s with this PR moves? its disgusting as hell",
+      "id_str": "1998889406732911002",
+      "is_quote_status": true,
+      "lang": "en",
+      "quote_count": 0,
+      "quoted_status_id_str": "1998285789864849715",
+      "quoted_status_permalink": {
+        "display": "x.com/bnpb_indonesia…",
+        "expanded": "https://twitter.com/bnpb_indonesia/status/1998285789864849715",
+        "url": "https://t.co/jGgcSpHq2z"
+      },
+      "reply_count": 0,
+      "retweet_count": 0,
+      "retweeted": false,
+      "user_id_str": "244073366"
+    },
+    "user": {
+      "default_profile": false,
+      "default_profile_image": false,
+      "description": "certified mind blower",
+      "entities": {
+        "description": {
+          "urls": []
+        },
+        "url": {
+          "urls": [
+            {
+              "display_url": "boxd.it/aVJXH",
+              "expanded_url": "https://boxd.it/aVJXH",
+              "indices": [
+                0,
+                23
+              ],
+              "url": "https://t.co/g691kk5QpB"
+            }
+          ]
+        }
+      },
+      "fast_followers_count": 0,
+      "favourites_count": 18154,
+      "follow_request_sent": false,
+      "followers_count": 615,
+      "friends_count": 550,
+      "has_custom_timelines": true,
+      "is_translator": false,
+      "listed_count": 2,
+      "media_count": 1650,
+      "normal_followers_count": 615,
+      "notifications": false,
+      "pinned_tweet_ids_str": [
+        "2005964103651934328"
+      ],
+      "possibly_sensitive": false,
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/244073366/1742130829",
+      "profile_interstitial_type": "",
+      "statuses_count": 28213,
+      "translator_type": "none",
+      "url": "https://t.co/g691kk5QpB",
+      "want_retweets": false,
+      "withheld_in_countries": []
+    },
+    "userDetail": {
+      "__typename": "User",
+      "affiliates_highlighted_label": {},
+      "avatar": {
+        "image_url": "https://pbs.twimg.com/profile_images/2010726093603667968/6vC7N-xj_normal.jpg"
+      },
+      "core": {
+        "created_at": "Fri Jan 28 13:11:26 +0000 2011",
+        "name": "🇵🇸",
+        "screen_name": "kelamaandiluar"
+      },
+      "dm_permissions": {
+        "can_dm": true
+      },
+      "follow_request_sent": false,
+      "has_graduated_access": true,
+      "id": "VXNlcjoyNDQwNzMzNjY=",
+      "is_blue_verified": false,
+      "legacy": {
+        "default_profile": false,
+        "default_profile_image": false,
+        "description": "certified mind blower",
+        "entities": {
+          "description": {
+            "urls": []
+          },
+          "url": {
+            "urls": [
+              {
+                "display_url": "boxd.it/aVJXH",
+                "expanded_url": "https://boxd.it/aVJXH",
+                "indices": [
+                  0,
+                  23
+                ],
+                "url": "https://t.co/g691kk5QpB"
+              }
+            ]
+          }
+        },
+        "fast_followers_count": 0,
+        "favourites_count": 18154,
+        "follow_request_sent": false,
+        "followers_count": 615,
+        "friends_count": 550,
+        "has_custom_timelines": true,
+        "is_translator": false,
+        "listed_count": 2,
+        "media_count": 1650,
+        "normal_followers_count": 615,
+        "notifications": false,
+        "pinned_tweet_ids_str": [
+          "2005964103651934328"
+        ],
+        "possibly_sensitive": false,
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/244073366/1742130829",
+        "profile_interstitial_type": "",
+        "statuses_count": 28213,
+        "translator_type": "none",
+        "url": "https://t.co/g691kk5QpB",
+        "want_retweets": false,
+        "withheld_in_countries": []
+      },
+      "location": {
+        "location": "pale blue dot"
+      },
+      "media_permissions": {
+        "can_media_tag": false
+      },
+      "parody_commentary_fan_label": "None",
+      "privacy": {
+        "protected": false
+      },
+      "profile_bio": {
+        "description": "certified mind blower"
+      },
+      "profile_image_shape": "Circle",
+      "relationship_perspectives": {
+        "blocked_by": false,
+        "blocking": false,
+        "followed_by": false,
+        "following": false,
+        "muting": false
+      },
+      "rest_id": "244073366",
+      "super_follow_eligible": false,
+      "super_followed_by": false,
+      "super_following": false,
+      "verification": {
+        "verified": false
+      }
+    },
+    "views": {
+      "count": "89",
+      "state": "EnabledWithCount"
+    },
+    "rest_id": "1998889406732911002",
+    "userName": "🇵🇸",
+    "userScreenName": "kelamaandiluar",
+    "userLocation": "pale blue dot"
+  },
+  {
+    "tweet": {
+      "bookmark_count": 0,
+      "bookmarked": false,
+      "conversation_id_str": "1998666374273708150",
+      "created_at": "Wed Dec 10 08:09:31 +0000 2025",
+      "display_text_range": [
+        0,
+        12
+      ],
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "timestamps": [],
+        "urls": [],
+        "user_mentions": []
+      },
+      "favorite_count": 0,
+      "favorited": false,
+      "full_text": "Wattpad kah?",
+      "id_str": "1998666374273708150",
+      "is_quote_status": true,
+      "lang": "in",
+      "quote_count": 0,
+      "quoted_status_id_str": "1998285789864849715",
+      "quoted_status_permalink": {
+        "display": "x.com/BNPB_Indonesia…",
+        "expanded": "https://twitter.com/BNPB_Indonesia/status/1998285789864849715",
+        "url": "https://t.co/DDQqfXG1Eh"
+      },
+      "reply_count": 0,
+      "retweet_count": 0,
+      "retweeted": false,
+      "user_id_str": "72834183"
+    },
+    "user": {
+      "default_profile": false,
+      "default_profile_image": false,
+      "description": "akun misuh-misuh",
+      "entities": {
+        "description": {
+          "urls": []
+        }
+      },
+      "fast_followers_count": 0,
+      "favourites_count": 38360,
+      "follow_request_sent": false,
+      "followers_count": 303,
+      "friends_count": 671,
+      "has_custom_timelines": true,
+      "is_translator": false,
+      "listed_count": 2,
+      "media_count": 1985,
+      "normal_followers_count": 303,
+      "notifications": false,
+      "pinned_tweet_ids_str": [
+        "1597394679527788544"
+      ],
+      "possibly_sensitive": false,
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/72834183/1726220897",
+      "profile_interstitial_type": "",
+      "statuses_count": 93611,
+      "translator_type": "none",
+      "want_retweets": false,
+      "withheld_in_countries": []
+    },
+    "userDetail": {
+      "__typename": "User",
+      "affiliates_highlighted_label": {},
+      "avatar": {
+        "image_url": "https://pbs.twimg.com/profile_images/1549269092019752962/AIw0mRHI_normal.jpg"
+      },
+      "core": {
+        "created_at": "Wed Sep 09 11:52:52 +0000 2009",
+        "name": "Opang",
+        "screen_name": "ogopagang"
+      },
+      "dm_permissions": {
+        "can_dm": false
+      },
+      "follow_request_sent": false,
+      "has_graduated_access": true,
+      "id": "VXNlcjo3MjgzNDE4Mw==",
+      "is_blue_verified": false,
+      "legacy": {
+        "default_profile": false,
+        "default_profile_image": false,
+        "description": "akun misuh-misuh",
+        "entities": {
+          "description": {
+            "urls": []
+          }
+        },
+        "fast_followers_count": 0,
+        "favourites_count": 38360,
+        "follow_request_sent": false,
+        "followers_count": 303,
+        "friends_count": 671,
+        "has_custom_timelines": true,
+        "is_translator": false,
+        "listed_count": 2,
+        "media_count": 1985,
+        "normal_followers_count": 303,
+        "notifications": false,
+        "pinned_tweet_ids_str": [
+          "1597394679527788544"
+        ],
+        "possibly_sensitive": false,
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/72834183/1726220897",
+        "profile_interstitial_type": "",
+        "statuses_count": 93611,
         "translator_type": "none",
         "want_retweets": false,
         "withheld_in_countries": []
@@ -3717,7 +3550,7 @@
         "protected": false
       },
       "profile_bio": {
-        "description": "🩷 Billlie - B.A.P - Jungsis"
+        "description": "akun misuh-misuh"
       },
       "profile_image_shape": "Circle",
       "relationship_perspectives": {
@@ -3727,7 +3560,7 @@
         "following": false,
         "muting": false
       },
-      "rest_id": "439749275",
+      "rest_id": "72834183",
       "super_follow_eligible": false,
       "super_followed_by": false,
       "super_following": false,
@@ -3736,12 +3569,12 @@
       }
     },
     "views": {
-      "count": "106",
+      "count": "54",
       "state": "EnabledWithCount"
     },
-    "rest_id": "1998741665788367265",
-    "userName": "suwa",
-    "userScreenName": "_syuaaaa",
+    "rest_id": "1998666374273708150",
+    "userName": "Opang",
+    "userScreenName": "ogopagang",
     "userLocation": ""
   }
 ]

@@ -3,7 +3,7 @@ import dayjs from "dayjs";
 // Twitter search URLs
 export const TWITTER_SEARCH_ADVANCED_URL = {
   TOP: "https://twitter.com/search-advanced",
-  LATEST: "https://twitter.com/search-advanced",
+  LATEST: "https://twitter.com/search-advanced?f=live",
 };
 
 // Fields to extract from tweets
