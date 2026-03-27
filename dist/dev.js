@@ -43,7 +43,7 @@ var env_1 = require("./env");
 // });
 (0, crawl_1.crawl)({
     ACCESS_TOKEN: env_1.ACCESS_TOKEN,
-    TWEET_THREAD_URL: "https://x.com/BNPB_Indonesia/status/1998285789864849715/quotes",
+    TWEET_THREAD_URL: "https://twitter.com/BNPB_Indonesia/status/1998285789864849715/quotes",
     TARGET_TWEET_COUNT: 50,
     OUTPUT_FILENAME: "quotes_test.csv",
     DELAY_EACH_TWEET_SECONDS: 0.1,

@@ -8,7 +8,7 @@ var dayjs_1 = __importDefault(require("dayjs"));
 // Twitter search URLs
 exports.TWITTER_SEARCH_ADVANCED_URL = {
     TOP: "https://twitter.com/search-advanced",
-    LATEST: "https://twitter.com/search-advanced",
+    LATEST: "https://twitter.com/search-advanced?f=live",
 };
 // Fields to extract from tweets
 exports.TWEET_FIELDS = [
