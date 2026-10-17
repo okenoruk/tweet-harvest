@@ -1,33 +1,17 @@
 "use strict";
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserInfoHandler = void 0;
-var lodash_1 = require("lodash");
-var chalk_1 = __importDefault(require("chalk"));
-var base_handler_1 = require("./base-handler");
-var constants_1 = require("../utils/constants");
+const lodash_1 = require("lodash");
+const chalk_1 = __importDefault(require("chalk"));
+const base_handler_1 = require("./base-handler");
+const constants_1 = require("../utils/constants");
 /**
  * Handler for Twitter user information data
  */
-var UserInfoHandler = /** @class */ (function (_super) {
-    __extends(UserInfoHandler, _super);
+class UserInfoHandler extends base_handler_1.BaseHandler {
     /**
      * Constructor for UserInfoHandler
      * @param page Playwright page object
@@ -37,50 +21,47 @@ var UserInfoHandler = /** @class */ (function (_super) {
      * @param delaySeconds Delay between items in seconds
      * @param delayEvery100Seconds Delay after every 100 items in seconds
      */
-    function UserInfoHandler(page, filePath, dataFolder, timeoutLimit, delaySeconds, delayEvery100Seconds) {
-        if (timeoutLimit === void 0) { timeoutLimit = 4; }
-        if (delaySeconds === void 0) { delaySeconds = 3; }
-        if (delayEvery100Seconds === void 0) { delayEvery100Seconds = 5; }
+    constructor(page, filePath, dataFolder, timeoutLimit = 4, delaySeconds = 3, delayEvery100Seconds = 5) {
         // For user info, we usually fetch one user at a time, so targetCount is 1
-        return _super.call(this, page, filePath, dataFolder, 1, timeoutLimit, delaySeconds, delayEvery100Seconds) || this;
+        super(page, filePath, dataFolder, 1, timeoutLimit, delaySeconds, delayEvery100Seconds);
     }
     /**
      * Get the URL pattern to listen for
      */
-    UserInfoHandler.prototype.getUrlPattern = function () {
+    getUrlPattern() {
         return "UserByScreenName";
-    };
+    }
     /**
      * Process the response data
      * @param responseJson Response JSON data
      */
-    UserInfoHandler.prototype.processResponseData = function (responseJson) {
+    processResponseData(responseJson) {
         var _a;
-        var data = responseJson.data;
+        const data = responseJson.data;
         if (!data || Object.keys(data).length === 0) {
             console.warn(chalk_1.default.yellow("\nWarning: Received empty data from Twitter API."));
             console.warn(chalk_1.default.yellow("This usually means the account is deleted. Skipping..."));
             return [];
         }
-        var user = (_a = data === null || data === void 0 ? void 0 : data.user) === null || _a === void 0 ? void 0 : _a.result;
+        const user = (_a = data === null || data === void 0 ? void 0 : data.user) === null || _a === void 0 ? void 0 : _a.result;
         if (!user) {
             return [];
         }
         return [user];
-    };
+    }
     /**
      * Get the fields to extract
      */
-    UserInfoHandler.prototype.getFields = function () {
+    getFields() {
         return constants_1.USER_INFO_FIELDS;
-    };
+    }
     /**
      * Process an item for CSV output
      * @param item Item to process
      */
-    UserInfoHandler.prototype.processItemForCsv = function (item) {
+    processItemForCsv(item) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
-        var data = {
+        const data = {
             id: item.id,
             rest_id: item.rest_id,
             created_at: (_a = item.core) === null || _a === void 0 ? void 0 : _a.created_at,
@@ -100,20 +81,19 @@ var UserInfoHandler = /** @class */ (function (_super) {
             is_identity_verified: (_q = item.verification_info) === null || _q === void 0 ? void 0 : _q.is_identity_verified,
         };
         return (0, lodash_1.pick)(data, this.getFields());
-    };
+    }
     /**
      * Get the unique ID of an item
      * @param item Item to get the ID for
      */
-    UserInfoHandler.prototype.getUniqueId = function (item) {
+    getUniqueId(item) {
         return item.rest_id || item.id;
-    };
+    }
     /**
      * Get the name of the items being collected (for logging)
      */
-    UserInfoHandler.prototype.getItemName = function () {
+    getItemName() {
         return "user information";
-    };
-    return UserInfoHandler;
-}(base_handler_1.BaseHandler));
+    }
+}
 exports.UserInfoHandler = UserInfoHandler;

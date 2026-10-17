@@ -78,7 +78,9 @@ export class TweetsHandler extends BaseHandler {
 
         const result = this.crawlMode === CrawlMode.SEARCH
           ? tweet.content.itemContent.tweet_results.result
-          : tweet.content.items[0].item.itemContent.tweet_results.result;
+          : (tweet.content.items?.length ? tweet.content.items[0].item.itemContent.tweet_results.result : null);
+
+        if (!result) return null;
 
         if (!result.tweet?.core?.user_results && !result.core?.user_results) return null;
 

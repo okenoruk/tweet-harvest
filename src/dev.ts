@@ -64,16 +64,18 @@ import { ACCESS_TOKEN } from "./env";
 //   DELAY_EVERY_100_TWEETS_SECONDS: 0,
 // });
 
-crawl({
-  ACCESS_TOKEN: ACCESS_TOKEN,
-  SEARCH_KEYWORDS: `kebakaran hutan lang:id`,
-  TARGET_TWEET_COUNT: 20,
-  DEBUG_MODE: true,
-  OUTPUT_FILENAME: "kebakaran.csv",
-  DELAY_EACH_TWEET_SECONDS: 0.1,
-  DELAY_EVERY_100_TWEETS_SECONDS: 0,
-  SEARCH_TAB: "TOP",
-});
+if (ACCESS_TOKEN) {
+  crawl({
+    ACCESS_TOKEN: ACCESS_TOKEN,
+    SEARCH_KEYWORDS: `kebakaran hutan lang:id`,
+    TARGET_TWEET_COUNT: 20,
+    DEBUG_MODE: true,
+    OUTPUT_FILENAME: "kebakaran.csv",
+    DELAY_EACH_TWEET_SECONDS: 0.1,
+    DELAY_EVERY_100_TWEETS_SECONDS: 0,
+    SEARCH_TAB: "TOP",
+  });
+}
 
 // crawl({
 //   ACCESS_TOKEN: ACCESS_TOKEN,

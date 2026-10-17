@@ -1,0 +1,99 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.UserInfoHandler = void 0;
+const lodash_1 = require("lodash");
+const chalk_1 = __importDefault(require("chalk"));
+const base_handler_1 = require("./base-handler");
+const constants_1 = require("../utils/constants");
+/**
+ * Handler for Twitter user information data
+ */
+class UserInfoHandler extends base_handler_1.BaseHandler {
+    /**
+     * Constructor for UserInfoHandler
+     * @param page Playwright page object
+     * @param filePath Path to save the CSV file
+     * @param dataFolder Folder to save the data
+     * @param timeoutLimit Number of timeouts before stopping
+     * @param delaySeconds Delay between items in seconds
+     * @param delayEvery100Seconds Delay after every 100 items in seconds
+     */
+    constructor(page, filePath, dataFolder, timeoutLimit = 4, delaySeconds = 3, delayEvery100Seconds = 5) {
+        // For user info, we usually fetch one user at a time, so targetCount is 1
+        super(page, filePath, dataFolder, 1, timeoutLimit, delaySeconds, delayEvery100Seconds);
+    }
+    /**
+     * Get the URL pattern to listen for
+     */
+    getUrlPattern() {
+        return "UserByScreenName";
+    }
+    /**
+     * Process the response data
+     * @param responseJson Response JSON data
+     */
+    processResponseData(responseJson) {
+        var _a;
+        const data = responseJson.data;
+        if (!data || Object.keys(data).length === 0) {
+            console.warn(chalk_1.default.yellow("\nWarning: Received empty data from Twitter API."));
+            console.warn(chalk_1.default.yellow("This usually means the account is deleted. Skipping..."));
+            return [];
+        }
+        const user = (_a = data === null || data === void 0 ? void 0 : data.user) === null || _a === void 0 ? void 0 : _a.result;
+        if (!user) {
+            return [];
+        }
+        return [user];
+    }
+    /**
+     * Get the fields to extract
+     */
+    getFields() {
+        return constants_1.USER_INFO_FIELDS;
+    }
+    /**
+     * Process an item for CSV output
+     * @param item Item to process
+     */
+    processItemForCsv(item) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
+        const data = {
+            id: item.id,
+            rest_id: item.rest_id,
+            created_at: (_a = item.core) === null || _a === void 0 ? void 0 : _a.created_at,
+            name: (_b = item.core) === null || _b === void 0 ? void 0 : _b.name,
+            screen_name: (_c = item.core) === null || _c === void 0 ? void 0 : _c.screen_name,
+            description: this.cleanText(((_d = item.legacy) === null || _d === void 0 ? void 0 : _d.description) || ((_e = item.profile_bio) === null || _e === void 0 ? void 0 : _e.description)),
+            location: this.cleanText((_f = item.location) === null || _f === void 0 ? void 0 : _f.location),
+            followers_count: (_g = item.legacy) === null || _g === void 0 ? void 0 : _g.followers_count,
+            friends_count: (_h = item.legacy) === null || _h === void 0 ? void 0 : _h.friends_count,
+            statuses_count: (_j = item.legacy) === null || _j === void 0 ? void 0 : _j.statuses_count,
+            favourites_count: (_k = item.legacy) === null || _k === void 0 ? void 0 : _k.favourites_count,
+            listed_count: (_l = item.legacy) === null || _l === void 0 ? void 0 : _l.listed_count,
+            media_count: (_m = item.legacy) === null || _m === void 0 ? void 0 : _m.media_count,
+            profile_image_url: (_o = item.avatar) === null || _o === void 0 ? void 0 : _o.image_url,
+            profile_banner_url: (_p = item.legacy) === null || _p === void 0 ? void 0 : _p.profile_banner_url,
+            is_blue_verified: item.is_blue_verified,
+            is_identity_verified: (_q = item.verification_info) === null || _q === void 0 ? void 0 : _q.is_identity_verified,
+        };
+        return (0, lodash_1.pick)(data, this.getFields());
+    }
+    /**
+     * Get the unique ID of an item
+     * @param item Item to get the ID for
+     */
+    getUniqueId(item) {
+        return item.rest_id || item.id;
+    }
+    /**
+     * Get the name of the items being collected (for logging)
+     */
+    getItemName() {
+        return "user information";
+    }
+}
+exports.UserInfoHandler = UserInfoHandler;

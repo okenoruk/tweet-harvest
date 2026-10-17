@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SearchTab = exports.CrawlMode = exports.DEFAULT_DATA_FOLDER = exports.FORMATTED_TIMESTAMP = exports.USER_INFO_FIELDS = exports.USER_PROFILE_FIELDS = exports.TWEET_FIELDS = exports.TWITTER_SEARCH_ADVANCED_URL = void 0;
-var dayjs_1 = __importDefault(require("dayjs"));
+const dayjs_1 = __importDefault(require("dayjs"));
 // Twitter search URLs
 exports.TWITTER_SEARCH_ADVANCED_URL = {
     TOP: "https://twitter.com/search-advanced",

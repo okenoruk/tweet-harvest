@@ -1,29 +1,13 @@
 "use strict";
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.RetweetsHandler = void 0;
-var lodash_1 = require("lodash");
-var base_handler_1 = require("./base-handler");
-var constants_1 = require("../utils/constants");
+const lodash_1 = require("lodash");
+const base_handler_1 = require("./base-handler");
+const constants_1 = require("../utils/constants");
 /**
  * Handler for Twitter retweets data
  */
-var RetweetsHandler = /** @class */ (function (_super) {
-    __extends(RetweetsHandler, _super);
+class RetweetsHandler extends base_handler_1.BaseHandler {
     /**
      * Constructor for RetweetsHandler
      * @param page Playwright page object
@@ -34,48 +18,45 @@ var RetweetsHandler = /** @class */ (function (_super) {
      * @param delaySeconds Delay between items in seconds
      * @param delayEvery100Seconds Delay after every 100 items in seconds
      */
-    function RetweetsHandler(page, filePath, dataFolder, targetCount, timeoutLimit, delaySeconds, delayEvery100Seconds) {
-        if (timeoutLimit === void 0) { timeoutLimit = 2; }
-        if (delaySeconds === void 0) { delaySeconds = 1; }
-        if (delayEvery100Seconds === void 0) { delayEvery100Seconds = 1; }
-        return _super.call(this, page, filePath, dataFolder, targetCount, timeoutLimit, delaySeconds, delayEvery100Seconds) || this;
+    constructor(page, filePath, dataFolder, targetCount, timeoutLimit = 2, delaySeconds = 1, delayEvery100Seconds = 1) {
+        super(page, filePath, dataFolder, targetCount, timeoutLimit, delaySeconds, delayEvery100Seconds);
     }
     /**
      * Get the URL pattern to listen for
      */
-    RetweetsHandler.prototype.getUrlPattern = function () {
+    getUrlPattern() {
         return "Retweeters";
-    };
+    }
     /**
      * Process the response data
      * @param responseJson Response JSON data
      */
-    RetweetsHandler.prototype.processResponseData = function (responseJson) {
+    processResponseData(responseJson) {
         var _a, _b, _c;
-        var instructions = (_c = (_b = (_a = responseJson.data) === null || _a === void 0 ? void 0 : _a.retweeters_timeline) === null || _b === void 0 ? void 0 : _b.timeline) === null || _c === void 0 ? void 0 : _c.instructions;
+        const instructions = (_c = (_b = (_a = responseJson.data) === null || _a === void 0 ? void 0 : _a.retweeters_timeline) === null || _b === void 0 ? void 0 : _b.timeline) === null || _c === void 0 ? void 0 : _c.instructions;
         if (!instructions || !Array.isArray(instructions)) {
             return [];
         }
         // Search for any instruction that has entries
-        var entriesInstruction = instructions.find(function (instruction) { return instruction.entries; });
+        const entriesInstruction = instructions.find((instruction) => instruction.entries);
         return (entriesInstruction === null || entriesInstruction === void 0 ? void 0 : entriesInstruction.entries) || [];
-    };
+    }
     /**
      * Get the fields to extract
      */
-    RetweetsHandler.prototype.getFields = function () {
+    getFields() {
         return constants_1.USER_PROFILE_FIELDS;
-    };
+    }
     /**
      * Process an item for CSV output
      * @param item Item to process
      */
-    RetweetsHandler.prototype.processItemForCsv = function (item) {
+    processItemForCsv(item) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
         if (item.content.entryType === 'TimelineTimelineItem' && ((_c = (_b = (_a = item === null || item === void 0 ? void 0 : item.content) === null || _a === void 0 ? void 0 : _a.itemContent) === null || _b === void 0 ? void 0 : _b.user_results) === null || _c === void 0 ? void 0 : _c.result)) {
-            var result = item.content.itemContent.user_results.result;
-            var isSuspended = result.__typename === 'UserUnavailable';
-            var user = (0, lodash_1.pick)({
+            const result = item.content.itemContent.user_results.result;
+            const isSuspended = result.__typename === 'UserUnavailable';
+            const user = (0, lodash_1.pick)({
                 id: result === null || result === void 0 ? void 0 : result.rest_id,
                 created_at: ((_d = result.core) === null || _d === void 0 ? void 0 : _d.created_at) || "",
                 description: ((_e = result.legacy) === null || _e === void 0 ? void 0 : _e.description) || "",
@@ -94,21 +75,20 @@ var RetweetsHandler = /** @class */ (function (_super) {
             return (0, lodash_1.pick)(user, this.getFields());
         }
         return null;
-    };
+    }
     /**
      * Get the name of the items being collected (for logging)
      */
-    RetweetsHandler.prototype.getItemName = function () {
+    getItemName() {
         return "user profiles (retweets)";
-    };
+    }
     /**
      * Get the unique ID of a user profile
      * @param item User profile item
      */
-    RetweetsHandler.prototype.getUniqueId = function (item) {
+    getUniqueId(item) {
         var _a, _b, _c, _d;
         return ((_d = (_c = (_b = (_a = item.content) === null || _a === void 0 ? void 0 : _a.itemContent) === null || _b === void 0 ? void 0 : _b.user_results) === null || _c === void 0 ? void 0 : _c.result) === null || _d === void 0 ? void 0 : _d.rest_id) || item.entryId || null;
-    };
-    return RetweetsHandler;
-}(base_handler_1.BaseHandler));
+    }
+}
 exports.RetweetsHandler = RetweetsHandler;

@@ -1,13 +1,23 @@
 {
   "compilerOptions": {
-    "target": "ES5",
+    "target": "ES6",
     "module": "CommonJS",
+    "rootDir": "./src",
     "outDir": "./dist",
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
-  "lib": ["esnext", "dom"],
-  "include": ["src/**/*", "**/*.d.ts"],
-  "exclude": ["node_modules", "**/*.spec.ts"]
+  "lib": [
+    "esnext",
+    "dom"
+  ],
+  "include": [
+    "src/**/*",
+    "**/*.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts"
+  ]
 }

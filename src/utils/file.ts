@@ -27,7 +27,7 @@ export function appendCsv(pathStr: string, contents: any, cb?: fs.WriteFileOptio
 export function ensureDirectoryExists(folderPath: string): string {
   if (!fs.existsSync(folderPath)) {
     const dir = fs.mkdirSync(folderPath, { recursive: true });
-    const dirFullPath = path.resolve(dir);
+    const dirFullPath = path.resolve(dir || "");
     console.info(chalk.green(`Created new directory: ${dirFullPath}`));
     return dirFullPath;
   }

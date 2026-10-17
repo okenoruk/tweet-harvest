@@ -224,17 +224,17 @@ export async function crawl({
       });
     }
 
-    const items = await handler.collect();
+    const items = await handler?.collect();
 
     if (items.length === 0) {
       if (handler instanceof TweetsHandler) {
         TWEETS_NOT_FOUND_ON_CURRENT_TAB = true;
         console.info("No tweets found for the search criteria");
       }
-      const screenshotPath = path.resolve(DEFAULT_DATA_FOLDER, `No-${handler.constructor.name}-${FORMATTED_TIMESTAMP}.png`).replace(/ /g, "_");
+      const screenshotPath = path.resolve(DEFAULT_DATA_FOLDER, `No-${handler?.constructor.name}-${FORMATTED_TIMESTAMP}.png`).replace(/ /g, "_");
       await page.screenshot({ path: screenshotPath });
     } else {
-      console.info(`Collected ${items.length} items using ${handler.constructor.name}`);
+      console.info(`Collected ${items.length} items using ${handler?.constructor.name}`);
     }
   }
 

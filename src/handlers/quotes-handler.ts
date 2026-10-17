@@ -64,7 +64,7 @@ export class QuotesHandler extends BaseHandler {
 
         const tweetContent = result.legacy || result.tweet?.legacy;
         const userContent =
-          result.core?.user_results?.result?.legacy || result.tweet?.core?.user_results?.result?.legacy;
+          result.core?.user_results?.result;
         const userDetail = result.core?.user_results?.result || result.tweet?.core?.user_results?.result;
         const views = result.views || result.tweet?.views;
 
@@ -107,8 +107,8 @@ export class QuotesHandler extends BaseHandler {
     tweet["tweet_url"] = `https://twitter.com/${userScreenName}/status/${tweet.id_str}`;
     tweet["image_url"] = item.tweet.entities?.media?.[0]?.media_url_https || "";
     tweet["views_count"] = item.views?.count;
-    tweet["followers"] = item.user?.followers_count;
-    tweet["following"] = item.user?.friends_count;
+    tweet["followers"] = item.user?.relationship_counts?.followers;
+    tweet["following"] = item.user?.relationship_counts?.following;
 
     return pick(tweet, this.getFields());
   }

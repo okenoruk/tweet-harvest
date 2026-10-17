@@ -90,7 +90,7 @@ export abstract class BaseHandler {
    * Process an item for CSV output
    * @param item Item to process
    */
-  protected abstract processItemForCsv(item: any): Record<string, any>;
+  protected abstract processItemForCsv(item: any): Record<string, any> | null;
 
   /**
    * Get the unique ID of an item
@@ -269,7 +269,7 @@ export abstract class BaseHandler {
           // TODO: For debugging purpose, delete later
           const jsonData = JSON.stringify(items, null, 2);
           var fs = require('fs');
-          fs.writeFile("api_results.json", jsonData, function (err) {
+          fs.writeFile("api_results.json", jsonData, function (err: any) {
             if (err) {
               console.log(err);
             }
