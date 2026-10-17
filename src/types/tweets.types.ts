@@ -56,6 +56,9 @@ export interface Result2 {
   tipjar_settings: TipjarSettings
   verification: Verification
   professional?: Professional
+  action_counts: {
+    favorites_count: number
+  }
   relationship_counts: {
     followers: number
     following: number
