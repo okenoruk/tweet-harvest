@@ -10,7 +10,22 @@ export interface TweetContent {
   grok_analysis_button: boolean
   legacy: Legacy2
   quoted_status_result?: QuotedStatusResult
-  card?: Card
+  card?: Card,
+  note_tweet: NoteTweet
+}
+
+export interface NoteTweet {
+  note_tweet_results: NoteTweetResults
+  is_expandable: boolean
+}
+
+export interface NoteTweetResults {
+  result: NoteTweetResult
+}
+
+export interface NoteTweetResult {
+  id: string
+  text: string
 }
 
 export interface Core {
@@ -31,7 +46,7 @@ export interface Result2 {
   dm_permissions: DmPermissions
   has_graduated_access: boolean
   is_blue_verified: boolean
-  legacy: Legacy
+  // legacy: Legacy
   location: Location
   media_permissions: MediaPermissions
   parody_commentary_fan_label: string
@@ -41,6 +56,10 @@ export interface Result2 {
   tipjar_settings: TipjarSettings
   verification: Verification
   professional?: Professional
+  relationship_counts: {
+    followers: number
+    following: number
+  }
 }
 
 export interface AffiliatesHighlightedLabel {

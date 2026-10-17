@@ -44,14 +44,14 @@ import { ACCESS_TOKEN } from "./env";
 //   SEARCH_TAB: "LATEST",
 // });
 
-crawl({
-  ACCESS_TOKEN: ACCESS_TOKEN,
-  TWEET_THREAD_URL: "https://twitter.com/BNPB_Indonesia/status/1998285789864849715/quotes",
-  TARGET_TWEET_COUNT: 50,
-  OUTPUT_FILENAME: "quotes_test.csv",
-  DELAY_EACH_TWEET_SECONDS: 0.1,
-  DELAY_EVERY_100_TWEETS_SECONDS: 10,
-});
+// crawl({
+//   ACCESS_TOKEN: ACCESS_TOKEN,
+//   TWEET_THREAD_URL: "https://twitter.com/BNPB_Indonesia/status/1998285789864849715/quotes",
+//   TARGET_TWEET_COUNT: 50,
+//   OUTPUT_FILENAME: "quotes_test.csv",
+//   DELAY_EACH_TWEET_SECONDS: 0.1,
+//   DELAY_EVERY_100_TWEETS_SECONDS: 10,
+// });
 
 // TEST: Check if existing code handles replies from a plain tweet URL
 // Using the same tweet as in tweet-detail.json (BNPB_Indonesia)
@@ -59,21 +59,21 @@ crawl({
 //   ACCESS_TOKEN: ACCESS_TOKEN,
 //   TWEET_THREAD_URL: "https://twitter.com/BNPB_Indonesia/status/2026826810747715848",
 //   TARGET_TWEET_COUNT: 50,
-//   OUTPUT_FILENAME: "replies_test.csv",
+//   OUTPUT_FILENAME: "replies_test_new.csv",
 //   DELAY_EACH_TWEET_SECONDS: 0.1,
 //   DELAY_EVERY_100_TWEETS_SECONDS: 0,
 // });
 
-// crawl({
-//   ACCESS_TOKEN: ACCESS_TOKEN,
-//   SEARCH_KEYWORDS: `perang iran lang:id`,
-//   TARGET_TWEET_COUNT: 20,
-//   DEBUG_MODE: true,
-//   OUTPUT_FILENAME: "perang_iran.csv",
-//   DELAY_EACH_TWEET_SECONDS: 0.1,
-//   DELAY_EVERY_100_TWEETS_SECONDS: 0,
-//   SEARCH_TAB: "TOP",
-// });
+crawl({
+  ACCESS_TOKEN: ACCESS_TOKEN,
+  SEARCH_KEYWORDS: `kebakaran hutan lang:id`,
+  TARGET_TWEET_COUNT: 20,
+  DEBUG_MODE: true,
+  OUTPUT_FILENAME: "kebakaran.csv",
+  DELAY_EACH_TWEET_SECONDS: 0.1,
+  DELAY_EVERY_100_TWEETS_SECONDS: 0,
+  SEARCH_TAB: "TOP",
+});
 
 // crawl({
 //   ACCESS_TOKEN: ACCESS_TOKEN,
