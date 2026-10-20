@@ -84,7 +84,7 @@ class TweetsHandler extends base_handler_1.BaseHandler {
                 rest_id: result.rest_id || ((_9 = result.tweet) === null || _9 === void 0 ? void 0 : _9.rest_id),
                 userName: (_10 = userDetail === null || userDetail === void 0 ? void 0 : userDetail.core) === null || _10 === void 0 ? void 0 : _10.name,
                 userScreenName: (_11 = userDetail === null || userDetail === void 0 ? void 0 : userDetail.core) === null || _11 === void 0 ? void 0 : _11.screen_name,
-                userLocation: ((_12 = userDetail === null || userDetail === void 0 ? void 0 : userDetail.location) === null || _12 === void 0 ? void 0 : _12.location) || ""
+                userLocation: (((_12 = userDetail === null || userDetail === void 0 ? void 0 : userDetail.location) === null || _12 === void 0 ? void 0 : _12.location) || "").replace(/,/g, " ").replace(/\n/g, " ")
             };
         })
             .filter((tweet) => tweet !== null);

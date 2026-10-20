@@ -62,7 +62,7 @@ class QuotesHandler extends base_handler_1.BaseHandler {
                 rest_id: result.rest_id || ((_r = result.tweet) === null || _r === void 0 ? void 0 : _r.rest_id),
                 userName: (_s = userDetail === null || userDetail === void 0 ? void 0 : userDetail.core) === null || _s === void 0 ? void 0 : _s.name,
                 userScreenName: (_t = userDetail === null || userDetail === void 0 ? void 0 : userDetail.core) === null || _t === void 0 ? void 0 : _t.screen_name,
-                userLocation: ((_u = userDetail === null || userDetail === void 0 ? void 0 : userDetail.location) === null || _u === void 0 ? void 0 : _u.location) || ""
+                userLocation: (((_u = userDetail === null || userDetail === void 0 ? void 0 : userDetail.location) === null || _u === void 0 ? void 0 : _u.location) || "").replace(/,/g, " ").replace(/\n/g, " ")
             };
         })
             .filter((tweet) => tweet !== null);

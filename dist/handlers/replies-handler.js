@@ -75,7 +75,7 @@ class RepliesHandler extends base_handler_1.BaseHandler {
                         rest_id: result.rest_id,
                         userName: userCore === null || userCore === void 0 ? void 0 : userCore.name,
                         userScreenName: userCore === null || userCore === void 0 ? void 0 : userCore.screen_name,
-                        userLocation: ((_k = userResult === null || userResult === void 0 ? void 0 : userResult.location) === null || _k === void 0 ? void 0 : _k.location) || "",
+                        userLocation: (((_k = userResult === null || userResult === void 0 ? void 0 : userResult.location) === null || _k === void 0 ? void 0 : _k.location) || "").replace(/,/g, " ").replace(/\n/g, " ")
                     });
                 }
             }
