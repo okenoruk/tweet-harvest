@@ -94,7 +94,7 @@ export class RepliesHandler extends BaseHandler {
                         rest_id: result.rest_id,
                         userName: userCore?.name,
                         userScreenName: userCore?.screen_name,
-                        userLocation: userResult?.location?.location || "",
+                        userLocation: (userResult?.location?.location || "").replace(/,/g, " ").replace(/\n/g, " ")
                     });
                 }
             }

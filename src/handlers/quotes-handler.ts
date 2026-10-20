@@ -76,7 +76,7 @@ export class QuotesHandler extends BaseHandler {
           rest_id: result.rest_id || result.tweet?.rest_id,
           userName: userDetail?.core?.name,
           userScreenName: userDetail?.core?.screen_name,
-          userLocation: userDetail?.location?.location || ""
+          userLocation: (userDetail?.location?.location || "").replace(/,/g, " ").replace(/\n/g, " ")
         };
       })
       .filter((tweet) => tweet !== null);
