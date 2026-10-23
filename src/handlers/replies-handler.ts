@@ -84,11 +84,12 @@ export class RepliesHandler extends BaseHandler {
                     const tweetLegacy = result.legacy;
                     const userResult = result.core.user_results.result;
                     const userCore = userResult.core;
-                    const userLegacy = userResult.legacy;
+                    const userContent = result.core?.user_results?.result;
+                    // const userLegacy = userResult.legacy;
 
                     replies.push({
                         tweet: tweetLegacy,
-                        user: userLegacy,
+                        user: userContent,
                         userDetail: userResult,
                         views: result.views,
                         rest_id: result.rest_id,
@@ -132,8 +133,8 @@ export class RepliesHandler extends BaseHandler {
         tweet["tweet_url"] = `https://twitter.com/${userScreenName}/status/${tweet.id_str}`;
         tweet["image_url"] = item.tweet.entities?.media?.[0]?.media_url_https || "";
         tweet["views_count"] = item.views?.count || "";
-        tweet["followers"] = item.user?.followers_count;
-        tweet["following"] = item.user?.friends_count;
+        tweet["followers"] = item.user?.relationship_counts?.followers;
+        tweet["following"] = item.user?.relationship_counts?.following;
 
         return pick(tweet, this.getFields());
     }
