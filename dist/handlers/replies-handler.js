@@ -34,7 +34,7 @@ class RepliesHandler extends base_handler_1.BaseHandler {
      * skipping the original tweet itself and pagination cursors.
      */
     processResponseData(responseJson) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
         const instructions = (_b = (_a = responseJson.data) === null || _a === void 0 ? void 0 : _a.threaded_conversation_with_injections_v2) === null || _b === void 0 ? void 0 : _b.instructions;
         if (!instructions || !Array.isArray(instructions)) {
             return [];
@@ -66,16 +66,17 @@ class RepliesHandler extends base_handler_1.BaseHandler {
                     const tweetLegacy = result.legacy;
                     const userResult = result.core.user_results.result;
                     const userCore = userResult.core;
-                    const userLegacy = userResult.legacy;
+                    const userContent = (_l = (_k = result.core) === null || _k === void 0 ? void 0 : _k.user_results) === null || _l === void 0 ? void 0 : _l.result;
+                    // const userLegacy = userResult.legacy;
                     replies.push({
                         tweet: tweetLegacy,
-                        user: userLegacy,
+                        user: userContent,
                         userDetail: userResult,
                         views: result.views,
                         rest_id: result.rest_id,
                         userName: userCore === null || userCore === void 0 ? void 0 : userCore.name,
                         userScreenName: userCore === null || userCore === void 0 ? void 0 : userCore.screen_name,
-                        userLocation: (((_k = userResult === null || userResult === void 0 ? void 0 : userResult.location) === null || _k === void 0 ? void 0 : _k.location) || "").replace(/,/g, " ").replace(/\n/g, " ")
+                        userLocation: (((_m = userResult === null || userResult === void 0 ? void 0 : userResult.location) === null || _m === void 0 ? void 0 : _m.location) || "").replace(/,/g, " ").replace(/\n/g, " ")
                     });
                 }
             }
@@ -93,7 +94,7 @@ class RepliesHandler extends base_handler_1.BaseHandler {
      * @param item Item to process
      */
     processItemForCsv(item) {
-        var _a, _b, _c, _d, _e, _f;
+        var _a, _b, _c, _d, _e, _f, _g, _h;
         if (!(item === null || item === void 0 ? void 0 : item.tweet) || !(item === null || item === void 0 ? void 0 : item.userScreenName))
             return null;
         const tweet = (0, lodash_1.pick)(Object.assign(Object.assign({}, item.tweet), { id_str: item.rest_id || item.tweet.id_str, username: item.userScreenName, location: item.userLocation }), constants_1.TWEET_FIELDS);
@@ -102,8 +103,8 @@ class RepliesHandler extends base_handler_1.BaseHandler {
         tweet["tweet_url"] = `https://twitter.com/${userScreenName}/status/${tweet.id_str}`;
         tweet["image_url"] = ((_c = (_b = (_a = item.tweet.entities) === null || _a === void 0 ? void 0 : _a.media) === null || _b === void 0 ? void 0 : _b[0]) === null || _c === void 0 ? void 0 : _c.media_url_https) || "";
         tweet["views_count"] = ((_d = item.views) === null || _d === void 0 ? void 0 : _d.count) || "";
-        tweet["followers"] = (_e = item.user) === null || _e === void 0 ? void 0 : _e.followers_count;
-        tweet["following"] = (_f = item.user) === null || _f === void 0 ? void 0 : _f.friends_count;
+        tweet["followers"] = (_f = (_e = item.user) === null || _e === void 0 ? void 0 : _e.relationship_counts) === null || _f === void 0 ? void 0 : _f.followers;
+        tweet["following"] = (_h = (_g = item.user) === null || _g === void 0 ? void 0 : _g.relationship_counts) === null || _h === void 0 ? void 0 : _h.following;
         return (0, lodash_1.pick)(tweet, this.getFields());
     }
     /**
