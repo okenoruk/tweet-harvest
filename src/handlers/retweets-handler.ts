@@ -72,16 +72,16 @@ export class RetweetsHandler extends BaseHandler {
         {
           id: result?.rest_id,
           created_at: result.core?.created_at || "",
-          description: result.legacy?.description || "",
-          followers_count: result.legacy?.followers_count || 0,
-          friends_count: result.legacy?.friends_count || 0,
+          description: result.profile_bio?.description || "",
+          followers_count: result.relationship_counts?.followers || 0,
+          friends_count: result.relationship_counts?.following || 0,
           name: result.core?.name || "",
           profile_image_url_https: result.avatar?.image_url || "",
           screen_name: result.core?.screen_name || "",
-          statuses_count: result.legacy?.statuses_count || 0,
+          statuses_count: result.tweet_counts?.tweets || 0,
           is_blue_verified: result.is_blue_verified || false,
           profile_description_language: this.cleanText(result.profile_description_language),
-          favourites_count: result.legacy?.favourites_count || 0
+          favourites_count: result.action_counts?.favorites_count || 0
         },
         USER_PROFILE_FIELDS
       );

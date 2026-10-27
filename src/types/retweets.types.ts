@@ -65,11 +65,27 @@ export interface Result {
   profile_description_language: string
   profile_image_shape: string
   relationship_perspectives: RelationshipPerspectives
+  relationship_counts?: RelationshipCounts
+  tweet_counts?: TweetCounts
+  action_counts?: ActionCounts
   rest_id: string
   super_follow_eligible: boolean
   super_followed_by: boolean
   super_following: boolean
   verification: Verification
+}
+
+export interface RelationshipCounts {
+  followers: number
+  following: number
+}
+
+export interface TweetCounts {
+  tweets: number
+}
+
+export interface ActionCounts {
+  favorites_count?: number
 }
 
 export interface AffiliatesHighlightedLabel { }

@@ -59,16 +59,16 @@ class RetweetsHandler extends base_handler_1.BaseHandler {
             const user = (0, lodash_1.pick)({
                 id: result === null || result === void 0 ? void 0 : result.rest_id,
                 created_at: ((_d = result.core) === null || _d === void 0 ? void 0 : _d.created_at) || "",
-                description: ((_e = result.legacy) === null || _e === void 0 ? void 0 : _e.description) || "",
-                followers_count: ((_f = result.legacy) === null || _f === void 0 ? void 0 : _f.followers_count) || 0,
-                friends_count: ((_g = result.legacy) === null || _g === void 0 ? void 0 : _g.friends_count) || 0,
+                description: ((_e = result.profile_bio) === null || _e === void 0 ? void 0 : _e.description) || "",
+                followers_count: ((_f = result.relationship_counts) === null || _f === void 0 ? void 0 : _f.followers) || 0,
+                friends_count: ((_g = result.relationship_counts) === null || _g === void 0 ? void 0 : _g.following) || 0,
                 name: ((_h = result.core) === null || _h === void 0 ? void 0 : _h.name) || "",
                 profile_image_url_https: ((_j = result.avatar) === null || _j === void 0 ? void 0 : _j.image_url) || "",
                 screen_name: ((_k = result.core) === null || _k === void 0 ? void 0 : _k.screen_name) || "",
-                statuses_count: ((_l = result.legacy) === null || _l === void 0 ? void 0 : _l.statuses_count) || 0,
+                statuses_count: ((_l = result.tweet_counts) === null || _l === void 0 ? void 0 : _l.tweets) || 0,
                 is_blue_verified: result.is_blue_verified || false,
                 profile_description_language: this.cleanText(result.profile_description_language),
-                favourites_count: ((_m = result.legacy) === null || _m === void 0 ? void 0 : _m.favourites_count) || 0
+                favourites_count: ((_m = result.action_counts) === null || _m === void 0 ? void 0 : _m.favorites_count) || 0
             }, constants_1.USER_PROFILE_FIELDS);
             user["description"] = this.cleanText(user["description"]);
             user["name"] = this.cleanText(user["name"]);
