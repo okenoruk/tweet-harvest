@@ -16,63 +16,72 @@ export interface Timeline {
 }
 
 export interface Instruction {
-  type: string
-  entries: RetweetEntry[]
+  type?: string
+  __typename?: string
+  entries?: RetweetEntry[]
 }
 
 export interface RetweetEntry {
-  entryId: string
-  sortIndex: string
+  entryId?: string
+  entry_id?: string
+  sortIndex?: string
+  sort_index?: string
   content: Content
 }
 
 export interface Content {
-  entryType: string
-  __typename: string
+  entryType?: string
+  __typename?: string
   itemContent?: ItemContent
+  content?: ItemContent
   value?: string
   cursorType?: string
+  cursor_type?: string
   stopOnEmptyResponse?: boolean
 }
 
 export interface ItemContent {
-  itemType: string
-  __typename: string
-  user_results: UserResults
-  userDisplayType: string
+  itemType?: string
+  __typename?: string
+  __isTimelineTimelineItemContent?: string
+  user_results?: UserResults
+  userDisplayType?: string
+  user_display_type?: string
 }
 
 export interface UserResults {
-  result: Result
+  id?: string
+  result?: Result
 }
 
 export interface Result {
   __typename: string
-  affiliates_highlighted_label: AffiliatesHighlightedLabel
-  avatar: Avatar
-  core: Core
-  dm_permissions: DmPermissions
-  follow_request_sent: boolean
-  has_graduated_access: boolean
-  id: string
-  is_blue_verified: boolean
-  legacy: Legacy
-  location: Location
-  media_permissions: MediaPermissions
-  parody_commentary_fan_label: string
-  privacy: Privacy
-  profile_bio: ProfileBio
-  profile_description_language: string
-  profile_image_shape: string
-  relationship_perspectives: RelationshipPerspectives
+  affiliates_highlighted_label?: AffiliatesHighlightedLabel
+  avatar?: Avatar
+  core?: Core
+  dm_permissions?: DmPermissions
+  follow_request_sent?: boolean
+  has_graduated_access?: boolean
+  id?: string
+  is_blue_verified?: boolean
+  legacy?: Legacy
+  location?: Location
+  media_permissions?: MediaPermissions
+  parody_commentary_fan_label?: string
+  privacy?: Privacy
+  profile_bio?: ProfileBio
+  profile_description_language?: string
+  profile_image_shape?: string
+  profile_translation?: any
+  relationship_perspectives?: RelationshipPerspectives
   relationship_counts?: RelationshipCounts
   tweet_counts?: TweetCounts
   action_counts?: ActionCounts
-  rest_id: string
-  super_follow_eligible: boolean
-  super_followed_by: boolean
-  super_following: boolean
-  verification: Verification
+  rest_id?: string
+  super_follow_eligible?: boolean
+  super_followed_by?: boolean
+  super_following?: boolean
+  verification?: Verification
 }
 
 export interface RelationshipCounts {
@@ -95,7 +104,7 @@ export interface Avatar {
 }
 
 export interface Core {
-  created_at: string
+  created_at?: string
   name: string
   screen_name: string
 }
@@ -105,29 +114,33 @@ export interface DmPermissions {
 }
 
 export interface Legacy {
-  default_profile: boolean
-  default_profile_image: boolean
-  description: string
-  entities: Entities
-  fast_followers_count: number
-  favourites_count: number
-  follow_request_sent: boolean
-  followers_count: number
-  friends_count: number
-  has_custom_timelines: boolean
-  is_translator: boolean
-  listed_count: number
-  media_count: number
-  normal_followers_count: number
-  notifications: boolean
-  pinned_tweet_ids_str: any[]
-  possibly_sensitive: boolean
-  profile_banner_url: string
-  profile_interstitial_type: string
-  statuses_count: number
-  translator_type: string
-  want_retweets: boolean
-  withheld_in_countries: any[]
+  default_profile?: boolean
+  default_profile_image?: boolean
+  description?: string
+  entities?: Entities
+  fast_followers_count?: number
+  favourites_count?: number
+  follow_request_sent?: boolean
+  followers_count?: number
+  friends_count?: number
+  has_custom_timelines?: boolean
+  is_translator?: boolean
+  listed_count?: number
+  media_count?: number
+  normal_followers_count?: number
+  notifications?: boolean
+  pinned_tweet_ids_str?: any[]
+  possibly_sensitive?: boolean
+  profile_banner_url?: string
+  profile_interstitial_type?: string
+  statuses_count?: number
+  translator_type?: string
+  want_retweets?: boolean
+  withheld_in_countries?: any[]
+  created_at?: string
+  name?: string
+  profile_image_url_https?: string
+  screen_name?: string
 }
 
 export interface Entities {
@@ -152,18 +165,20 @@ export interface Privacy {
 
 export interface ProfileBio {
   description: string
+  entities?: any
 }
 
 export interface RelationshipPerspectives {
-  blocked_by: boolean
-  blocking: boolean
-  followed_by: boolean
-  following: boolean
-  muting: boolean
+  blocked_by?: boolean
+  blocking?: boolean
+  followed_by?: boolean
+  following?: boolean
+  muting?: boolean
 }
 
 export interface Verification {
-  verified: boolean
+  verified?: boolean
+  is_blue_verified?: boolean
 }
 
 export interface ResponseObjects {
